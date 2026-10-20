@@ -7,6 +7,8 @@ change when polls do. This script regenerates only site/data/*.js:
     forecast.js   2028 estimates for every matchup in data/polls_2028.csv
     history.js    actual results, 1960-2024, from data/results_1960_2024.csv
     polls.js      every 2028 poll, with how much it counts and why
+    senate.js     2026 Senate estimates and polls (from fetch_midterms.py's CSVs)
+    house.js      2026 House estimates by district
 
 The data is written as small JS files (window.X = {...}) rather than JSON so
 the pages work when opened straight from disk, with no local server needed.
@@ -22,6 +24,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+import midterms
 import polling_2028 as model
 
 SITE_DATA = Path("site/data")
@@ -210,10 +213,16 @@ if __name__ == "__main__":
     write_js("polls", "POLLS", poll_data)
     write_js("history", "HISTORY", build_history())
 
+    senate, house = midterms.senate(), midterms.house()
+    write_js("senate", "SENATE", senate)
+    write_js("house", "HOUSE", house)
+
     avail = [f"{m['dem']} vs {m['rep']}" for m in forecast["matchups"] if m["available"]]
     unavail = [f"{m['dem']} vs {m['rep']}" for m in forecast["matchups"] if not m["available"]]
     print(f"Matchups with a map: {', '.join(avail) or 'none'}")
     if unavail:
         print(f"Listed but no map (no recent national polls): {', '.join(unavail)}")
     print(f"Polls: {len(poll_data['polls'])} ({sum(p['status'] == 'Used' for p in poll_data['polls'])} used)")
-    print(f"Wrote site/data/forecast.js, polls.js, history.js")
+    print(f"Senate: D {senate['seats']['D']}, R {senate['seats']['R']}, tossup {senate['seats']['Tossup']}; "
+          f"House: D {house['seats']['D']}, R {house['seats']['R']}, tossup {house['seats']['Tossup']}")
+    print(f"Wrote site/data/forecast.js, polls.js, history.js, senate.js, house.js")

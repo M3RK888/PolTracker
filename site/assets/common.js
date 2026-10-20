@@ -56,7 +56,8 @@
 
   // Electoral vote bar --------------------------------------------------------
   // opts: { left: {name, ev, sub, color}, right: {...}, center: html,
-  //         segments: [{label, ev, color, detail}], total }
+  //         segments: [{label, ev, color, detail}], total,
+  //         threshold (default 270), thresholdLabel, unit ("electoral vote" / "seat") }
   PM.renderEvBar = (el, opts) => {
     const side = (s, cls) => `
       <div class="ev-side ${cls}">
@@ -77,14 +78,15 @@
             <div class="ev-seg ${PM.textClass(s.color)}" data-i="${i}" tabindex="0"
                  style="flex:${s.ev} 1 0;background:${s.color}">${s.ev / opts.total >= 0.035 ? s.ev : ""}</div>`).join("")}
         </div>
-        <div class="ev-270" style="left:${(270 / opts.total) * 100}%"><span>270 to win</span></div>
+        <div class="ev-270" style="left:${((opts.threshold ?? 270) / opts.total) * 100}%"><span>${opts.thresholdLabel ?? "270 to win"}</span></div>
       </div>
       <div class="legend">
         ${opts.segments.map((s) => `<span><i style="background:${s.color}"></i>${PM.esc(s.label)} <span class="muted">${s.ev}</span></span>`).join("")}
       </div>`;
     el.querySelectorAll(".ev-seg").forEach((node) => {
       const s = segs[+node.dataset.i];
-      const html = `<strong>${PM.esc(s.label)}</strong>: ${s.ev} electoral vote${s.ev === 1 ? "" : "s"}${s.detail ? `<br>${s.detail}` : ""}`;
+      const unit = opts.unit ?? "electoral vote";
+      const html = `<strong>${PM.esc(s.label)}</strong>: ${s.ev} ${unit}${s.ev === 1 ? "" : "s"}${s.detail ? `<br>${s.detail}` : ""}`;
       node.addEventListener("mousemove", (e) => PM.showTip(html, e.clientX, e.clientY));
       node.addEventListener("mouseleave", PM.hideTip);
       node.addEventListener("focus", () => { const r = node.getBoundingClientRect(); PM.showTip(html, r.left, r.bottom); });
@@ -114,13 +116,15 @@
       text: scaled.map((r) => r.hover),
       zmin: -PM.MARGIN_RANGE, zmax: PM.MARGIN_RANGE, colorscale: PM.MARGIN_SCALE,
     }];
-    if (flat.length) {
+    // One flat-colored layer per color (third-party wins, states with no race, ...)
+    [...new Set(flat.map((r) => r.color))].forEach((c) => {
+      const rs = flat.filter((r) => r.color === c);
       traces.push({
         ...base,
-        locations: flat.map((r) => r.state), z: flat.map(() => 1), text: flat.map((r) => r.hover),
-        zmin: 0, zmax: 1, colorscale: [[0, flat[0].color], [1, flat[0].color]],
+        locations: rs.map((r) => r.state), z: rs.map(() => 1), text: rs.map((r) => r.hover),
+        zmin: 0, zmax: 1, colorscale: [[0, c], [1, c]],
       });
-    }
+    });
     const layout = {
       geo: {
         scope: "usa", projection: { type: "albers usa" },
@@ -133,7 +137,11 @@
       hoverlabel: { bgcolor: ink, bordercolor: ink, font: { color: border, size: 13, family: css.getPropertyValue("--sans") } },
     };
     window.Plotly.react(el, traces, layout, { displayModeBar: false, responsive: true, scrollZoom: false });
+    return el;
   };
+
+  // Grey for states with nothing on the ballot (theme-aware)
+  PM.noRaceColor = () => (window.matchMedia("(prefers-color-scheme: dark)").matches ? "#3a3d44" : "#dcd9d2");
 
   PM.renderScale = (el, { other } = {}) => {
     const stops = PM.MARGIN_SCALE.map(([p, c]) => `${c} ${p * 100}%`).join(",");

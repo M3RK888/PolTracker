@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026 House · Pollmap</title>
+  <meta name="description" content="A poll-based estimate of all 435 U.S. House races in 2026, shown as an equal-area district map.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Pollmap</a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">2028</a>
+        <a href="senate.html">Senate</a>
+        <a href="house.html" aria-current="page">House</a>
+        <a href="history.html">Past elections</a>
+        <a href="polls.html">Polls</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-head">
+      <div>
+        <h1>The 2026 House</h1>
+        <p class="dek" id="dek"></p>
+      </div>
+    </div>
+
+    <section class="card">
+      <div id="bar"></div>
+      <div class="hexmap-wrap"><svg id="hexmap" role="img" aria-label="Map of all 435 House districts, one hexagon each, colored by rating"></svg></div>
+      <p class="muted small" style="text-align:center;margin:6px 0 0">Each hexagon is one district, so every seat is the same size. Districts are grouped by state; their positions within a state aren't geographic.</p>
+    </section>
+
+    <section class="stats" id="stats" aria-label="Key numbers"></section>
+
+    <details class="card polls-drawer">
+      <summary><span id="generic-summary">The generic ballot behind every district</span></summary>
+      <p class="muted small">"If the election were held today, would you vote for the Democratic or Republican candidate for Congress in your district?"
+        Each aggregator averages hundreds of these polls; this page averages the aggregators.</p>
+      <div class="table-scroll"><table id="generic"></table></div>
+    </details>
+
+    <section>
+      <h2>Every district</h2>
+      <div class="filters">
+        <label>State <select id="f-state"><option value="">All states</option></select></label>
+        <label>Rating <select id="f-rating"><option value="">All ratings</option></select></label>
+        <span class="muted small" id="count" aria-live="polite"></span>
+      </div>
+      <div class="table-scroll"><table id="districts"></table></div>
+    </section>
+
+    <section class="card prose">
+      <h2>How this estimate works</h2>
+      <p>Individual House races are rarely polled, so every district is estimated the same way: its partisan lean
+        (<a href="https://www.cookpolitical.com/cook-pvi" target="_blank" rel="noopener">Cook PVI</a>) applied to the
+        national environment from the generic congressional ballot, currently <strong id="m-env"></strong>.
+        A district rated R+5 is about 5 points more Republican than the country in two-party share, roughly 10 points of margin,
+        so with the nation at D+8 it comes out near D-2.</p>
+      <p>Cook's 2026 PVI is calculated for the district lines actually used this year, so states that redrew their maps
+        mid-decade (Texas, California, Missouri, North Carolina, Ohio, Utah and others) are covered.</p>
+      <p>This ignores candidates: incumbents, scandals and money often move a district several points from its lean.
+        Ratings use the same cutoffs as the other maps. A snapshot of the polls, not a forecast.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap">Districts, candidates and Cook PVI from Wikipedia's 2026 House elections article (read from its exact page source); generic ballot from the aggregators linked above.</div></footer>
+
+  <script src="assets/common.js"></script>
+  <script src="data/forecast.js"></script>
+  <script src="data/house.js"></script>
+  <script>
+  (function () {
+    const H = window.HOUSE;
+    const color = Object.fromEntries(window.FORECAST.ratings.map((r) => [r.name, r.color]));
+    const D = H.districts;
+    const byCell = new Map(D.map((d) => [`${d.q},${d.r}`, d]));
+    const NAMES = Object.fromEntries(window.FORECAST.matchups.find((m) => m.available).states.map((s) => [s.state, s.name]));
+    const cands = (d) => [d.dem && `${d.dem} (D)`, d.rep && `${d.rep} (R)`, d.others].filter(Boolean).join(", ") || "—";
+    const pvi = (p) => (p === 0 ? "EVEN" : `${p > 0 ? "D" : "R"}+${Math.abs(p)}`);
+
+    document.getElementById("dek").textContent =
+      `Estimate as of ${PM.fmtDate(H.as_of)} · Election Day is November 3 · based on polls, not a forecast`;
+    document.getElementById("m-env").textContent = PM.fmtMargin(H.environment);
+    document.getElementById("generic-summary").textContent =
+      `The generic ballot behind every district: ${PM.fmtMargin(H.environment)}`;
+
+    // Seat bar
+    const inRating = (rating) => {
+      const ds = D.filter((d) => d.rating === rating);
+      return ds.length > 24 ? `${ds.length} districts` : ds.map((d) => d.id).join(", ");
+    };
+    PM.renderEvBar(document.getElementById("bar"), {
+      total: 435, threshold: 218, thresholdLabel: "218 for control", unit: "seat",
+      left: { name: "Democrats", ev: H.seats.D, color: PM.SHADES.D[0], sub: "excluding tossups" },
+      right: { name: "Republicans", ev: H.seats.R, color: PM.SHADES.R[0], sub: "excluding tossups" },
+      center: H.seats.Tossup ? `<strong>${H.seats.Tossup}</strong>tossup` : "",
+      segments: H.segments.map((s) => ({ label: s.rating, ev: s.seats, color: color[s.rating], detail: inRating(s.rating) })),
+    });
+
+    // Hex map (pointy-top hexagons in axial coordinates)
+    const R3 = Math.sqrt(3);
+    const center = (d) => [R3 * (d.q + d.r / 2), 1.5 * d.r];
+    const corner = (cx, cy, i) => [cx + Math.cos(Math.PI / 180 * (60 * i - 30)), cy + Math.sin(Math.PI / 180 * (60 * i - 30))];
+    const DIRS = [[1, 0], [0, 1], [-1, 1], [-1, 0], [0, -1], [1, -1]];   // edge i joins corners i and i+1
+    const pts = D.map(center);
+    const minX = Math.min(...pts.map((p) => p[0])) - 1.2, maxX = Math.max(...pts.map((p) => p[0])) + 1.2;
+    const minY = Math.min(...pts.map((p) => p[1])) - 1.2, maxY = Math.max(...pts.map((p) => p[1])) + 1.2;
+    const svg = document.getElementById("hexmap");
+    svg.setAttribute("viewBox", `${minX} ${minY} ${maxX - minX} ${maxY - minY}`);
+
+    let hexes = "", borders = "";
+    D.forEach((d) => {
+      const [cx, cy] = center(d);
+      const poly = [0, 1, 2, 3, 4, 5].map((i) => corner(cx, cy, i).map((v) => v.toFixed(3)).join(",")).join(" ");
+      hexes += `<polygon class="hex" data-id="${d.id}" points="${poly}" fill="${color[d.rating]}" tabindex="0"/>`;
+      DIRS.forEach(([dq, dr], i) => {
+        const n = byCell.get(`${d.q + dq},${d.r + dr}`);
+        if (!n || n.state !== d.state) {
+          const [a, b] = [corner(cx, cy, i), corner(cx, cy, (i + 1) % 6)];
+          borders += `M${a[0].toFixed(3)} ${a[1].toFixed(3)}L${b[0].toFixed(3)} ${b[1].toFixed(3)}`;
+        }
+      });
+    });
+    const labels = [...new Set(D.map((d) => d.state))].map((st) => {
+      const ps = D.filter((d) => d.state === st).map(center);
+      // label the hex nearest the state's middle, so it sits on the state
+      const mx = ps.reduce((s, p) => s + p[0], 0) / ps.length, my = ps.reduce((s, p) => s + p[1], 0) / ps.length;
+      const [x, y] = ps.reduce((b, p) => (Math.hypot(p[0] - mx, p[1] - my) < Math.hypot(b[0] - mx, b[1] - my) ? p : b));
+      return `<text x="${x}" y="${y}" class="hex-label">${st}</text>`;
+    }).join("");
+    svg.innerHTML = `<g>${hexes}</g><path class="hex-border" d="${borders}"/><g>${labels}</g>`;
+
+    const tip = (d) => `<strong>${PM.esc(d.name)}</strong> (${d.id})<br>Estimate: <strong>${PM.fmtMargin(d.estimate)}</strong>, ${d.rating}` +
+      `<br>Partisan lean: ${pvi(d.pvi)}<br>Incumbent: ${d.incumbent ? `${PM.esc(d.incumbent)} (${d.incumbent_party})` : "none (new or open seat)"}` +
+      `<br>Candidates: ${PM.esc(cands(d))}`;
+    svg.addEventListener("mousemove", (e) => {
+      const h = e.target.closest(".hex");
+      if (h) PM.showTip(tip(D.find((d) => d.id === h.dataset.id)), e.clientX, e.clientY); else PM.hideTip();
+    });
+    svg.addEventListener("mouseleave", PM.hideTip);
+    svg.addEventListener("focusin", (e) => {
+      const h = e.target.closest(".hex");
+      if (h) { const r = h.getBoundingClientRect(); PM.showTip(tip(D.find((d) => d.id === h.dataset.id)), r.right, r.bottom); }
+    });
+    svg.addEventListener("focusout", PM.hideTip);
+
+    // Stats
+    const held = D.filter((d) => d.incumbent_party === "D" || d.incumbent_party === "R");
+    const flips = held.filter((d) => Math.abs(d.estimate) >= 2 && (d.estimate > 0 ? "D" : "R") !== d.incumbent_party);
+    const toD = flips.filter((d) => d.estimate > 0).length;
+    const competitive = D.filter((d) => Math.abs(d.estimate) < 5).length;
+    document.getElementById("stats").innerHTML = [
+      ["National environment", PM.fmtMargin(H.environment), "generic ballot, average of aggregators"],
+      ["Competitive seats", competitive, "within 5 points (Lean or Tossup)"],
+      ["Seats changing party", flips.length, `${toD} to Democrats, ${flips.length - toD} to Republicans (not counting tossups)`],
+      ["Open or new seats", D.filter((d) => !d.incumbent).length, "no incumbent on the ballot"],
+    ].map(([l, v, n]) => `<div class="stat"><div class="label">${l}</div><div class="value">${v}</div><div class="note">${PM.esc(n)}</div></div>`).join("");
+
+    // Generic ballot table
+    PM.sortableTable(document.getElementById("generic"), [
+      { key: "source", label: "Aggregator", render: (g) => g.url ? `<a href="${PM.esc(g.url)}" target="_blank" rel="noopener">${PM.esc(g.source)}</a>` : PM.esc(g.source) },
+      { key: "end_date", label: "Polls through", render: (g) => PM.fmtDate(g.end_date) },
+      { key: "dem", label: "Democrats", num: true, render: (g) => `${g.dem}%` },
+      { key: "rep", label: "Republicans", num: true, render: (g) => `${g.rep}%` },
+      { key: "margin", label: "Margin", num: true, render: (g) => `<span class="${PM.marginClass(g.margin)}">${PM.fmtMargin(g.margin)}</span>` },
+    ], H.generic, { key: "margin", dir: -1 });
+
+    // District table with filters
+    const fState = document.getElementById("f-state"), fRating = document.getElementById("f-rating");
+    fState.innerHTML += [...new Set(D.map((d) => d.state))].sort((a, b) => (NAMES[a] || a).localeCompare(NAMES[b] || b))
+      .map((s) => `<option value="${s}">${PM.esc(NAMES[s] || s)}</option>`).join("");
+    fRating.innerHTML += H.segments.map((s) => `<option>${s.rating}</option>`).join("");
+    const filtered = () => D.filter((d) => (!fState.value || d.state === fState.value) && (!fRating.value || d.rating === fRating.value));
+    const table = PM.sortableTable(document.getElementById("districts"), [
+      { key: "id", label: "District" },
+      { key: "pvi", label: "Lean", num: true, render: (d) => `<span class="muted">${pvi(d.pvi)}</span>` },
+      { key: "estimate", label: "Estimate", num: true, sort: (d) => -Math.abs(d.estimate),
+        render: (d) => `<span class="${PM.marginClass(d.estimate)}">${PM.fmtMargin(d.estimate)}</span>` },
+      { key: "rating", label: "Rating", sort: (d) => H.segments.findIndex((s) => s.rating === d.rating),
+        render: (d) => `<span class="chip"><i style="background:${color[d.rating]}"></i>${d.rating}</span>` },
+      { key: "incumbent", label: "Incumbent", render: (d) => d.incumbent ? `${PM.esc(d.incumbent)} <span class="muted">(${d.incumbent_party})</span>` : `<span class="muted">open / new</span>` },
+      { key: "cands", label: "Candidates", sort: (d) => d.dem, render: (d) => PM.esc(cands(d)) },
+    ], filtered(), { key: "estimate", dir: -1 });
+    const update = () => {
+      const rows = filtered();
+      table.update(rows);
+      document.getElementById("count").textContent = `Showing ${rows.length} of 435`;
+    };
+    [fState, fRating].forEach((el) => el.addEventListener("change", update));
+    update();
+  })();
+  </script>
+</body>
+</html>

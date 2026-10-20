@@ -1,0 +1,436 @@
+district,state,number,pvi,incumbent,incumbent_party,dem_candidate,rep_candidate,other_candidates
+AK-AL,AK,0,-6.0,Nick Begich III,R,Eric Hafner,Nick Begich III,Bill Hill (I); Jim McDermott (O)
+AL-01,AL,1,-17.0,,,Clyde Jones Jr.,Jerry Carl,
+AL-02,AL,2,-7.0,Shomari Figures,D,Shomari Figures,Rhett Marques,
+AL-03,AL,3,-23.0,Mike Rogers,R,Lee McInnis,Mike Rogers,
+AL-04,AL,4,-33.0,Robert Aderholt,R,Amanda Pusczek,Robert Aderholt,
+AL-05,AL,5,-15.0,Dale Strong,R,Andrew Sneed,Dale Strong,
+AL-06,AL,6,-17.0,Gary Palmer,R,Maurice Mercer,Gary Palmer,
+AL-07,AL,7,10.0,Terri Sewell,D,Terri Sewell,Ammie Akin,
+AR-01,AR,1,-23.0,Rick Crawford,R,Terri Green,Rick Crawford,Steve Parsons (O)
+AR-02,AR,2,-8.0,French Hill,R,Chris Jones,French Hill,
+AR-03,AR,3,-13.0,Steve Womack,R,Robb Ryerse,Steve Womack,Bobby Wilson (O)
+AR-04,AR,4,-20.0,Bruce Westerman,R,James Russell,Bruce Westerman,
+AZ-01,AZ,1,-1.0,David Schweikert,R,Amish Shah,Jay Feely,Monica Alponte (O)
+AZ-02,AZ,2,-7.0,Eli Crane,R,Jonathan Nez,Eli Crane,Curtis Goodwin (O)
+AZ-03,AZ,3,22.0,Yassamin Ansari,D,Yassamin Ansari,,Alan Aversa (O); David Redkey (O)
+AZ-04,AZ,4,4.0,Greg Stanton,D,Greg Stanton,Zuhdi Jasser,Tisha Benoit (O)
+AZ-05,AZ,5,-10.0,Andy Biggs,R,Elizabeth Lee,Mark Lamb,
+AZ-06,AZ,6,0.0,Juan Ciscomani,R,JoAnna Mendoza,Juan Ciscomani,Jereme Peters (O); Gary Swing (O)
+AZ-07,AZ,7,13.0,Adelita Grijalva,D,Adelita Grijalva,Daniel Butierez,
+AZ-08,AZ,8,-8.0,Abraham Hamadeh,R,Bernadette Greene-Placentia,Abraham Hamadeh,
+AZ-09,AZ,9,-15.0,Paul Gosar,R,Dani Sterbinsky,Paul Gosar,
+CA-01,CA,1,7.0,James Gallagher,R,Mike McGuire,James Gallagher,
+CA-02,CA,2,13.0,Jared Huffman,D,Jared Huffman,Robin Littau,
+CA-03,CA,3,6.0,Ami Bera,D,Ami Bera,Robb Tucker,
+CA-04,CA,4,8.0,Mike Thompson,D,Eric Jones,,
+CA-05,CA,5,-10.0,Tom McClintock,R,Michael Masuda,Tom McClintock,
+CA-06,CA,6,5.0,Kevin Kiley,I,Richard Pan,,Kevin Kiley (I)
+CA-07,CA,7,7.0,Doris Matsui,D,Doris Matsui,,
+CA-08,CA,8,19.0,John Garamendi,D,John Garamendi,Rudy Recile,
+CA-09,CA,9,8.0,Josh Harder,D,Josh Harder,John McBride,
+CA-10,CA,10,18.0,Mark DeSaulnier,D,Mark DeSaulnier,Jeff Frese,
+CA-11,CA,11,36.0,Nancy Pelosi,D,Connie Chan,,
+CA-12,CA,12,39.0,Lateefah Simon,D,Jamie Joyce,,
+CA-13,CA,13,2.0,Adam Gray,D,Adam Gray,Kevin Lincoln,
+CA-14,CA,14,19.0,Aisha Wahab,D,Melissa Hernandez,,
+CA-15,CA,15,26.0,Kevin Mullin,D,Kevin Mullin,Charles Hoelter,
+CA-16,CA,16,25.0,Sam Liccardo,D,Sam Liccardo,Peter Soulé,
+CA-17,CA,17,21.0,Ro Khanna,D,Ro Khanna,Ritesh Tandon,
+CA-18,CA,18,16.0,Zoe Lofgren,D,Zoe Lofgren,Shane Lewis,
+CA-19,CA,19,18.0,Jimmy Panetta,D,Jimmy Panetta,Peter Coe Verbica,
+CA-20,CA,20,-16.0,Vince Fong,R,Sandra Van Scotter,Vince Fong,
+CA-21,CA,21,5.0,Jim Costa,D,Jim Costa,Kyle Kirkland,
+CA-22,CA,22,1.0,David Valadao,R,Randy Villegas,David Valadao,
+CA-23,CA,23,-9.0,Jay Obernolte,R,Tessa Lynn Hodge,Jay Obernolte,
+CA-24,CA,24,13.0,Salud Carbajal,D,Salud Carbajal,Bob Smith,
+CA-25,CA,25,4.0,Raul Ruiz,D,Raul Ruiz,Joe Males,
+CA-26,CA,26,9.0,Julia Brownley,D,Jacqui Irwin,Sam Gallucci,
+CA-27,CA,27,6.0,George T. Whitesides,D,George Whitesides,Jason Gibbs,
+CA-28,CA,28,14.0,Judy Chu,D,Judy Chu,April Verlato,
+CA-29,CA,29,19.0,Luz Rivas,D,Angelica Dueñas,,
+CA-30,CA,30,21.0,Laura Friedman,D,Laura Friedman,Scott Meyers,
+CA-31,CA,31,8.0,Gil Cisneros,D,Gil Cisneros,Eric Ching,
+CA-32,CA,32,14.0,Brad Sherman,D,Brad Sherman,Larry Thompson,
+CA-33,CA,33,7.0,Pete Aguilar,D,Pete Aguilar,Stephanie Vargas,
+CA-34,CA,34,28.0,Jimmy Gomez,D,Jimmy Gomez,,
+CA-35,CA,35,6.0,Norma Torres,D,Norma Torres,Mike Cargile,
+CA-36,CA,36,21.0,Ted Lieu,D,Ted Lieu,Houston Brignano,
+CA-37,CA,37,33.0,Sydney Kamlager-Dove,D,Sydney Kamlager-Dove,,
+CA-38,CA,38,8.0,,,Hilda Solis,Pedro Casas,
+CA-39,CA,39,7.0,Mark Takano,D,Mark Takano,Steve Manos,
+CA-40,CA,40,-6.0,Young Kim,R,,Ken Calvert,
+CA-41,CA,41,9.0,Linda Sánchez,D,Linda Sánchez,Mitch Clemmons,
+CA-42,CA,42,8.0,Robert Garcia,D,Robert Garcia,Brian Burley,
+CA-43,CA,43,27.0,Maxine Waters,D,Maxine Waters,Cristian Morales,
+CA-44,CA,44,20.0,Nanette Barragán,D,Nanette Barragán,Genevieve Angel,
+CA-45,CA,45,3.0,Derek Tran,D,Derek Tran,Chuong Vo,
+CA-46,CA,46,10.0,Lou Correa,D,Lou Correa,David Pan,
+CA-47,CA,47,6.0,Dave Min,D,Dave Min,Jenny Le Roux,
+CA-48,CA,48,2.0,Darrell Issa,R,Marni von Wilpert,Jim Desmond,
+CA-49,CA,49,7.0,Mike Levin,D,Mike Levin,Armen Kurdian,
+CA-50,CA,50,10.0,Scott Peters,D,Scott Peters,Steve Cohen,
+CA-51,CA,51,10.0,Sara Jacobs,D,Sara Jacobs,Ricardo Cabrera,
+CA-52,CA,52,11.0,Juan Vargas,D,Juan Vargas,Jeff Belle,
+CO-01,CO,1,29.0,Diana DeGette,D,Melat Kiros,Christy Peterson,Shimon Blau (I); Chad Humphrey (O); Critter Milton (O)
+CO-02,CO,2,20.0,Joe Neguse,D,Joe Neguse,Kelley Dennison,Gaylon Kent (O)
+CO-03,CO,3,-5.0,Jeff Hurd,R,Dwayne Romero,Jeff Hurd,Clifton Brown (I); Cory Robertson (O)
+CO-04,CO,4,-9.0,Lauren Boebert,R,Eileen Laubacher,Lauren Boebert,Douglas Mangeris (O)
+CO-05,CO,5,-5.0,Jeff Crank,R,Jessica Killin,Jeff Crank,Mark Elworth (O); Christopher Mitchell (O)
+CO-06,CO,6,11.0,Jason Crow,D,Jason Crow,Jason Clark,Patty McMahon (O); Meredith Ryan (O); Samir Ezzeldin Witta (I)
+CO-07,CO,7,8.0,Brittany Pettersen,D,Brittany Pettersen,Tim Bennett,Lawrence Clark (O); Susan Hall (O); Joe Krzeczkowski (I); Dan Sallis (O)
+CO-08,CO,8,0.0,Gabe Evans,R,Manny Rutinel,Gabe Evans,Dan Wood (O)
+CT-01,CT,1,12.0,John B. Larson,D,Luke Bronin,Amy Chai,Mary Sanders (O)
+CT-02,CT,2,4.0,Joe Courtney,D,Joe Courtney,George Austin,
+CT-03,CT,3,8.0,Rosa DeLauro,D,Rosa DeLauro,Chris Lancia,Thomas Egan (I)
+CT-04,CT,4,13.0,Jim Himes,D,Jim Himes,Michael Goldstein,Benjamin Wesley (I)
+CT-05,CT,5,3.0,Jahana Hayes,D,Jahana Hayes,Chris Shea,
+DE-AL,DE,0,8.0,Sarah McBride,D,Sarah McBride,Joseph Arminio,
+FL-01,FL,1,-18.0,Jimmy Patronis,R,Gay Valimont,Jimmy Patronis,Tyler Davis (I)
+FL-02,FL,2,-8.0,Neal Dunn,R,Amanda Green,Austin Rogers,
+FL-03,FL,3,-10.0,Kat Cammack,R,Seth Harp,Kat Cammack,Mike Klein (I)
+FL-04,FL,4,-5.0,Aaron Bean,R,LaShonda Holloway,Aaron Bean,Todd Schaefer (I); Mike Sell (I)
+FL-05,FL,5,-10.0,John Rutherford,R,Rachel Grage,John Rutherford,
+FL-06,FL,6,-14.0,Randy Fine,R,Eric Yonce,Randy Fine,Michael Gist (I); Andrew Parrott (O)
+FL-07,FL,7,-5.0,Cory Mills,R,Bale Dalton,Ryan Elijah,Christopher Dennison (O)
+FL-08,FL,8,-8.0,Mike Haridopolos,R,Jennifer Jenkins,Mike Haridopolos,
+FL-09,FL,9,-8.0,Darren Soto,D,Darren Soto,Dan Green,
+FL-10,FL,10,13.0,Maxwell Frost,D,Maxwell Frost,,
+FL-11,FL,11,-7.0,Daniel Webster,R,James Pericola,Joe Strada,Ralph Groves (O)
+FL-12,FL,12,-7.0,Gus Bilirakis,R,Kimberly Overman,Gus Bilirakis,Branden Scrivener (I)
+FL-13,FL,13,-6.0,Anna Paulina Luna,R,Leela Gray,Anna Paulina Luna,Tony D'Arrigo (I)
+FL-14,FL,14,-4.0,Kathy Castor,D,Kathy Castor,Mike Beltran,Brian Lambert (O)
+FL-15,FL,15,-9.0,Laurel Lee,R,Robert People,Laurel Lee,
+FL-16,FL,16,-6.0,Vern Buchanan,R,Kelly Kirschner,Sydney Gruters,Mark Davis (I)
+FL-17,FL,17,-10.0,Greg Steube,R,Matthew Montavon,Greg Steube,Michael Quirk (I)
+FL-18,FL,18,-8.0,Scott Franklin,R,Curtis Gibson,Scott Franklin,Deva Simmons (I)
+FL-19,FL,19,-14.0,Byron Donalds,R,Victor Arias,Jim Schwartzel,Seth Haskin (I)
+FL-20,FL,20,20.0,Vacant,,Debbie Wasserman Schultz,Brent Andersen,Kedner Maxime (I)
+FL-21,FL,21,-7.0,Brian Mast,R,James Martin,Brian Mast,Alexander Cooke (I)
+FL-22,FL,22,-4.0,,,Pia Dandiya,Casey Askar,
+FL-23,FL,23,9.0,Lois Frankel,D,Lois Frankel,Deborah Adeimy,
+FL-24,FL,24,22.0,Frederica Wilson,D,Oliver Gilbert,Te Mayonna Brown,
+FL-25,FL,25,-3.0,Jared Moskowitz,D,Jared Moskowitz,Scott Singer,Peter Jassenoff (O)
+FL-26,FL,26,-7.0,Mario Díaz-Balart,R,Nicole Locklin,Mario Díaz-Balart,Deborah Ann Meidinger Hosey (I)
+FL-27,FL,27,-6.0,María Elvira Salazar,R,Eliott Rodriguez,María Elvira Salazar,
+FL-28,FL,28,-10.0,Carlos A. Giménez,R,Phil Ehr,Carlos Giménez,Eddy Rojas (I)
+GA-01,GA,1,-8.0,Buddy Carter,R,Amanda Hollowell,Jim Kingston,
+GA-02,GA,2,4.0,Sanford Bishop,D,Sanford Bishop,Matt Day,
+GA-03,GA,3,-15.0,Brian Jack,R,Maura Keller,Brian Jack,
+GA-04,GA,4,27.0,Hank Johnson,D,Hank Johnson,James Duffie,
+GA-05,GA,5,36.0,Nikema Williams,D,Nikema Williams,John Oscar Salvesen,
+GA-06,GA,6,25.0,Lucy McBath,D,Lucy McBath,Kevin Martin,
+GA-07,GA,7,-11.0,Rich McCormick,R,Tony Kozycki,Rich McCormick,
+GA-08,GA,8,-15.0,Austin Scott,R,Kelly Esti,Austin Scott,
+GA-09,GA,9,-17.0,Andrew Clyde,R,Caitlyn Gegen,Andrew Clyde,
+GA-10,GA,10,-11.0,Mike Collins,R,Pam Delancy,Houston Gaines,
+GA-11,GA,11,-12.0,Barry Loudermilk,R,Chris Harden,John Cowan,
+GA-12,GA,12,-7.0,Rick Allen,R,Ceretta Smith,Rick Allen,
+GA-13,GA,13,21.0,Everton Blair,D,Jasmine Clark,Jonathan Chavez,
+GA-14,GA,14,-19.0,Clay Fuller,R,Shawn Harris,Clay Fuller,
+HI-01,HI,1,13.0,Ed Case,D,Ed Case,Adriel Lam,Nathan Berning (I); Jordan Conley (O)
+HI-02,HI,2,12.0,Jill Tokuda,D,Jill Tokuda,Brenton Awa,
+IA-01,IA,1,-4.0,Mariannette Miller-Meeks,R,Christina Bohannan,Mariannette Miller-Meeks,Michael Bridgford (I)
+IA-02,IA,2,-4.0,Ashley Hinson,R,Lindsay James,Joe Mitchell,Dave Bushaw (I); Rick Stewart (O)
+IA-03,IA,3,-2.0,Zach Nunn,R,Sarah Trone Garriott,Zach Nunn,
+IA-04,IA,4,-15.0,Randy Feenstra,R,David Dawson,Chris McGowan,
+ID-01,ID,1,-22.0,Russ Fulcher,R,Kaylee Peterson,Russ Fulcher,Brendan Gomez (O); Sarah Zabel (I)
+ID-02,ID,2,-13.0,Mike Simpson,R,Ellie Gilbreath,Mike Simpson,Emre Houser (I); Tripp Hutchinson (I); Will Johanson (O)
+IL-01,IL,1,18.0,Jonathan Jackson,D,Jonathan Jackson,Christian Maxwell,
+IL-02,IL,2,18.0,Robin Kelly,D,Donna Miller,Michael Noack,
+IL-03,IL,3,17.0,Delia Ramirez,D,Delia Ramirez,Angel Oakley,
+IL-04,IL,4,17.0,Chuy García,D,Patty Garcia,Lupe Castillo,Chris Getty (I); Ed Hershey (O)
+IL-05,IL,5,19.0,Mike Quigley,D,Mike Quigley,Tommy Hanson,
+IL-06,IL,6,3.0,Sean Casten,D,Sean Casten,Niki Conforti,
+IL-07,IL,7,34.0,Danny Davis,D,La Shawn Ford,Chad Koppie,
+IL-08,IL,8,5.0,Raja Krishnamoorthi,D,Melissa Bean,Jennifer Davis,
+IL-09,IL,9,19.0,Jan Schakowsky,D,Daniel Biss,John Elleson,
+IL-10,IL,10,12.0,Brad Schneider,D,Brad Schneider,Carl Lambrecht,
+IL-11,IL,11,6.0,Bill Foster,D,Bill Foster,Jeff Walter,
+IL-12,IL,12,-22.0,Mike Bost,R,Julie Fortier,Mike Bost,
+IL-13,IL,13,5.0,Nikki Budzinski,D,Nikki Budzinski,Jeff Wilson,
+IL-14,IL,14,3.0,Lauren Underwood,D,Lauren Underwood,James Marter,
+IL-15,IL,15,-20.0,Mary Miller,R,Jennifer Todd,Mary Miller,
+IL-16,IL,16,-11.0,Darin LaHood,R,Paul Nolley,Darin LaHood,
+IL-17,IL,17,3.0,Eric Sorensen,D,Eric Sorensen,Dillan Vancil,
+IN-01,IN,1,1.0,Frank J. Mrvan,D,Frank Mrvan,Barb Regnitz,
+IN-02,IN,2,-13.0,Rudy Yakym,R,Jamee Decio,Rudy Yakym,William Henry (O)
+IN-03,IN,3,-16.0,Marlin Stutzman,R,Kelly Thompson,Marlin Stutzman,
+IN-04,IN,4,-15.0,Jim Baird,R,Drew Cox,Jim Baird,
+IN-05,IN,5,-8.0,Victoria Spartz,R,J. D. Ford,Victoria Spartz,
+IN-06,IN,6,-16.0,Jefferson Shreve,R,Cinde Wirth,Jefferson Shreve,
+IN-07,IN,7,21.0,André Carson,D,André Carson,Patrick McAuley,James Sceniak (O)
+IN-08,IN,8,-18.0,Mark Messmer,R,Mary Allen,Mark Messmer,
+IN-09,IN,9,-15.0,Erin Houchin,R,Brad Meyer,Erin Houchin,Tonya Hudson (O)
+KS-01,KS,1,-16.0,Tracey Mann,R,Lauren Reinhold,Tracey Mann,Steven Jacob (O)
+KS-02,KS,2,-10.0,Derek Schmidt,R,Don Coover,Derek Schmidt,John Hauer (O)
+KS-03,KS,3,2.0,Sharice Davids,D,Sharice Davids,Eric Jenkins,Steven Hohe (O)
+KS-04,KS,4,-12.0,Ron Estes,R,Katy Tyndell,Ron Estes,Drew Cranmer (O)
+KY-01,KY,1,-23.0,James Comer,R,Drew Williams,James Comer,
+KY-02,KY,2,-20.0,Brett Guthrie,R,Megan Wingfield,Brett Guthrie,Thomas Loecken (I)
+KY-03,KY,3,10.0,Morgan McGarvey,D,Morgan McGarvey,Maria Rodriquez,
+KY-04,KY,4,-18.0,Thomas Massie,R,Melissa Strange,Ed Gallrein,Jeremy Todd (O)
+KY-05,KY,5,-32.0,Hal Rogers,R,Ned Pillersdorf,Hal Rogers,Gerardo Serrano (I); Mikel Wein (I)
+KY-06,KY,6,-7.0,Andy Barr,R,Zach Dembo,Ralph Alvarado,Jay Bowman (I); Pete Lynch (O)
+LA-01,LA,1,-20.0,Steve Scalise,R,Lauren Jewett,Randall Arrington,Liddy Glass (I)
+LA-02,LA,2,25.0,Troy Carter,D,Troy Carter,Peter Williams,Lisa Ballay (O); Walter Beach (I)
+LA-03,LA,3,-18.0,Clay Higgins,R,John Day,Kate Cotten,
+LA-04,LA,4,-17.0,Mike Johnson,R,Conrad Cable,Gordon Heslop,
+LA-05,LA,5,-17.0,Julia Letlow,R,Dan McKay,Stewart Cathey Jr.,
+LA-06,LA,6,-16.0,Cleo Fields,D,Pat Forbes,Monique Appeaning,Rufus Craig (O)
+MA-01,MA,1,8.0,Richard Neal,D,Richard Neal,,Nadia Milleron (I)
+MA-02,MA,2,13.0,Jim McGovern,D,Jim McGovern,,
+MA-03,MA,3,11.0,Lori Trahan,D,Lori Trahan,Gary Grossi,Dennis Conlon (I)
+MA-04,MA,4,11.0,Jake Auchincloss,D,Jake Auchincloss,Thomas Stalcup,
+MA-05,MA,5,24.0,Katherine Clark,D,Katherine Clark,,
+MA-06,MA,6,11.0,Seth Moulton,D,Dan Koh,Micah Jones,
+MA-07,MA,7,34.0,Ayanna Pressley,D,Ayanna Pressley,,
+MA-08,MA,8,15.0,Stephen Lynch,D,Stephen Lynch,Robert Burke,Rasheed Walters (I)
+MA-09,MA,9,6.0,Bill Keating,D,Bill Keating,Tyler MacAllister,
+MD-01,MD,1,-8.0,Andy Harris,R,Dan Schwartz,Andy Harris,
+MD-02,MD,2,10.0,Johnny Olszewski,D,Johnny Olszewski,Dave Wallace,
+MD-03,MD,3,12.0,Sarah Elfreth,D,Sarah Elfreth,Berney Flowers,
+MD-04,MD,4,39.0,Glenn Ivey,D,Glenn Ivey,George McDermott,Sam Husseini (O)
+MD-05,MD,5,17.0,Steny Hoyer,D,Adrian Boafo,Chris Chaffee,
+MD-06,MD,6,3.0,April McClain Delaney,D,April McClain Delaney,Robin Ficker,Moshe Landman (O)
+MD-07,MD,7,31.0,Kweisi Mfume,D,Kweisi Mfume,Scott Collier,
+MD-08,MD,8,30.0,Jamie Raskin,D,Jamie Raskin,Cheryl Riley,Nancy Wallace (O)
+ME-01,ME,1,11.0,Chellie Pingree,D,Chellie Pingree,Ronald Russell,
+ME-02,ME,2,-4.0,Jared Golden,D,Matthew Dunlap,Paul LePage,
+MI-01,MI,1,-11.0,Jack Bergman,R,Callie Barr,Jack Bergman,LaVeta Davenport (O); Zebulon Featherly (I); Liz Hakola (O); Doc Kovaly (O); Arnett Satterla (O)
+MI-02,MI,2,-15.0,John Moolenaar,R,Ben Ambrose,John Moolenaar,Charlotte Magoon (O); Richard Sills (O)
+MI-03,MI,3,4.0,Hillary Scholten,D,Hillary Scholten,Terri DeBoer,Joe Jock (O)
+MI-04,MI,4,-3.0,Bill Huizenga,R,Sean McCann,Bill Huizenga,Shafina Che Barnett (O)
+MI-05,MI,5,-13.0,Tim Walberg,R,Christian Vukasovich,Tim Walberg,Jim Bronke (O); Ronald A. Muszynski (O); Sharon M. Renier (O)
+MI-06,MI,6,12.0,Debbie Dingell,D,Debbie Dingell,Heather Smiley,Michael Mickevicius (O); Linda Rayburn (O); Clyde Shabazz (O); Timothy A. Tegan (O)
+MI-07,MI,7,0.0,Tom Barrett,R,William Lawrence,Tom Barrett,Shane Dedrick (O)
+MI-08,MI,8,-1.0,Kristen McDonald Rivet,D,Kristen McDonald Rivet,Thomas Smith,Jim Casha (O); Kathy Goodwin (O); Mia C. Pettus (O)
+MI-09,MI,9,-16.0,Lisa McClain,R,Ray Pooley,Lisa McClain,Destiny Clayton (O); Kevin Vayko (O); John Vlahos (O); Jim Walkowicz (O)
+MI-10,MI,10,-3.0,John James,R,Christina Hines,Mike Bouchard Jr.,Andrea L. Kirby (O); Kwabena Nkromo (O); Mike Saliba (O)
+MI-11,MI,11,9.0,Haley Stevens,D,Jeremy Moss,Ethan Baker,Farid Ishac (O); Anil Kumar (I); Ryan Teasdale (O)
+MI-12,MI,12,21.0,Rashida Tlaib,D,Rashida Tlaib,James Hooper,Brenda K. Sanders (O); Marc J. Sosnowski (O); Gary Walkowicz (O)
+MI-13,MI,13,22.0,Shri Thanedar,D,Donavan McKinney,T. P. Nykoriak,Simone R. Coleman (O); Chris Dardzinski (O); Raelyn Light (O)
+MN-01,MN,1,-6.0,Brad Finstad,R,Jake Johnson,Brad Finstad,
+MN-02,MN,2,3.0,Angie Craig,D,Matt Little,Eric Pratt,
+MN-03,MN,3,11.0,Kelly Morrison,D,Kelly Morrison,Tyler Bass,
+MN-04,MN,4,18.0,Betty McCollum,D,Betty McCollum,Paul Wikstrom,
+MN-05,MN,5,32.0,Ilhan Omar,D,Ilhan Omar,John Nagel,DeVelle Jackson (I)
+MN-06,MN,6,-10.0,Tom Emmer,R,Doug Chapin,Tom Emmer,
+MN-07,MN,7,-18.0,Michelle Fischbach,R,Erik Osberg,Michelle Fischbach,
+MN-08,MN,8,-7.0,Pete Stauber,R,Trina Swanson,Pete Stauber,
+MO-01,MO,1,29.0,Wesley Bell,D,Wesley Bell,Paul Berry,Tom Schmitz (O)
+MO-02,MO,2,-4.0,Ann Wagner,R,Fred Wellman,Ann Wagner,Brandon Daugherty (O)
+MO-03,MO,3,-13.0,Bob Onder,R,Bethany Mann,Bob Onder,Jim Higgins (O)
+MO-04,MO,4,-21.0,Mark Alford,R,Jordan Herrera,Mark Alford,Thomas Holbrook (O)
+MO-05,MO,5,12.0,Emanuel Cleaver,D,Emanuel Cleaver,Rick Brattin,Randy Langkraehr (O)
+MO-06,MO,6,-19.0,Sam Graves,R,Josh Smead,Chris Stigall,Andy Maidment (O)
+MO-07,MO,7,-21.0,Eric Burlison,R,Missi Hesketh,Eric Burlison,Kevin Craig (O)
+MO-08,MO,8,-27.0,Jason Smith,R,Chris Reichard,Jason Smith,Rebecca Sharpe Lombard (O)
+MS-01,MS,1,-18.0,Trent Kelly,R,Cliff Johnson,Trent Kelly,Johnny Baucom (O)
+MS-02,MS,2,11.0,Bennie Thompson,D,Bennie Thompson,Ron Eller,Bennie Foster (I)
+MS-03,MS,3,-14.0,Michael Guest,R,Michael Chiaradio,Michael Guest,Erik Kiehle (O)
+MS-04,MS,4,-21.0,Mike Ezell,R,Jeffrey Hulum III,Mike Ezell,Carl Boyanton (I)
+MT-01,MT,1,-5.0,Ryan Zinke,R,Sam Forstag,Aaron Flint,Nick Sheedy (O)
+MT-02,MT,2,-15.0,Troy Downing,R,Brian Miller,Troy Downing,Michael Eisenhauer (I); Patrick McCracken (O)
+NC-01,NC,1,-5.0,Don Davis,D,Don Davis,Laurie Buckhout,Tom Bailey (O)
+NC-02,NC,2,17.0,Deborah Ross,D,Deborah Ross,Eugene Douglass,Matthew Laszacs (O)
+NC-03,NC,3,-6.0,Greg Murphy,R,Raymond Smith Jr.,Greg Murphy,Daniel Cavender (O)
+NC-04,NC,4,23.0,Valerie Foushee,D,Valerie Foushee,Max Ganorkar,Guy Meilleur (O)
+NC-05,NC,5,-9.0,Virginia Foxx,R,Chuck Hubbard,Virginia Foxx,Robert Luffman (O)
+NC-06,NC,6,-9.0,Addison McDowell,R,Cyril Jefferson,Addison McDowell,
+NC-07,NC,7,-7.0,David Rouzer,R,Kimberly Hardy,David Rouzer,Maad Abu-Ghazalah (O)
+NC-08,NC,8,-10.0,Mark Harris,R,Colby Watson,Mark Harris,Bo Whitehead (O)
+NC-09,NC,9,-8.0,Richard Hudson,R,Richard Ojeda,Richard Hudson,
+NC-10,NC,10,-9.0,Pat Harrigan,R,Ashley Bell,Pat Harrigan,Steve Feldman (O)
+NC-11,NC,11,-5.0,Chuck Edwards,R,Jamie Ager,Jennifer Balkcom,Travis Groo (O)
+NC-12,NC,12,24.0,Alma Adams,D,Alma Adams,Jack Codiga,
+NC-13,NC,13,-8.0,Brad Knott,R,Paul Barringer,Brad Knott,Steven Swinton (O)
+NC-14,NC,14,-8.0,Tim Moore,R,Lakesha Womack,Tim Moore,
+ND-AL,ND,0,-18.0,Julie Fedorchak,R,Trygve Hammer,Julie Fedorchak,Helene Neville (I); Charles Tuttle (I)
+NE-01,NE,1,-6.0,Mike Flood,R,Chris Backemeyer,Mike Flood,Daniel Hartong (O); Nik Sandman (O)
+NE-02,NE,2,3.0,Don Bacon,R,Denise Powell,Brinker Harding,Eric Foreman (O)
+NE-03,NE,3,-27.0,Adrian Smith,R,Becky Stille,Adrian Smith,Macey Budke (O); Mark Cohen (I); David Else (O)
+NH-01,NH,1,2.0,Chris Pappas,D,Stefany Shaheen,Anthony DiLorenzo,
+NH-02,NH,2,2.0,Maggie Goodlander,D,Maggie Goodlander,Lily Tang Williams,Robbie Mahrou (I)
+NJ-01,NJ,1,10.0,Donald Norcross,D,Donald Norcross,Damon Galdo,
+NJ-02,NJ,2,-5.0,Jeff Van Drew,R,Zack Mullock,Jeff Van Drew,Ramon Mora Jr. (I)
+NJ-03,NJ,3,5.0,Herb Conaway,D,Herb Conaway,Michael McGuire,Ryan Kelly (I); Steven Welzer (O)
+NJ-04,NJ,4,-14.0,Chris Smith,R,Rachel Peace,Chris Smith,
+NJ-05,NJ,5,2.0,Josh Gottheimer,D,Josh Gottheimer,Sean Kirrane,Adam Rueda (I)
+NJ-06,NJ,6,5.0,Frank Pallone,D,Frank Pallone,Hillary Herzig,
+NJ-07,NJ,7,0.0,Thomas Kean Jr.,R,Rebecca Bennett,Thomas Kean Jr.,Seamus O'Toole (I)
+NJ-08,NJ,8,15.0,Rob Menendez,D,Rob Menendez,,Aristotle Eliopoulos (I); Craig Honts (O); Da'Shone Hughey (I)
+NJ-09,NJ,9,2.0,Nellie Pou,D,Nellie Pou,Rosie Pino,Terrisa Bukovinac (I)
+NJ-10,NJ,10,27.0,LaMonica McIver,D,LaMonica McIver,Carmen Bucco,
+NJ-11,NJ,11,5.0,Analilia Mejia,D,Analilia Mejia,Joe Hathaway,Alan Bond (I)
+NJ-12,NJ,12,13.0,Bonnie Watson Coleman,D,Adam Hamawy,Gregg Mele,Andres Jinete (O); Winston Jordan (I)
+NM-01,NM,1,7.0,Melanie Stansbury,D,Melanie Stansbury,Didi Okpareke,
+NM-02,NM,2,0.0,Gabe Vasquez,D,Gabe Vasquez,Greg Cunningham,
+NM-03,NM,3,3.0,Teresa Leger Fernandez,D,Teresa Leger Fernández,Martin Zamora,
+NV-01,NV,1,2.0,Dina Titus,D,Dina Titus,Carrie Buck,Bobby Khan (I); Steven St. John (I)
+NV-02,NV,2,-7.0,Mark Amodei,R,Teresa Benitez-Thompson,David Flippo,Lynn Chapman (I)
+NV-03,NV,3,1.0,Susie Lee,D,Susie Lee,Martin O'Donnell,Jon Kamerath (I)
+NV-04,NV,4,2.0,Steven Horsford,D,Steven Horsford,Cody Whipple,Russell Best (I); William Johnson (I)
+NY-01,NY,1,-4.0,Nick LaLota,R,Chris Gallant,Nick LaLota,
+NY-02,NY,2,-6.0,Andrew Garbarino,R,Patrick Halpin,Andrew Garbarino,
+NY-03,NY,3,0.0,Tom Suozzi,D,Tom Suozzi,Mike LiPetri,
+NY-04,NY,4,2.0,Laura Gillen,D,Laura Gillen,Jeanine Driscoll,Blay Tarnoff (O)
+NY-05,NY,5,24.0,Gregory Meeks,D,Gregory Meeks,George Marsh,
+NY-06,NY,6,6.0,Grace Meng,D,Grace Meng,Joseph Chou,
+NY-07,NY,7,25.0,Nydia Velázquez,D,Claire Valdez,Melvin Rivera,Priscilla Ghaznavi (I)
+NY-08,NY,8,24.0,Hakeem Jeffries,D,Hakeem Jeffries,Lewis Mizrahi,
+NY-09,NY,9,22.0,Yvette Clarke,D,Yvette Clarke,Joel Azumah,
+NY-10,NY,10,32.0,Dan Goldman,D,Brad Lander,Jennifer Moore,
+NY-11,NY,11,-10.0,Nicole Malliotakis,R,Michael DeCillis,Nicole Malliotakis,
+NY-12,NY,12,33.0,Jerry Nadler,D,Micah Lasher,Caroline Shinkle,Wilneida Negron (I); Karen Ortiz (I)
+NY-13,NY,13,32.0,Adriano Espaillat,D,Darializa Avila Chevalier,Jomo Williams,
+NY-14,NY,14,19.0,Alexandria Ocasio-Cortez,D,Alexandria Ocasio-Cortez,Diamant Hysenaj,
+NY-15,NY,15,27.0,Ritchie Torres,D,Ritchie Torres,Stylo Sapaskis,Gonzalo Duran (O); Andre Easton (O); Jose Vega (I)
+NY-16,NY,16,18.0,George Latimer,D,George Latimer,Joseph Cinquemani,
+NY-17,NY,17,1.0,Mike Lawler,R,Cait Conley,Mike Lawler,
+NY-18,NY,18,2.0,Pat Ryan,D,Pat Ryan,Jacqueline Auringer,
+NY-19,NY,19,1.0,Josh Riley,D,Josh Riley,Peter Oberacker,
+NY-20,NY,20,8.0,Paul Tonko,D,Paul Tonko,Ralph Ambrosio,
+NY-21,NY,21,-10.0,Elise Stefanik,R,Blake Gendebien,Anthony Constantino,
+NY-22,NY,22,4.0,John Mannion,D,John Mannion,Kailee Buller,
+NY-23,NY,23,-10.0,Nick Langworthy,R,Aaron Gies,Nick Langworthy,
+NY-24,NY,24,-11.0,Claudia Tenney,R,Alissa Ellman,Claudia Tenney,
+NY-25,NY,25,10.0,Joseph Morelle,D,Joseph Morelle,Virginia McIntyre,
+NY-26,NY,26,11.0,Tim Kennedy,D,Tim Kennedy,Dennis Hannon,
+OH-01,OH,1,-1.0,Greg Landsman,D,Greg Landsman,Eric Conroy,Nathan Weise (O)
+OH-02,OH,2,-21.0,David Taylor,R,Jennifer Mazzuckelli,David Taylor,
+OH-03,OH,3,21.0,Joyce Beatty,D,Joyce Beatty,Cleophus Dulaney,
+OH-04,OH,4,-21.0,Jim Jordan,R,Joshua Kolasinski,Jim Jordan,Tracey Tackett (I)
+OH-05,OH,5,-12.0,Bob Latta,R,Brian Shaver,Bob Latta,Michael Veloff (O)
+OH-06,OH,6,-17.0,Michael Rulli,R,Elizabeth Kirtley,Michael Rulli,
+OH-07,OH,7,-5.0,Max Miller,R,Brian Poindexter,Max Miller,
+OH-08,OH,8,-8.0,Warren Davidson,R,Vanessa Enoch,Warren Davidson,
+OH-09,OH,9,-5.0,Marcy Kaptur,D,Marcy Kaptur,Derek Merrin,Matthew Althaus (O)
+OH-10,OH,10,-4.0,Mike Turner,R,Kristina Knickerbocker,Mike Turner,Thomas McMasters (O)
+OH-11,OH,11,28.0,Shontel Brown,D,Shontel Brown,Mike Kirchner,
+OH-12,OH,12,-15.0,Troy Balderson,R,Jerrad Christian,Troy Balderson,
+OH-13,OH,13,2.0,Emilia Sykes,D,Emilia Sykes,Carey Coleman,Sandeep Dixit (I)
+OH-14,OH,14,-10.0,David Joyce,R,Maria Jukic,David Joyce,
+OH-15,OH,15,-5.0,Mike Carey,R,Don Leonard,Mike Carey,Brennan Barrington (O)
+OK-01,OK,1,-11.0,Kevin Hern,R,John Croisant,Mark Tedford,
+OK-02,OK,2,-28.0,Josh Brecheen,R,Brandon Wade,Josh Brecheen,Ronnie Hopkins (I)
+OK-03,OK,3,-23.0,Frank Lucas,R,Suzie Byrd,Frank Lucas,
+OK-04,OK,4,-17.0,Tom Cole,R,Mitchell Jacob,Tom Cole,Rocco Bonacci (I)
+OK-05,OK,5,-9.0,Stephanie Bice,R,Jena Nelson,Stephanie Bice,Robert Henri (I); Austin Nieves (I)
+OR-01,OR,1,20.0,Suzanne Bonamici,D,Suzanne Bonamici,Barbara Kahl,
+OR-02,OR,2,-14.0,Cliff Bentz,R,Chris Beck,Cliff Bentz,
+OR-03,OR,3,24.0,Maxine Dexter,D,Maxine Dexter,Loran Ayles,
+OR-04,OR,4,6.0,Val Hoyle,D,Val Hoyle,Monique DeSpain,Justin Filip (O)
+OR-05,OR,5,4.0,Janelle Bynum,D,Janelle Bynum,Patti Adair,Andrea Townsend (O)
+OR-06,OR,6,6.0,Andrea Salinas,D,Andrea Salinas,David Russ,
+PA-01,PA,1,1.0,Brian Fitzpatrick,R,Bob Harvie,Brian Fitzpatrick,
+PA-02,PA,2,19.0,Brendan Boyle,D,Brendan Boyle,Jessica Arriaga,
+PA-03,PA,3,40.0,Dwight Evans,D,Chris Rabb,,Dennis Mahoney (I)
+PA-04,PA,4,8.0,Madeleine Dean,D,Madeleine Dean,Aurora Stuski,
+PA-05,PA,5,15.0,Mary Gay Scanlon,D,Mary Gay Scanlon,Nicholas Manganaro,
+PA-06,PA,6,6.0,Chrissy Houlahan,D,Chrissy Houlahan,Marty Young,
+PA-07,PA,7,-1.0,Ryan Mackenzie,R,Bob Brooks,Ryan Mackenzie,
+PA-08,PA,8,-4.0,Rob Bresnahan,R,Paige Cognetti,Rob Bresnahan,
+PA-09,PA,9,-19.0,Dan Meuser,R,Rachel Wallace,Dan Meuser,
+PA-10,PA,10,-3.0,Scott Perry,R,Janelle Stelson,Scott Perry,
+PA-11,PA,11,-11.0,Lloyd Smucker,R,Nancy Mannion,Lloyd Smucker,
+PA-12,PA,12,10.0,Summer Lee,D,Summer Lee,James Hayes,
+PA-13,PA,13,-23.0,John Joyce,R,Beth Farnham,John Joyce,
+PA-14,PA,14,-17.0,Guy Reschenthaler,R,Alan Bradstock,Guy Reschenthaler,
+PA-15,PA,15,-19.0,Glenn Thompson,R,Ray Bilger,Glenn Thompson,
+PA-16,PA,16,-11.0,Mike Kelly,R,Justin Wagner,Mike Kelly,
+PA-17,PA,17,3.0,Chris Deluzio,D,Chris Deluzio,Tony Guy,
+RI-01,RI,1,12.0,Gabe Amo,D,Gabe Amo,Kellie Keenan,Pedro DeSouza (I)
+RI-02,RI,2,4.0,Seth Magaziner,D,Seth Magaziner,Vic Mellor,
+SC-01,SC,1,-6.0,Nancy Mace,R,Nancy Lacore,Jenny Costa Honeycutt,Bill Reeside (O)
+SC-02,SC,2,-7.0,Joe Wilson,R,Zyon Khalifa,Joe Wilson,Dayna Alane Smith (O)
+SC-03,SC,3,-21.0,Sheri Biggs,R,Eunice Lehmacher,Sheri Biggs,Brian Corriea (O)
+SC-04,SC,4,-11.0,William Timmons,R,Courtney McClain,William Timmons,Jessica Ethridge (O)
+SC-05,SC,5,-11.0,Ralph Norman,R,Mallory Dittmer,Wes Climer,
+SC-06,SC,6,13.0,Jim Clyburn,D,Jim Clyburn,John Peterson,
+SC-07,SC,7,-12.0,Russell Fry,R,John Vincent,Russell Fry,
+SD-AL,SD,0,-15.0,Dusty Johnson,R,Nikki Gronli,Marty Jackley,
+TN-01,TN,1,-29.0,Diana Harshbarger,R,Kristi Burke,Diana Harshbarger,Joshua Ashburn (I); Richard Baker (I); Chris Campbell (I); Billy Cody (I); Tyler McClain (I)
+TN-02,TN,2,-17.0,Tim Burchett,R,Michaela Barnett,Tim Burchett,Bruce Fine (I); Adam Heimerman (I)
+TN-03,TN,3,-18.0,Chuck Fleischmann,R,Anna Golladay,Chuck Fleischmann,Dean Arnold (I); Jean Howard-Hill (I); Rodney Joe King (I); Donnie Ownby (I); Edward Roland (I)
+TN-04,TN,4,-11.0,Scott DesJarlais,R,Victoria Broderick,Scott DesJarlais,Jacob Anders (I)
+TN-05,TN,5,-10.0,Andy Ogles,R,Chaz Molder,Charlie Hatcher,James Johnson (I); Micheál O'Leary (I)
+TN-06,TN,6,-13.0,John Rose,R,Mike Croley,Johnny Garrett,Christopher Monday (I); Angus Purdy (I)
+TN-07,TN,7,-11.0,Matt Van Epps,R,Darden Copeland,Matt Van Epps,Andrew Koontz (I); Lowell Reynolds (I)
+TN-08,TN,8,-10.0,David Kustoff,R,Heidi Kuhn,David Kustoff,Adam Austill (I); Wells Blankenship (I); Antonio Futch (I); Pamela Moses (I); Horace Taylor (I); Henry Ward III (I)
+TN-09,TN,9,-9.0,Steve Cohen,D,Justin Pearson,Brent Taylor,Dennis Clark (I); Michelle Head (I)
+TX-01,TX,1,-24.0,Nathaniel Moran,R,Yolanda Prince,Nathaniel Moran,
+TX-02,TX,2,-11.0,Dan Crenshaw,R,Shaun Finnie,Steve Toth,
+TX-03,TX,3,-11.0,Keith Self,R,Evan Hunt,Keith Self,
+TX-04,TX,4,-12.0,Pat Fallon,R,Jason Pearce,Pat Fallon,
+TX-05,TX,5,-10.0,Lance Gooden,R,Chelsey Hockett,Lance Gooden,
+TX-06,TX,6,-11.0,Jake Ellzey,R,Danny Minton,Jake Ellzey,
+TX-07,TX,7,13.0,Lizzie Fletcher,D,Lizzie Fletcher,Alexander Hale,Espoir Ngabo (O)
+TX-08,TX,8,-13.0,Morgan Luttrell,R,Laura Jones,Jessica Hart Steinmann,
+TX-09,TX,9,-9.0,,,Leticia Gutierrez,Alex Mealer,
+TX-10,TX,10,-10.0,Michael McCaul,R,Caitlin Rourk,Chris Gober,
+TX-11,TX,11,-17.0,August Pfluger,R,Claire Reynolds,August Pfluger,
+TX-12,TX,12,-11.0,Craig Goldman,R,Angela Rodriguez Prilliman,Craig Goldman,
+TX-13,TX,13,-23.0,Ronny Jackson,R,Mark Nair,Ronny Jackson,
+TX-14,TX,14,-12.0,Randy Weber,R,Thurman Bartie,Randy Weber,
+TX-15,TX,15,-7.0,Monica De La Cruz,R,Bobby Pulido,Monica De La Cruz,
+TX-16,TX,16,11.0,Veronica Escobar,D,Veronica Escobar,Adam Bauman,
+TX-17,TX,17,-10.0,Pete Sessions,R,Casey Shepard,Pete Sessions,
+TX-18,TX,18,29.0,Christian Menefee,D,Christian Menefee,Ronald Whitfield,
+TX-19,TX,19,-25.0,Jodey Arrington,R,Kyle Rable,Tom Sell,
+TX-20,TX,20,16.0,Joaquin Castro,D,Joaquin Castro,Edgardo Rafael Baez,
+TX-21,TX,21,-10.0,Chip Roy,R,Kristin Hook,Mark Teixeira,
+TX-22,TX,22,-11.0,Troy Nehls,R,Marquette Greene-Scott,Trever Nehls,
+TX-23,TX,23,-7.0,Vacant,,Katy Padilla Stout,Brandon Herrera,Ben Mendoza (I)
+TX-24,TX,24,-8.0,Beth Van Duyne,R,Kevin Burge,Beth Van Duyne,
+TX-25,TX,25,-11.0,Roger Williams,R,Dione Sims,Roger Williams,
+TX-26,TX,26,-11.0,Brandon Gill,R,Steven Shook,Brandon Gill,Phil Gray (O)
+TX-27,TX,27,-10.0,Michael Cloud,R,Tanya Lloyd,Michael Cloud,
+TX-28,TX,28,-3.0,Henry Cuellar,D,Henry Cuellar,Tano Tijerina,Marlón Durán (O)
+TX-29,TX,29,17.0,Sylvia Garcia,D,Sylvia Garcia,Martha Fierro,
+TX-30,TX,30,25.0,,,Frederick Haynes III,Everett Jackson,
+TX-31,TX,31,-11.0,John Carter,R,Justin Early,John Carter,Greg Stoker (O)
+TX-32,TX,32,-8.0,,,Dan Barrios,Jace Yarbrough,
+TX-33,TX,33,18.0,Jasmine Crockett,D,Colin Allred,Patrick Gillespie,
+TX-34,TX,34,-3.0,Vicente Gonzalez,D,Vicente Gonzalez,Eric Flores,Eddie Espinoza (O); Chris Royal (O)
+TX-35,TX,35,-4.0,,,Johnny Garcia,Carlos De La Cruz,
+TX-36,TX,36,-12.0,Brian Babin,R,Rhonda Hart,Brian Babin,
+TX-37,TX,37,30.0,Lloyd Doggett,D,Greg Casar,Lauren Peña,
+TX-38,TX,38,-10.0,Wesley Hunt,R,Melissa McDonough,Jon Bonck,Alex McMenemy (O)
+UT-01,UT,1,12.0,,,Ben McAdams,Riley Owen,Elias Montgomery (I); Jesse West (O)
+UT-02,UT,2,-15.0,Blake Moore,R,Peter Crosby,Blake Moore,Carlton Bowen (I); Daniel Cottam (O); Robert Moesinger (I)
+UT-03,UT,3,-21.0,Celeste Maloy,R,Kent Udell,Celeste Maloy,Cassie Easley (O); Adonis Hooslyn (I); Ayden Scott (I); Michael Stoddard (O)
+UT-04,UT,4,-17.0,Burgess Owens,R,Jonny Larsen,Mike Kennedy,Steven Burt (I); Taylor Wright (O)
+VA-01,VA,1,-3.0,Rob Wittman,R,Shannon Taylor,Rob Wittman,
+VA-02,VA,2,0.0,Jen Kiggans,R,Elaine Luria,Jen Kiggans,J. Matt Baker (I); Geral Staten (I)
+VA-03,VA,3,18.0,Bobby Scott,D,Bobby Scott,Edwin Rivera,Makiba Gaines (I); Stephen Woll (I)
+VA-04,VA,4,17.0,Jennifer McClellan,D,Jennifer McClellan,Robert Murray,Joan Bell (I)
+VA-05,VA,5,-6.0,John McGuire,R,Tom Perriello,John McGuire,Cooke Harvey (I)
+VA-06,VA,6,-12.0,Ben Cline,R,Beth Macy,Ben Cline,
+VA-07,VA,7,2.0,Eugene Vindman,D,Eugene Vindman,Doug Ollivant,Alaha Ahrar (I); Taner Demirci Lopez (O); Joshua Ertle (I); Randall Terry (I)
+VA-08,VA,8,26.0,Don Beyer,D,Don Beyer,Tony Sabio,Shelly Arnoldi (O); Tim Sharman (I)
+VA-09,VA,9,-22.0,Morgan Griffith,R,Joy Powers,Morgan Griffith,
+VA-10,VA,10,6.0,Suhas Subramanyam,D,Suhas Subramanyam,Dave Beckwith,Ahsen Malik (I)
+VA-11,VA,11,18.0,James Walkinshaw,D,James Walkinshaw,Arthur Purves,Dianne Blais (O)
+VT-AL,VT,0,17.0,Becca Balint,D,Becca Balint,Gerald Malloy,Phoenix Altair (I); Adam Ortiz (I); Suz Seymour (I); Ryan Walton (I)
+WA-01,WA,1,15.0,Suzan DelBene,D,Suzan DelBene,Mary Silva,
+WA-02,WA,2,12.0,Rick Larsen,D,Rick Larsen,Edwin Feller,
+WA-03,WA,3,-2.0,Marie Gluesenkamp Perez,D,Marie Gluesenkamp Perez,John Braun,
+WA-04,WA,4,-10.0,Dan Newhouse,R,John Duresky,Amanda McKinney,
+WA-05,WA,5,-5.0,Michael Baumgartner,R,Carmela Conroy,Michael Baumgartner,
+WA-06,WA,6,10.0,Emily Randall,D,Emily Randall,Teresa Fox,
+WA-07,WA,7,39.0,Pramila Jayapal,D,Pramila Jayapal,Nirav Sheth,
+WA-08,WA,8,3.0,Kim Schrier,D,Kim Schrier,Spencer Meline,
+WA-09,WA,9,22.0,Adam Smith,D,Adam Smith,Doug Basler,
+WA-10,WA,10,9.0,Marilyn Strickland,D,Marilyn Strickland,Chris Chung,
+WI-01,WI,1,-2.0,Bryan Steil,R,Mitchell Berman,Bryan Steil,
+WI-02,WI,2,21.0,Mark Pocan,D,Mark Pocan,,
+WI-03,WI,3,-3.0,Derrick Van Orden,R,Rebecca Cooke,Derrick Van Orden,Alexander Kent (I); Rustin Provance (I)
+WI-04,WI,4,26.0,Gwen Moore,D,Gwen Moore,Tim Rogers,Arthur Burks (I)
+WI-05,WI,5,-11.0,Scott Fitzgerald,R,Andrew Beck,Scott Fitzgerald,
+WI-06,WI,6,-8.0,Glenn Grothman,R,Brad Smith,Glenn Grothman,Matthew Arndt (O); Elizabeth Fitzgibbon (I); Michael Thurow (I)
+WI-07,WI,7,-11.0,Tom Tiffany,R,Fred Clark,Michael Alfonso,
+WI-08,WI,8,-8.0,Tony Wied,R,Rick Crosson,Tony Wied,
+WV-01,WV,1,-22.0,Carol Miller,R,Vince George,Carol Miller,Belinda Fox-Spencer (O)
+WV-02,WV,2,-20.0,Riley Moore,R,Ace Parsi,Riley Moore,
+WY-AL,WY,0,-23.0,Harriet Hageman,R,Lisa Kinney,Chuck Gray,Jeffrey Haggit (O); Shawn Johnson (O)

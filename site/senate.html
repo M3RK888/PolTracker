@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026 Senate · Pollmap</title>
+  <meta name="description" content="A poll-based estimate of every 2026 U.S. Senate race, with the polls behind each one.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Pollmap</a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">2028</a>
+        <a href="senate.html" aria-current="page">Senate</a>
+        <a href="house.html">House</a>
+        <a href="history.html">Past elections</a>
+        <a href="polls.html">Polls</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-head">
+      <div>
+        <h1>The 2026 Senate</h1>
+        <p class="dek" id="dek"></p>
+      </div>
+    </div>
+
+    <section class="card">
+      <div id="bar"></div>
+      <div id="map" class="map" aria-label="Map of Senate races by estimated margin"></div>
+      <div class="scale" id="scale"></div>
+      <p class="muted small" style="text-align:center;margin:6px 0 0">Click a state to see the polls behind its race.</p>
+    </section>
+
+    <section class="stats" id="stats" aria-label="Key numbers"></section>
+
+    <details class="card polls-drawer" id="polls-drawer">
+      <summary><span>Polls behind each race</span></summary>
+      <div class="filters" style="margin:0 20px 12px">
+        <label>Race <select id="race-select"></select></label>
+        <span class="muted small" id="race-note"></span>
+      </div>
+      <div class="table-scroll"><table id="race-polls"></table></div>
+    </details>
+
+    <section>
+      <h2>Every race</h2>
+      <p class="muted small">Sorted closest race first. Click a column to re-sort, or a race to see its polls.</p>
+      <div class="table-scroll"><table id="races"></table></div>
+    </section>
+
+    <section class="card prose">
+      <h2>How this estimate works</h2>
+      <p>Each race starts from a <strong>baseline</strong>: the state's partisan lean
+        (<a href="https://www.cookpolitical.com/cook-pvi" target="_blank" rel="noopener">Cook PVI</a>) applied to the
+        national environment. The environment is the average of the major poll aggregators' generic congressional
+        ballot averages, currently <strong id="m-env"></strong>.</p>
+      <p>The race's own polls are then blended in. Poll weight halves every <span id="m-half"></span> days, rises with
+        sample size, and is reduced when one pollster has several polls of the race. The baseline counts as
+        <span id="m-prior"></span> fresh polls, so in a well-polled race the polls decide the estimate almost entirely.</p>
+      <p><strong>Independents.</strong> Where the main challenger is an independent (Nebraska, Idaho, Montana,
+        South Dakota), the estimate is that independent against the Republican, and a win counts on the
+        Democrats' side of the seat count. They haven't all said who they'd caucus with.</p>
+      <p><strong>Control.</strong> 65 seats aren't up this year (34 Democratic-caucus, 31 Republican). Democrats
+        need 51 seats for a majority; Republicans need 50, since Vice President Vance breaks ties.
+        Ratings use the same cutoffs as the 2028 map. This is a snapshot of the polls, not a forecast.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap">Races, candidates, Cook PVI and polls from Wikipedia's 2026 Senate race articles (read from their exact page source); each poll links to its original source.</div></footer>
+
+  <script src="https://cdn.plot.ly/plotly-geo-4.1.1.min.js"></script>
+  <script src="assets/common.js"></script>
+  <script src="data/forecast.js"></script>
+  <script src="data/senate.js"></script>
+  <script>
+  (function () {
+    const S = window.SENATE;
+    const color = Object.fromEntries(window.FORECAST.ratings.map((r) => [r.name, r.color]));
+    const NOT_UP = { D: "#6b7d99", R: "#9a6b6b" };
+    const races = [...S.races].sort((a, b) => Math.abs(a.estimate) - Math.abs(b.estimate));
+    const key = (r) => r.state + (r.special ? "-special" : "");
+    const opp = (r) => `${r.opp} (${r.opp_party})`;
+    const leader = (r) => (r.estimate > 0 ? r.opp : r.rep);
+    let selected = key(races[0]), pollTable;
+
+    document.getElementById("dek").textContent =
+      `Estimate as of ${PM.fmtDate(S.as_of)} · Election Day is November 3 · based on polls, not a forecast`;
+    document.getElementById("m-env").textContent = PM.fmtMargin(S.environment);
+    document.getElementById("m-half").textContent = S.settings.half_life_days;
+    document.getElementById("m-prior").textContent = S.settings.prior_weight;
+
+    function render() {
+      const inRating = (rating) => races.filter((r) => r.rating === rating).map((r) => r.state).join(", ");
+      PM.renderEvBar(document.getElementById("bar"), {
+        total: 100, threshold: 50, thresholdLabel: "51 for control (50 + VP for R)", unit: "seat",
+        left: { name: "Democrats & independents", ev: S.seats.D, color: PM.SHADES.D[0], sub: `${S.not_up.D} not up + ${S.seats.D - S.not_up.D} races` },
+        right: { name: "Republicans", ev: S.seats.R, color: PM.SHADES.R[0], sub: `${S.not_up.R} not up + ${S.seats.R - S.not_up.R} races` },
+        center: S.seats.Tossup ? `<strong>${S.seats.Tossup}</strong>tossup` : "",
+        segments: [
+          { label: "Not up (D)", ev: S.not_up.D, color: NOT_UP.D, detail: "Seats not on the ballot this year" },
+          ...S.segments.map((s) => ({ label: s.rating, ev: s.seats, color: color[s.rating], detail: inRating(s.rating) })),
+          { label: "Not up (R)", ev: S.not_up.R, color: NOT_UP.R, detail: "Seats not on the ballot this year" },
+        ],
+      });
+
+      const raceStates = new Set(races.map((r) => r.state));
+      const hover = (r) => `<b>${PM.esc(r.name)}</b><br>${PM.esc(opp(r))} vs ${PM.esc(r.rep)} (R)` +
+        `<br>Estimate: <b>${PM.fmtMargin(r.estimate)}</b> (${r.rating})` +
+        (r.n_polls ? `<br>Poll average: ${PM.fmtMargin(r.poll_avg)} from ${r.n_polls} poll${r.n_polls > 1 ? "s" : ""}` : "<br>No recent polls: baseline only") +
+        `<br><span style="opacity:.75">Incumbent: ${PM.esc(r.incumbent)} (${r.incumbent_party})</span>`;
+      const allStates = Object.keys(window.FORECAST.matchups.find((m) => m.available).states.reduce((o, s) => (o[s.state] = 1, o), {}));
+      const rows = races.map((r) => ({ state: r.state, margin: r.estimate, hover: hover(r) }))
+        .concat(allStates.filter((s) => !raceStates.has(s)).map((s) => ({ state: s, color: PM.noRaceColor(), hover: `<b>${s}</b><br>No Senate race in 2026` })));
+      const mapEl = PM.renderMap(document.getElementById("map"), rows);
+      if (!mapEl._wired) {
+        mapEl.on("plotly_click", (e) => {
+          const st = e.points[0].location;
+          const r = races.find((x) => x.state === st);
+          if (r) selectRace(key(r), true);
+        });
+        mapEl._wired = true;
+      }
+      PM.renderScale(document.getElementById("scale"), {});
+
+      const flips = races.filter((r) => (r.estimate > 0 ? "D" : "R") !== (r.incumbent_party === "R" ? "R" : "D"));
+      document.getElementById("stats").innerHTML = [
+        ["National environment", PM.fmtMargin(S.environment), "generic ballot, average of aggregators"],
+        ["Races", races.length, `${races.filter((r) => r.n_polls).length} with recent polls, ${S.polls.filter((p) => p.used).length} polls in all`],
+        ["Closest race", races[0].state, `${PM.fmtMargin(races[0].estimate)}: ${races[0].opp} vs ${races[0].rep}`],
+        ["Seats changing party", flips.length, flips.map((r) => r.state).join(", ") || "none"],
+      ].map(([l, v, n]) => `<div class="stat"><div class="label">${l}</div><div class="value">${v}</div><div class="note">${PM.esc(n)}</div></div>`).join("");
+    }
+
+    // Race table
+    const raceCols = [
+      { key: "name", label: "Race", render: (r) => `<a href="#${key(r)}" data-race="${key(r)}">${PM.esc(r.name)}</a>` },
+      { key: "matchup", label: "Candidates", sort: (r) => r.rep,
+        render: (r) => `${PM.esc(opp(r))} vs ${PM.esc(r.rep)} (R)` },
+      { key: "estimate", label: "Estimate", num: true, sort: (r) => -Math.abs(r.estimate),
+        render: (r) => `<span class="${PM.marginClass(r.estimate)}">${PM.fmtMargin(r.estimate)}</span>` },
+      { key: "rating", label: "Rating", sort: (r) => S.segments.findIndex((s) => s.rating === r.rating),
+        render: (r) => `<span class="chip"><i style="background:${color[r.rating]}"></i>${r.rating}</span>` },
+      { key: "poll_avg", label: "Poll avg", num: true, render: (r) => r.poll_avg == null ? `<span class="muted">—</span>` : PM.fmtMargin(r.poll_avg) },
+      { key: "n_polls", label: "Polls", num: true },
+      { key: "baseline", label: "Baseline", num: true, render: (r) => `<span class="muted">${PM.fmtMargin(r.baseline)}</span>` },
+      { key: "incumbent", label: "Incumbent", render: (r) => `${PM.esc(r.incumbent)} <span class="muted">(${r.incumbent_party})</span>` },
+    ];
+    PM.sortableTable(document.getElementById("races"), raceCols, races, { key: "estimate", dir: -1 });
+    document.getElementById("races").addEventListener("click", (e) => {
+      const a = e.target.closest("a[data-race]");
+      if (a) { e.preventDefault(); selectRace(a.dataset.race, true); }
+    });
+
+    // Polls drawer
+    const sel = document.getElementById("race-select");
+    sel.innerHTML = races.map((r) => `<option value="${key(r)}">${PM.esc(r.name)}: ${PM.esc(r.opp)} vs ${PM.esc(r.rep)} (${r.n_polls} poll${r.n_polls === 1 ? "" : "s"})</option>`).join("");
+    sel.addEventListener("change", () => selectRace(sel.value, false));
+
+    function selectRace(k, open) {
+      selected = k;
+      sel.value = k;
+      const r = races.find((x) => key(x) === k);
+      const ps = S.polls.filter((p) => p.state === r.state && p.used);
+      const older = S.polls.filter((p) => p.state === r.state && !p.used).length;
+      document.getElementById("race-note").innerHTML = ps.length
+        ? `Estimate ${PM.fmtMargin(r.estimate)}: polls carry ${Math.round((1 - r.baseline_share) * 100)}%, the baseline (${PM.fmtMargin(r.baseline)}) ${Math.round(r.baseline_share * 100)}%.` +
+          (older ? ` ${older} older poll${older === 1 ? " isn't" : "s aren't"} counted.` : "")
+        : `No polls from the last ${S.settings.window_days} days, so the estimate is the baseline: ${PM.fmtMargin(r.baseline)}.`;
+      pollTable = PM.sortableTable(document.getElementById("race-polls"), [
+        { key: "end", label: "Dates", render: (p) => `${p.start ? PM.fmtDate(p.start).replace(/, \d{4}$/, "") + " – " : ""}${PM.fmtDate(p.end)}` },
+        { key: "pollster", label: "Pollster" },
+        { key: "sample_size", label: "Sample", num: true,
+          render: (p) => `${PM.fmtInt(p.sample_size)}${p.voter_type ? ` <span class="muted">${PM.esc(p.voter_type)}</span>` : ""}` },
+        { key: "dem", label: PM.esc(r.opp.split(" ").pop()), num: true, render: (p) => `${p.dem}%` },
+        { key: "rep", label: PM.esc(r.rep.split(" ").pop()), num: true, render: (p) => `${p.rep}%` },
+        { key: "margin", label: "Margin", num: true, render: (p) => `<span class="${PM.marginClass(p.margin)}">${PM.fmtMargin(p.margin)}</span>` },
+        { key: "share", label: "Share", num: true, render: (p) => `${Math.round(p.share * 100)}%` },
+        { key: "source", label: "Source", sort: (p) => p.source,
+          render: (p) => `<a href="${PM.esc(p.source)}" target="_blank" rel="noopener">${PM.esc(new URL(p.source).hostname.replace(/^www\./, ""))}</a>` },
+      ], ps, { key: "share", dir: -1 });
+      if (open) {
+        const d = document.getElementById("polls-drawer");
+        d.open = true;
+        d.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.replaceState(null, "", "#" + k);
+      }
+    }
+
+    const fromHash = races.find((r) => key(r) === location.hash.slice(1));
+    render();
+    selectRace(fromHash ? key(fromHash) : selected, !!fromHash);
+    PM.onThemeChange(render);
+  })();
+  </script>
+</body>
+</html>

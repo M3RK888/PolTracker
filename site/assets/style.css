@@ -123,6 +123,17 @@ h2 { font-size: 20px; letter-spacing: -0.01em; margin: 0 0 12px; }
 .scale .other-key { display: inline-flex; align-items: center; gap: 6px; }
 .scale .other-key i { width: 12px; height: 12px; border-radius: 3px; background: var(--other); }
 
+/* House hex map ------------------------------------------------------------ */
+.hexmap-wrap { margin-top: 12px; }
+#hexmap { width: 100%; height: auto; display: block; }
+#hexmap .hex { stroke: var(--surface); stroke-width: 0.08; cursor: default; }
+#hexmap .hex:hover, #hexmap .hex:focus { stroke: var(--ink); stroke-width: 0.18; outline: none; }
+#hexmap .hex-border { fill: none; stroke: var(--ink); stroke-width: 0.12; stroke-linecap: round; pointer-events: none; opacity: 0.75; }
+#hexmap .hex-label {
+  font: 700 0.62px var(--sans); text-anchor: middle; dominant-baseline: central; pointer-events: none;
+  fill: #16181d; paint-order: stroke; stroke: rgba(255,255,255,0.75); stroke-width: 0.14px;
+}
+
 /* Stats row --------------------------------------------------------------- */
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
 .stat { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); padding: 14px 16px; }

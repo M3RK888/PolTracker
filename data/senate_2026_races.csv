@@ -1,0 +1,36 @@
+state,state_name,special,pvi,incumbent,incumbent_party,rep_candidate,opp_candidate,opp_party,article
+FL,Florida,True,-5.0,Ashley Moody,R,Ashley Moody,Angie Nixon,D,2026 United States Senate special election in Florida
+OH,Ohio,True,-5.0,Jon Husted,R,Jon Husted,Sherrod Brown,D,2026 United States Senate special election in Ohio
+AL,Alabama,False,-15.0,Tommy Tuberville,R,Barry Moore,Everett Wess,D,2026 United States Senate election in Alabama
+AK,Alaska,False,-6.0,Dan Sullivan,R,Dan S. Sullivan,Mary Peltola,D,2026 United States Senate election in Alaska
+AR,Arkansas,False,-15.0,Tom Cotton,R,Tom Cotton,Hallie Shoffner,D,2026 United States Senate election in Arkansas
+CO,Colorado,False,6.0,John Hickenlooper,D,Mark Baisley,John Hickenlooper,D,2026 United States Senate election in Colorado
+DE,Delaware,False,8.0,Chris Coons,D,Michael Katz,Chris Coons,D,2026 United States Senate election in Delaware
+GA,Georgia,False,-1.0,Jon Ossoff,D,Mike Collins,Jon Ossoff,D,2026 United States Senate election in Georgia
+ID,Idaho,False,-18.0,Jim Risch,R,Jim Risch,Todd Achilles,I,2026 United States Senate election in Idaho
+IL,Illinois,False,6.0,Dick Durbin,D,Don Tracy,Juliana Stratton,D,2026 United States Senate election in Illinois
+IA,Iowa,False,-6.0,Joni Ernst,R,Ashley Hinson,Josh Turek,D,2026 United States Senate election in Iowa
+KS,Kansas,False,-8.0,Roger Marshall,R,Roger Marshall,Adam Hamilton,D,2026 United States Senate election in Kansas
+KY,Kentucky,False,-15.0,Mitch McConnell,R,Andy Barr,Charles Booker,D,2026 United States Senate election in Kentucky
+LA,Louisiana,False,-11.0,Bill Cassidy,R,Julia Letlow,Jamie Davis,D,2026 United States Senate election in Louisiana
+ME,Maine,False,4.0,Susan Collins,R,Susan Collins,Troy Jackson,D,2026 United States Senate election in Maine
+MA,Massachusetts,False,14.0,Ed Markey,D,John Deaton,Ed Markey,D,2026 United States Senate election in Massachusetts
+MI,Michigan,False,0.0,Gary Peters,D,Mike Rogers,Abdul El-Sayed,D,2026 United States Senate election in Michigan
+MN,Minnesota,False,3.0,Tina Smith,D,Michele Tafoya,Peggy Flanagan,D,2026 United States Senate election in Minnesota
+MS,Mississippi,False,-11.0,Cindy Hyde-Smith,R,Cindy Hyde-Smith,Scott Colom,D,2026 United States Senate election in Mississippi
+MT,Montana,False,-10.0,Steve Daines,R,Kurt Alme,Seth Bodnar,I,2026 United States Senate election in Montana
+NE,Nebraska,False,-10.0,Pete Ricketts,R,Pete Ricketts,Dan Osborn,I,2026 United States Senate election in Nebraska
+NH,New Hampshire,False,2.0,Jeanne Shaheen,D,John E. Sununu,Chris Pappas,D,2026 United States Senate election in New Hampshire
+NJ,New Jersey,False,4.0,Cory Booker,D,Justin Murphy,Cory Booker,D,2026 United States Senate election in New Jersey
+NM,New Mexico,False,4.0,Ben Ray Luján,D,Larry Marker,Ben Ray Luján,D,2026 United States Senate election in New Mexico
+NC,North Carolina,False,-1.0,Thom Tillis,R,Michael Whatley,Roy Cooper,D,2026 United States Senate election in North Carolina
+OK,Oklahoma,False,-17.0,Alan Armstrong,R,Kevin Hern,N'Kiyla Jasmine Thomas,D,2026 United States Senate election in Oklahoma
+OR,Oregon,False,8.0,Jeff Merkley,D,David Brock Smith,Jeff Merkley,D,2026 United States Senate election in Oregon
+RI,Rhode Island,False,8.0,Jack Reed,D,Raymond McKay,Jack Reed,D,2026 United States Senate election in Rhode Island
+SC,South Carolina,False,-8.0,Darline Graham,R,Darline Graham,Annie Andrews,D,2026 United States Senate election in South Carolina
+SD,South Dakota,False,-15.0,Mike Rounds,R,Mike Rounds,Brian Bengs,I,2026 United States Senate election in South Dakota
+TN,Tennessee,False,-14.0,Bill Hagerty,R,Bill Hagerty,Marquita Bradshaw,D,2026 United States Senate election in Tennessee
+TX,Texas,False,-6.0,John Cornyn,R,Ken Paxton,James Talarico,D,2026 United States Senate election in Texas
+VA,Virginia,False,3.0,Mark Warner,D,Bert Mizusawa,Mark Warner,D,2026 United States Senate election in Virginia
+WV,West Virginia,False,-21.0,Shelley Moore Capito,R,Shelley Moore Capito,Rachel Fetty Anderson,D,2026 United States Senate election in West Virginia
+WY,Wyoming,False,-23.0,Cynthia Lummis,R,Harriet Hageman,James W. Byrd,D,2026 United States Senate election in Wyoming

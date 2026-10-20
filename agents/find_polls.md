@@ -99,6 +99,27 @@ is too old for the pinned packages, so use `python3.13` (if that doesn't exist, 
 
 If you found nothing new, don't commit. Just report that no new polls were found.
 
+## 2026 Senate and House (through Election Day, November 3, 2026)
+
+The Senate and House pages are refreshed by a script, not by hand. Every run, after the 2028 work:
+
+1. `python3.13 fetch_midterms.py`. It re-reads Wikipedia's 2026 Senate race articles and House article
+   (exact wikitext), rewrites `data/senate_2026_races.csv`, `data/senate_2026_polls.csv`,
+   `data/house_2026_districts.csv` and `data/generic_ballot_2026.csv`, and stops with
+   "validation failed" if anything looks wrong (wrong number of races or districts, missing partisan
+   leans, too few polls).
+2. If it fails, don't edit those CSVs by hand and don't commit them. `git checkout` them back and
+   mention the failure in your report.
+3. If it succeeds, look at `git diff --stat` and the diff of `data/senate_2026_polls.csv`. Expect a
+   handful of new polls per day. If a large number of existing rows changed or vanished, something
+   on Wikipedia changed format: discard the midterm changes and report it instead.
+4. `python3.13 build_site.py` (once, covering both the 2028 and midterm changes), then commit the
+   CSVs and `site/data/` together. Mention the Senate poll count change in the commit message,
+   e.g. "Senate: +6 polls".
+
+After November 3 the results replace the polls. Stop running `fetch_midterms.py` then; the site's
+owner will switch the pages to results.
+
 ## Final report
 
 End with a short summary listing each poll added (pollster, where, matchup, dem–rep, source URL),
