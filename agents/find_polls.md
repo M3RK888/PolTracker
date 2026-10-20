@@ -82,11 +82,13 @@ The same poll is often reported by several sites, so search results will repeat.
 
 ## After adding
 
-Use the same interpreter for installing and running (the cloud machine has more than one Python):
+Use the same interpreter for installing and running. On the cloud machine `python3` is 3.11, which
+is too old for the pinned packages, so use `python3.13` (if that doesn't exist, use the newest
+`python3.x` available):
 
-1. `python3 -m pip install -q -r requirements.txt`
-2. `python3 validate_polls.py` and fix any problem it reports in the rows you added
-3. `python3 build_site.py`
+1. `python3.13 -m pip install -q -r requirements.txt`
+2. `python3.13 validate_polls.py` and fix any problem it reports in the rows you added
+3. `python3.13 build_site.py`
 4. Commit `data/polls_2028.csv` and `site/data/` with a message like:
 
    ```
