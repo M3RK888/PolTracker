@@ -12,9 +12,12 @@ Find 2028 **general-election presidential** polls that are not yet in
 
 Search the web, then confirm every number on a page you actually opened. Good starting points:
 
-- Wikipedia: "Nationwide opinion polling for the 2028 United States presidential election"
-  and "Statewide opinion polling for the 2028 United States presidential election"
-- 270toWin 2028 presidential polls (national and per-state pages)
+- Wikipedia: the "Opinion polling > General election" section of "2028 United States presidential
+  election", which has one table per matchup (national, then statewide). Read its exact wikitext with
+  `curl -sL -A "pollmap-agent/1.0" "https://en.wikipedia.org/w/index.php?title=2028_United_States_presidential_election&action=raw"`.
+  If a separate "Nationwide/Statewide opinion polling for the 2028 ..." article exists by the time you
+  run, use that instead (same `action=raw` trick).
+- 270toWin 2028 presidential polls
 - RealClearPolling 2028 general election matchups
 - Pollster releases: Emerson College, YouGov (Yahoo, Economist), Morning Consult, Echelon Insights,
   Quinnipiac, Marist, Siena / New York Times, Fox News, CNN, Harris / HarrisX, AtlasIntel,
@@ -22,6 +25,18 @@ Search the web, then confirm every number on a page you actually opened. Good st
 
 Prefer the pollster's own release as the `source` URL. An aggregator URL is fine when the pollster
 page isn't available, as long as the numbers match.
+
+## Reading numbers exactly
+
+WebFetch answers through a summarizing model, which can misread table columns. Use it to *find*
+polls, but take the percentages from exact page text: `curl -sL <url>` piped to `grep`/`sed`
+(or Python), or Wikipedia wikitext via `action=raw` as above. In Wikipedia's matchup tables the
+column order follows the header (check which party's column comes first), and the leader's number is
+wrapped in `'''bold'''` with a `{{Party shading/...}}` cell.
+
+One exact source is enough. You don't need a second site to agree, but if two sources disagree,
+skip the poll and mention it in your report. Many pollster releases only show toplines in chart
+images; in that case the Wikipedia row (which cites the release) is the source to read.
 
 ## What counts
 
@@ -67,9 +82,11 @@ The same poll is often reported by several sites, so search results will repeat.
 
 ## After adding
 
-1. `pip install -r requirements.txt` (if not already installed)
-2. `python validate_polls.py` and fix any problem it reports in the rows you added
-3. `python build_site.py`
+Use the same interpreter for installing and running (the cloud machine has more than one Python):
+
+1. `python3 -m pip install -q -r requirements.txt`
+2. `python3 validate_polls.py` and fix any problem it reports in the rows you added
+3. `python3 build_site.py`
 4. Commit `data/polls_2028.csv` and `site/data/` with a message like:
 
    ```
