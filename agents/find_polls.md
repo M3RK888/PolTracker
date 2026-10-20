@@ -1,0 +1,86 @@
+# Finding new 2028 polls
+
+Instructions for the scheduled agent that keeps `data/polls_2028.csv` up to date.
+Edit this file to change how the agent behaves; the routine reads it every run.
+
+## Goal
+
+Find 2028 **general-election presidential** polls that are not yet in
+`data/polls_2028.csv`, add them, rebuild the site data, and commit.
+
+## Where to look
+
+Search the web, then confirm every number on a page you actually opened. Good starting points:
+
+- Wikipedia: "Nationwide opinion polling for the 2028 United States presidential election"
+  and "Statewide opinion polling for the 2028 United States presidential election"
+- 270toWin 2028 presidential polls (national and per-state pages)
+- RealClearPolling 2028 general election matchups
+- Pollster releases: Emerson College, YouGov (Yahoo, Economist), Morning Consult, Echelon Insights,
+  Quinnipiac, Marist, Siena / New York Times, Fox News, CNN, Harris / HarrisX, AtlasIntel,
+  Cygnal, co/efficient, and others
+
+Prefer the pollster's own release as the `source` URL. An aggregator URL is fine when the pollster
+page isn't available, as long as the numbers match.
+
+## What counts
+
+Include:
+- Head-to-head matchups between one Democrat and one Republican, nationally or in one state.
+- Every matchup a poll tested: one row per matchup. A poll testing Newsom–Vance and
+  Buttigieg–Vance gives two rows.
+
+Skip:
+- Primary polls, favorability, "generic Democrat vs generic Republican", and approval ratings.
+- Matchups with three or more named candidates, unless the poll also reports the two-way
+  version (then use the two-way numbers).
+- Anything where you can't find the actual percentages.
+
+When a poll reports more than one population, use **likely voters (LV)** if available, otherwise
+**registered voters (RV)**, otherwise all adults (A). Use only one per matchup.
+
+## Row format
+
+Append rows to `data/polls_2028.csv`. Columns, in order:
+
+| column | format |
+|---|---|
+| state | `US` for national, otherwise the two-letter postal code (`PA`, `DC`) |
+| pollster | Name as used in existing rows when the pollster already appears (e.g. `Emerson College`, `Yahoo/YouGov`). For a new partnership use `Sponsor/Pollster`. |
+| start_date | `YYYY-MM-DD`, blank if not reported |
+| end_date | `YYYY-MM-DD` (last day of fieldwork; required) |
+| sample_size | whole number, blank if not reported |
+| voter_type | `LV`, `RV`, or `A` |
+| dem_candidate | surname only, spelled like existing rows (`Newsom`, `Buttigieg`, `Ocasio-Cortez`) |
+| rep_candidate | surname only (`Vance`) |
+| dem, rep | the percentages as numbers, e.g. `47` or `46.5` — not margins |
+| source | URL of the page you verified the numbers on |
+
+Put quotes around any field containing a comma. Don't reorder, edit or delete existing rows,
+except to fix one you added yourself in this same run.
+
+## Avoid duplicates
+
+Before adding a poll, check the CSV for the same pollster, state, matchup and end date
+(within a day or two, since aggregators sometimes list slightly different dates). If it's there, skip it.
+The same poll is often reported by several sites, so search results will repeat.
+
+## After adding
+
+1. `pip install -r requirements.txt` (if not already installed)
+2. `python validate_polls.py` and fix any problem it reports in the rows you added
+3. `python build_site.py`
+4. Commit `data/polls_2028.csv` and `site/data/` with a message like:
+
+   ```
+   Add 3 polls: Emerson (US, Oct 15), Quinnipiac (PA, Oct 12), ...
+   ```
+
+   Then push to `main`.
+
+If you found nothing new, don't commit. Just report that no new polls were found.
+
+## Final report
+
+End with a short summary listing each poll added (pollster, where, matchup, dem–rep, source URL),
+plus any polls you found but skipped and why.

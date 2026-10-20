@@ -1,0 +1,922 @@
+year,unit,state,is_district,dem_votes,rep_votes,other_votes,total_votes,ev_total,ev_dem,ev_rep,ev_other,top_other,top_other_votes,dem_candidate,rep_candidate
+1960,AL,AL,False,318303,237981,324050,880334,11,5,0,6,Unpledged Electors (Unpledged Democratic),324050,John F. Kennedy,Richard Nixon
+1960,AK,AK,False,29809,30953,0,60762,3,0,3,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,AZ,AZ,False,176781,221241,469,398491,4,0,4,0,Eric Hass (Socialist Labor),469,John F. Kennedy,Richard Nixon
+1960,AR,AR,False,215049,184508,28952,428509,8,8,0,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,CA,CA,False,3224099,3259722,22757,6506578,32,0,32,0,Eric Hass (Socialist Labor),1051,John F. Kennedy,Richard Nixon
+1960,CO,CO,False,330629,402242,3375,736246,6,0,6,0,Eric Hass (Socialist Labor),2803,John F. Kennedy,Richard Nixon
+1960,CT,CT,False,657055,565813,15,1222883,8,8,0,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,DE,DE,False,99590,96373,720,196683,3,3,0,0,Eric Hass (Socialist Labor),82,John F. Kennedy,Richard Nixon
+1960,FL,FL,False,748700,795476,0,1544176,10,0,10,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,GA,GA,False,458638,274472,239,733349,12,12,0,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,HI,HI,False,92410,92295,0,184705,3,3,0,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,ID,ID,False,138853,161597,0,300450,4,0,4,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,IL,IL,False,2377846,2368988,10575,4757409,27,27,0,0,Eric Hass (Socialist Labor),10560,John F. Kennedy,Richard Nixon
+1960,IN,IN,False,952358,1175120,7882,2135360,13,0,13,0,Eric Hass (Socialist Labor),1136,John F. Kennedy,Richard Nixon
+1960,IA,IA,False,550565,722381,864,1273810,10,0,10,0,Eric Hass (Socialist Labor),230,John F. Kennedy,Richard Nixon
+1960,KS,KS,False,363213,561474,4138,928825,8,0,8,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,KY,KY,False,521855,602607,0,1124462,10,0,10,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,LA,LA,False,407339,230980,169572,807891,10,10,0,0,Unpledged Electors (Unpledged Democratic),169572,John F. Kennedy,Richard Nixon
+1960,ME,ME,False,181159,240608,0,421767,5,0,5,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,MD,MD,False,565808,489538,3,1055349,9,9,0,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,MA,MA,False,1487174,976750,5556,2469480,16,16,0,0,Eric Hass (Socialist Labor),3892,John F. Kennedy,Richard Nixon
+1960,MI,MI,False,1687269,1620428,10400,3318097,20,20,0,0,Eric Hass (Socialist Labor),1718,John F. Kennedy,Richard Nixon
+1960,MN,MN,False,779933,757915,4039,1541887,11,11,0,0,Eric Hass (Socialist Labor),962,John F. Kennedy,Richard Nixon
+1960,MS,MS,False,108362,73561,116248,298171,8,0,0,8,Unpledged Electors (Unpledged Democratic),116248,John F. Kennedy,Richard Nixon
+1960,MO,MO,False,972201,962221,0,1934422,13,13,0,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,MT,MT,False,134891,141841,847,277579,4,0,4,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,NE,NE,False,232542,380553,0,613095,6,0,6,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,NV,NV,False,54880,52387,0,107267,3,3,0,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,NH,NH,False,137772,157989,0,295761,4,0,4,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,NJ,NJ,False,1385415,1363324,24372,2773111,16,16,0,0,Eric Hass (Socialist Labor),4262,John F. Kennedy,Richard Nixon
+1960,NM,NM,False,156027,153733,1347,311107,4,4,0,0,Eric Hass (Socialist Labor),570,John F. Kennedy,Richard Nixon
+1960,NY,NY,False,3830085,3446419,14575,7291079,45,45,0,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,NC,NC,False,713136,655420,0,1368556,14,14,0,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,ND,ND,False,123963,154310,158,278431,4,0,4,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,OH,OH,False,1944248,2217611,0,4161859,25,0,25,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,OK,OK,False,370111,533039,0,903150,8,0,7,1,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,OR,OR,False,367402,408060,959,776421,6,0,6,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,PA,PA,False,2556282,2439956,10303,5006541,32,32,0,0,Eric Hass (Socialist Labor),7185,John F. Kennedy,Richard Nixon
+1960,RI,RI,False,258032,147502,1,405535,4,4,0,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,SC,SC,False,198129,188558,1,386688,8,8,0,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,SD,SD,False,128070,178417,0,306487,4,0,4,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,TN,TN,False,481453,556577,13762,1051792,11,0,11,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,TX,TX,False,1167567,1121310,22207,2311084,24,24,0,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,UT,UT,False,169248,205361,100,374709,4,0,4,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,VT,VT,False,69186,98131,7,167324,3,0,3,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,VA,VA,False,362327,404521,4601,771449,12,0,12,0,Eric Hass (Socialist Labor),397,John F. Kennedy,Richard Nixon
+1960,WA,WA,False,599298,629273,13001,1241572,9,0,9,0,Eric Hass (Socialist Labor),10895,John F. Kennedy,Richard Nixon
+1960,WV,WV,False,441786,395995,0,837781,8,8,0,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1960,WI,WI,False,830805,895175,3102,1729082,12,0,12,0,Eric Hass (Socialist Labor),1310,John F. Kennedy,Richard Nixon
+1960,WY,WY,False,63331,77451,0,140782,3,0,3,0,Unpledged Electors (Unpledged Democratic),0,John F. Kennedy,Richard Nixon
+1964,AL,AL,False,0,479085,210732,689817,10,0,10,0,Unpledged electors (Unpledged Democratic),210732,Lyndon B. Johnson,Barry Goldwater
+1964,AK,AK,False,44329,22930,0,67259,3,3,0,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1964,AZ,AZ,False,237753,242535,482,480770,5,0,5,0,Other,482,Lyndon B. Johnson,Barry Goldwater
+1964,AR,AR,False,314197,243264,2965,560426,6,6,0,0,Other,2965,Lyndon B. Johnson,Barry Goldwater
+1964,CA,CA,False,4171877,2879108,6601,7057586,40,40,0,0,Other,6601,Lyndon B. Johnson,Barry Goldwater
+1964,CO,CO,False,476024,296767,4195,776986,6,6,0,0,Other,4195,Lyndon B. Johnson,Barry Goldwater
+1964,CT,CT,False,826269,390996,1313,1218578,8,8,0,0,Other,1313,Lyndon B. Johnson,Barry Goldwater
+1964,DE,DE,False,122704,78078,538,201320,3,3,0,0,Other,538,Lyndon B. Johnson,Barry Goldwater
+1964,DC,DC,False,169796,28801,0,198597,3,3,0,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1964,FL,FL,False,948540,905941,0,1854481,14,14,0,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1964,GA,GA,False,522557,616584,195,1139336,12,0,12,0,Other,195,Lyndon B. Johnson,Barry Goldwater
+1964,HI,HI,False,163249,44022,0,207271,4,4,0,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1964,ID,ID,False,148920,143557,0,292477,4,4,0,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1964,IL,IL,False,2796833,1905946,62,4702841,26,26,0,0,Other,62,Lyndon B. Johnson,Barry Goldwater
+1964,IN,IN,False,1170848,911118,9640,2091606,13,13,0,0,Other,9640,Lyndon B. Johnson,Barry Goldwater
+1964,IA,IA,False,733030,449148,2361,1184539,9,9,0,0,Other,2361,Lyndon B. Johnson,Barry Goldwater
+1964,KS,KS,False,464028,386579,7294,857901,7,7,0,0,Other,7294,Lyndon B. Johnson,Barry Goldwater
+1964,KY,KY,False,669659,372977,3469,1046105,9,9,0,0,Other,3469,Lyndon B. Johnson,Barry Goldwater
+1964,LA,LA,False,387068,509225,0,896293,10,0,10,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1964,ME,ME,False,262264,118701,256,381221,4,4,0,0,Other,256,Lyndon B. Johnson,Barry Goldwater
+1964,MD,MD,False,730912,385495,50,1116457,10,10,0,0,Other,50,Lyndon B. Johnson,Barry Goldwater
+1964,MA,MA,False,1786422,549727,8649,2344798,14,14,0,0,Other,8649,Lyndon B. Johnson,Barry Goldwater
+1964,MI,MI,False,2136615,1060152,6335,3203102,21,21,0,0,Other,6335,Lyndon B. Johnson,Barry Goldwater
+1964,MN,MN,False,991117,559624,3721,1554462,10,10,0,0,Other,3721,Lyndon B. Johnson,Barry Goldwater
+1964,MS,MS,False,52618,356528,0,409146,7,0,7,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1964,MO,MO,False,1164344,653535,0,1817879,12,12,0,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1964,MT,MT,False,164246,113032,1350,278628,4,4,0,0,Other,1350,Lyndon B. Johnson,Barry Goldwater
+1964,NE,NE,False,307307,276847,0,584154,5,5,0,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1964,NV,NV,False,79339,56094,0,135433,3,3,0,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1964,NH,NH,False,184064,104029,0,288093,4,4,0,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1964,NJ,NJ,False,1867671,963843,15256,2846770,17,17,0,0,Other,15256,Lyndon B. Johnson,Barry Goldwater
+1964,NM,NM,False,194017,131838,1760,327615,4,4,0,0,Other,1760,Lyndon B. Johnson,Barry Goldwater
+1964,NY,NY,False,4913156,2243559,9300,7166015,43,43,0,0,Other,9300,Lyndon B. Johnson,Barry Goldwater
+1964,NC,NC,False,800139,624844,0,1424983,13,13,0,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1964,ND,ND,False,149784,108207,398,258389,4,4,0,0,Other,398,Lyndon B. Johnson,Barry Goldwater
+1964,OH,OH,False,2498331,1470865,0,3969196,26,26,0,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1964,OK,OK,False,519834,412665,0,932499,8,8,0,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1964,OR,OR,False,501017,282779,2509,786305,6,6,0,0,Other,2509,Lyndon B. Johnson,Barry Goldwater
+1964,PA,PA,False,3130954,1673657,18079,4822690,29,29,0,0,Other,18079,Lyndon B. Johnson,Barry Goldwater
+1964,RI,RI,False,315463,74615,13,390091,4,4,0,0,Other,13,Lyndon B. Johnson,Barry Goldwater
+1964,SC,SC,False,215700,309048,8,524756,8,0,8,0,Other,8,Lyndon B. Johnson,Barry Goldwater
+1964,SD,SD,False,163010,130108,0,293118,4,4,0,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1964,TN,TN,False,634947,508965,34,1143946,11,11,0,0,Other,34,Lyndon B. Johnson,Barry Goldwater
+1964,TX,TX,False,1663185,958566,5060,2626811,25,25,0,0,Other,5060,Lyndon B. Johnson,Barry Goldwater
+1964,UT,UT,False,219628,180682,0,400310,4,4,0,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1964,VT,VT,False,108127,54942,20,163089,3,3,0,0,Other,20,Lyndon B. Johnson,Barry Goldwater
+1964,VA,VA,False,558038,481334,3107,1042479,12,12,0,0,Other,3107,Lyndon B. Johnson,Barry Goldwater
+1964,WA,WA,False,779881,470366,8309,1258556,9,9,0,0,Other,8309,Lyndon B. Johnson,Barry Goldwater
+1964,WV,WV,False,538087,253953,0,792040,7,7,0,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1964,WI,WI,False,1050424,638495,2896,1691815,12,12,0,0,Other,2896,Lyndon B. Johnson,Barry Goldwater
+1964,WY,WY,False,80718,61998,0,142716,3,3,0,0,Unpledged electors (Unpledged Democratic),0,Lyndon B. Johnson,Barry Goldwater
+1968,AL,AL,False,196579,146923,706415,1049917,10,0,0,10,George Wallace (American Independent),691425,Hubert Humphrey,Richard Nixon
+1968,AK,AK,False,35411,37600,10024,83035,3,0,3,0,George Wallace (American Independent),10024,Hubert Humphrey,Richard Nixon
+1968,AZ,AZ,False,170514,266721,49701,486936,5,0,5,0,George Wallace (American Independent),46573,Hubert Humphrey,Richard Nixon
+1968,AR,AR,False,184901,189062,235627,609590,6,0,0,6,George Wallace (American Independent),235627,Hubert Humphrey,Richard Nixon
+1968,CA,CA,False,3244318,3467664,539605,7251587,40,0,40,0,George Wallace (American Independent),487270,Hubert Humphrey,Richard Nixon
+1968,CO,CO,False,335174,409345,66680,811199,6,0,6,0,George Wallace (American Independent),60813,Hubert Humphrey,Richard Nixon
+1968,CT,CT,False,621561,556721,77950,1256232,8,8,0,0,George Wallace (American Independent),76650,Hubert Humphrey,Richard Nixon
+1968,DE,DE,False,89194,96714,28459,214367,3,0,3,0,George Wallace (American Independent),28459,Hubert Humphrey,Richard Nixon
+1968,DC,DC,False,139566,31012,0,170578,3,3,0,0,George Wallace (American Independent),0,Hubert Humphrey,Richard Nixon
+1968,FL,FL,False,676794,886804,624207,2187805,14,0,14,0,George Wallace (American Independent),624207,Hubert Humphrey,Richard Nixon
+1968,GA,GA,False,334440,380111,535715,1250266,12,0,0,12,George Wallace (American Independent),535550,Hubert Humphrey,Richard Nixon
+1968,HI,HI,False,141324,91425,3469,236218,4,4,0,0,George Wallace (American Independent),3469,Hubert Humphrey,Richard Nixon
+1968,ID,ID,False,89273,165369,36541,291183,4,0,4,0,George Wallace (American Independent),36541,Hubert Humphrey,Richard Nixon
+1968,IL,IL,False,2039814,2174774,405161,4619749,26,0,26,0,George Wallace (American Independent),390958,Hubert Humphrey,Richard Nixon
+1968,IN,IN,False,806659,1067885,249053,2123597,13,0,13,0,George Wallace (American Independent),243108,Hubert Humphrey,Richard Nixon
+1968,IA,IA,False,476699,619106,72126,1167931,9,0,9,0,George Wallace (American Independent),66422,Hubert Humphrey,Richard Nixon
+1968,KS,KS,False,302996,478674,91113,872783,7,0,7,0,George Wallace (American Independent),88921,Hubert Humphrey,Richard Nixon
+1968,KY,KY,False,397541,462411,195941,1055893,9,0,9,0,George Wallace (American Independent),193098,Hubert Humphrey,Richard Nixon
+1968,LA,LA,False,309615,257535,530300,1097450,10,0,0,10,George Wallace (American Independent),530300,Hubert Humphrey,Richard Nixon
+1968,ME,ME,False,217312,169254,6370,392936,4,4,0,0,George Wallace (American Independent),6370,Hubert Humphrey,Richard Nixon
+1968,MD,MD,False,538310,517995,178734,1235039,10,10,0,0,George Wallace (American Independent),178734,Hubert Humphrey,Richard Nixon
+1968,MA,MA,False,1469218,766844,95690,2331752,14,14,0,0,George Wallace (American Independent),87088,Hubert Humphrey,Richard Nixon
+1968,MI,MI,False,1593082,1370665,342503,3306250,21,21,0,0,George Wallace (American Independent),331968,Hubert Humphrey,Richard Nixon
+1968,MN,MN,False,857738,658643,72129,1588510,10,10,0,0,George Wallace (American Independent),68931,Hubert Humphrey,Richard Nixon
+1968,MS,MS,False,150644,88516,415349,654509,7,0,0,7,George Wallace (American Independent),415349,Hubert Humphrey,Richard Nixon
+1968,MO,MO,False,791444,811932,206126,1809502,12,0,12,0,George Wallace (American Independent),206126,Hubert Humphrey,Richard Nixon
+1968,MT,MT,False,114117,138835,21452,274404,4,0,4,0,George Wallace (American Independent),20015,Hubert Humphrey,Richard Nixon
+1968,NE,NE,False,170784,321163,44904,536851,5,0,5,0,George Wallace (American Independent),44904,Hubert Humphrey,Richard Nixon
+1968,NV,NV,False,60598,73188,20432,154218,3,0,3,0,George Wallace (American Independent),20432,Hubert Humphrey,Richard Nixon
+1968,NH,NH,False,130589,154903,11806,297298,4,0,4,0,George Wallace (American Independent),11173,Hubert Humphrey,Richard Nixon
+1968,NJ,NJ,False,1264206,1325467,285722,2875395,17,0,17,0,George Wallace (American Independent),262187,Hubert Humphrey,Richard Nixon
+1968,NM,NM,False,130081,169692,27508,327281,4,0,4,0,George Wallace (American Independent),25737,Hubert Humphrey,Richard Nixon
+1968,NY,NY,False,3378470,3007932,403664,6790066,43,43,0,0,George Wallace (American Independent),358864,Hubert Humphrey,Richard Nixon
+1968,NC,NC,False,464113,627192,496188,1587493,13,0,12,1,George Wallace (American Independent),496188,Hubert Humphrey,Richard Nixon
+1968,ND,ND,False,94769,138669,14444,247882,4,0,4,0,George Wallace (American Independent),14244,Hubert Humphrey,Richard Nixon
+1968,OH,OH,False,1700586,1791014,468098,3959698,26,0,26,0,George Wallace (American Independent),467495,Hubert Humphrey,Richard Nixon
+1968,OK,OK,False,301658,449697,191731,943086,8,0,8,0,George Wallace (American Independent),191731,Hubert Humphrey,Richard Nixon
+1968,OR,OR,False,358866,408433,52323,819622,6,0,6,0,George Wallace (American Independent),49683,Hubert Humphrey,Richard Nixon
+1968,PA,PA,False,2259405,2090017,398506,4747928,29,29,0,0,George Wallace (American Independent),378582,Hubert Humphrey,Richard Nixon
+1968,RI,RI,False,246518,122359,16123,385000,4,4,0,0,George Wallace (American Independent),15678,Hubert Humphrey,Richard Nixon
+1968,SC,SC,False,197486,254062,215434,666982,8,0,8,0,George Wallace (American Independent),215430,Hubert Humphrey,Richard Nixon
+1968,SD,SD,False,118023,149841,13400,281264,4,0,4,0,George Wallace (American Independent),13400,Hubert Humphrey,Richard Nixon
+1968,TN,TN,False,351233,472592,424792,1248617,11,0,11,0,George Wallace (American Independent),424792,Hubert Humphrey,Richard Nixon
+1968,TX,TX,False,1266804,1227844,584758,3079406,25,25,0,0,George Wallace (American Independent),584269,Hubert Humphrey,Richard Nixon
+1968,UT,UT,False,156665,238728,27175,422568,4,0,4,0,George Wallace (American Independent),26906,Hubert Humphrey,Richard Nixon
+1968,VT,VT,False,70255,85142,6007,161404,3,0,3,0,George Wallace (American Independent),5104,Hubert Humphrey,Richard Nixon
+1968,VA,VA,False,442387,590319,328785,1361491,12,0,12,0,George Wallace (American Independent),321833,Hubert Humphrey,Richard Nixon
+1968,WA,WA,False,616037,588510,99734,1304281,9,9,0,0,George Wallace (American Independent),96990,Hubert Humphrey,Richard Nixon
+1968,WV,WV,False,374091,307555,72560,754206,7,7,0,0,George Wallace (American Independent),72560,Hubert Humphrey,Richard Nixon
+1968,WI,WI,False,748804,809997,132737,1691538,12,0,12,0,George Wallace (American Independent),127835,Hubert Humphrey,Richard Nixon
+1968,WY,WY,False,45173,70927,11105,127205,3,0,3,0,George Wallace (American Independent),11105,Hubert Humphrey,Richard Nixon
+1972,AL,AL,False,256923,728701,20469,1006093,9,0,9,0,Schmitz/Anderson (American Independent),11918,George McGovern,Richard Nixon
+1972,AK,AK,False,32967,55349,6903,95219,3,0,3,0,Schmitz/Anderson (American Independent),6903,George McGovern,Richard Nixon
+1972,AZ,AZ,False,198540,402812,52153,653505,6,0,6,0,Schmitz/Anderson (American Independent),21208,George McGovern,Richard Nixon
+1972,AR,AR,False,198899,445751,3016,647666,6,0,6,0,Schmitz/Anderson (American Independent),3016,George McGovern,Richard Nixon
+1972,CA,CA,False,3475847,4602096,289919,8367862,45,0,45,0,Schmitz/Anderson (American Independent),232554,George McGovern,Richard Nixon
+1972,CO,CO,False,329980,597189,26715,953884,7,0,7,0,Schmitz/Anderson (American Independent),17269,George McGovern,Richard Nixon
+1972,CT,CT,False,555498,810763,18016,1384277,8,0,8,0,Schmitz/Anderson (American Independent),17239,George McGovern,Richard Nixon
+1972,DE,DE,False,92283,140357,2876,235516,3,0,3,0,Schmitz/Anderson (American Independent),2638,George McGovern,Richard Nixon
+1972,DC,DC,False,127627,35226,568,163421,3,3,0,0,Schmitz/Anderson (American Independent),0,George McGovern,Richard Nixon
+1972,FL,FL,False,718117,1857759,7407,2583283,17,0,17,0,Schmitz/Anderson (American Independent),0,George McGovern,Richard Nixon
+1972,GA,GA,False,289529,881496,3747,1174772,12,0,12,0,Schmitz/Anderson (American Independent),812,George McGovern,Richard Nixon
+1972,HI,HI,False,101409,168865,0,270274,4,0,4,0,Schmitz/Anderson (American Independent),0,George McGovern,Richard Nixon
+1972,ID,ID,False,80826,199384,30169,310379,4,0,4,0,Schmitz/Anderson (American Independent),28869,George McGovern,Richard Nixon
+1972,IL,IL,False,1913472,2788179,21585,4723236,26,0,26,0,Schmitz/Anderson (American Independent),2471,George McGovern,Richard Nixon
+1972,IN,IN,False,708568,1405154,11807,2125529,13,0,13,0,Schmitz/Anderson (American Independent),0,George McGovern,Richard Nixon
+1972,IA,IA,False,496206,706207,23531,1225944,8,0,8,0,Schmitz/Anderson (American Independent),22056,George McGovern,Richard Nixon
+1972,KS,KS,False,270287,619812,25996,916095,7,0,7,0,Schmitz/Anderson (American Independent),21808,George McGovern,Richard Nixon
+1972,KY,KY,False,371159,676446,19894,1067499,9,0,9,0,Schmitz/Anderson (American Independent),17627,George McGovern,Richard Nixon
+1972,LA,LA,False,298142,686852,66497,1051491,10,0,10,0,Schmitz/Anderson (American Independent),52099,George McGovern,Richard Nixon
+1972,ME,ME,False,160584,256458,229,417271,2,0,2,0,Schmitz/Anderson (American Independent),117,George McGovern,Richard Nixon
+1972,ME-1,ME,True,85028,135388,0,220416,1,0,1,0,Schmitz/Anderson (American Independent),0,George McGovern,Richard Nixon
+1972,ME-2,ME,True,75556,121120,0,196676,1,0,1,0,Schmitz/Anderson (American Independent),0,George McGovern,Richard Nixon
+1972,MD,MD,False,505781,829305,18726,1353812,10,0,10,0,Schmitz/Anderson (American Independent),18726,George McGovern,Richard Nixon
+1972,MA,MA,False,1332540,1112078,14138,2458756,14,14,0,0,Schmitz/Anderson (American Independent),2877,George McGovern,Richard Nixon
+1972,MI,MI,False,1459435,1961721,69169,3490325,21,0,21,0,Schmitz/Anderson (American Independent),63321,George McGovern,Richard Nixon
+1972,MN,MN,False,802346,898269,41037,1741652,10,0,10,0,Schmitz/Anderson (American Independent),31407,George McGovern,Richard Nixon
+1972,MS,MS,False,126782,505125,14056,645963,7,0,7,0,Schmitz/Anderson (American Independent),11598,George McGovern,Richard Nixon
+1972,MO,MO,False,698531,1154058,0,1852589,12,0,12,0,Schmitz/Anderson (American Independent),0,George McGovern,Richard Nixon
+1972,MT,MT,False,120197,183976,13430,317603,4,0,4,0,Schmitz/Anderson (American Independent),13430,George McGovern,Richard Nixon
+1972,NE,NE,False,169991,406298,0,576289,5,0,5,0,Schmitz/Anderson (American Independent),0,George McGovern,Richard Nixon
+1972,NV,NV,False,66016,115750,0,181766,3,0,3,0,Schmitz/Anderson (American Independent),0,George McGovern,Richard Nixon
+1972,NH,NH,False,116435,213724,3896,334055,4,0,4,0,Schmitz/Anderson (American Independent),3386,George McGovern,Richard Nixon
+1972,NJ,NJ,False,1102211,1845502,49516,2997229,17,0,17,0,Schmitz/Anderson (American Independent),34378,George McGovern,Richard Nixon
+1972,NM,NM,False,141084,235606,9241,385931,4,0,4,0,Schmitz/Anderson (American Independent),8767,George McGovern,Richard Nixon
+1972,NY,NY,False,2951084,4192778,17968,7161830,41,0,41,0,Schmitz/Anderson (American Independent),0,George McGovern,Richard Nixon
+1972,NC,NC,False,438705,1054889,25018,1518612,13,0,13,0,Schmitz/Anderson (American Independent),25018,George McGovern,Richard Nixon
+1972,ND,ND,False,100384,174109,6021,280514,3,0,3,0,Schmitz/Anderson (American Independent),5646,George McGovern,Richard Nixon
+1972,OH,OH,False,1558889,2441827,94071,4094787,25,0,25,0,Schmitz/Anderson (American Independent),80067,George McGovern,Richard Nixon
+1972,OK,OK,False,247147,759025,23728,1029900,8,0,8,0,Schmitz/Anderson (American Independent),23728,George McGovern,Richard Nixon
+1972,OR,OR,False,392760,486686,48500,927946,6,0,6,0,Schmitz/Anderson (American Independent),46211,George McGovern,Richard Nixon
+1972,PA,PA,False,1796951,2714521,80633,4592105,27,0,27,0,Schmitz/Anderson (American Independent),70593,George McGovern,Richard Nixon
+1972,RI,RI,False,194645,220383,780,415808,4,0,4,0,Schmitz/Anderson (American Independent),25,George McGovern,Richard Nixon
+1972,SC,SC,False,189270,478427,10183,677880,8,0,8,0,Schmitz/Anderson (American Independent),10166,George McGovern,Richard Nixon
+1972,SD,SD,False,139945,166476,994,307415,4,0,4,0,Schmitz/Anderson (American Independent),0,George McGovern,Richard Nixon
+1972,TN,TN,False,357293,813147,30742,1201182,10,0,10,0,Schmitz/Anderson (American Independent),30373,George McGovern,Richard Nixon
+1972,TX,TX,False,1154291,2298896,19527,3472714,26,0,26,0,Schmitz/Anderson (American Independent),7098,George McGovern,Richard Nixon
+1972,UT,UT,False,126284,323643,28549,478476,4,0,4,0,Schmitz/Anderson (American Independent),28549,George McGovern,Richard Nixon
+1972,VT,VT,False,68174,117149,1624,186947,3,0,3,0,Schmitz/Anderson (American Independent),0,George McGovern,Richard Nixon
+1972,VA,VA,False,438887,988493,29639,1457019,12,0,11,1,Schmitz/Anderson (American Independent),19721,George McGovern,Richard Nixon
+1972,WA,WA,False,568334,837135,65378,1470847,9,0,9,0,Schmitz/Anderson (American Independent),58906,George McGovern,Richard Nixon
+1972,WV,WV,False,277435,484964,0,762399,6,0,6,0,Schmitz/Anderson (American Independent),0,George McGovern,Richard Nixon
+1972,WI,WI,False,810174,989430,53286,1852890,11,0,11,0,Schmitz/Anderson (American Independent),47525,George McGovern,Richard Nixon
+1972,WY,WY,False,44358,100464,748,145570,3,0,3,0,Schmitz/Anderson (American Independent),748,George McGovern,Richard Nixon
+1976,AL,AL,False,659170,504070,19610,1182850,9,9,0,0,Roger MacBride (Libertarian),1481,Jimmy Carter,Gerald Ford
+1976,AK,AK,False,44058,71555,7961,123574,3,0,3,0,Roger MacBride (Libertarian),6785,Jimmy Carter,Gerald Ford
+1976,AZ,AZ,False,295602,418642,28475,742719,6,0,6,0,Eugene McCarthy (Independent),19229,Jimmy Carter,Gerald Ford
+1976,AR,AR,False,499614,268753,1029,769396,6,6,0,0,Eugene McCarthy (Independent),647,Jimmy Carter,Gerald Ford
+1976,CA,CA,False,3742284,3882244,242589,7867117,45,0,45,0,Eugene McCarthy (Independent),58412,Jimmy Carter,Gerald Ford
+1976,CO,CO,False,460353,584367,36415,1081135,7,0,7,0,Eugene McCarthy (Independent),26107,Jimmy Carter,Gerald Ford
+1976,CT,CT,False,647895,719261,14370,1381526,8,0,8,0,Eugene McCarthy (Independent),0,Jimmy Carter,Gerald Ford
+1976,DE,DE,False,122596,109831,3407,235834,3,3,0,0,Eugene McCarthy (Independent),2437,Jimmy Carter,Gerald Ford
+1976,DC,DC,False,137818,27873,3139,168830,3,3,0,0,Roger MacBride (Libertarian),274,Jimmy Carter,Gerald Ford
+1976,FL,FL,False,1636000,1469531,45100,3150631,17,17,0,0,Eugene McCarthy (Independent),23643,Jimmy Carter,Gerald Ford
+1976,GA,GA,False,979409,483743,4306,1467458,12,12,0,0,Eugene McCarthy (Independent),991,Jimmy Carter,Gerald Ford
+1976,HI,HI,False,147375,140003,3923,291301,4,4,0,0,Roger MacBride (Libertarian),3923,Jimmy Carter,Gerald Ford
+1976,ID,ID,False,126549,204151,10232,340932,4,0,4,0,Roger MacBride (Libertarian),3558,Jimmy Carter,Gerald Ford
+1976,IL,IL,False,2271295,2364269,83269,4718833,26,0,26,0,Eugene McCarthy (Independent),55939,Jimmy Carter,Gerald Ford
+1976,IN,IN,False,1014714,1183958,21690,2220362,13,0,13,0,Eugene McCarthy (Independent),0,Jimmy Carter,Gerald Ford
+1976,IA,IA,False,619931,632863,26512,1279306,8,0,8,0,Eugene McCarthy (Independent),20051,Jimmy Carter,Gerald Ford
+1976,KS,KS,False,430421,502752,24672,957845,7,0,7,0,Eugene McCarthy (Independent),13185,Jimmy Carter,Gerald Ford
+1976,KY,KY,False,615717,531852,19573,1167142,9,9,0,0,Eugene McCarthy (Independent),6837,Jimmy Carter,Gerald Ford
+1976,LA,LA,False,661365,587446,29628,1278439,10,10,0,0,Eugene McCarthy (Independent),6588,Jimmy Carter,Gerald Ford
+1976,ME,ME,False,232289,236320,14599,483208,2,0,2,0,Eugene McCarthy (Independent),10874,Jimmy Carter,Gerald Ford
+1976,ME-1,ME,True,123598,127019,7424,258041,1,0,1,0,Eugene McCarthy (Independent),6025,Jimmy Carter,Gerald Ford
+1976,ME-2,ME,True,108681,109301,7185,225167,1,0,1,0,Eugene McCarthy (Independent),4849,Jimmy Carter,Gerald Ford
+1976,MD,MD,False,759612,672661,0,1432273,10,10,0,0,Eugene McCarthy (Independent),0,Jimmy Carter,Gerald Ford
+1976,MA,MA,False,1429475,1030276,87806,2547557,14,14,0,0,Eugene McCarthy (Independent),65637,Jimmy Carter,Gerald Ford
+1976,MI,MI,False,1696714,1893742,63293,3653749,21,0,21,0,Eugene McCarthy (Independent),47905,Jimmy Carter,Gerald Ford
+1976,MN,MN,False,1070440,819395,60096,1949931,10,10,0,0,Eugene McCarthy (Independent),35490,Jimmy Carter,Gerald Ford
+1976,MS,MS,False,381309,366846,21205,769360,7,7,0,0,Eugene McCarthy (Independent),4074,Jimmy Carter,Gerald Ford
+1976,MO,MO,False,998387,927443,27770,1953600,12,12,0,0,Eugene McCarthy (Independent),24029,Jimmy Carter,Gerald Ford
+1976,MT,MT,False,149259,173703,5772,328734,4,0,4,0,Eugene McCarthy (Independent),0,Jimmy Carter,Gerald Ford
+1976,NE,NE,False,233692,359705,14271,607668,5,0,5,0,Eugene McCarthy (Independent),9409,Jimmy Carter,Gerald Ford
+1976,NV,NV,False,92479,101273,8124,201876,3,0,3,0,Roger MacBride (Libertarian),1519,Jimmy Carter,Gerald Ford
+1976,NH,NH,False,147635,185935,6048,339618,4,0,4,0,Eugene McCarthy (Independent),4095,Jimmy Carter,Gerald Ford
+1976,NJ,NJ,False,1444653,1509688,60131,3014472,17,0,17,0,Eugene McCarthy (Independent),32717,Jimmy Carter,Gerald Ford
+1976,NM,NM,False,201148,211419,4023,416590,4,0,4,0,Roger MacBride (Libertarian),1110,Jimmy Carter,Gerald Ford
+1976,NY,NY,False,3389558,3100791,34876,6525225,41,41,0,0,Roger MacBride (Libertarian),12197,Jimmy Carter,Gerald Ford
+1976,NC,NC,False,927365,741960,8581,1677906,13,13,0,0,Roger MacBride (Libertarian),2219,Jimmy Carter,Gerald Ford
+1976,ND,ND,False,136078,153470,7546,297094,3,0,3,0,Eugene McCarthy (Independent),2952,Jimmy Carter,Gerald Ford
+1976,OH,OH,False,2011621,2000505,99747,4111873,25,25,0,0,Eugene McCarthy (Independent),58258,Jimmy Carter,Gerald Ford
+1976,OK,OK,False,532442,545708,14101,1092251,8,0,8,0,Eugene McCarthy (Independent),14101,Jimmy Carter,Gerald Ford
+1976,OR,OR,False,490407,492120,47349,1029876,6,0,6,0,Eugene McCarthy (Independent),40207,Jimmy Carter,Gerald Ford
+1976,PA,PA,False,2328677,2205604,86506,4620787,27,27,0,0,Eugene McCarthy (Independent),50584,Jimmy Carter,Gerald Ford
+1976,RI,RI,False,227636,181249,2285,411170,4,4,0,0,Roger MacBride (Libertarian),715,Jimmy Carter,Gerald Ford
+1976,SC,SC,False,450825,346140,5629,802594,8,8,0,0,Eugene McCarthy (Independent),0,Jimmy Carter,Gerald Ford
+1976,SD,SD,False,147068,151505,2105,300678,4,0,4,0,Roger MacBride (Libertarian),1619,Jimmy Carter,Gerald Ford
+1976,TN,TN,False,825879,633969,16498,1476346,10,10,0,0,Eugene McCarthy (Independent),5004,Jimmy Carter,Gerald Ford
+1976,TX,TX,False,2082319,1953300,36265,4071884,26,26,0,0,Eugene McCarthy (Independent),20118,Jimmy Carter,Gerald Ford
+1976,UT,UT,False,182110,337908,21180,541198,4,0,4,0,Eugene McCarthy (Independent),3907,Jimmy Carter,Gerald Ford
+1976,VT,VT,False,81044,102085,4726,187855,3,0,3,0,Eugene McCarthy (Independent),4001,Jimmy Carter,Gerald Ford
+1976,VA,VA,False,813896,836554,46644,1697094,12,0,12,0,Roger MacBride (Libertarian),4648,Jimmy Carter,Gerald Ford
+1976,WA,WA,False,717323,777732,60479,1555534,9,0,8,1,Eugene McCarthy (Independent),36986,Jimmy Carter,Gerald Ford
+1976,WV,WV,False,435914,314760,0,750674,6,6,0,0,Eugene McCarthy (Independent),0,Jimmy Carter,Gerald Ford
+1976,WI,WI,False,1040232,1004987,56117,2101336,11,11,0,0,Eugene McCarthy (Independent),34943,Jimmy Carter,Gerald Ford
+1976,WY,WY,False,62239,92717,1387,156343,3,0,3,0,Eugene McCarthy (Independent),624,Jimmy Carter,Gerald Ford
+1980,AL,AL,False,636730,654192,51007,1341929,9,0,9,0,John Anderson (Independent),16481,Jimmy Carter,Ronald Reagan
+1980,AK,AK,False,41842,86112,30491,158445,3,0,3,0,Ed Clark (Libertarian),18479,Jimmy Carter,Ronald Reagan
+1980,AZ,AZ,False,246843,529688,97414,873945,6,0,6,0,John Anderson (Independent),76952,Jimmy Carter,Ronald Reagan
+1980,AR,AR,False,398041,403164,36377,837582,6,0,6,0,John Anderson (Independent),22468,Jimmy Carter,Ronald Reagan
+1980,CA,CA,False,3083661,4524858,978544,8587063,45,0,45,0,John Anderson (Independent),739833,Jimmy Carter,Ronald Reagan
+1980,CO,CO,False,367973,652264,164178,1184415,7,0,7,0,John Anderson (Independent),130633,Jimmy Carter,Ronald Reagan
+1980,CT,CT,False,541732,677210,187343,1406285,8,0,8,0,John Anderson (Independent),171807,Jimmy Carter,Ronald Reagan
+1980,DE,DE,False,105754,111252,18662,235668,3,0,3,0,John Anderson (Independent),16288,Jimmy Carter,Ronald Reagan
+1980,DC,DC,False,130231,23313,20345,173889,3,3,0,0,John Anderson (Independent),16131,Jimmy Carter,Ronald Reagan
+1980,FL,FL,False,1419475,2046951,220600,3687026,17,0,17,0,John Anderson (Independent),189692,Jimmy Carter,Ronald Reagan
+1980,GA,GA,False,890733,654168,52566,1597467,12,12,0,0,John Anderson (Independent),36055,Jimmy Carter,Ronald Reagan
+1980,HI,HI,False,135879,130112,37296,303287,4,4,0,0,John Anderson (Independent),32021,Jimmy Carter,Ronald Reagan
+1980,ID,ID,False,110192,290699,36540,437431,4,0,4,0,John Anderson (Independent),27058,Jimmy Carter,Ronald Reagan
+1980,IL,IL,False,1981413,2358049,410259,4749721,26,0,26,0,John Anderson (Independent),346754,Jimmy Carter,Ronald Reagan
+1980,IN,IN,False,844197,1255656,142180,2242033,13,0,13,0,John Anderson (Independent),111639,Jimmy Carter,Ronald Reagan
+1980,IA,IA,False,508672,676026,132963,1317661,8,0,8,0,John Anderson (Independent),115633,Jimmy Carter,Ronald Reagan
+1980,KS,KS,False,326150,566812,86833,979795,7,0,7,0,John Anderson (Independent),68231,Jimmy Carter,Ronald Reagan
+1980,KY,KY,False,616417,635274,42936,1294627,9,0,9,0,John Anderson (Independent),31127,Jimmy Carter,Ronald Reagan
+1980,LA,LA,False,708453,792853,47285,1548591,10,0,10,0,John Anderson (Independent),26345,Jimmy Carter,Ronald Reagan
+1980,ME,ME,False,220974,238522,63515,523011,2,0,2,0,John Anderson (Independent),53327,Jimmy Carter,Ronald Reagan
+1980,ME-1,ME,True,117613,126274,30889,274776,1,0,1,0,John Anderson (Independent),30889,Jimmy Carter,Ronald Reagan
+1980,ME-2,ME,True,103361,112248,22438,238047,1,0,1,0,John Anderson (Independent),22438,Jimmy Carter,Ronald Reagan
+1980,MD,MD,False,726161,680606,133729,1540496,10,10,0,0,John Anderson (Independent),119537,Jimmy Carter,Ronald Reagan
+1980,MA,MA,False,1053802,1057631,412865,2524298,14,0,14,0,John Anderson (Independent),382539,Jimmy Carter,Ronald Reagan
+1980,MI,MI,False,1661532,1915225,332968,3909725,21,0,21,0,John Anderson (Independent),275223,Jimmy Carter,Ronald Reagan
+1980,MN,MN,False,954174,873241,224538,2051953,10,10,0,0,John Anderson (Independent),174990,Jimmy Carter,Ronald Reagan
+1980,MS,MS,False,429281,441089,22250,892620,7,0,7,0,John Anderson (Independent),12036,Jimmy Carter,Ronald Reagan
+1980,MO,MO,False,931182,1074181,94461,2099824,12,0,12,0,John Anderson (Independent),77920,Jimmy Carter,Ronald Reagan
+1980,MT,MT,False,118032,206814,39106,363952,4,0,4,0,John Anderson (Independent),29281,Jimmy Carter,Ronald Reagan
+1980,NE,NE,False,166851,419937,54066,640854,5,0,5,0,John Anderson (Independent),44993,Jimmy Carter,Ronald Reagan
+1980,NV,NV,False,66666,155017,26202,247885,3,0,3,0,John Anderson (Independent),17651,Jimmy Carter,Ronald Reagan
+1980,NH,NH,False,108864,221705,53430,383999,4,0,4,0,John Anderson (Independent),49693,Jimmy Carter,Ronald Reagan
+1980,NJ,NJ,False,1147364,1546557,281763,2975684,17,0,17,0,John Anderson (Independent),234632,Jimmy Carter,Ronald Reagan
+1980,NM,NM,False,167826,250779,37632,456237,4,0,4,0,John Anderson (Independent),29459,Jimmy Carter,Ronald Reagan
+1980,NY,NY,False,2728372,2893831,579756,6201959,41,0,41,0,John Anderson (Independent),467801,Jimmy Carter,Ronald Reagan
+1980,NC,NC,False,875635,915018,65180,1855833,13,0,13,0,John Anderson (Independent),52800,Jimmy Carter,Ronald Reagan
+1980,ND,ND,False,79189,193695,28661,301545,3,0,3,0,John Anderson (Independent),23640,Jimmy Carter,Ronald Reagan
+1980,OH,OH,False,1752414,2206545,324644,4283603,25,0,25,0,John Anderson (Independent),254472,Jimmy Carter,Ronald Reagan
+1980,OK,OK,False,402026,695570,52112,1149708,8,0,8,0,John Anderson (Independent),38284,Jimmy Carter,Ronald Reagan
+1980,OR,OR,False,456890,571044,153582,1181516,6,0,6,0,John Anderson (Independent),112389,Jimmy Carter,Ronald Reagan
+1980,PA,PA,False,1937540,2261872,362089,4561501,27,0,27,0,John Anderson (Independent),292921,Jimmy Carter,Ronald Reagan
+1980,RI,RI,False,198342,154793,62937,416072,4,4,0,0,John Anderson (Independent),59819,Jimmy Carter,Ronald Reagan
+1980,SC,SC,False,427560,441207,21316,890083,8,0,8,0,John Anderson (Independent),14150,Jimmy Carter,Ronald Reagan
+1980,SD,SD,False,103855,198343,25505,327703,4,0,4,0,John Anderson (Independent),21431,Jimmy Carter,Ronald Reagan
+1980,TN,TN,False,783051,787761,46804,1617616,10,0,10,0,John Anderson (Independent),35991,Jimmy Carter,Ronald Reagan
+1980,TX,TX,False,1881147,2510705,149785,4541637,26,0,26,0,John Anderson (Independent),111613,Jimmy Carter,Ronald Reagan
+1980,UT,UT,False,124266,439687,40269,604222,4,0,4,0,John Anderson (Independent),30284,Jimmy Carter,Ronald Reagan
+1980,VT,VT,False,81891,94598,36718,213207,3,0,3,0,John Anderson (Independent),31760,Jimmy Carter,Ronald Reagan
+1980,VA,VA,False,752174,989609,124249,1866032,12,0,12,0,John Anderson (Independent),95418,Jimmy Carter,Ronald Reagan
+1980,WA,WA,False,650193,865244,226957,1742394,9,0,9,0,John Anderson (Independent),185073,Jimmy Carter,Ronald Reagan
+1980,WV,WV,False,367462,334206,36047,737715,6,6,0,0,John Anderson (Independent),31691,Jimmy Carter,Ronald Reagan
+1980,WI,WI,False,981584,1088845,202792,2273221,11,0,11,0,John Anderson (Independent),160657,Jimmy Carter,Ronald Reagan
+1980,WY,WY,False,49427,110700,16586,176713,3,0,3,0,John Anderson (Independent),12072,Jimmy Carter,Ronald Reagan
+1984,AL,AL,False,551899,872849,16965,1441713,9,0,9,0,David Bergland (Libertarian),9504,Walter Mondale,Ronald Reagan
+1984,AK,AK,False,62007,138377,7221,207605,3,0,3,0,David Bergland (Libertarian),6378,Walter Mondale,Ronald Reagan
+1984,AZ,AZ,False,333854,681416,10627,1025897,7,0,7,0,David Bergland (Libertarian),10585,Walter Mondale,Ronald Reagan
+1984,AR,AR,False,338646,534774,10986,884406,6,0,6,0,David Bergland (Libertarian),2221,Walter Mondale,Ronald Reagan
+1984,CA,CA,False,3922519,5467009,115895,9505423,47,0,47,0,David Bergland (Libertarian),49951,Walter Mondale,Ronald Reagan
+1984,CO,CO,False,454974,821818,18589,1295381,8,0,8,0,David Bergland (Libertarian),11257,Walter Mondale,Ronald Reagan
+1984,CT,CT,False,569597,890877,6426,1466900,8,0,8,0,David Bergland (Libertarian),0,Walter Mondale,Ronald Reagan
+1984,DE,DE,False,101656,152190,726,254572,3,0,3,0,David Bergland (Libertarian),268,Walter Mondale,Ronald Reagan
+1984,DC,DC,False,180408,29009,1871,211288,3,3,0,0,David Bergland (Libertarian),279,Walter Mondale,Ronald Reagan
+1984,FL,FL,False,1448816,2730350,885,4180051,21,0,21,0,David Bergland (Libertarian),754,Walter Mondale,Ronald Reagan
+1984,GA,GA,False,706628,1068722,743,1776093,12,0,12,0,David Bergland (Libertarian),151,Walter Mondale,Ronald Reagan
+1984,HI,HI,False,147154,185050,3642,335846,4,0,4,0,David Bergland (Libertarian),2167,Walter Mondale,Ronald Reagan
+1984,ID,ID,False,108510,297523,5111,411144,4,0,4,0,David Bergland (Libertarian),2823,Walter Mondale,Ronald Reagan
+1984,IL,IL,False,2086499,2707103,25486,4819088,24,0,24,0,David Bergland (Libertarian),10086,Walter Mondale,Ronald Reagan
+1984,IN,IN,False,841481,1377230,14358,2233069,12,0,12,0,David Bergland (Libertarian),6741,Walter Mondale,Ronald Reagan
+1984,IA,IA,False,605620,703088,11097,1319805,8,0,8,0,David Bergland (Libertarian),1844,Walter Mondale,Ronald Reagan
+1984,KS,KS,False,333149,677296,11546,1021991,7,0,7,0,David Bergland (Libertarian),3329,Walter Mondale,Ronald Reagan
+1984,KY,KY,False,539589,822782,8090,1370461,9,0,9,0,David Bergland (Libertarian),0,Walter Mondale,Ronald Reagan
+1984,LA,LA,False,651586,1037299,17937,1706822,10,0,10,0,David Bergland (Libertarian),1876,Walter Mondale,Ronald Reagan
+1984,ME,ME,False,214515,336500,2129,553144,2,0,2,0,David Bergland (Libertarian),0,Walter Mondale,Ronald Reagan
+1984,ME-1,ME,True,117450,175472,0,292922,1,0,1,0,David Bergland (Libertarian),0,Walter Mondale,Ronald Reagan
+1984,ME-2,ME,True,97065,161028,0,258093,1,0,1,0,David Bergland (Libertarian),0,Walter Mondale,Ronald Reagan
+1984,MD,MD,False,787935,879918,8020,1675873,10,0,10,0,David Bergland (Libertarian),5721,Walter Mondale,Ronald Reagan
+1984,MA,MA,False,1239606,1310936,8911,2559453,13,0,13,0,David Bergland (Libertarian),0,Walter Mondale,Ronald Reagan
+1984,MI,MI,False,1529638,2251571,20449,3801658,20,0,20,0,David Bergland (Libertarian),10055,Walter Mondale,Ronald Reagan
+1984,MN,MN,False,1036364,1032603,15482,2084449,10,10,0,0,David Bergland (Libertarian),2996,Walter Mondale,Ronald Reagan
+1984,MS,MS,False,352192,581477,6523,940192,7,0,7,0,David Bergland (Libertarian),2336,Walter Mondale,Ronald Reagan
+1984,MO,MO,False,848583,1274188,0,2122771,11,0,11,0,David Bergland (Libertarian),0,Walter Mondale,Ronald Reagan
+1984,MT,MT,False,146742,232450,5185,384377,4,0,4,0,David Bergland (Libertarian),5185,Walter Mondale,Ronald Reagan
+1984,NE,NE,False,187866,460054,4170,652090,5,0,5,0,David Bergland (Libertarian),2079,Walter Mondale,Ronald Reagan
+1984,NV,NV,False,91655,188770,6242,286667,4,0,4,0,David Bergland (Libertarian),2292,Walter Mondale,Ronald Reagan
+1984,NH,NH,False,120395,267051,1508,388954,4,0,4,0,David Bergland (Libertarian),735,Walter Mondale,Ronald Reagan
+1984,NJ,NJ,False,1261323,1933630,22909,3217862,16,0,16,0,David Bergland (Libertarian),6416,Walter Mondale,Ronald Reagan
+1984,NM,NM,False,201769,307101,5500,514370,5,0,5,0,David Bergland (Libertarian),4459,Walter Mondale,Ronald Reagan
+1984,NY,NY,False,3119609,3664763,22438,6806810,36,0,36,0,David Bergland (Libertarian),11949,Walter Mondale,Ronald Reagan
+1984,NC,NC,False,824287,1346481,4593,2175361,13,0,13,0,David Bergland (Libertarian),3794,Walter Mondale,Ronald Reagan
+1984,ND,ND,False,104429,200336,4206,308971,3,0,3,0,David Bergland (Libertarian),703,Walter Mondale,Ronald Reagan
+1984,OH,OH,False,1825440,2678560,43619,4547619,23,0,23,0,David Bergland (Libertarian),5886,Walter Mondale,Ronald Reagan
+1984,OK,OK,False,385080,861530,9066,1255676,8,0,8,0,David Bergland (Libertarian),9066,Walter Mondale,Ronald Reagan
+1984,OR,OR,False,536479,685700,4348,1226527,7,0,7,0,David Bergland (Libertarian),0,Walter Mondale,Ronald Reagan
+1984,PA,PA,False,2228131,2584323,32449,4844903,25,0,25,0,David Bergland (Libertarian),6982,Walter Mondale,Ronald Reagan
+1984,RI,RI,False,197106,212080,1306,410492,4,0,4,0,David Bergland (Libertarian),277,Walter Mondale,Ronald Reagan
+1984,SC,SC,False,344470,615539,8531,968540,8,0,8,0,David Bergland (Libertarian),4360,Walter Mondale,Ronald Reagan
+1984,SD,SD,False,116113,200267,1487,317867,3,0,3,0,David Bergland (Libertarian),0,Walter Mondale,Ronald Reagan
+1984,TN,TN,False,711714,990212,10067,1711993,11,0,11,0,David Bergland (Libertarian),3072,Walter Mondale,Ronald Reagan
+1984,TX,TX,False,1949276,3433428,14867,5397571,29,0,29,0,David Bergland (Libertarian),0,Walter Mondale,Ronald Reagan
+1984,UT,UT,False,155369,469105,5182,629656,5,0,5,0,David Bergland (Libertarian),2447,Walter Mondale,Ronald Reagan
+1984,VT,VT,False,95730,135865,2966,234561,3,0,3,0,David Bergland (Libertarian),1002,Walter Mondale,Ronald Reagan
+1984,VA,VA,False,796250,1337078,13307,2146635,12,0,12,0,David Bergland (Libertarian),0,Walter Mondale,Ronald Reagan
+1984,WA,WA,False,807352,1051670,24888,1883910,10,0,10,0,David Bergland (Libertarian),8844,Walter Mondale,Ronald Reagan
+1984,WV,WV,False,328125,405483,2134,735742,6,0,6,0,David Bergland (Libertarian),0,Walter Mondale,Ronald Reagan
+1984,WI,WI,False,995847,1198800,17369,2212016,11,0,11,0,David Bergland (Libertarian),4884,Walter Mondale,Ronald Reagan
+1984,WY,WY,False,53370,133241,2357,188968,3,0,3,0,David Bergland (Libertarian),2357,Walter Mondale,Ronald Reagan
+1988,AL,AL,False,549506,815576,13394,1378476,9,0,9,0,Ron Paul (Libertarian),8460,Michael Dukakis,George H. W. Bush
+1988,AK,AK,False,72584,119251,8281,200116,3,0,3,0,Ron Paul (Libertarian),5484,Michael Dukakis,George H. W. Bush
+1988,AZ,AZ,False,454029,702541,15303,1171873,7,0,7,0,Ron Paul (Libertarian),13351,Michael Dukakis,George H. W. Bush
+1988,AR,AR,False,349237,466578,11923,827738,6,0,6,0,Ron Paul (Libertarian),3297,Michael Dukakis,George H. W. Bush
+1988,CA,CA,False,4702233,5054917,129914,9887064,47,0,47,0,Ron Paul (Libertarian),70105,Michael Dukakis,George H. W. Bush
+1988,CO,CO,False,621453,728177,22764,1372394,8,0,8,0,Ron Paul (Libertarian),15482,Michael Dukakis,George H. W. Bush
+1988,CT,CT,False,676584,750241,16569,1443394,8,0,8,0,Ron Paul (Libertarian),14071,Michael Dukakis,George H. W. Bush
+1988,DE,DE,False,108647,139639,1605,249891,3,0,3,0,Ron Paul (Libertarian),1162,Michael Dukakis,George H. W. Bush
+1988,DC,DC,False,159407,27590,5880,192877,3,3,0,0,Lenora Fulani (New Alliance),2901,Michael Dukakis,George H. W. Bush
+1988,FL,FL,False,1656701,2618885,26727,4302313,21,0,21,0,Ron Paul (Libertarian),19796,Michael Dukakis,George H. W. Bush
+1988,GA,GA,False,714792,1081331,13549,1809672,12,0,12,0,Ron Paul (Libertarian),8435,Michael Dukakis,George H. W. Bush
+1988,HI,HI,False,192364,158625,3472,354461,4,4,0,0,Ron Paul (Libertarian),1999,Michael Dukakis,George H. W. Bush
+1988,ID,ID,False,147272,253881,7815,408968,4,0,4,0,Ron Paul (Libertarian),5313,Michael Dukakis,George H. W. Bush
+1988,IL,IL,False,2215940,2310939,32241,4559120,24,0,24,0,Ron Paul (Libertarian),14944,Michael Dukakis,George H. W. Bush
+1988,IN,IN,False,860643,1297763,10215,2168621,12,0,12,0,Lenora Fulani (New Alliance),10215,Michael Dukakis,George H. W. Bush
+1988,IA,IA,False,670557,545355,9702,1225614,8,8,0,0,Ron Paul (Libertarian),2494,Michael Dukakis,George H. W. Bush
+1988,KS,KS,False,422636,554049,16359,993044,7,0,7,0,Ron Paul (Libertarian),12553,Michael Dukakis,George H. W. Bush
+1988,KY,KY,False,580368,734281,7868,1322517,9,0,9,0,Ron Paul (Libertarian),2118,Michael Dukakis,George H. W. Bush
+1988,LA,LA,False,734281,883702,10219,1628202,10,0,10,0,Ron Paul (Libertarian),4115,Michael Dukakis,George H. W. Bush
+1988,ME,ME,False,243569,307131,4335,555035,2,0,2,0,Ron Paul (Libertarian),2700,Michael Dukakis,George H. W. Bush
+1988,ME-1,ME,True,131078,169292,2294,302664,1,0,1,0,Ron Paul (Libertarian),1555,Michael Dukakis,George H. W. Bush
+1988,ME-2,ME,True,112491,137839,1811,252141,1,0,1,0,Ron Paul (Libertarian),1145,Michael Dukakis,George H. W. Bush
+1988,MD,MD,False,826304,876167,11887,1714358,10,0,10,0,Ron Paul (Libertarian),6748,Michael Dukakis,George H. W. Bush
+1988,MA,MA,False,1401406,1194644,36755,2632805,13,13,0,0,Ron Paul (Libertarian),24251,Michael Dukakis,George H. W. Bush
+1988,MI,MI,False,1675783,1965486,27894,3669163,20,0,20,0,Ron Paul (Libertarian),18336,Michael Dukakis,George H. W. Bush
+1988,MN,MN,False,1109471,962337,24982,2096790,10,10,0,0,Ron Paul (Libertarian),5109,Michael Dukakis,George H. W. Bush
+1988,MS,MS,False,363921,557890,9716,931527,7,0,7,0,Ron Paul (Libertarian),3329,Michael Dukakis,George H. W. Bush
+1988,MO,MO,False,1001619,1084953,6656,2093228,11,0,11,0,Lenora Fulani (New Alliance),6656,Michael Dukakis,George H. W. Bush
+1988,MT,MT,False,168936,190412,6326,365674,4,0,4,0,Ron Paul (Libertarian),5047,Michael Dukakis,George H. W. Bush
+1988,NE,NE,False,259646,398447,4279,662372,5,0,5,0,Ron Paul (Libertarian),2536,Michael Dukakis,George H. W. Bush
+1988,NV,NV,False,132738,206040,11289,350067,4,0,4,0,Ron Paul (Libertarian),3520,Michael Dukakis,George H. W. Bush
+1988,NH,NH,False,163696,281537,5292,450525,4,0,4,0,Ron Paul (Libertarian),4502,Michael Dukakis,George H. W. Bush
+1988,NJ,NJ,False,1320352,1743192,36009,3099553,16,0,16,0,Ron Paul (Libertarian),8421,Michael Dukakis,George H. W. Bush
+1988,NM,NM,False,244497,270341,6449,521287,5,0,5,0,Ron Paul (Libertarian),3268,Michael Dukakis,George H. W. Bush
+1988,NY,NY,False,3347882,3081871,55930,6485683,36,36,0,0,Lenora Fulani (New Alliance),15845,Michael Dukakis,George H. W. Bush
+1988,NC,NC,False,890167,1237258,6945,2134370,13,0,13,0,Lenora Fulani (New Alliance),5682,Michael Dukakis,George H. W. Bush
+1988,ND,ND,False,127739,166559,2963,297261,3,0,3,0,Ron Paul (Libertarian),1315,Michael Dukakis,George H. W. Bush
+1988,OH,OH,False,1939629,2416549,37521,4393699,23,0,23,0,Lenora Fulani (New Alliance),12017,Michael Dukakis,George H. W. Bush
+1988,OK,OK,False,483423,678367,9246,1171036,8,0,8,0,Ron Paul (Libertarian),6261,Michael Dukakis,George H. W. Bush
+1988,OR,OR,False,616206,560126,25362,1201694,7,7,0,0,Ron Paul (Libertarian),14811,Michael Dukakis,George H. W. Bush
+1988,PA,PA,False,2194944,2300087,41220,4536251,25,0,25,0,Ron Paul (Libertarian),12051,Michael Dukakis,George H. W. Bush
+1988,RI,RI,False,225123,177761,1736,404620,4,4,0,0,Ron Paul (Libertarian),825,Michael Dukakis,George H. W. Bush
+1988,SC,SC,False,370554,606443,9012,986009,8,0,8,0,Ron Paul (Libertarian),4935,Michael Dukakis,George H. W. Bush
+1988,SD,SD,False,145560,165415,2016,312991,3,0,3,0,Ron Paul (Libertarian),1060,Michael Dukakis,George H. W. Bush
+1988,TN,TN,False,679794,947233,9223,1636250,11,0,11,0,Ron Paul (Libertarian),2041,Michael Dukakis,George H. W. Bush
+1988,TX,TX,False,2352748,3036829,37833,5427410,29,0,29,0,Ron Paul (Libertarian),30355,Michael Dukakis,George H. W. Bush
+1988,UT,UT,False,207343,428442,11223,647008,5,0,5,0,Ron Paul (Libertarian),7473,Michael Dukakis,George H. W. Bush
+1988,VT,VT,False,115775,124331,3227,243333,3,0,3,0,Ron Paul (Libertarian),1003,Michael Dukakis,George H. W. Bush
+1988,VA,VA,False,859799,1309162,22648,2191609,12,0,12,0,Lenora Fulani (New Alliance),14312,Michael Dukakis,George H. W. Bush
+1988,WA,WA,False,933516,903835,27902,1865253,10,10,0,0,Ron Paul (Libertarian),17240,Michael Dukakis,George H. W. Bush
+1988,WV,WV,False,341016,310065,2230,653311,6,5,0,1,Lenora Fulani (New Alliance),2230,Michael Dukakis,George H. W. Bush
+1988,WI,WI,False,1126794,1047499,17315,2191608,11,11,0,0,Ron Paul (Libertarian),5157,Michael Dukakis,George H. W. Bush
+1988,WY,WY,False,67113,106867,2571,176551,3,0,3,0,Ron Paul (Libertarian),2026,Michael Dukakis,George H. W. Bush
+1992,AL,AL,False,690080,804283,193697,1688060,9,0,9,0,Ross Perot (Independent),183109,Bill Clinton,George H. W. Bush
+1992,AK,AK,False,78294,102000,78212,258506,3,0,3,0,Ross Perot (Independent),73481,Bill Clinton,George H. W. Bush
+1992,AZ,AZ,False,543050,572086,371839,1486975,8,0,8,0,Ross Perot (Independent),353741,Bill Clinton,George H. W. Bush
+1992,AR,AR,False,505823,337324,107506,950653,6,6,0,0,Ross Perot (Independent),99132,Bill Clinton,George H. W. Bush
+1992,CA,CA,False,5121325,3630574,2379822,11131721,54,54,0,0,Ross Perot (Independent),2296006,Bill Clinton,George H. W. Bush
+1992,CO,CO,False,629681,562850,376649,1569180,8,8,0,0,Ross Perot (Independent),366010,Bill Clinton,George H. W. Bush
+1992,CT,CT,False,682318,578313,355701,1616332,8,8,0,0,Ross Perot (Independent),348771,Bill Clinton,George H. W. Bush
+1992,DE,DE,False,126055,102313,61367,289735,3,3,0,0,Ross Perot (Independent),59213,Bill Clinton,George H. W. Bush
+1992,DC,DC,False,192619,20698,14255,227572,3,3,0,0,Ross Perot (Independent),9681,Bill Clinton,George H. W. Bush
+1992,FL,FL,False,2072798,2173310,1068384,5314492,25,0,25,0,Ross Perot (Independent),1053067,Bill Clinton,George H. W. Bush
+1992,GA,GA,False,1008966,995252,316907,2321125,13,13,0,0,Ross Perot (Independent),309657,Bill Clinton,George H. W. Bush
+1992,HI,HI,False,179310,136822,56710,372842,4,4,0,0,Ross Perot (Independent),53003,Bill Clinton,George H. W. Bush
+1992,ID,ID,False,137013,202645,142484,482142,4,0,4,0,Ross Perot (Independent),130395,Bill Clinton,George H. W. Bush
+1992,IL,IL,False,2453350,1734096,862711,5050157,22,22,0,0,Ross Perot (Independent),840515,Bill Clinton,George H. W. Bush
+1992,IN,IN,False,848420,989375,468076,2305871,12,0,12,0,Ross Perot (Independent),455934,Bill Clinton,George H. W. Bush
+1992,IA,IA,False,586353,504891,263363,1354607,7,7,0,0,Ross Perot (Independent),253468,Bill Clinton,George H. W. Bush
+1992,KS,KS,False,390434,449951,316851,1157236,6,0,6,0,Ross Perot (Independent),312358,Bill Clinton,George H. W. Bush
+1992,KY,KY,False,665104,617178,210618,1492900,8,8,0,0,Ross Perot (Independent),203944,Bill Clinton,George H. W. Bush
+1992,LA,LA,False,815971,733386,240660,1790017,9,9,0,0,Ross Perot (Independent),211478,Bill Clinton,George H. W. Bush
+1992,ME,ME,False,263420,206504,209575,679499,2,2,0,0,Ross Perot (Independent),206820,Bill Clinton,George H. W. Bush
+1992,ME-1,ME,True,145191,115697,102828,363716,1,1,0,0,Ross Perot (Independent),102828,Bill Clinton,George H. W. Bush
+1992,ME-2,ME,True,118229,90807,103992,313028,1,1,0,0,Ross Perot (Independent),103992,Bill Clinton,George H. W. Bush
+1992,MD,MD,False,988571,707094,289381,1985046,10,10,0,0,Ross Perot (Independent),281414,Bill Clinton,George H. W. Bush
+1992,MA,MA,False,1318639,805039,649986,2773664,12,12,0,0,Ross Perot (Independent),630731,Bill Clinton,George H. W. Bush
+1992,MI,MI,False,1871182,1554940,848551,4274673,18,18,0,0,Ross Perot (Independent),824813,Bill Clinton,George H. W. Bush
+1992,MN,MN,False,1020997,747841,579109,2347947,10,10,0,0,Ross Perot (Independent),562506,Bill Clinton,George H. W. Bush
+1992,MS,MS,False,400258,487793,93742,981793,7,0,7,0,Ross Perot (Independent),85626,Bill Clinton,George H. W. Bush
+1992,MO,MO,False,1053873,811159,526533,2391565,11,11,0,0,Ross Perot (Independent),518741,Bill Clinton,George H. W. Bush
+1992,MT,MT,False,154507,144207,111897,410611,3,3,0,0,Ross Perot (Independent),107225,Bill Clinton,George H. W. Bush
+1992,NE,NE,False,217344,344346,177593,739283,2,0,2,0,Ross Perot (Independent),174687,Bill Clinton,George H. W. Bush
+1992,NE-1,NE,True,80696,107081,59974,247751,1,0,1,0,Ross Perot (Independent),59974,Bill Clinton,George H. W. Bush
+1992,NE-2,NE,True,78701,115255,48657,242613,1,0,1,0,Ross Perot (Independent),48657,Bill Clinton,George H. W. Bush
+1992,NE-3,NE,True,57467,121342,65473,244282,1,0,1,0,Ross Perot (Independent),65473,Bill Clinton,George H. W. Bush
+1992,NV,NV,False,189148,175828,141342,506318,4,4,0,0,Ross Perot (Independent),132580,Bill Clinton,George H. W. Bush
+1992,NH,NH,False,209040,202484,126421,537945,4,4,0,0,Ross Perot (Independent),121337,Bill Clinton,George H. W. Bush
+1992,NJ,NJ,False,1436206,1356865,550523,3343594,15,15,0,0,Ross Perot (Independent),521829,Bill Clinton,George H. W. Bush
+1992,NM,NM,False,261617,212824,95545,569986,5,5,0,0,Ross Perot (Independent),91895,Bill Clinton,George H. W. Bush
+1992,NY,NY,False,3444450,2346649,1135834,6926933,33,33,0,0,Ross Perot (Independent),1090721,Bill Clinton,George H. W. Bush
+1992,NC,NC,False,1114042,1134661,363147,2611850,14,0,14,0,Ross Perot (Independent),357864,Bill Clinton,George H. W. Bush
+1992,ND,ND,False,99168,136244,72721,308133,3,0,3,0,Ross Perot (Independent),71084,Bill Clinton,George H. W. Bush
+1992,OH,OH,False,1984942,1894310,1060712,4939964,21,21,0,0,Ross Perot (Independent),1036426,Bill Clinton,George H. W. Bush
+1992,OK,OK,False,473066,592929,324364,1390359,8,0,8,0,Ross Perot (Independent),319878,Bill Clinton,George H. W. Bush
+1992,OR,OR,False,621314,475757,365572,1462643,7,7,0,0,Ross Perot (Independent),354091,Bill Clinton,George H. W. Bush
+1992,PA,PA,False,2239164,1791841,928805,4959810,23,23,0,0,Ross Perot (Independent),902667,Bill Clinton,George H. W. Bush
+1992,RI,RI,False,213302,131601,108575,453478,4,4,0,0,Ross Perot (Independent),105045,Bill Clinton,George H. W. Bush
+1992,SC,SC,False,479514,577507,145506,1202527,8,0,8,0,Ross Perot (Independent),138872,Bill Clinton,George H. W. Bush
+1992,SD,SD,False,124888,136718,74648,336254,3,0,3,0,Ross Perot (Independent),73295,Bill Clinton,George H. W. Bush
+1992,TN,TN,False,933521,841300,207817,1982638,11,11,0,0,Ross Perot (Independent),199968,Bill Clinton,George H. W. Bush
+1992,TX,TX,False,2281815,2496071,1376132,6154018,32,0,32,0,Ross Perot (Independent),1354781,Bill Clinton,George H. W. Bush
+1992,UT,UT,False,183429,322632,237938,743999,5,0,5,0,Ross Perot (Independent),203400,Bill Clinton,George H. W. Bush
+1992,VT,VT,False,133592,88122,67987,289701,3,3,0,0,Ross Perot (Independent),65991,Bill Clinton,George H. W. Bush
+1992,VA,VA,False,1038650,1150517,369498,2558665,13,0,13,0,Ross Perot (Independent),348639,Bill Clinton,George H. W. Bush
+1992,WA,WA,False,993039,731235,563954,2288228,11,11,0,0,Ross Perot (Independent),541780,Bill Clinton,George H. W. Bush
+1992,WV,WV,False,331001,241974,110702,683677,5,5,0,0,Ross Perot (Independent),108829,Bill Clinton,George H. W. Bush
+1992,WI,WI,False,1041066,930855,559193,2531114,11,11,0,0,Ross Perot (Independent),544479,Bill Clinton,George H. W. Bush
+1992,WY,WY,False,68160,79347,53080,200587,3,0,3,0,Ross Perot (Independent),51263,Bill Clinton,George H. W. Bush
+1996,AL,AL,False,662165,769044,103140,1534349,9,0,9,0,Ross Perot (Reform),92149,Bill Clinton,Bob Dole
+1996,AK,AK,False,80380,122746,38494,241620,3,0,3,0,Ross Perot (Reform),26333,Bill Clinton,Bob Dole
+1996,AZ,AZ,False,653288,622073,129044,1404405,8,8,0,0,Ross Perot (Reform),112072,Bill Clinton,Bob Dole
+1996,AR,AR,False,475171,325416,83675,884262,6,6,0,0,Ross Perot (Reform),69884,Bill Clinton,Bob Dole
+1996,CA,CA,False,5119835,3828380,1071269,10019484,54,54,0,0,Ross Perot (Reform),697847,Bill Clinton,Bob Dole
+1996,CO,CO,False,671152,691848,147704,1510704,8,0,8,0,Ross Perot (Reform),99629,Bill Clinton,Bob Dole
+1996,CT,CT,False,735740,483109,173765,1392614,8,8,0,0,Ross Perot (Reform),139523,Bill Clinton,Bob Dole
+1996,DE,DE,False,140355,99062,31428,270845,3,3,0,0,Ross Perot (Reform),28719,Bill Clinton,Bob Dole
+1996,DC,DC,False,158220,17339,10167,185726,3,3,0,0,Ralph Nader (Green),4780,Bill Clinton,Bob Dole
+1996,FL,FL,False,2546870,2244536,512388,5303794,25,25,0,0,Ross Perot (Reform),483870,Bill Clinton,Bob Dole
+1996,GA,GA,False,1053849,1080843,164379,2299071,13,0,13,0,Ross Perot (Reform),146337,Bill Clinton,Bob Dole
+1996,HI,HI,False,205012,113943,41165,360120,4,4,0,0,Ross Perot (Reform),27358,Bill Clinton,Bob Dole
+1996,ID,ID,False,165443,256595,69681,491719,4,0,4,0,Ross Perot (Reform),62518,Bill Clinton,Bob Dole
+1996,IL,IL,False,2341744,1587021,382626,4311391,22,22,0,0,Ross Perot (Reform),346408,Bill Clinton,Bob Dole
+1996,IN,IN,False,887424,1006693,241725,2135842,12,0,12,0,Ross Perot (Reform),224299,Bill Clinton,Bob Dole
+1996,IA,IA,False,620258,492644,121173,1234075,7,7,0,0,Ross Perot (Reform),105159,Bill Clinton,Bob Dole
+1996,KS,KS,False,387659,583245,103396,1074300,6,0,6,0,Ross Perot (Reform),92639,Bill Clinton,Bob Dole
+1996,KY,KY,False,636614,623283,128811,1388708,8,8,0,0,Ross Perot (Reform),120396,Bill Clinton,Bob Dole
+1996,LA,LA,False,927837,712586,143536,1783959,9,9,0,0,Ross Perot (Reform),123293,Bill Clinton,Bob Dole
+1996,ME,ME,False,312788,186378,106731,605897,2,2,0,0,Ross Perot (Reform),85970,Bill Clinton,Bob Dole
+1996,ME-1,ME,True,165053,100851,51217,317121,1,1,0,0,Ross Perot (Reform),39845,Bill Clinton,Bob Dole
+1996,ME-2,ME,True,147735,85527,55514,288776,1,1,0,0,Ross Perot (Reform),46125,Bill Clinton,Bob Dole
+1996,MD,MD,False,966207,681530,133133,1780870,10,10,0,0,Ross Perot (Reform),115812,Bill Clinton,Bob Dole
+1996,MA,MA,False,1571763,718107,266916,2556786,12,12,0,0,Ross Perot (Reform),227217,Bill Clinton,Bob Dole
+1996,MI,MI,False,1989653,1481212,377979,3848844,18,18,0,0,Ross Perot (Reform),336670,Bill Clinton,Bob Dole
+1996,MN,MN,False,1120438,766476,305726,2192640,10,10,0,0,Ross Perot (Reform),257704,Bill Clinton,Bob Dole
+1996,MS,MS,False,394022,439838,59997,893857,7,0,7,0,Ross Perot (Reform),52222,Bill Clinton,Bob Dole
+1996,MO,MO,False,1025935,890016,242114,2158065,11,11,0,0,Ross Perot (Reform),217188,Bill Clinton,Bob Dole
+1996,MT,MT,False,167922,179652,59687,407261,3,0,3,0,Ross Perot (Reform),55229,Bill Clinton,Bob Dole
+1996,NE,NE,False,236761,363467,77187,677415,2,0,2,0,Ross Perot (Reform),71278,Bill Clinton,Bob Dole
+1996,NE-1,NE,True,87713,114560,28057,230330,1,0,1,0,Ross Perot (Reform),25973,Bill Clinton,Bob Dole
+1996,NE-2,NE,True,84666,116892,21102,222660,1,0,1,0,Ross Perot (Reform),18935,Bill Clinton,Bob Dole
+1996,NE-3,NE,True,64382,132015,28028,224425,1,0,1,0,Ross Perot (Reform),26370,Bill Clinton,Bob Dole
+1996,NV,NV,False,203974,199244,61061,464279,4,4,0,0,Ross Perot (Reform),43986,Bill Clinton,Bob Dole
+1996,NH,NH,False,246214,196532,56429,499175,4,4,0,0,Ross Perot (Reform),48390,Bill Clinton,Bob Dole
+1996,NJ,NJ,False,1652329,1103078,320400,3075807,15,15,0,0,Ross Perot (Reform),262134,Bill Clinton,Bob Dole
+1996,NM,NM,False,273495,232751,49828,556074,5,5,0,0,Ross Perot (Reform),32257,Bill Clinton,Bob Dole
+1996,NY,NY,False,3756177,1933492,626460,6316129,33,33,0,0,Ross Perot (Reform),503458,Bill Clinton,Bob Dole
+1996,NC,NC,False,1107849,1225938,182020,2515807,14,0,14,0,Ross Perot (Reform),168059,Bill Clinton,Bob Dole
+1996,ND,ND,False,106905,125050,34456,266411,3,0,3,0,Ross Perot (Reform),32515,Bill Clinton,Bob Dole
+1996,OH,OH,False,2148222,1859883,526329,4534434,21,21,0,0,Ross Perot (Reform),483207,Bill Clinton,Bob Dole
+1996,OK,OK,False,488105,582315,136293,1206713,8,0,8,0,Ross Perot (Reform),130788,Bill Clinton,Bob Dole
+1996,OR,OR,False,649641,538152,189967,1377760,7,7,0,0,Ross Perot (Reform),121221,Bill Clinton,Bob Dole
+1996,PA,PA,False,2215819,1801169,489130,4506118,23,23,0,0,Ross Perot (Reform),430984,Bill Clinton,Bob Dole
+1996,RI,RI,False,233050,104683,52551,390284,4,4,0,0,Ross Perot (Reform),43723,Bill Clinton,Bob Dole
+1996,SC,SC,False,506283,573458,71948,1151689,8,0,8,0,Ross Perot (Reform),64386,Bill Clinton,Bob Dole
+1996,SD,SD,False,139333,150543,33950,323826,3,0,3,0,Ross Perot (Reform),31250,Bill Clinton,Bob Dole
+1996,TN,TN,False,909146,863530,121429,1894105,11,11,0,0,Ross Perot (Reform),105918,Bill Clinton,Bob Dole
+1996,TX,TX,False,2459683,2736167,415794,5611644,32,0,32,0,Ross Perot (Reform),378537,Bill Clinton,Bob Dole
+1996,UT,UT,False,221633,361911,82085,665629,5,0,5,0,Ross Perot (Reform),66461,Bill Clinton,Bob Dole
+1996,VT,VT,False,137894,80352,40203,258449,3,3,0,0,Ross Perot (Reform),31024,Bill Clinton,Bob Dole
+1996,VA,VA,False,1091060,1138350,187232,2416642,13,0,13,0,Ross Perot (Reform),159861,Bill Clinton,Bob Dole
+1996,WA,WA,False,1123323,840712,289802,2253837,11,11,0,0,Ross Perot (Reform),201003,Bill Clinton,Bob Dole
+1996,WV,WV,False,327812,233946,74701,636459,5,5,0,0,Ross Perot (Reform),71639,Bill Clinton,Bob Dole
+1996,WI,WI,False,1071971,845029,279169,2196169,11,11,0,0,Ross Perot (Reform),227339,Bill Clinton,Bob Dole
+1996,WY,WY,False,77934,105388,28249,211571,3,0,3,0,Ross Perot (Reform),25928,Bill Clinton,Bob Dole
+2000,AL,AL,False,692611,941173,32488,1666272,9,0,9,0,Ralph Nader (Green),18323,Al Gore,George W. Bush
+2000,AK,AK,False,79004,167398,39158,285560,3,0,3,0,Ralph Nader (Green),28747,Al Gore,George W. Bush
+2000,AZ,AZ,False,685341,781652,65023,1532016,8,0,8,0,Ralph Nader (Green),45645,Al Gore,George W. Bush
+2000,AR,AR,False,422768,472940,26073,921781,6,0,6,0,Ralph Nader (Green),13421,Al Gore,George W. Bush
+2000,CA,CA,False,5861203,4567429,537224,10965856,54,54,0,0,Ralph Nader (Green),418707,Al Gore,George W. Bush
+2000,CO,CO,False,738227,883748,119393,1741368,8,0,8,0,Ralph Nader (Green),91434,Al Gore,George W. Bush
+2000,CT,CT,False,816015,561094,82416,1459525,8,8,0,0,Ralph Nader (Green),64452,Al Gore,George W. Bush
+2000,DE,DE,False,180068,137288,10266,327622,3,3,0,0,Ralph Nader (Green),8307,Al Gore,George W. Bush
+2000,DC,DC,False,171923,18073,11898,201894,3,2,0,1,Ralph Nader (Green),10576,Al Gore,George W. Bush
+2000,FL,FL,False,2912253,2912790,138067,5963110,25,0,25,0,Ralph Nader (Green),97488,Al Gore,George W. Bush
+2000,GA,GA,False,1116230,1419720,60854,2596804,13,0,13,0,Harry Browne (Libertarian),36332,Al Gore,George W. Bush
+2000,HI,HI,False,205286,137845,24820,367951,4,4,0,0,Ralph Nader (Green),21623,Al Gore,George W. Bush
+2000,ID,ID,False,138637,336937,26047,501621,4,0,4,0,Ralph Nader (Green),12292,Al Gore,George W. Bush
+2000,IL,IL,False,2589026,2019421,133676,4742123,22,22,0,0,Ralph Nader (Green),103759,Al Gore,George W. Bush
+2000,IN,IN,False,901980,1245836,51486,2199302,12,0,12,0,Ralph Nader (Green),18531,Al Gore,George W. Bush
+2000,IA,IA,False,638517,634373,42673,1315563,7,7,0,0,Ralph Nader (Green),29374,Al Gore,George W. Bush
+2000,KS,KS,False,399276,622332,50610,1072218,6,0,6,0,Ralph Nader (Green),36086,Al Gore,George W. Bush
+2000,KY,KY,False,638898,872492,32797,1544187,8,0,8,0,Ralph Nader (Green),23192,Al Gore,George W. Bush
+2000,LA,LA,False,792344,927871,45441,1765656,9,0,9,0,Ralph Nader (Green),20473,Al Gore,George W. Bush
+2000,ME,ME,False,319951,286616,45250,651817,2,2,0,0,Ralph Nader (Green),37127,Al Gore,George W. Bush
+2000,ME-1,ME,True,176293,148618,24040,348951,1,1,0,0,Ralph Nader (Green),20297,Al Gore,George W. Bush
+2000,ME-2,ME,True,143658,137998,21210,302866,1,1,0,0,Ralph Nader (Green),16830,Al Gore,George W. Bush
+2000,MD,MD,False,1145782,813797,65901,2025480,10,10,0,0,Ralph Nader (Green),53768,Al Gore,George W. Bush
+2000,MA,MA,False,1616487,878502,207995,2702984,12,12,0,0,Ralph Nader (Green),173564,Al Gore,George W. Bush
+2000,MI,MI,False,2170418,1953139,108944,4232501,18,18,0,0,Ralph Nader (Green),84165,Al Gore,George W. Bush
+2000,MN,MN,False,1168266,1109659,160760,2438685,10,10,0,0,Ralph Nader (Green),126696,Al Gore,George W. Bush
+2000,MS,MS,False,404614,572844,16726,994184,7,0,7,0,Ralph Nader (Green),8122,Al Gore,George W. Bush
+2000,MO,MO,False,1111138,1189924,58830,2359892,11,0,11,0,Ralph Nader (Green),38515,Al Gore,George W. Bush
+2000,MT,MT,False,137126,240178,33693,410997,3,0,3,0,Ralph Nader (Green),24437,Al Gore,George W. Bush
+2000,NE,NE,False,231780,433862,31377,697019,2,0,2,0,Ralph Nader (Green),24540,Al Gore,George W. Bush
+2000,NE-1,NE,True,86946,142562,12515,242023,1,0,1,0,Ralph Nader (Green),10085,Al Gore,George W. Bush
+2000,NE-2,NE,True,88975,131485,10552,231012,1,0,1,0,Ralph Nader (Green),8495,Al Gore,George W. Bush
+2000,NE-3,NE,True,55859,159815,8310,223984,1,0,1,0,Ralph Nader (Green),5960,Al Gore,George W. Bush
+2000,NV,NV,False,279978,301575,27417,608970,4,0,4,0,Ralph Nader (Green),15008,Al Gore,George W. Bush
+2000,NH,NH,False,266348,273559,29174,569081,4,0,4,0,Ralph Nader (Green),22198,Al Gore,George W. Bush
+2000,NJ,NJ,False,1788850,1284173,114203,3187226,15,15,0,0,Ralph Nader (Green),94554,Al Gore,George W. Bush
+2000,NM,NM,False,286783,286417,25405,598605,5,5,0,0,Ralph Nader (Green),21251,Al Gore,George W. Bush
+2000,NY,NY,False,4107697,2403374,310928,6821999,33,33,0,0,Ralph Nader (Green),244030,Al Gore,George W. Bush
+2000,NC,NC,False,1257692,1631163,22407,2911262,14,0,14,0,Harry Browne (Libertarian),12307,Al Gore,George W. Bush
+2000,ND,ND,False,95284,174852,18120,288256,3,0,3,0,Ralph Nader (Green),9486,Al Gore,George W. Bush
+2000,OH,OH,False,2186190,2351209,168058,4705457,21,0,21,0,Ralph Nader (Green),117857,Al Gore,George W. Bush
+2000,OK,OK,False,474276,744337,15616,1234229,8,0,8,0,Pat Buchanan (Reform),9014,Al Gore,George W. Bush
+2000,OR,OR,False,720342,713577,100049,1533968,7,7,0,0,Ralph Nader (Green),77357,Al Gore,George W. Bush
+2000,PA,PA,False,2485967,2281127,146025,4913119,23,23,0,0,Ralph Nader (Green),103392,Al Gore,George W. Bush
+2000,RI,RI,False,249508,130555,29049,409112,4,4,0,0,Ralph Nader (Green),25052,Al Gore,George W. Bush
+2000,SC,SC,False,565561,785937,31219,1382717,8,0,8,0,Ralph Nader (Green),20200,Al Gore,George W. Bush
+2000,SD,SD,False,118804,190700,6765,316269,3,0,3,0,Pat Buchanan (Reform),3322,Al Gore,George W. Bush
+2000,TN,TN,False,981720,1061949,32512,2076181,11,0,11,0,Ralph Nader (Green),19781,Al Gore,George W. Bush
+2000,TX,TX,False,2433746,3799639,174252,6407637,32,0,32,0,Ralph Nader (Green),137994,Al Gore,George W. Bush
+2000,UT,UT,False,203053,515096,52605,770754,5,0,5,0,Ralph Nader (Green),35850,Al Gore,George W. Bush
+2000,VT,VT,False,149022,119775,25511,294308,3,3,0,0,Ralph Nader (Green),20374,Al Gore,George W. Bush
+2000,VA,VA,False,1217290,1437490,84667,2739447,13,0,13,0,Ralph Nader (Green),59398,Al Gore,George W. Bush
+2000,WA,WA,False,1247652,1108864,130917,2487433,11,11,0,0,Ralph Nader (Green),103002,Al Gore,George W. Bush
+2000,WV,WV,False,295497,336475,16152,648124,5,0,5,0,Ralph Nader (Green),10680,Al Gore,George W. Bush
+2000,WI,WI,False,1242987,1237279,118341,2598607,11,11,0,0,Ralph Nader (Green),94070,Al Gore,George W. Bush
+2000,WY,WY,False,60481,147947,9923,218351,3,0,3,0,Ralph Nader (Green),4625,Al Gore,George W. Bush
+2004,AL,AL,False,693933,1176394,13122,1883449,9,0,9,0,Ralph Nader (Independent / Reform),6701,John Kerry,George W. Bush
+2004,AK,AK,False,111025,190889,10684,312598,3,0,3,0,Ralph Nader (Independent / Reform),5069,John Kerry,George W. Bush
+2004,AZ,AZ,False,893524,1104294,14767,2012585,10,0,10,0,Michael Badnarik (Libertarian),11856,John Kerry,George W. Bush
+2004,AR,AR,False,469953,572898,12094,1054945,6,0,6,0,Ralph Nader (Independent / Reform),6171,John Kerry,George W. Bush
+2004,CA,CA,False,6745485,5509826,166541,12421852,55,55,0,0,Michael Badnarik (Libertarian),50165,John Kerry,George W. Bush
+2004,CO,CO,False,1001732,1101255,27343,2130330,9,0,9,0,Ralph Nader (Independent / Reform),12718,John Kerry,George W. Bush
+2004,CT,CT,False,857488,693826,27455,1578769,7,7,0,0,Ralph Nader (Independent / Reform),12969,John Kerry,George W. Bush
+2004,DE,DE,False,200152,171660,3378,375190,3,3,0,0,Ralph Nader (Independent / Reform),2153,John Kerry,George W. Bush
+2004,DC,DC,False,202970,21256,3360,227586,3,3,0,0,Ralph Nader (Independent / Reform),1485,John Kerry,George W. Bush
+2004,FL,FL,False,3583544,3964522,61744,7609810,27,0,27,0,Ralph Nader (Independent / Reform),32971,John Kerry,George W. Bush
+2004,GA,GA,False,1366149,1914254,21472,3301875,15,0,15,0,Michael Badnarik (Libertarian),18387,John Kerry,George W. Bush
+2004,HI,HI,False,231708,194191,3114,429013,4,4,0,0,David Cobb (Green),1737,John Kerry,George W. Bush
+2004,ID,ID,False,181098,409235,8114,598447,4,0,4,0,Michael Badnarik (Libertarian),3844,John Kerry,George W. Bush
+2004,IL,IL,False,2891550,2345946,36826,5274322,21,21,0,0,Michael Badnarik (Libertarian),32442,John Kerry,George W. Bush
+2004,IN,IN,False,969011,1479438,19553,2468002,11,0,11,0,Michael Badnarik (Libertarian),18058,John Kerry,George W. Bush
+2004,IA,IA,False,741898,751957,13053,1506908,7,0,7,0,Ralph Nader (Independent / Reform),5973,John Kerry,George W. Bush
+2004,KS,KS,False,434993,736456,16307,1187756,6,0,6,0,Ralph Nader (Independent / Reform),9348,John Kerry,George W. Bush
+2004,KY,KY,False,712733,1069439,13710,1795882,8,0,8,0,Ralph Nader (Independent / Reform),8856,John Kerry,George W. Bush
+2004,LA,LA,False,820299,1102169,20638,1943106,9,0,9,0,Ralph Nader (Independent / Reform),7032,John Kerry,George W. Bush
+2004,ME,ME,False,396842,330201,13709,740752,2,2,0,0,Ralph Nader (Independent / Reform),8069,John Kerry,George W. Bush
+2004,ME-1,ME,True,211703,165824,6865,384392,1,1,0,0,Ralph Nader (Independent / Reform),4004,John Kerry,George W. Bush
+2004,ME-2,ME,True,185139,164377,6840,356356,1,1,0,0,Ralph Nader (Independent / Reform),4065,John Kerry,George W. Bush
+2004,MD,MD,False,1334493,1024703,27482,2386678,10,10,0,0,Ralph Nader (Independent / Reform),11854,John Kerry,George W. Bush
+2004,MA,MA,False,1803800,1071109,37479,2912388,12,12,0,0,Michael Badnarik (Libertarian),15022,John Kerry,George W. Bush
+2004,MI,MI,False,2479183,2313746,46323,4839252,17,17,0,0,Ralph Nader (Independent / Reform),24035,John Kerry,George W. Bush
+2004,MN,MN,False,1445014,1346695,36678,2828387,10,9,0,1,Ralph Nader (Independent / Reform),18683,John Kerry,George W. Bush
+2004,MS,MS,False,458094,684981,9070,1152145,6,0,6,0,Ralph Nader (Independent / Reform),3177,John Kerry,George W. Bush
+2004,MO,MO,False,1259171,1455713,16480,2731364,11,0,11,0,Michael Badnarik (Libertarian),9831,John Kerry,George W. Bush
+2004,MT,MT,False,173710,266063,10672,450445,3,0,3,0,Ralph Nader (Independent / Reform),6168,John Kerry,George W. Bush
+2004,NE,NE,False,254328,512814,11044,778186,2,0,2,0,Ralph Nader (Independent / Reform),5698,John Kerry,George W. Bush
+2004,NE-1,NE,True,96314,169888,3569,269771,1,0,1,0,Ralph Nader (Independent / Reform),2025,John Kerry,George W. Bush
+2004,NE-2,NE,True,97858,153041,3133,254032,1,0,1,0,Ralph Nader (Independent / Reform),1731,John Kerry,George W. Bush
+2004,NE-3,NE,True,60156,189885,3411,253452,1,0,1,0,Ralph Nader (Independent / Reform),1942,John Kerry,George W. Bush
+2004,NV,NV,False,397190,418690,13707,829587,5,0,5,0,Ralph Nader (Independent / Reform),4838,John Kerry,George W. Bush
+2004,NH,NH,False,340511,331237,5990,677738,4,4,0,0,Ralph Nader (Independent / Reform),4479,John Kerry,George W. Bush
+2004,NJ,NJ,False,1911430,1670003,30258,3611691,15,15,0,0,Ralph Nader (Independent / Reform),19418,John Kerry,George W. Bush
+2004,NM,NM,False,370942,376930,8432,756304,5,0,5,0,Ralph Nader (Independent / Reform),4053,John Kerry,George W. Bush
+2004,NY,NY,False,4314280,2962567,114189,7391036,31,31,0,0,Ralph Nader (Independent / Reform),99873,John Kerry,George W. Bush
+2004,NC,NC,False,1525849,1961166,13992,3501007,15,0,15,0,Michael Badnarik (Libertarian),11731,John Kerry,George W. Bush
+2004,ND,ND,False,111052,196651,5130,312833,3,0,3,0,Ralph Nader (Independent / Reform),3756,John Kerry,George W. Bush
+2004,OH,OH,False,2741167,2859768,26973,5627908,20,0,20,0,Michael Badnarik (Libertarian),14676,John Kerry,George W. Bush
+2004,OK,OK,False,503966,959792,0,1463758,7,0,7,0,Ralph Nader (Independent / Reform),0,John Kerry,George W. Bush
+2004,OR,OR,False,943163,866831,26788,1836782,7,7,0,0,Others,8956,John Kerry,George W. Bush
+2004,PA,PA,False,2938095,2793847,37648,5769590,21,21,0,0,Michael Badnarik (Libertarian),21185,John Kerry,George W. Bush
+2004,RI,RI,False,259765,169046,8323,437134,4,4,0,0,Ralph Nader (Independent / Reform),4651,John Kerry,George W. Bush
+2004,SC,SC,False,661699,937974,18057,1617730,8,0,8,0,Ralph Nader (Independent / Reform),5520,John Kerry,George W. Bush
+2004,SD,SD,False,149244,232584,6387,388215,3,0,3,0,Ralph Nader (Independent / Reform),4320,John Kerry,George W. Bush
+2004,TN,TN,False,1036477,1384375,16467,2437319,11,0,11,0,Ralph Nader (Independent / Reform),8992,John Kerry,George W. Bush
+2004,TX,TX,False,2832704,4526917,51144,7410765,34,0,34,0,Michael Badnarik (Libertarian),38787,John Kerry,George W. Bush
+2004,UT,UT,False,241199,663742,22903,927844,5,0,5,0,Ralph Nader (Independent / Reform),11305,John Kerry,George W. Bush
+2004,VT,VT,False,184067,121180,7062,312309,3,3,0,0,Ralph Nader (Independent / Reform),4494,John Kerry,George W. Bush
+2004,VA,VA,False,1454742,1716959,26666,3198367,13,0,13,0,Michael Badnarik (Libertarian),11032,John Kerry,George W. Bush
+2004,WA,WA,False,1510201,1304894,43989,2859084,11,11,0,0,Ralph Nader (Independent / Reform),23283,John Kerry,George W. Bush
+2004,WV,WV,False,326541,423778,5568,755887,5,0,5,0,Ralph Nader (Independent / Reform),4063,John Kerry,George W. Bush
+2004,WI,WI,False,1489504,1478120,29383,2997007,10,10,0,0,Ralph Nader (Independent / Reform),16390,John Kerry,George W. Bush
+2004,WY,WY,False,70776,167629,5023,243428,3,0,3,0,Ralph Nader (Independent / Reform),2741,John Kerry,George W. Bush
+2008,AL,AL,False,813479,1266546,19794,2099819,9,0,9,0,Ralph Nader (Independent),6788,Barack Obama,John McCain
+2008,AK,AK,False,123594,193841,8762,326197,3,0,3,0,Ralph Nader (Independent),3783,Barack Obama,John McCain
+2008,AZ,AZ,False,1034707,1230111,28657,2293475,10,0,10,0,Bob Barr (Libertarian),12555,Barack Obama,John McCain
+2008,AR,AR,False,422310,638017,26290,1086617,6,0,6,0,Ralph Nader (Independent),12882,Barack Obama,John McCain
+2008,CA,CA,False,8274473,5011781,275646,13561900,55,55,0,0,Ralph Nader (Independent),108381,Barack Obama,John McCain
+2008,CO,CO,False,1288633,1073629,39200,2401462,9,9,0,0,Ralph Nader (Independent),13352,Barack Obama,John McCain
+2008,CT,CT,False,997772,629428,19597,1646797,7,7,0,0,Ralph Nader (Independent),19162,Barack Obama,John McCain
+2008,DE,DE,False,255459,152374,4579,412412,3,3,0,0,Ralph Nader (Independent),2401,Barack Obama,John McCain
+2008,DC,DC,False,245800,17367,2686,265853,3,3,0,0,Others,1138,Barack Obama,John McCain
+2008,FL,FL,False,4282074,4045624,63046,8390744,27,27,0,0,Ralph Nader (Independent),28124,Barack Obama,John McCain
+2008,GA,GA,False,1844123,2048759,31604,3924486,15,0,15,0,Bob Barr (Libertarian),28731,Barack Obama,John McCain
+2008,HI,HI,False,325871,120566,7131,453568,4,4,0,0,Ralph Nader (Independent),3825,Barack Obama,John McCain
+2008,ID,ID,False,236440,403012,15670,655122,4,0,4,0,Ralph Nader (Independent),7175,Barack Obama,John McCain
+2008,IL,IL,False,3419348,2031179,71844,5522371,21,21,0,0,Ralph Nader (Independent),30948,Barack Obama,John McCain
+2008,IN,IN,False,1374039,1345648,31367,2751054,11,11,0,0,Bob Barr (Libertarian),29257,Barack Obama,John McCain
+2008,IA,IA,False,828940,682379,25804,1537123,7,7,0,0,Ralph Nader (Independent),8014,Barack Obama,John McCain
+2008,KS,KS,False,514765,699655,21452,1235872,6,0,6,0,Ralph Nader (Independent),10527,Barack Obama,John McCain
+2008,KY,KY,False,751985,1048462,26173,1826620,8,0,8,0,Ralph Nader (Independent),15378,Barack Obama,John McCain
+2008,LA,LA,False,782989,1148275,29497,1960761,9,0,9,0,Others,10732,Barack Obama,John McCain
+2008,ME,ME,False,421923,295273,13967,731163,2,2,0,0,Ralph Nader (Independent),10636,Barack Obama,John McCain
+2008,ME-1,ME,True,232145,144604,6877,383626,1,1,0,0,Ralph Nader (Independent),5263,Barack Obama,John McCain
+2008,ME-2,ME,True,189778,150669,7090,347537,1,1,0,0,Ralph Nader (Independent),5373,Barack Obama,John McCain
+2008,MD,MD,False,1629467,959862,42267,2631596,10,10,0,0,Ralph Nader (Independent),14713,Barack Obama,John McCain
+2008,MA,MA,False,1904097,1108854,68034,3080985,12,12,0,0,Ralph Nader (Independent),28841,Barack Obama,John McCain
+2008,MI,MI,False,2872579,2048639,80548,5001766,17,17,0,0,Ralph Nader (Independent),33085,Barack Obama,John McCain
+2008,MN,MN,False,1573354,1275409,61606,2910369,10,10,0,0,Ralph Nader (Independent),30152,Barack Obama,John McCain
+2008,MS,MS,False,554662,724597,10606,1289865,6,0,6,0,Ralph Nader (Independent),4011,Barack Obama,John McCain
+2008,MO,MO,False,1441911,1445814,37480,2925205,11,0,11,0,Ralph Nader (Independent),17813,Barack Obama,John McCain
+2008,MT,MT,False,231667,242763,15872,490302,3,0,3,0,Others,10665,Barack Obama,John McCain
+2008,NE,NE,False,333319,452979,14983,801281,2,0,2,0,Ralph Nader (Independent),5406,Barack Obama,John McCain
+2008,NE-1,NE,True,121411,148179,4303,273893,1,0,1,0,Ralph Nader (Independent),1963,Barack Obama,John McCain
+2008,NE-2,NE,True,138809,135439,3561,277809,1,1,0,0,Ralph Nader (Independent),1628,Barack Obama,John McCain
+2008,NE-3,NE,True,73099,169361,4282,246742,1,0,1,0,Ralph Nader (Independent),1815,Barack Obama,John McCain
+2008,NV,NV,False,533736,412827,21285,967848,5,5,0,0,Others,6267,Barack Obama,John McCain
+2008,NH,NH,False,384826,316534,9610,710970,4,4,0,0,Others,3624,Barack Obama,John McCain
+2008,NJ,NJ,False,2215422,1613207,39608,3868237,15,15,0,0,Ralph Nader (Independent),21298,Barack Obama,John McCain
+2008,NM,NM,False,472422,346832,10904,830158,5,5,0,0,Ralph Nader (Independent),5327,Barack Obama,John McCain
+2008,NY,NY,False,4804945,2752771,83215,7640931,31,31,0,0,Ralph Nader (Independent),41249,Barack Obama,John McCain
+2008,NC,NC,False,2142651,2128474,39664,4310789,15,15,0,0,Bob Barr (Libertarian),25722,Barack Obama,John McCain
+2008,ND,ND,False,141278,168601,6742,316621,3,0,3,0,Ralph Nader (Independent),4189,Barack Obama,John McCain
+2008,OH,OH,False,2940044,2677820,90486,5708350,20,20,0,0,Ralph Nader (Independent),42337,Barack Obama,John McCain
+2008,OK,OK,False,502496,960165,0,1462661,7,0,7,0,Ralph Nader (Independent),0,Barack Obama,John McCain
+2008,OR,OR,False,1037291,738475,52098,1827864,7,7,0,0,Ralph Nader (Independent),18614,Barack Obama,John McCain
+2008,PA,PA,False,3276363,2655885,81024,6013272,21,21,0,0,Ralph Nader (Independent),42977,Barack Obama,John McCain
+2008,RI,RI,False,296571,165391,9804,471766,4,4,0,0,Ralph Nader (Independent),4829,Barack Obama,John McCain
+2008,SC,SC,False,862449,1034896,23624,1920969,8,0,8,0,Bob Barr (Libertarian),7283,Barack Obama,John McCain
+2008,SD,SD,False,170924,203054,7997,381975,3,0,3,0,Ralph Nader (Independent),4267,Barack Obama,John McCain
+2008,TN,TN,False,1087437,1479178,33134,2599749,11,0,11,0,Ralph Nader (Independent),11560,Barack Obama,John McCain
+2008,TX,TX,False,3528633,4479328,69834,8077795,34,0,34,0,Bob Barr (Libertarian),56116,Barack Obama,John McCain
+2008,UT,UT,False,327670,596030,28670,952370,5,0,5,0,Chuck Baldwin (Constitution),12012,Barack Obama,John McCain
+2008,VT,VT,False,219262,98974,6810,325046,3,3,0,0,Ralph Nader (Independent),3339,Barack Obama,John McCain
+2008,VA,VA,False,1959532,1725005,38723,3723260,13,13,0,0,Ralph Nader (Independent),11483,Barack Obama,John McCain
+2008,WA,WA,False,1750848,1229216,56814,3036878,11,11,0,0,Ralph Nader (Independent),29489,Barack Obama,John McCain
+2008,WV,WV,False,303857,397466,12128,713451,5,0,5,0,Ralph Nader (Independent),7219,Barack Obama,John McCain
+2008,WI,WI,False,1677211,1262393,43813,2983417,10,10,0,0,Ralph Nader (Independent),17605,Barack Obama,John McCain
+2008,WY,WY,False,82868,164958,6832,254658,3,0,3,0,Ralph Nader (Independent),2525,Barack Obama,John McCain
+2012,AL,AL,False,795696,1255925,22717,2074338,9,0,9,0,Johnson/Gray (Libertarian),12328,Barack Obama,Mitt Romney
+2012,AK,AK,False,122640,164676,13179,300495,3,0,3,0,Johnson/Gray (Libertarian),7392,Barack Obama,Mitt Romney
+2012,AZ,AZ,False,1025232,1233654,40368,2299254,11,0,11,0,Johnson/Gray (Libertarian),32100,Barack Obama,Mitt Romney
+2012,AR,AR,False,394409,647744,27315,1069468,6,0,6,0,Johnson/Gray (Libertarian),16276,Barack Obama,Mitt Romney
+2012,CA,CA,False,7854285,4839958,344304,13038547,55,55,0,0,Johnson/Gray (Libertarian),143221,Barack Obama,Mitt Romney
+2012,CO,CO,False,1323102,1185243,61174,2569519,9,9,0,0,Johnson/Gray (Libertarian),35545,Barack Obama,Mitt Romney
+2012,CT,CT,False,905083,634892,18985,1558960,7,7,0,0,Johnson/Gray (Libertarian),12580,Barack Obama,Mitt Romney
+2012,DE,DE,False,242584,165484,5853,413921,3,3,0,0,Johnson/Gray (Libertarian),3882,Barack Obama,Mitt Romney
+2012,DC,DC,False,267070,21381,5313,293764,3,3,0,0,Stein/Honkala (Green),2458,Barack Obama,Mitt Romney
+2012,FL,FL,False,4237756,4163447,72976,8474179,29,29,0,0,Johnson/Gray (Libertarian),44726,Barack Obama,Mitt Romney
+2012,GA,GA,False,1773827,2078688,47535,3900050,16,0,16,0,Johnson/Gray (Libertarian),45324,Barack Obama,Mitt Romney
+2012,HI,HI,False,306658,121015,7024,434697,4,4,0,0,Johnson/Gray (Libertarian),3840,Barack Obama,Mitt Romney
+2012,ID,ID,False,212787,420911,23044,656742,4,0,4,0,Johnson/Gray (Libertarian),9453,Barack Obama,Mitt Romney
+2012,IL,IL,False,3019512,2135216,87286,5242014,20,20,0,0,Johnson/Gray (Libertarian),56229,Barack Obama,Mitt Romney
+2012,IN,IN,False,1152887,1420543,51104,2624534,11,0,11,0,Johnson/Gray (Libertarian),50111,Barack Obama,Mitt Romney
+2012,IA,IA,False,822544,730617,29019,1582180,6,6,0,0,Johnson/Gray (Libertarian),12926,Barack Obama,Mitt Romney
+2012,KS,KS,False,440726,692634,26611,1159971,6,0,6,0,Johnson/Gray (Libertarian),20456,Barack Obama,Mitt Romney
+2012,KY,KY,False,679370,1087190,30652,1797212,8,0,8,0,Johnson/Gray (Libertarian),17063,Barack Obama,Mitt Romney
+2012,LA,LA,False,809141,1152262,32662,1994065,8,0,8,0,Johnson/Gray (Libertarian),18157,Barack Obama,Mitt Romney
+2012,ME,ME,False,401306,292276,19598,713180,2,2,0,0,Johnson/Gray (Libertarian),9352,Barack Obama,Mitt Romney
+2012,ME-1,ME,True,223035,142937,8447,374419,1,1,0,0,Johnson/Gray (Libertarian),4501,Barack Obama,Mitt Romney
+2012,ME-2,ME,True,177998,149215,9013,336226,1,1,0,0,Johnson/Gray (Libertarian),4843,Barack Obama,Mitt Romney
+2012,MD,MD,False,1677844,971869,57614,2707327,10,10,0,0,Johnson/Gray (Libertarian),30195,Barack Obama,Mitt Romney
+2012,MA,MA,False,1921290,1188314,58163,3167767,11,11,0,0,Johnson/Gray (Libertarian),30920,Barack Obama,Mitt Romney
+2012,MI,MI,False,2564569,2115256,51136,4730961,16,16,0,0,Stein/Honkala (Green),21897,Barack Obama,Mitt Romney
+2012,MN,MN,False,1546167,1320225,70169,2936561,10,10,0,0,Johnson/Gray (Libertarian),35098,Barack Obama,Mitt Romney
+2012,MS,MS,False,562949,710746,11889,1285584,6,0,6,0,Johnson/Gray (Libertarian),6676,Barack Obama,Mitt Romney
+2012,MO,MO,False,1223796,1482440,51087,2757323,10,0,10,0,Johnson/Gray (Libertarian),43151,Barack Obama,Mitt Romney
+2012,MT,MT,False,201839,267928,14281,484048,3,0,3,0,Johnson/Gray (Libertarian),14165,Barack Obama,Mitt Romney
+2012,NE,NE,False,302081,475064,17234,794379,2,0,2,0,Johnson/Gray (Libertarian),11109,Barack Obama,Mitt Romney
+2012,NE-1,NE,True,108082,152021,4609,264712,1,0,1,0,Johnson/Gray (Libertarian),3847,Barack Obama,Mitt Romney
+2012,NE-2,NE,True,121889,140976,3862,266727,1,0,1,0,Johnson/Gray (Libertarian),3393,Barack Obama,Mitt Romney
+2012,NE-3,NE,True,72110,182067,5046,259223,1,0,1,0,Johnson/Gray (Libertarian),3869,Barack Obama,Mitt Romney
+2012,NV,NV,False,531373,463567,19978,1014918,6,6,0,0,Johnson/Gray (Libertarian),10968,Barack Obama,Mitt Romney
+2012,NH,NH,False,369561,329918,11493,710972,4,4,0,0,Johnson/Gray (Libertarian),8212,Barack Obama,Mitt Romney
+2012,NJ,NJ,False,2125101,1477568,37623,3640292,14,14,0,0,Johnson/Gray (Libertarian),21045,Barack Obama,Mitt Romney
+2012,NM,NM,False,415335,335788,32635,783758,5,5,0,0,Johnson/Gray (Libertarian),27788,Barack Obama,Mitt Romney
+2012,NY,NY,False,4485741,2490431,104987,7081159,29,29,0,0,Johnson/Gray (Libertarian),47256,Barack Obama,Mitt Romney
+2012,NC,NC,False,2178391,2270395,56586,4505372,15,0,15,0,Johnson/Gray (Libertarian),44515,Barack Obama,Mitt Romney
+2012,ND,ND,False,124827,188163,9637,322627,3,0,3,0,Johnson/Gray (Libertarian),5231,Barack Obama,Mitt Romney
+2012,OH,OH,False,2827709,2661437,91701,5580847,18,18,0,0,Johnson/Gray (Libertarian),49493,Barack Obama,Mitt Romney
+2012,OK,OK,False,443547,891325,0,1334872,7,0,7,0,Johnson/Gray (Libertarian),0,Barack Obama,Mitt Romney
+2012,OR,OR,False,970488,754175,64607,1789270,7,7,0,0,Johnson/Gray (Libertarian),24089,Barack Obama,Mitt Romney
+2012,PA,PA,False,2990274,2680434,82962,5753670,20,20,0,0,Johnson/Gray (Libertarian),49991,Barack Obama,Mitt Romney
+2012,RI,RI,False,279677,157204,9168,446049,4,4,0,0,Johnson/Gray (Libertarian),4388,Barack Obama,Mitt Romney
+2012,SC,SC,False,865941,1071645,26532,1964118,9,0,9,0,Johnson/Gray (Libertarian),16321,Barack Obama,Mitt Romney
+2012,SD,SD,False,145039,210610,8166,363815,3,0,3,0,Johnson/Gray (Libertarian),5795,Barack Obama,Mitt Romney
+2012,TN,TN,False,960709,1462330,35538,2458577,11,0,11,0,Johnson/Gray (Libertarian),18623,Barack Obama,Mitt Romney
+2012,TX,TX,False,3308124,4569843,115884,7993851,38,0,38,0,Johnson/Gray (Libertarian),88580,Barack Obama,Mitt Romney
+2012,UT,UT,False,251813,740600,25027,1017440,6,0,6,0,Johnson/Gray (Libertarian),12572,Barack Obama,Mitt Romney
+2012,VT,VT,False,199239,92698,7353,299290,3,3,0,0,Johnson/Gray (Libertarian),3487,Barack Obama,Mitt Romney
+2012,VA,VA,False,1971820,1822522,60147,3854489,13,13,0,0,Johnson/Gray (Libertarian),31216,Barack Obama,Mitt Romney
+2012,WA,WA,False,1755396,1290670,79450,3125516,12,12,0,0,Johnson/Gray (Libertarian),42202,Barack Obama,Mitt Romney
+2012,WV,WV,False,238269,417655,14514,670438,5,0,5,0,Johnson/Gray (Libertarian),6302,Barack Obama,Mitt Romney
+2012,WI,WI,False,1620985,1407966,39483,3068434,10,10,0,0,Johnson/Gray (Libertarian),20439,Barack Obama,Mitt Romney
+2012,WY,WY,False,69286,170962,8813,249061,3,0,3,0,Johnson/Gray (Libertarian),5326,Barack Obama,Mitt Romney
+2016,AL,AL,False,729547,1318255,75570,2123372,9,0,9,0,Johnson/Weld (Libertarian),44467,Hillary Clinton,Donald Trump
+2016,AK,AK,False,116454,163387,38767,318608,3,0,3,0,Johnson/Weld (Libertarian),18725,Hillary Clinton,Donald Trump
+2016,AZ,AZ,False,1161167,1252401,159597,2573165,11,0,11,0,Johnson/Weld (Libertarian),106327,Hillary Clinton,Donald Trump
+2016,AR,AR,False,380494,684872,65310,1130676,6,0,6,0,Johnson/Weld (Libertarian),29949,Hillary Clinton,Donald Trump
+2016,CA,CA,False,8753788,4483810,943997,14181595,55,55,0,0,Johnson/Weld (Libertarian),478500,Hillary Clinton,Donald Trump
+2016,CO,CO,False,1338870,1202484,238893,2780247,9,9,0,0,Johnson/Weld (Libertarian),144121,Hillary Clinton,Donald Trump
+2016,CT,CT,False,897572,673215,74133,1644920,7,7,0,0,Johnson/Weld (Libertarian),48676,Hillary Clinton,Donald Trump
+2016,DE,DE,False,235603,185127,23084,443814,3,3,0,0,Johnson/Weld (Libertarian),14757,Hillary Clinton,Donald Trump
+2016,DC,DC,False,282830,12723,15715,311268,3,3,0,0,Others,6551,Hillary Clinton,Donald Trump
+2016,FL,FL,False,4504975,4617886,297178,9420039,29,0,29,0,Johnson/Weld (Libertarian),207043,Hillary Clinton,Donald Trump
+2016,GA,GA,False,1877963,2089104,147665,4114732,16,0,16,0,Johnson/Weld (Libertarian),125306,Hillary Clinton,Donald Trump
+2016,HI,HI,False,266891,128847,33199,428937,4,3,0,1,Johnson/Weld (Libertarian),15954,Hillary Clinton,Donald Trump
+2016,ID,ID,False,189765,409055,91435,690255,4,0,4,0,McMullin/Finn (Independent),46476,Hillary Clinton,Donald Trump
+2016,IL,IL,False,3090729,2146015,299680,5536424,20,20,0,0,Johnson/Weld (Libertarian),209596,Hillary Clinton,Donald Trump
+2016,IN,IN,False,1033126,1557286,144546,2734958,11,0,11,0,Johnson/Weld (Libertarian),133993,Hillary Clinton,Donald Trump
+2016,IA,IA,False,653669,800983,111379,1566031,6,0,6,0,Johnson/Weld (Libertarian),59186,Hillary Clinton,Donald Trump
+2016,KS,KS,False,427005,671018,86379,1184402,6,0,6,0,Johnson/Weld (Libertarian),55406,Hillary Clinton,Donald Trump
+2016,KY,KY,False,628854,1202971,92324,1924149,8,0,8,0,Johnson/Weld (Libertarian),53752,Hillary Clinton,Donald Trump
+2016,LA,LA,False,780154,1178638,70240,2029032,8,0,8,0,Johnson/Weld (Libertarian),37978,Hillary Clinton,Donald Trump
+2016,ME,ME,False,357735,335593,54599,747927,2,2,0,0,Johnson/Weld (Libertarian),38105,Hillary Clinton,Donald Trump
+2016,ME-1,ME,True,212774,154384,27171,394329,1,1,0,0,Johnson/Weld (Libertarian),18592,Hillary Clinton,Donald Trump
+2016,ME-2,ME,True,144817,181177,27422,353416,1,0,1,0,Johnson/Weld (Libertarian),19510,Hillary Clinton,Donald Trump
+2016,MD,MD,False,1677928,943169,160349,2781446,10,10,0,0,Johnson/Weld (Libertarian),79605,Hillary Clinton,Donald Trump
+2016,MA,MA,False,1995196,1090893,238957,3325046,11,11,0,0,Johnson/Weld (Libertarian),138018,Hillary Clinton,Donald Trump
+2016,MI,MI,False,2268839,2279543,250902,4799284,16,0,16,0,Johnson/Weld (Libertarian),172136,Hillary Clinton,Donald Trump
+2016,MN,MN,False,1367716,1322951,254146,2944813,10,10,0,0,Johnson/Weld (Libertarian),112972,Hillary Clinton,Donald Trump
+2016,MS,MS,False,485131,700714,23512,1209357,6,0,6,0,Johnson/Weld (Libertarian),14435,Hillary Clinton,Donald Trump
+2016,MO,MO,False,1071068,1594511,143026,2808605,10,0,10,0,Johnson/Weld (Libertarian),97359,Hillary Clinton,Donald Trump
+2016,MT,MT,False,177709,279240,40198,497147,3,0,3,0,Johnson/Weld (Libertarian),28037,Hillary Clinton,Donald Trump
+2016,NE,NE,False,284494,495961,63772,844227,2,0,2,0,Johnson/Weld (Libertarian),38946,Hillary Clinton,Donald Trump
+2016,NE-1,NE,True,100132,158642,23588,282362,1,0,1,0,Johnson/Weld (Libertarian),14033,Hillary Clinton,Donald Trump
+2016,NE-2,NE,True,131030,137564,23086,291680,1,0,1,0,Johnson/Weld (Libertarian),13245,Hillary Clinton,Donald Trump
+2016,NE-3,NE,True,53332,199755,17173,270260,1,0,1,0,Johnson/Weld (Libertarian),11668,Hillary Clinton,Donald Trump
+2016,NV,NV,False,539260,512058,74067,1125385,6,6,0,0,Johnson/Weld (Libertarian),37384,Hillary Clinton,Donald Trump
+2016,NH,NH,False,348526,345790,49980,744296,4,4,0,0,Johnson/Weld (Libertarian),30777,Hillary Clinton,Donald Trump
+2016,NJ,NJ,False,2148278,1601933,123835,3874046,14,14,0,0,Johnson/Weld (Libertarian),72477,Hillary Clinton,Donald Trump
+2016,NM,NM,False,385234,319667,93418,798319,5,5,0,0,Johnson/Weld (Libertarian),74541,Hillary Clinton,Donald Trump
+2016,NY,NY,False,4556124,2819534,345795,7721453,29,29,0,0,Johnson/Weld (Libertarian),176598,Hillary Clinton,Donald Trump
+2016,NC,NC,False,2189316,2362631,189617,4741564,15,0,15,0,Johnson/Weld (Libertarian),130126,Hillary Clinton,Donald Trump
+2016,ND,ND,False,93758,216794,33808,344360,3,0,3,0,Johnson/Weld (Libertarian),21434,Hillary Clinton,Donald Trump
+2016,OH,OH,False,2394164,2841005,261318,5496487,18,0,18,0,Johnson/Weld (Libertarian),174498,Hillary Clinton,Donald Trump
+2016,OK,OK,False,420375,949136,83481,1452992,7,0,7,0,Johnson/Weld (Libertarian),83481,Hillary Clinton,Donald Trump
+2016,OR,OR,False,1002106,782403,216827,2001336,7,7,0,0,Johnson/Weld (Libertarian),94231,Hillary Clinton,Donald Trump
+2016,PA,PA,False,2926441,2970733,268304,6165478,20,0,20,0,Johnson/Weld (Libertarian),146715,Hillary Clinton,Donald Trump
+2016,RI,RI,False,252525,180543,31076,464144,4,4,0,0,Johnson/Weld (Libertarian),14746,Hillary Clinton,Donald Trump
+2016,SC,SC,False,855373,1155389,92265,2103027,9,0,9,0,Johnson/Weld (Libertarian),49204,Hillary Clinton,Donald Trump
+2016,SD,SD,False,117458,227721,24914,370093,3,0,3,0,Johnson/Weld (Libertarian),20850,Hillary Clinton,Donald Trump
+2016,TN,TN,False,870695,1522925,114407,2508027,11,0,11,0,Johnson/Weld (Libertarian),70397,Hillary Clinton,Donald Trump
+2016,TX,TX,False,3877868,4685047,406311,8969226,38,0,36,2,Johnson/Weld (Libertarian),283492,Hillary Clinton,Donald Trump
+2016,UT,UT,False,310676,515231,305523,1131430,6,0,6,0,McMullin/Finn (Independent),243690,Hillary Clinton,Donald Trump
+2016,VT,VT,False,178573,95369,41125,315067,3,3,0,0,Others,23650,Hillary Clinton,Donald Trump
+2016,VA,VA,False,1981473,1769443,233715,3984631,13,13,0,0,Johnson/Weld (Libertarian),118274,Hillary Clinton,Donald Trump
+2016,WA,WA,False,1742718,1221747,352554,3317019,12,8,0,4,Johnson/Weld (Libertarian),160879,Hillary Clinton,Donald Trump
+2016,WV,WV,False,188794,489371,36258,714423,5,0,5,0,Johnson/Weld (Libertarian),23004,Hillary Clinton,Donald Trump
+2016,WI,WI,False,1382536,1405284,188330,2976150,10,0,10,0,Johnson/Weld (Libertarian),106674,Hillary Clinton,Donald Trump
+2016,WY,WY,False,55973,174419,25457,255849,3,0,3,0,Johnson/Weld (Libertarian),13287,Hillary Clinton,Donald Trump
+2020,AL,AL,False,849624,1441170,32488,2323282,9,0,9,0,Jorgensen/Cohen (Libertarian),25176,Joe Biden,Donald Trump
+2020,AK,AK,False,153778,189951,15801,359530,3,0,3,0,Jorgensen/Cohen (Libertarian),8897,Joe Biden,Donald Trump
+2020,AZ,AZ,False,1672143,1661686,53497,3387326,11,11,0,0,Jorgensen/Cohen (Libertarian),51465,Joe Biden,Donald Trump
+2020,AR,AR,False,423932,760647,34490,1219069,6,0,6,0,Others,18377,Joe Biden,Donald Trump
+2020,CA,CA,False,11110639,6006518,384223,17501380,55,55,0,0,Jorgensen/Cohen (Libertarian),187910,Joe Biden,Donald Trump
+2020,CO,CO,False,1804352,1364607,88021,3256980,9,9,0,0,Jorgensen/Cohen (Libertarian),52460,Joe Biden,Donald Trump
+2020,CT,CT,False,1080831,714717,28309,1823857,7,7,0,0,Jorgensen/Cohen (Libertarian),20230,Joe Biden,Donald Trump
+2020,DE,DE,False,296268,200603,7475,504346,3,3,0,0,Jorgensen/Cohen (Libertarian),5000,Joe Biden,Donald Trump
+2020,DC,DC,False,317323,18586,8447,344356,3,3,0,0,Others,4685,Joe Biden,Donald Trump
+2020,FL,FL,False,5297045,5668731,101680,11067456,29,0,29,0,Jorgensen/Cohen (Libertarian),70324,Joe Biden,Donald Trump
+2020,GA,GA,False,2473633,2461854,64473,4999960,16,16,0,0,Jorgensen/Cohen (Libertarian),62229,Joe Biden,Donald Trump
+2020,HI,HI,False,366130,196864,11475,574469,4,4,0,0,Jorgensen/Cohen (Libertarian),5539,Joe Biden,Donald Trump
+2020,ID,ID,False,287021,554119,26794,867934,4,0,4,0,Jorgensen/Cohen (Libertarian),16404,Joe Biden,Donald Trump
+2020,IL,IL,False,3471915,2446891,114938,6033744,20,20,0,0,Jorgensen/Cohen (Libertarian),66544,Joe Biden,Donald Trump
+2020,IN,IN,False,1242498,1729857,60855,3033210,11,0,11,0,Jorgensen/Cohen (Libertarian),58901,Joe Biden,Donald Trump
+2020,IA,IA,False,759061,897672,34138,1690871,6,0,6,0,Jorgensen/Cohen (Libertarian),19637,Joe Biden,Donald Trump
+2020,KS,KS,False,570323,771406,32257,1373986,6,0,6,0,Jorgensen/Cohen (Libertarian),30574,Joe Biden,Donald Trump
+2020,KY,KY,False,772474,1326646,37648,2136768,8,0,8,0,Jorgensen/Cohen (Libertarian),26234,Joe Biden,Donald Trump
+2020,LA,LA,False,856034,1255776,36252,2148062,8,0,8,0,Jorgensen/Cohen (Libertarian),21645,Joe Biden,Donald Trump
+2020,ME,ME,False,435072,360737,23652,819461,2,2,0,0,Jorgensen/Cohen (Libertarian),14152,Joe Biden,Donald Trump
+2020,ME-1,ME,True,266376,164045,12691,443112,1,1,0,0,Jorgensen/Cohen (Libertarian),7343,Joe Biden,Donald Trump
+2020,ME-2,ME,True,168696,196692,10961,376349,1,0,1,0,Jorgensen/Cohen (Libertarian),6809,Joe Biden,Donald Trump
+2020,MD,MD,False,1985023,976414,75593,3037030,10,10,0,0,Jorgensen/Cohen (Libertarian),33488,Joe Biden,Donald Trump
+2020,MA,MA,False,2382202,1167202,81998,3631402,11,11,0,0,Jorgensen/Cohen (Libertarian),47013,Joe Biden,Donald Trump
+2020,MI,MI,False,2804040,2649852,85410,5539302,16,16,0,0,Jorgensen/Cohen (Libertarian),60381,Joe Biden,Donald Trump
+2020,MN,MN,False,1717077,1484065,76029,3277171,10,10,0,0,Jorgensen/Cohen (Libertarian),34976,Joe Biden,Donald Trump
+2020,MS,MS,False,539398,756764,17597,1313759,6,0,6,0,Others,8073,Joe Biden,Donald Trump
+2020,MO,MO,False,1253014,1718736,54212,3025962,10,0,10,0,Jorgensen/Cohen (Libertarian),41205,Joe Biden,Donald Trump
+2020,MT,MT,False,244786,343602,15286,603674,3,0,3,0,Jorgensen/Cohen (Libertarian),15252,Joe Biden,Donald Trump
+2020,NE,NE,False,374583,556846,24954,956383,2,0,2,0,Jorgensen/Cohen (Libertarian),20283,Joe Biden,Donald Trump
+2020,NE-1,NE,True,132261,180290,9335,321886,1,0,1,0,Jorgensen/Cohen (Libertarian),7495,Joe Biden,Donald Trump
+2020,NE-2,NE,True,176468,154377,8821,339666,1,1,0,0,Jorgensen/Cohen (Libertarian),6909,Joe Biden,Donald Trump
+2020,NE-3,NE,True,65854,222179,6798,294831,1,0,1,0,Jorgensen/Cohen (Libertarian),5879,Joe Biden,Donald Trump
+2020,NV,NV,False,703486,669890,32000,1405376,6,6,0,0,Others,17217,Joe Biden,Donald Trump
+2020,NH,NH,False,424937,365660,15608,806205,4,4,0,0,Jorgensen/Cohen (Libertarian),13236,Joe Biden,Donald Trump
+2020,NJ,NJ,False,2608400,1883313,57744,4549457,14,14,0,0,Jorgensen/Cohen (Libertarian),31677,Joe Biden,Donald Trump
+2020,NM,NM,False,501614,401894,20457,923965,5,5,0,0,Jorgensen/Cohen (Libertarian),12585,Joe Biden,Donald Trump
+2020,NY,NY,False,5244886,3251997,119978,8616861,29,29,0,0,Jorgensen/Cohen (Libertarian),60383,Joe Biden,Donald Trump
+2020,NC,NC,False,2684292,2758775,81737,5524804,15,0,15,0,Jorgensen/Cohen (Libertarian),48678,Joe Biden,Donald Trump
+2020,ND,ND,False,115042,235751,11231,362024,3,0,3,0,Jorgensen/Cohen (Libertarian),9371,Joe Biden,Donald Trump
+2020,OH,OH,False,2679165,3154834,88203,5922202,18,0,18,0,Jorgensen/Cohen (Libertarian),67569,Joe Biden,Donald Trump
+2020,OK,OK,False,503890,1020280,36529,1560699,7,0,7,0,Jorgensen/Cohen (Libertarian),24731,Joe Biden,Donald Trump
+2020,OR,OR,False,1340383,958448,75490,2374321,7,7,0,0,Jorgensen/Cohen (Libertarian),41582,Joe Biden,Donald Trump
+2020,PA,PA,False,3458229,3377674,101073,6936976,20,20,0,0,Jorgensen/Cohen (Libertarian),79380,Joe Biden,Donald Trump
+2020,RI,RI,False,307486,199922,10349,517757,4,4,0,0,Others,5296,Joe Biden,Donald Trump
+2020,SC,SC,False,1091541,1385103,36685,2513329,9,0,9,0,Jorgensen/Cohen (Libertarian),27916,Joe Biden,Donald Trump
+2020,SD,SD,False,150471,261043,11095,422609,3,0,3,0,Jorgensen/Cohen (Libertarian),11095,Joe Biden,Donald Trump
+2020,TN,TN,False,1143711,1852475,57665,3053851,11,0,11,0,Jorgensen/Cohen (Libertarian),29877,Joe Biden,Donald Trump
+2020,TX,TX,False,5259126,5890347,165583,11315056,38,0,38,0,Jorgensen/Cohen (Libertarian),126243,Joe Biden,Donald Trump
+2020,UT,UT,False,560282,865140,62867,1488289,6,0,6,0,Jorgensen/Cohen (Libertarian),38447,Joe Biden,Donald Trump
+2020,VT,VT,False,242820,112704,11904,367428,3,3,0,0,Others,6986,Joe Biden,Donald Trump
+2020,VA,VA,False,2413568,1962430,84526,4460524,13,13,0,0,Jorgensen/Cohen (Libertarian),64761,Joe Biden,Donald Trump
+2020,WA,WA,False,2369612,1584651,133368,4087631,12,12,0,0,Jorgensen/Cohen (Libertarian),80500,Joe Biden,Donald Trump
+2020,WV,WV,False,235984,545382,13365,794731,5,0,5,0,Jorgensen/Cohen (Libertarian),10687,Joe Biden,Donald Trump
+2020,WI,WI,False,1630866,1610184,56991,3298041,10,10,0,0,Jorgensen/Cohen (Libertarian),38491,Joe Biden,Donald Trump
+2020,WY,WY,False,73491,193559,9715,276765,3,0,3,0,Jorgensen/Cohen (Libertarian),5768,Joe Biden,Donald Trump
+2024,AL,AL,False,772412,1462616,30062,2265090,9,0,9,0,Kennedy/Shanahan (Independent),12075,Kamala Harris,Donald Trump
+2024,AK,AK,False,140026,184458,13693,338177,3,0,3,0,Kennedy/Shanahan (Independent),5670,Kamala Harris,Donald Trump
+2024,AZ,AZ,False,1582860,1770242,37059,3390161,11,0,11,0,Stein/Ware (Green),18319,Kamala Harris,Donald Trump
+2024,AR,AR,False,396905,759241,26530,1182676,6,0,6,0,Kennedy/Shanahan (Independent),13255,Kamala Harris,Donald Trump
+2024,CA,CA,False,9276179,6081697,507599,15865475,54,54,0,0,Kennedy/Shanahan (Independent),197645,Kamala Harris,Donald Trump
+2024,CO,CO,False,1728159,1377441,87145,3192745,10,10,0,0,Kennedy/Shanahan (Independent),35623,Kamala Harris,Donald Trump
+2024,CT,CT,False,992053,736918,30039,1759010,7,7,0,0,Stein/Ware (Green),14281,Kamala Harris,Donald Trump
+2024,DE,DE,False,289758,214351,8803,512912,3,3,0,0,Kennedy/Shanahan (Independent),4636,Kamala Harris,Donald Trump
+2024,DC,DC,False,294185,21076,10608,325869,3,3,0,0,Others,7830,Kamala Harris,Donald Trump
+2024,FL,FL,False,4683038,6110125,100589,10893752,30,0,30,0,Stein/Ware (Green),43155,Kamala Harris,Donald Trump
+2024,GA,GA,False,2548017,2663117,39771,5250905,16,0,16,0,Oliver/Maat (Libertarian),20684,Kamala Harris,Donald Trump
+2024,HI,HI,False,313044,193661,9996,516701,4,4,0,0,Stein/Ware (Green),4387,Kamala Harris,Donald Trump
+2024,ID,ID,False,274972,605246,24839,905057,4,0,4,0,Kennedy/Shanahan (Independent),12812,Kamala Harris,Donald Trump
+2024,IL,IL,False,3062863,2449079,121368,5633310,19,19,0,0,Kennedy/Shanahan (Independent),80426,Kamala Harris,Donald Trump
+2024,IN,IN,False,1163603,1720347,52727,2936677,11,0,11,0,Kennedy/Shanahan (Independent),29325,Kamala Harris,Donald Trump
+2024,IA,IA,False,707278,927019,29209,1663506,6,0,6,0,Kennedy/Shanahan (Independent),13122,Kamala Harris,Donald Trump
+2024,KS,KS,False,544853,758802,23936,1327591,6,0,6,0,Kennedy/Shanahan (Independent),16322,Kamala Harris,Donald Trump
+2024,KY,KY,False,704043,1337494,32993,2074530,8,0,8,0,Kennedy/Shanahan (Independent),16769,Kamala Harris,Donald Trump
+2024,LA,LA,False,766870,1208505,31600,2006975,8,0,8,0,Others,10986,Kamala Harris,Donald Trump
+2024,ME,ME,False,435652,377977,17746,831375,2,2,0,0,Stein/Ware (Green),8967,Kamala Harris,Donald Trump
+2024,ME-1,ME,True,258863,165214,9632,433709,1,1,0,0,Stein/Ware (Green),4828,Kamala Harris,Donald Trump
+2024,ME-2,ME,True,176789,212763,8114,397666,1,0,1,0,Stein/Ware (Green),4139,Kamala Harris,Donald Trump
+2024,MD,MD,False,1902577,1035550,100207,3038334,10,10,0,0,Stein/Ware (Green),33134,Kamala Harris,Donald Trump
+2024,MA,MA,False,2126518,1251303,95847,3473668,11,11,0,0,Others,51567,Kamala Harris,Donald Trump
+2024,MI,MI,False,2736533,2816636,111017,5664186,15,0,15,0,Stein/Ware (Green),44607,Kamala Harris,Donald Trump
+2024,MN,MN,False,1656979,1519032,77909,3253920,10,10,0,0,Kennedy/Shanahan (Independent),24001,Kamala Harris,Donald Trump
+2024,MS,MS,False,466668,747744,13596,1228008,6,0,6,0,Kennedy/Shanahan (Independent),5387,Kamala Harris,Donald Trump
+2024,MO,MO,False,1200599,1751986,42742,2995327,10,0,10,0,Oliver/Maat (Libertarian),23876,Kamala Harris,Donald Trump
+2024,MT,MT,False,231906,352079,19005,602990,4,0,4,0,Kennedy/Shanahan (Independent),11825,Kamala Harris,Donald Trump
+2024,NE,NE,False,369995,564816,17371,952182,2,0,2,0,Others,8085,Kamala Harris,Donald Trump
+2024,NE-1,NE,True,136153,177666,6375,320194,1,0,1,0,Others,2944,Kamala Harris,Donald Trump
+2024,NE-2,NE,True,163541,148905,6200,318646,1,1,0,0,Others,3089,Kamala Harris,Donald Trump
+2024,NE-3,NE,True,70301,238245,4796,313342,1,0,1,0,Others,2052,Kamala Harris,Donald Trump
+2024,NV,NV,False,705197,751205,28438,1484840,6,0,6,0,Others,22379,Kamala Harris,Donald Trump
+2024,NH,NH,False,418488,395523,12178,826189,4,4,0,0,Oliver/Maat (Libertarian),4425,Kamala Harris,Donald Trump
+2024,NJ,NJ,False,2220713,1968215,83797,4272725,14,14,0,0,Stein/Ware (Green),39041,Kamala Harris,Donald Trump
+2024,NM,NM,False,478802,423391,21210,923403,5,5,0,0,Kennedy/Shanahan (Independent),9553,Kamala Harris,Donald Trump
+2024,NY,NY,False,4619195,3578899,64401,8262495,28,28,0,0,Stein/Ware (Green),46698,Kamala Harris,Donald Trump
+2024,NC,NC,False,2715375,2898423,85343,5699141,16,0,16,0,Others,38456,Kamala Harris,Donald Trump
+2024,ND,ND,False,112327,246505,9323,368155,3,0,3,0,Oliver/Maat (Libertarian),6227,Kamala Harris,Donald Trump
+2024,OH,OH,False,2533699,3180116,53973,5767788,17,0,17,0,Oliver/Maat (Libertarian),28200,Kamala Harris,Donald Trump
+2024,OK,OK,False,499599,1036213,30361,1566173,7,0,7,0,Kennedy/Shanahan (Independent),16020,Kamala Harris,Donald Trump
+2024,OR,OR,False,1240600,919480,84413,2244493,8,8,0,0,Kennedy/Shanahan (Independent),33733,Kamala Harris,Donald Trump
+2024,PA,PA,False,3423042,3543308,92382,7058732,19,0,19,0,Stein/Ware (Green),34538,Kamala Harris,Donald Trump
+2024,RI,RI,False,285156,214406,13824,513386,4,4,0,0,Kennedy/Shanahan (Independent),5045,Kamala Harris,Donald Trump
+2024,SC,SC,False,1028452,1483747,35941,2548140,9,0,9,0,Others,15155,Kamala Harris,Donald Trump
+2024,SD,SD,False,146859,272081,9982,428922,3,0,3,0,Kennedy/Shanahan (Independent),7204,Kamala Harris,Donald Trump
+2024,TN,TN,False,1056265,1966865,40812,3063942,11,0,11,0,Kennedy/Shanahan (Independent),21535,Kamala Harris,Donald Trump
+2024,TX,TX,False,4835250,6393597,159827,11388674,40,0,40,0,Stein/Ware (Green),82701,Kamala Harris,Donald Trump
+2024,UT,UT,False,562566,883818,42110,1488494,6,0,6,0,Others,16986,Kamala Harris,Donald Trump
+2024,VT,VT,False,235791,119395,14236,369422,3,3,0,0,Kennedy/Shanahan (Independent),5905,Kamala Harris,Donald Trump
+2024,VA,VA,False,2335395,2075085,95461,4505941,13,13,0,0,Others,40759,Kamala Harris,Donald Trump
+2024,WA,WA,False,2245849,1530923,147471,3924243,12,12,0,0,Kennedy/Shanahan (Independent),54868,Kamala Harris,Donald Trump
+2024,WV,WV,False,214309,533556,14717,762582,4,0,4,0,Kennedy/Shanahan (Independent),8947,Kamala Harris,Donald Trump
+2024,WI,WI,False,1668229,1697626,57063,3422918,10,0,10,0,Kennedy/Shanahan (Independent),17740,Kamala Harris,Donald Trump
+2024,WY,WY,False,69527,192633,6888,269048,3,0,3,0,Oliver/Maat (Libertarian),4193,Kamala Harris,Donald Trump

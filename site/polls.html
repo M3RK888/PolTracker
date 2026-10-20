@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2028 Polls · Pollmap</title>
+  <meta name="description" content="Every 2028 presidential poll behind the Pollmap estimate, with dates, sample sizes, margins and weights.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Pollmap</a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">2028</a>
+        <a href="history.html">Past elections</a>
+        <a href="polls.html" aria-current="page">Polls</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-head">
+      <div>
+        <h1>2028 polls</h1>
+        <p class="dek" id="dek"></p>
+      </div>
+    </div>
+
+    <div class="filters" role="search" aria-label="Filter polls">
+      <label>Matchup <select id="f-matchup"></select></label>
+      <label>Where <select id="f-where"></select></label>
+      <label>Status <select id="f-status">
+        <option value="">All polls</option>
+        <option value="used">Used in the estimate</option>
+        <option value="unused">Not used</option>
+      </select></label>
+      <span class="muted small" id="count" aria-live="polite"></span>
+    </div>
+
+    <div class="table-scroll"><table id="polls"></table></div>
+
+    <section class="card prose" style="margin-top:20px">
+      <h2>Reading this table</h2>
+      <p><strong>Margin</strong> is the Democrat's share minus the Republican's, in points. D+3 means the Democrat leads by 3.</p>
+      <p><strong>Weight</strong> is how much a poll counts. A fresh 600-person poll scores about 1.0. Weight halves every
+        <span id="r-half"></span> days, rises with the square root of sample size, and is reduced when one pollster has several
+        polls of the same race. <strong>Share</strong> is that poll's slice of its average: the national average for national polls,
+        or that state's estimate for state polls (the rest of a state's estimate comes from its 2024 baseline).</p>
+      <p><strong>Adjusted</strong> applies to state polls only: the margin shifted by how far the national average has moved since the poll was taken.</p>
+      <p><strong>Status.</strong> "Too old" polls ended more than <span id="r-window"></span> days ago and no longer count.
+        "No national poll" means the poll is recent but its matchup has no national poll in that window, so there's no
+        baseline to blend it with yet.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap">Polls collected by hand from public releases and aggregators; each row links to its source.</div></footer>
+
+  <script src="assets/common.js"></script>
+  <script src="data/polls.js"></script>
+  <script>
+  (function () {
+    const P = window.POLLS;
+    const polls = P.polls.map((p) => ({ ...p, matchup: `${p.dem_candidate} vs ${p.rep_candidate}` }));
+    const used = polls.filter((p) => p.status === "Used").length;
+    document.getElementById("dek").textContent =
+      `${polls.length} poll${polls.length === 1 ? "" : "s"} collected · ${used} used in the estimate as of ${PM.fmtDate(P.as_of)}`;
+    document.getElementById("r-half").textContent = P.half_life_days;
+    document.getElementById("r-window").textContent = P.window_days;
+
+    const opts = (el, values, allLabel) => {
+      el.innerHTML = `<option value="">${allLabel}</option>` + values.map((v) => `<option>${PM.esc(v)}</option>`).join("");
+    };
+    const uniq = (xs) => [...new Set(xs)];
+    const fMatch = document.getElementById("f-matchup");
+    const fWhere = document.getElementById("f-where");
+    const fStatus = document.getElementById("f-status");
+    opts(fMatch, uniq(polls.map((p) => p.matchup)), "All matchups");
+    const places = uniq(polls.map((p) => p.state_name)).sort((a, b) => (a === "National" ? -1 : b === "National" ? 1 : a.localeCompare(b)));
+    opts(fWhere, places, "National and state");
+
+    const columns = [
+      { key: "end", label: "Dates", render: (p) => `${p.start ? PM.fmtDate(p.start).replace(/, \d{4}$/, "") + " – " : ""}${PM.fmtDate(p.end)}` },
+      { key: "pollster", label: "Pollster" },
+      { key: "state_name", label: "Where" },
+      { key: "matchup", label: "Matchup" },
+      { key: "sample_size", label: "Sample", num: true,
+        render: (p) => `${PM.fmtInt(p.sample_size)}${p.voter_type ? ` <span class="muted">${PM.esc(p.voter_type)}</span>` : ""}` },
+      { key: "dem", label: "Dem", num: true, render: (p) => `${p.dem}%` },
+      { key: "rep", label: "Rep", num: true, render: (p) => `${p.rep}%` },
+      { key: "margin", label: "Margin", num: true, render: (p) => `<span class="${PM.marginClass(p.margin)}">${PM.fmtMargin(p.margin)}</span>` },
+      { key: "adjusted", label: "Adjusted", num: true, render: (p) => p.adjusted == null ? `<span class="muted">—</span>` : PM.fmtMargin(p.adjusted) },
+      { key: "weight", label: "Weight", num: true, render: (p) => p.weight == null ? `<span class="muted">—</span>` : p.weight.toFixed(2) },
+      { key: "share", label: "Share", num: true, render: (p) => p.share == null ? `<span class="muted">—</span>` : `${Math.round(p.share * 100)}%` },
+      { key: "status", label: "Status", render: (p) => `<span class="${p.status === "Used" ? "status-used" : "status-unused"}">${PM.esc(p.status)}</span>` },
+      { key: "source", label: "Source", sort: (p) => p.source,
+        render: (p) => p.source ? `<a href="${PM.esc(p.source)}" target="_blank" rel="noopener">${PM.esc(new URL(p.source).hostname.replace(/^www\./, ""))}</a>` : "—" },
+    ];
+
+    const filtered = () => polls.filter((p) =>
+      (!fMatch.value || p.matchup === fMatch.value) &&
+      (!fWhere.value || p.state_name === fWhere.value) &&
+      (!fStatus.value || (fStatus.value === "used") === (p.status === "Used")));
+    const table = PM.sortableTable(document.getElementById("polls"), columns, filtered(), { key: "end", dir: -1 });
+    const update = () => {
+      const rows = filtered();
+      table.update(rows);
+      document.getElementById("count").textContent = `Showing ${rows.length} of ${polls.length}`;
+    };
+    [fMatch, fWhere, fStatus].forEach((el) => el.addEventListener("change", update));
+    update();
+  })();
+  </script>
+</body>
+</html>

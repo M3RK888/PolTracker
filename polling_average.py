@@ -33,7 +33,7 @@ import plotly.express as px
 # dem / rep are vote shares in percent (e.g. 47.0, not 0.47).
 
 ELECTION_DAY = pd.Timestamp("2016-11-08")
-HALF_LIFE_DAYS = 14     # a poll 14 days old counts half as much as one from today
+HALF_LIFE_DAYS = 7     # a poll 14 days old counts half as much as one from today
 WINDOW_DAYS = 60        # ignore polls older than this
 MIN_POLLS = 1           # states with fewer polls are left blank on the map
 

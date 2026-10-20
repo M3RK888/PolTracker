@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2028 Map · Pollmap</title>
+  <meta name="description" content="An early, poll-based estimate of the 2028 presidential map, state by state.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Pollmap</a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html" aria-current="page">2028</a>
+        <a href="history.html">Past elections</a>
+        <a href="polls.html">Polls</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-head">
+      <div>
+        <h1>The 2028 map</h1>
+        <p class="dek" id="dek"></p>
+      </div>
+      <div class="toggle" id="matchups" role="group" aria-label="Choose a matchup"></div>
+    </div>
+
+    <section class="card" aria-labelledby="map-heading">
+      <h2 id="map-heading" class="visually-hidden" hidden>Electoral map</h2>
+      <div id="evbar"></div>
+      <div id="map" class="map" aria-label="Map of estimated margins by state"></div>
+      <div class="scale" id="scale"></div>
+      <div id="unavailable" class="notice" hidden></div>
+    </section>
+
+    <section class="stats" id="stats" aria-label="Key numbers"></section>
+
+    <section>
+      <h2>Every state</h2>
+      <p class="muted small">Sorted closest race first. Click a column to re-sort.</p>
+      <div class="table-scroll"><table id="states"></table></div>
+    </section>
+
+    <section class="card prose" id="method">
+      <h2>How this estimate works</h2>
+      <p>There are almost no 2028 <strong>state</strong> polls yet, only national ones. So each state starts from a
+        <strong>baseline</strong>: its 2024 result, shifted by however much the national polls have moved since 2024.</p>
+      <p>If a state has its own polls, they're blended with that baseline. Each state poll is first
+        <strong>trend-adjusted</strong> by how much the national average has moved since it was taken.
+        The baseline counts as <span id="m-prior"></span> fresh polls, so a few recent state polls quickly outweigh it.</p>
+      <p>Polls are weighted by recency (weight halves every <span id="m-half"></span> days), sample size, and
+        how many polls that pollster has released. Polls older than <span id="m-window"></span> days are dropped.
+        See every poll and its weight on the <a href="polls.html">polls page</a>.</p>
+      <p>Ratings: <span id="m-cutoffs"></span>. This is an early snapshot of the polls, not a forecast of November 2028.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap">2024 results: certified state totals, the same data as the <a href="history.html#2024">2024 map</a>. Polls collected by hand; sources linked on the polls page.</div></footer>
+
+  <script src="https://cdn.plot.ly/plotly-geo-4.1.1.min.js"></script>
+  <script src="assets/common.js"></script>
+  <script src="data/forecast.js"></script>
+  <script>
+  (function () {
+    const F = window.FORECAST;
+    const color = Object.fromEntries(F.ratings.map((r) => [r.name, r.color]));
+    const byId = Object.fromEntries(F.matchups.map((m) => [m.id, m]));
+    let current = byId[location.hash.slice(1)]?.available ? location.hash.slice(1) : F.default;
+    let table;
+
+    document.getElementById("dek").textContent =
+      `Estimate as of ${PM.fmtDate(F.as_of)} · based on polls, not a forecast`;
+    document.getElementById("m-prior").textContent = F.settings.prior_weight;
+    document.getElementById("m-half").textContent = F.settings.half_life_days;
+    document.getElementById("m-window").textContent = F.settings.window_days;
+    document.getElementById("m-cutoffs").textContent =
+      F.settings.cutoffs.map((c, i, a) => i === 0 ? `almost certain at ${c.min}+ points`
+        : `${c.label.toLowerCase()} at ${c.min}–${a[i - 1].min}`).join(", ") +
+      `, tossup under ${F.settings.cutoffs.at(-1).min}`;
+
+    // Matchup toggle
+    const toggle = document.getElementById("matchups");
+    toggle.innerHTML = F.matchups.map((m) => `
+      <button type="button" data-id="${m.id}" ${m.available ? "" : "disabled"}
+              title="${m.available ? "" : PM.esc(m.reason)}">
+        ${PM.esc(m.dem)} vs ${PM.esc(m.rep)} <span class="count">${m.n_polls} poll${m.n_polls === 1 ? "" : "s"}</span>
+      </button>`).join("");
+    toggle.addEventListener("click", (e) => {
+      const b = e.target.closest("button");
+      if (b && !b.disabled) { current = b.dataset.id; history.replaceState(null, "", "#" + current); render(); }
+    });
+
+    const unavailable = F.matchups.filter((m) => !m.available);
+    if (unavailable.length) {
+      const n = document.getElementById("unavailable");
+      n.hidden = false;
+      n.innerHTML = unavailable.map((m) => `<strong>${PM.esc(m.dem)} vs ${PM.esc(m.rep)}</strong>: ${PM.esc(m.reason)}, so there's no map for it yet.`).join("<br>");
+    }
+
+    function render() {
+      const m = byId[current];
+      if (!m) return;
+      toggle.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", b.dataset.id === current));
+
+      const statesIn = (rating) => m.states.filter((s) => s.rating === rating)
+        .sort((a, b) => b.ev - a.ev).map((s) => s.state).join(", ");
+      PM.renderEvBar(document.getElementById("evbar"), {
+        total: 538,
+        left: { name: `${m.dem} (D)`, ev: m.ev.D, color: PM.SHADES.D[0], sub: "excluding tossups" },
+        right: { name: `${m.rep} (R)`, ev: m.ev.R, color: PM.SHADES.R[0], sub: "excluding tossups" },
+        center: m.ev.Tossup ? `<strong>${m.ev.Tossup}</strong>tossup` : "",
+        segments: m.segments.map((s) => ({ label: s.rating, ev: s.ev, color: color[s.rating], detail: statesIn(s.rating) })),
+      });
+
+      const basis = (s) => s.n_state_polls ? `${s.n_state_polls} state poll${s.n_state_polls > 1 ? "s" : ""} + baseline` : "2024 result + national swing";
+      PM.renderMap(document.getElementById("map"), m.states.map((s) => ({
+        state: s.state, margin: s.estimate,
+        hover: `<b>${PM.esc(s.name)}</b> · ${s.ev} EV<br>2028 estimate: <b>${PM.fmtMargin(s.estimate)}</b> (${s.rating})` +
+               `<br>2024 result: ${PM.fmtMargin(s.margin_2024)}<br><span style="opacity:.75">${basis(s)}</span>`,
+      })));
+      PM.renderScale(document.getElementById("scale"));
+
+      document.getElementById("stats").innerHTML = [
+        ["National polling average", PM.fmtMargin(m.national_avg), `${m.n_national} national poll${m.n_national === 1 ? "" : "s"} in the average`],
+        ["Swing since 2024", `${PM.fmtSigned(m.swing)} pts`, `2024 popular vote: ${PM.fmtMargin(m.national_2024)}`],
+        ["State polls", m.n_state_polls, m.n_state_polls ? "blended with the baseline" : "every state uses the baseline"],
+        ["States flipped from 2024", m.states.filter((s) => Math.sign(s.estimate) !== Math.sign(s.margin_2024)).length,
+          m.states.filter((s) => Math.sign(s.estimate) !== Math.sign(s.margin_2024)).map((s) => s.state).join(", ") || "none"],
+      ].map(([l, v, n]) => `<div class="stat"><div class="label">${l}</div><div class="value">${v}</div><div class="note">${PM.esc(n)}</div></div>`).join("");
+
+      const columns = [
+        { key: "name", label: "State" },
+        { key: "ev", label: "EV", num: true },
+        { key: "estimate", label: "2028 estimate", num: true, sort: (s) => -Math.abs(s.estimate),
+          render: (s) => `<span class="${PM.marginClass(s.estimate)}">${PM.fmtMargin(s.estimate)}</span>` },
+        { key: "rating", label: "Rating", sort: (s) => m.segments.findIndex((x) => x.rating === s.rating),
+          render: (s) => `<span class="chip"><i style="background:${color[s.rating]}"></i>${s.rating}</span>` },
+        { key: "margin_2024", label: "2024 result", num: true,
+          render: (s) => `<span class="${PM.marginClass(s.margin_2024)}">${PM.fmtMargin(s.margin_2024)}</span>` },
+        { key: "shift", label: "Change", num: true, sort: (s) => s.estimate - s.margin_2024,
+          render: (s) => PM.fmtSigned(s.estimate - s.margin_2024) },
+        { key: "basis", label: "Based on", sort: (s) => s.n_state_polls, render: (s) => `<span class="muted">${basis(s)}</span>` },
+      ];
+      const tableEl = document.getElementById("states");
+      // The estimate column sorts by closeness: descending on -|margin| puts the tightest race first
+      if (!table) table = PM.sortableTable(tableEl, columns, m.states, { key: "estimate", dir: -1 });
+      else table.update(m.states);
+    }
+
+    render();
+    PM.onThemeChange(render);
+  })();
+  </script>
+</body>
+</html>

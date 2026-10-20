@@ -1,0 +1,11 @@
+state,pollster,start_date,end_date,sample_size,voter_type,dem_candidate,rep_candidate,dem,rep,source
+US,Emerson College,2026-08-16,2026-08-17,1000,LV,Newsom,Vance,49,44,https://emersoncollegepolling.com/august-2026-national-poll/
+US,Yahoo/YouGov,2026-02-09,2026-02-12,1146,RV,Newsom,Vance,49,43,https://www.270towin.com/2028-presidential-election-polls/national
+US,Morning Consult,2025-11-14,2025-11-16,,RV,Newsom,Vance,41,42,https://www.realclearpolling.com/polls/president/general/2028/vance-vs-newsom
+US,Echelon Insights,,2025-10-21,1010,LV,Newsom,Vance,47,46,https://www.270towin.com/2028-presidential-election-polls/national
+US,Emerson College,2025-10-13,2025-10-14,1000,RV,Newsom,Vance,45,46,https://www.270towin.com/2028-presidential-election-polls/national
+US,Yahoo/YouGov,2025-08-29,2025-09-02,1132,RV,Newsom,Vance,49,41,https://www.270towin.com/2028-presidential-election-polls/national
+US,Emerson College,2025-08-25,2025-08-26,1000,RV,Newsom,Vance,44,44,https://www.270towin.com/2028-presidential-election-polls/national
+US,Emerson College,2025-07-21,2025-07-22,1400,RV,Newsom,Vance,42,45,https://www.270towin.com/2028-presidential-election-polls/national
+US,Emerson College,2025-07-21,2025-07-22,1400,RV,Buttigieg,Vance,43,44,https://www.270towin.com/2028-presidential-election-polls/national
+US,Emerson College,2025-07-21,2025-07-22,1400,RV,Ocasio-Cortez,Vance,41,44,https://www.270towin.com/2028-presidential-election-polls/national

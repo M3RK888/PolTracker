@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Past Elections · Pollmap</title>
+  <meta name="description" content="State-by-state presidential election results and electoral maps, 1960 to 2024.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Pollmap</a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">2028</a>
+        <a href="history.html" aria-current="page">Past elections</a>
+        <a href="polls.html">Polls</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-head">
+      <div>
+        <h1 id="title">Past elections</h1>
+        <p class="dek" id="dek"></p>
+      </div>
+      <div class="year-nav">
+        <button class="step" id="prev" type="button" aria-label="Previous election">←</button>
+        <button class="step" id="next" type="button" aria-label="Next election">→</button>
+      </div>
+    </div>
+    <div class="toggle years" id="years" role="group" aria-label="Choose an election year" style="margin-bottom:18px"></div>
+
+    <section class="card">
+      <div id="evbar"></div>
+      <div id="map" class="map" aria-label="Map of results by state"></div>
+      <div class="scale" id="scale"></div>
+      <div id="notes" class="notice" hidden></div>
+    </section>
+
+    <section class="stats" id="stats" aria-label="Key numbers"></section>
+
+    <section>
+      <h2>Results by state</h2>
+      <p class="muted small">Click a column to re-sort. Margin is Democratic minus Republican share of the total vote.</p>
+      <div class="table-scroll"><table id="states"></table></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap">Results from the "Results by state" tables on each election's Wikipedia page, checked against official electoral vote totals.</div></footer>
+
+  <script src="https://cdn.plot.ly/plotly-geo-4.1.1.min.js"></script>
+  <script src="assets/common.js"></script>
+  <script src="data/history.js"></script>
+  <script>
+  (function () {
+    const H = window.HISTORY;
+    const years = H.years.map((y) => y.year);
+    let idx = years.indexOf(+location.hash.slice(1));
+    if (idx < 0) idx = years.length - 1;
+    let table;
+
+    const yearsEl = document.getElementById("years");
+    yearsEl.innerHTML = years.map((y) => `<button type="button" data-year="${y}">${y}</button>`).join("");
+    yearsEl.addEventListener("click", (e) => {
+      const b = e.target.closest("button");
+      if (b) go(years.indexOf(+b.dataset.year));
+    });
+    document.getElementById("prev").onclick = () => go(idx - 1);
+    document.getElementById("next").onclick = () => go(idx + 1);
+    document.addEventListener("keydown", (e) => {
+      if (e.target.closest("input, select, textarea")) return;
+      if (e.key === "ArrowLeft") go(idx - 1);
+      if (e.key === "ArrowRight") go(idx + 1);
+    });
+    window.addEventListener("hashchange", () => {
+      const i = years.indexOf(+location.hash.slice(1));
+      if (i >= 0 && i !== idx) { idx = i; render(); }
+    });
+
+    function go(i) {
+      if (i < 0 || i >= years.length) return;
+      idx = i;
+      history.replaceState(null, "", "#" + years[idx]);
+      render();
+    }
+
+    const bandColor = (band) => {
+      if (band === "Other") return PM.SHADES.other;
+      const [party, ...rest] = band.split(" ");
+      return PM.SHADES[party][H.bands.indexOf(rest.join(" "))];
+    };
+
+    function render() {
+      const Y = H.years[idx];
+      const dem = PM.surname(Y.dem), rep = PM.surname(Y.rep);
+      const states = Y.units.filter((u) => !u.district);
+      const total = Y.ev.D + Y.ev.R + Y.ev.Other;
+
+      document.title = `${Y.year} Election · Pollmap`;
+      document.getElementById("title").textContent = `${Y.year}: ${Y.dem} vs. ${Y.rep}`;
+      const winner = Y.ev.D > Y.ev.R ? Y.dem : Y.rep;
+      document.getElementById("dek").textContent =
+        `${winner} won with ${Math.max(Y.ev.D, Y.ev.R)} electoral votes. Popular vote: ${PM.fmtMargin(Y.dem_pct - Y.rep_pct)}.`;
+      yearsEl.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", +b.dataset.year === Y.year));
+      document.getElementById("prev").disabled = idx === 0;
+      document.getElementById("next").disabled = idx === years.length - 1;
+
+      // EV bar: which states each segment's electoral votes came from
+      const bandOf = (m) => H.bands.find((b, i) => i === H.bands.length - 1 || Math.abs(m) >= +b.match(/\d+/)[0]);
+      const unitsIn = (seg) => Y.units.filter((u) => {
+        if (seg === "Other") return u.ev_other > 0;
+        const [party, ...rest] = seg.split(" ");
+        return (party === "D" ? u.ev_dem : u.ev_rep) > 0 && bandOf(u.margin) === rest.join(" ");
+      }).map((u) => u.unit).join(", ");
+      const label = (band) => {
+        if (band === "Other") return "Other";
+        const [party, ...rest] = band.split(" ");
+        return `${party === "D" ? dem : rep} by ${rest.join(" ")}`;
+      };
+      PM.renderEvBar(document.getElementById("evbar"), {
+        total,
+        left: { name: `${Y.dem} (D)`, ev: Y.ev.D, color: PM.SHADES.D[0], sub: `${PM.fmtPct(Y.dem_pct)} of the vote` },
+        right: { name: `${Y.rep} (R)`, ev: Y.ev.R, color: PM.SHADES.R[0], sub: `${PM.fmtPct(Y.rep_pct)} of the vote` },
+        center: Y.ev.Other ? `<strong>${Y.ev.Other}</strong>other` : "",
+        segments: Y.segments.filter((s) => s.band !== "Other" || s.ev > 0)
+          .map((s) => ({ label: label(s.band), ev: s.ev, color: bandColor(s.band), detail: unitsIn(s.band) })),
+      });
+
+      // Map
+      const otherWinners = states.filter((u) => u.winner === "O");
+      const evLine = (u) => {
+        const parts = [[dem, u.ev_dem], [rep, u.ev_rep], ["other", u.ev_other]].filter(([, n]) => n > 0);
+        return parts.length > 1 ? `Electoral votes split: ${parts.map(([n, v]) => `${n} ${v}`).join(", ")}` : `${u.ev_total} electoral votes`;
+      };
+      PM.renderMap(document.getElementById("map"), states.map((u) => ({
+        state: u.state, margin: u.margin,
+        color: u.winner === "O" ? PM.OTHER_COLOR : null,
+        hover: `<b>${PM.esc(u.name)}</b> · ${evLine(u)}` +
+          `<br>${PM.esc(Y.dem)}: ${PM.fmtPct(u.dem_pct)} (${PM.fmtInt(u.dem_votes)})` +
+          `<br>${PM.esc(Y.rep)}: ${PM.fmtPct(u.rep_pct)} (${PM.fmtInt(u.rep_votes)})` +
+          (u.top_other && u.top_other_pct >= 5 ? `<br>${PM.esc(u.top_other)}: ${PM.fmtPct(u.top_other_pct)}` : "") +
+          `<br>Margin: <b>${PM.fmtMargin(u.margin)}</b>`,
+      })));
+      PM.renderScale(document.getElementById("scale"), {
+        other: otherWinners.length ? `Won by ${[...new Set(otherWinners.map((u) => u.top_other.replace(/\s*\(.*\)/, "")))].join(" / ")}` : null,
+      });
+
+      // Notes: district splits, faithless/unpledged electors
+      const notes = [];
+      const districts = Y.units.filter((u) => u.district);
+      ["ME", "NE"].forEach((st) => {
+        const ds = districts.filter((u) => u.state === st);
+        const s = states.find((u) => u.state === st);
+        const split = ds.some((u) => u.winner !== s.winner);
+        if (split) {
+          const odd = ds.filter((u) => u.winner !== s.winner).map((u) => `${u.unit} (${PM.fmtMargin(u.margin)})`);
+          notes.push(`<strong>${s.name}</strong> splits its electoral votes by district. ${odd.join(", ")} voted for ${odd.length && ds.find((u) => u.winner !== s.winner).winner === "D" ? dem : rep}, unlike the state as a whole.`);
+        }
+      });
+      const unusual = states.filter((u) => u.ev_other > 0 && u.winner !== "O");
+      if (unusual.length) {
+        notes.push(`Electoral votes cast for someone other than the state's winner (faithless or unpledged electors, or an abstention): ` +
+          unusual.map((u) => `${u.name} (${u.ev_other})`).join(", ") + ".");
+      }
+      const n = document.getElementById("notes");
+      n.hidden = !notes.length;
+      n.innerHTML = notes.join("<br>");
+
+      // Stats
+      const close = [...states].sort((a, b) => Math.abs(a.margin) - Math.abs(b.margin)).slice(0, 3);
+      const prev = H.years[idx - 1];
+      const shift = prev ? (Y.dem_pct - Y.rep_pct) - (prev.dem_pct - prev.rep_pct) : null;
+      document.getElementById("stats").innerHTML = [
+        ["Popular vote", PM.fmtMargin(Y.dem_pct - Y.rep_pct), `${PM.fmtInt(Y.total)} votes cast`],
+        ["Shift from previous election", shift == null ? "—" : `${PM.fmtSigned(shift)} pts`, prev ? `${prev.year}: ${PM.fmtMargin(prev.dem_pct - prev.rep_pct)}` : "first year shown"],
+        ["States won", `${states.filter((u) => u.winner === "D").length} – ${states.filter((u) => u.winner === "R").length}`,
+          `${dem} – ${rep}${otherWinners.length ? `, ${otherWinners.length} other` : ""}`],
+        ["Closest states", close.map((u) => u.state).join(", "), close.map((u) => PM.fmtMargin(u.margin)).join(", ")],
+      ].map(([l, v, nn]) => `<div class="stat"><div class="label">${l}</div><div class="value">${v}</div><div class="note">${PM.esc(nn)}</div></div>`).join("");
+
+      // Table (states and districts)
+      const winnerName = (u) => u.winner === "D" ? dem : u.winner === "R" ? rep : (u.top_other || "Other").replace(/\s*\(.*\)/, "");
+      const columns = [
+        { key: "name", label: "State", sort: (u) => u.name },
+        { key: "ev_total", label: "EV", num: true },
+        { key: "winner", label: "Winner", sort: winnerName, render: (u) =>
+          `<span class="chip"><i style="background:${u.winner === "O" ? PM.OTHER_COLOR : u.winner === "D" ? PM.SHADES.D[0] : PM.SHADES.R[0]}"></i>${PM.esc(winnerName(u))}</span>` },
+        { key: "dem_pct", label: `${dem} %`, num: true, render: (u) => PM.fmtPct(u.dem_pct) },
+        { key: "rep_pct", label: `${rep} %`, num: true, render: (u) => PM.fmtPct(u.rep_pct) },
+        { key: "margin", label: "Margin", num: true, render: (u) => `<span class="${PM.marginClass(u.margin)}">${PM.fmtMargin(u.margin)}</span>` },
+        { key: "total", label: "Total votes", num: true, render: (u) => PM.fmtInt(u.total) },
+      ];
+      const tableEl = document.getElementById("states");
+      // Columns name the candidates, so rebuild the table each year
+      table = PM.sortableTable(tableEl, columns, Y.units, table ? undefined : { key: "name", dir: 1 });
+    }
+
+    render();
+    PM.onThemeChange(render);
+  })();
+  </script>
+</body>
+</html>
