@@ -79,6 +79,10 @@
     const places = uniq(polls.map((p) => p.state_name)).sort((a, b) => (a === "National" ? -1 : b === "National" ? 1 : a.localeCompare(b)));
     opts(fWhere, places, "National and state");
 
+    // Links from the 2028 page arrive as polls.html#matchup=Newsom%20vs%20Vance
+    const wanted = new URLSearchParams(location.hash.slice(1)).get("matchup");
+    if (wanted && [...fMatch.options].some((o) => o.value === wanted)) fMatch.value = wanted;
+
     const columns = [
       { key: "end", label: "Dates", render: (p) => `${p.start ? PM.fmtDate(p.start).replace(/, \d{4}$/, "") + " – " : ""}${PM.fmtDate(p.end)}` },
       { key: "pollster", label: "Pollster" },

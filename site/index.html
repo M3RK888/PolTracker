@@ -38,6 +38,12 @@
 
     <section class="stats" id="stats" aria-label="Key numbers"></section>
 
+    <details class="card polls-drawer" id="polls-drawer">
+      <summary><span id="polls-summary">Polls behind this map</span></summary>
+      <p class="muted small" id="polls-note"></p>
+      <div class="table-scroll"><table id="matchup-polls"></table></div>
+    </details>
+
     <section>
       <h2>Every state</h2>
       <p class="muted small">Sorted closest race first. Click a column to re-sort.</p>
@@ -63,13 +69,46 @@
   <script src="https://cdn.plot.ly/plotly-geo-4.1.1.min.js"></script>
   <script src="assets/common.js"></script>
   <script src="data/forecast.js"></script>
+  <script src="data/polls.js"></script>
   <script>
   (function () {
     const F = window.FORECAST;
+    const POLLS = window.POLLS.polls;
     const color = Object.fromEntries(F.ratings.map((r) => [r.name, r.color]));
     const byId = Object.fromEntries(F.matchups.map((m) => [m.id, m]));
     let current = byId[location.hash.slice(1)]?.available ? location.hash.slice(1) : F.default;
-    let table;
+    let table, pollTable;
+
+    // Polls that count toward the selected matchup, biggest share first
+    function renderPolls(m) {
+      const all = POLLS.filter((p) => p.dem_candidate === m.dem && p.rep_candidate === m.rep);
+      const used = all.filter((p) => p.status === "Used");
+      const nat = used.filter((p) => p.state === "US").length;
+      const st = used.length - nat;
+      document.getElementById("polls-summary").textContent =
+        `Polls behind this map: ${nat} national${st ? `, ${st} state` : ""}`;
+      const skipped = all.length - used.length;
+      const filterLink = `polls.html#matchup=${encodeURIComponent(`${m.dem} vs ${m.rep}`)}`;
+      document.getElementById("polls-note").innerHTML =
+        `Share is each poll's slice of the national average, or of its state's estimate for state polls. ` +
+        (skipped ? `${skipped} older poll${skipped === 1 ? " isn't" : "s aren't"} counted. ` : "") +
+        `<a href="${filterLink}">See all ${m.dem} vs ${m.rep} polls</a>.`;
+      const columns = [
+        { key: "end", label: "Dates", render: (p) => `${p.start ? PM.fmtDate(p.start).replace(/, \d{4}$/, "") + " – " : ""}${PM.fmtDate(p.end)}` },
+        { key: "pollster", label: "Pollster" },
+        { key: "state_name", label: "Where" },
+        { key: "sample_size", label: "Sample", num: true,
+          render: (p) => `${PM.fmtInt(p.sample_size)}${p.voter_type ? ` <span class="muted">${PM.esc(p.voter_type)}</span>` : ""}` },
+        { key: "dem", label: PM.esc(m.dem), num: true, render: (p) => `${p.dem}%` },
+        { key: "rep", label: PM.esc(m.rep), num: true, render: (p) => `${p.rep}%` },
+        { key: "margin", label: "Margin", num: true, render: (p) => `<span class="${PM.marginClass(p.margin)}">${PM.fmtMargin(p.margin)}</span>` },
+        { key: "share", label: "Share", num: true, render: (p) => `${Math.round(p.share * 100)}%` },
+        { key: "source", label: "Source", sort: (p) => p.source,
+          render: (p) => p.source ? `<a href="${PM.esc(p.source)}" target="_blank" rel="noopener">${PM.esc(new URL(p.source).hostname.replace(/^www\./, ""))}</a>` : "—" },
+      ];
+      // Column labels name the candidates, so rebuild for each matchup
+      pollTable = PM.sortableTable(document.getElementById("matchup-polls"), columns, used, { key: "share", dir: -1 });
+    }
 
     document.getElementById("dek").textContent =
       `Estimate as of ${PM.fmtDate(F.as_of)} · based on polls, not a forecast`;
@@ -130,6 +169,8 @@
         ["States flipped from 2024", m.states.filter((s) => Math.sign(s.estimate) !== Math.sign(s.margin_2024)).length,
           m.states.filter((s) => Math.sign(s.estimate) !== Math.sign(s.margin_2024)).map((s) => s.state).join(", ") || "none"],
       ].map(([l, v, n]) => `<div class="stat"><div class="label">${l}</div><div class="value">${v}</div><div class="note">${PM.esc(n)}</div></div>`).join("");
+
+      renderPolls(m);
 
       const columns = [
         { key: "name", label: "State" },

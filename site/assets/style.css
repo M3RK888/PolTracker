@@ -130,6 +130,22 @@ h2 { font-size: 20px; letter-spacing: -0.01em; margin: 0 0 12px; }
 .stat .value { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; margin-top: 2px; }
 .stat .note { font-size: 12.5px; color: var(--ink-2); }
 
+/* Polls drawer (collapsible list under the stats) --------------------------- */
+.polls-drawer { padding: 0; margin-top: 20px; }
+.polls-drawer summary {
+  cursor: pointer; list-style: none; padding: 16px 20px; font-weight: 650; font-size: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.polls-drawer summary::-webkit-details-marker { display: none; }
+.polls-drawer summary::before {
+  content: "▸"; color: var(--ink-3); font-size: 13px; transition: transform 0.15s; display: inline-block;
+}
+.polls-drawer[open] summary::before { transform: rotate(90deg); }
+.polls-drawer summary:hover { background: var(--bg); border-radius: var(--radius); }
+.polls-drawer > p, .polls-drawer > .table-scroll { margin: 0 20px 16px; }
+.polls-drawer .table-scroll { margin-bottom: 20px; }
+.polls-drawer + section { margin-top: 20px; }
+
 /* Notice ------------------------------------------------------------------ */
 .notice { border-left: 3px solid var(--other); background: var(--surface); padding: 10px 14px; border-radius: 6px; font-size: 14px; color: var(--ink-2); margin-top: 12px; }
 
