@@ -37,7 +37,7 @@ def raw_page(title: str, refresh: bool = True) -> str:
 
 # Wikimedia asks automated tools to say who they are, with a way to get in touch;
 # requests from anonymous-looking tools are the first to be throttled.
-USER_AGENT = "poltracker-build/1.0 (https://github.com/M3RK888/pollmap)"
+USER_AGENT = "poltracker-build/1.0 (https://github.com/M3RK888/poltracker)"
 
 
 def fetch(url: str) -> bytes:

@@ -26,7 +26,7 @@ before starting; the decisions in it were made with the owner and shouldn't be r
   jargon or define it, and point him to the relevant files. He likes to understand how things work.
 - He reviews outcomes, not diffs. Show screenshots or numbers that prove things work.
 - He chose to publish: anything pushed to `main` under `site/` goes live on
-  https://m3rk888.github.io/pollmap/ within about a minute (GitHub Pages workflow). Don't push
+  https://m3rk888.github.io/poltracker/ within about a minute (GitHub Pages workflow). Don't push
   broken or half-done pages. Work on a branch or keep the toggle hidden until a forecast is done.
 - Don't send his email address anywhere (e.g. in HTTP User-Agent headers). Use
   `poltracker-build/1.0` style agents.
@@ -34,7 +34,7 @@ before starting; the decisions in it were made with the owner and shouldn't be r
 
 ## How the site works today
 
-Python builds static data files; hand-written pages draw them. Repo: https://github.com/M3RK888/pollmap
+Python builds static data files; hand-written pages draw them. Repo: https://github.com/M3RK888/poltracker
 
 ```
 data/*.csv  ->  build_site.py  ->  site/data/*.js  ->  site/*.html (+ site/assets/common.js, style.css)

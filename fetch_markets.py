@@ -46,7 +46,7 @@ from datetime import datetime, timezone
 import wikitables
 from fetch_midterms import STATE_CODES
 
-AGENT = {"User-Agent": "poltracker-build/1.0 (https://github.com/M3RK888/pollmap)"}
+AGENT = {"User-Agent": "poltracker-build/1.0 (https://github.com/M3RK888/poltracker)"}
 POLYMARKET = "https://gamma-api.polymarket.com/events"
 KALSHI = "https://api.elections.kalshi.com/trade-api/v2/events"
 APPROVAL_ARTICLE = "Opinion polling on the second Trump presidency"

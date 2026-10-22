@@ -1,4 +1,4 @@
-# Publishes the site/ folder to GitHub Pages (https://m3rk888.github.io/pollmap/)
+# Publishes the site/ folder to GitHub Pages (https://m3rk888.github.io/poltracker/)
 # on every push to main, including the poll agent's daily commits.
 # The site's data files are committed already, so there's no build step.
 name: Publish site
