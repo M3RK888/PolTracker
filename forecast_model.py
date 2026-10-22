@@ -50,6 +50,7 @@ P_CLAMP = (0.02, 0.98)         # a 99.9% market price says little about the marg
 
 INCUMBENCY = 2.5               # points of margin for an incumbent on the ballot
 REGION_SD = 2.0                # shared error within a Census region
+NATIONAL_SD0 = 3.0             # shared national error on Election Day itself (grows with time; see sigmas)
 
 # Midterm rule of thumb: since 1994 the president's party has run about 4.5 points
 # behind in the House popular vote, plus about 1 point per 6 points of net approval
@@ -97,7 +98,7 @@ def weights_for(t: int, have: dict) -> dict:
 
 def sigmas(t: int, s0: float) -> dict:
     """Standard deviations (points of margin) of the error on the final margin."""
-    return {"national": math.sqrt(3 ** 2 + 0.06 * t), "region": REGION_SD,
+    return {"national": math.sqrt(NATIONAL_SD0 ** 2 + 0.06 * t), "region": REGION_SD,
             "race": math.sqrt(s0 ** 2 + 0.05 * t)}
 
 

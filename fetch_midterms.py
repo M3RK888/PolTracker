@@ -52,28 +52,48 @@ VOTER_RANK = {"LV": 0, "RV": 1, "V": 2, "A": 3, None: 4}
 
 def pvi(cell: str) -> float | None:
     """'{{Shading PVI|R|15}}' -> -15 (Democratic lean positive); EVEN -> 0."""
-    m = re.search(r"PVI\|\s*(EVEN|[RD])\s*(?:\|\s*(\d+))?", cell, re.I)
+    m = re.search(r"PVI\|\s*(EVEN|[RD])\s*(?:[|+]\s*(?:value\s*=\s*)?(\d+(?:\.\d+)?))?", cell, re.I)
     if not m:
         return None
     if m.group(1).upper() == "EVEN":
         return 0.0
+    if m.group(2) is None:                        # malformed cell, e.g. '{{Shading PVI|R}}'
+        return None
     return float(m.group(2)) * (1 if m.group(1).upper() == "D" else -1)
 
 
 def candidates(cell: str) -> list[tuple[str, str]]:
     """Plainlist of '*{{Party stripe|...}}[[Name]] (Republican)' -> [('Name', 'R'), ...]."""
+    return [(name, code) for name, code, _, _ in candidate_results(cell)]
+
+
+def candidate_results(cell: str) -> list[tuple[str, str, float | None, bool]]:
+    """Like candidates(), plus each one's vote share and whether they won. Before an
+    election the share is None; after, lines read '{{Aye}} [[Name]] (Republican) 50.5%'
+    (the check mark is on the winner)."""
     out = []
-    for line in cell.split("\n"):
-        if not line.strip().startswith("*"):
+    lines = cell.split("\n")
+    bulleted = any(l.strip().startswith("*") for l in lines)
+    for line in lines:
+        # Usually one '*' line per candidate; an unopposed winner is a single line without one
+        if not (line.strip().startswith("*") or (not bulleted and "party stripe" in line.lower())):
             continue
-        m = re.search(r"^(.*)\(([^()]*)\)\s*$", w.plain(line.lstrip("* ")))
+        won = bool(re.search(r"\{\{\s*(Aye|Yes|Tick|Check mark)", line, re.I))
+        m = re.search(r"^(.*)\(([^()]*)\)\s*(?:([\d.]+)\s*%)?\s*$", w.plain(line.lstrip("* ")))
         if not m:
             continue
         party = m.group(2)
         code = ("D" if re.search(r"Democrat|DFL", party) else "R" if "Republican" in party
                 else "I" if re.search(r"Independent|Nonpartisan|Forward", party) else "O")
-        out.append((m.group(1).strip(), code))
+        out.append((m.group(1).strip(), code, float(m.group(3)) if m.group(3) else None, won))
     return out
+
+
+def result_cell(row: list[str]) -> str:
+    """The candidates cell, rejoined: a collapsible "Others" list inside it has lines
+    starting with '|', which the table reader takes for extra cells."""
+    i = next((i for i, c in enumerate(row) if re.search(r"plainlist|party stripe", c, re.I)), len(row) - 1)
+    return "\n".join(row[i:])
 
 
 def write_csv(path: str, rows: list[dict], columns: list[str]) -> None:
@@ -92,15 +112,19 @@ def surname(name: str) -> str:
 # ---------------------------------------------------------------------------
 # Senate
 # ---------------------------------------------------------------------------
-def senate() -> tuple[list[dict], list[dict]]:
-    lines = w.raw_page(SENATE_ARTICLE).split("\n")
+def senate(year: int = 2026, refresh: bool = True, with_polls: bool = True) -> tuple[list[dict], list[dict]]:
+    """Races and polls for one year's Senate elections. Past years (for backtest.py)
+    work too: their articles have the same layout, plus results once decided.
+    refresh=False reuses cached copies of the articles; with_polls=False skips each
+    race's own article (one page instead of ~35, enough for results)."""
+    lines = w.raw_page(SENATE_ARTICLE.replace("2026", str(year)), refresh).split("\n")
     races = []
     # Regular races, plus the Florida and Ohio specials, which have their own table
     spans = [w.section(lines, r"^Special elections during the preceding Congress$"),
              w.section(lines, r"^Elections leading to the next Congress$")]
     for t in (t for a, b in spans for t in w.tables(lines[a:b])):
         for row in t["rows"]:
-            title = re.search(r"\[\[(2026 United States Senate (?:special )?election in ([^|\]]+))", row[0])
+            title = re.search(rf"\[\[({year} United States Senate (?:special )?election in ([^|\]]+))", row[0])
             if not title:
                 continue
             state = title.group(2).strip()
@@ -110,13 +134,13 @@ def senate() -> tuple[list[dict], list[dict]]:
                 "special": "special" in title.group(1),
                 "pvi": pvi(row[1]), "incumbent": w.plain(row[2]),
                 "incumbent_party": "R" if "Republican" in party else "D" if re.search("Democrat|DFL", party) else "I",
-                "listed": candidates(row[-1]),
+                "listed": candidates(row[-1]), "results": candidate_results(result_cell(row)),
             })
 
     polls = []
-    for race in races:
+    for race in races if with_polls else []:
         time.sleep(0.3)
-        lines = w.raw_page(race["article"]).split("\n")
+        lines = w.raw_page(race["article"], refresh).split("\n")
         g0, g1 = w.section(lines, r"^General election$", 2)
         p0, p1 = w.section(lines, r"^Polling$", 3, g0) if g0 >= 0 else (-1, -1)
         rows = []
@@ -160,7 +184,8 @@ def senate() -> tuple[list[dict], list[dict]]:
                 best[key] = {**r, "dem": d, "rep": rv}
         for r in best.values():
             polls.append({
-                "state": race["state"], "pollster": r["pollster"], "start_date": r["start"] or "",
+                "state": race["state"], "race": race["state"] + ("-special" if race["special"] else ""),
+                "pollster": r["pollster"], "start_date": r["start"] or "",
                 "end_date": r["end"], "sample_size": r["sample_size"] or "",
                 "voter_type": r["voter_type"] if r["voter_type"] in ("LV", "RV", "A") else "",
                 "dem_candidate": surname(opp), "rep_candidate": surname(rep),
@@ -174,8 +199,8 @@ def senate() -> tuple[list[dict], list[dict]]:
 # ---------------------------------------------------------------------------
 # House
 # ---------------------------------------------------------------------------
-def house() -> tuple[list[dict], list[dict]]:
-    lines = w.raw_page(HOUSE_ARTICLE).split("\n")
+def house(year: int = 2026, refresh: bool = True) -> tuple[list[dict], list[dict]]:
+    lines = w.raw_page(HOUSE_ARTICLE.replace("2026", str(year)), refresh).split("\n")
     districts = {}
     for name, code in STATE_CODES.items():
         a, b = w.section(lines, rf"^{re.escape(name)}$", 2)
@@ -204,6 +229,7 @@ def house() -> tuple[list[dict], list[dict]]:
                     "dem_candidate": next((n for n, p in cands if p == "D"), ""),
                     "rep_candidate": next((n for n, p in cands if p == "R"), ""),
                     "other_candidates": "; ".join(f"{n} ({p})" for n, p in cands if p not in ("D", "R")),
+                    "results": candidate_results(result_cell(row)),
                 }
 
     return sorted(districts.values(), key=lambda d: (d["state"], d["number"])), generic_ballot(lines)

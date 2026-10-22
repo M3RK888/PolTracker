@@ -173,4 +173,4 @@ date,race,kind,p_dem,p_rep,median,lo,hi,market_dem,polymarket,kalshi
 2026-10-19,senate,reconstructed,0.6384,0.3615,51,48,55,0.6275,0.635,0.62
 2026-10-20,senate,reconstructed,0.6413,0.3587,51,48,55,0.6425,0.635,0.65
 2026-10-21,senate,reconstructed,0.6512,0.3488,52,48,55,0.6475,0.635,0.66
-2026-10-22,senate,daily,0.6372,0.3628,51,48,55,0.68,0.685,0.675
+2026-10-22,senate,daily,0.638,0.362,51,48,55,0.68,0.685,0.675
