@@ -90,7 +90,8 @@ is too old for the pinned packages, so use `python3.13` (if that doesn't exist, 
 2. `python3.13 validate_polls.py` and fix any problem it reports in the rows you added
 3. `python3.13 build_site.py`
 4. `python3.13 -m pytest -q` (the tests must pass; don't change them)
-5. Commit `data/polls_2028.csv`, `site/data/` and any changed `data/*history*.csv` with a message like:
+5. Commit `data/polls_2028.csv`, everything changed under `site/` (the build also updates the pages'
+   version tags) and any changed `data/*history*.csv` with a message like:
 
    ```
    Add 3 polls: Emerson (US, Oct 15), Quinnipiac (PA, Oct 12), ...

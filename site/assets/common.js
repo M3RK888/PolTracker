@@ -3,6 +3,21 @@
 (function () {
   const PM = {};
 
+  // If a page's script fails (for example, an old cached file), say so instead of
+  // leaving the page blank.
+  window.addEventListener("error", () => {
+    if (document.querySelector(".notice.load-error")) return;
+    const show = () => {
+      const n = document.createElement("p");
+      n.className = "notice load-error";
+      n.setAttribute("role", "alert");
+      n.innerHTML = "<strong>Something didn't load right.</strong> Please refresh the page; if that doesn't help, " +
+        "try again in a few minutes (the site may be mid-update).";
+      document.querySelector("main")?.prepend(n);
+    };
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", show); else show();
+  });
+
   // ColorBrewer RdBu, the same scale as the Python map: R+25 deep red -> D+25 deep blue
   PM.MARGIN_RANGE = 25;
   PM.MARGIN_SCALE = [

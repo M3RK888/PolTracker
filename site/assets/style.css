@@ -188,6 +188,7 @@ body:not([data-view="results"]) .only-results { display: none !important; }
 .polls-drawer + section { margin-top: 20px; }
 
 /* Notice ------------------------------------------------------------------ */
+.notice.load-error { margin: 0 0 16px; border-left-color: var(--rep); }
 .notice.stale { margin: 0 0 16px; border-left-color: var(--rep); }
 .notice { border-left: 3px solid var(--other); background: var(--surface); padding: 10px 14px; border-radius: 6px; font-size: 14px; color: var(--ink-2); margin-top: 12px; }
 

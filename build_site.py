@@ -24,7 +24,9 @@ Run after editing data/polls_2028.csv:
 Then open site/index.html, or publish the site/ folder.
 """
 
+import hashlib
 import json
+import re
 from pathlib import Path
 
 import numpy as np
@@ -237,6 +239,30 @@ def build_accuracy() -> dict:
     return {"backtest": load(BACKTEST), "score_2026": load(SCORE_2026)}
 
 
+def stamp_versions() -> int:
+    """Give every local script, stylesheet and data link in the pages a version tag
+    made from the file's contents (data/house.js?v=3f9a1c2e). Browsers keep copies
+    of these files for a while; when a file changes, its tag changes, so a visitor
+    never gets new page code with an old cached data file (which can leave a page blank)."""
+    changed = 0
+    for page in Path("site").glob("*.html"):
+        html = page.read_text(encoding="utf-8")
+
+        def tag(m):
+            path = Path("site") / m.group(2)
+            if not path.exists():
+                return m.group(0)
+            # Windows and Linux save line breaks differently; ignore that so both give the same tag
+            digest = hashlib.md5(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()[:8]
+            return f'{m.group(1)}="{m.group(2)}?v={digest}"'
+
+        new = re.sub(r'(src|href)="((?:data|assets)/[^"?#]+)(?:\?v=[^"]*)?"', tag, html)
+        if new != html:
+            page.write_text(new, encoding="utf-8")
+            changed += 1
+    return changed
+
+
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
     polls = model.load_polls()
@@ -269,6 +295,7 @@ if __name__ == "__main__":
     f28["history"] = {m["id"]: forecast_model.history_series(hist, f"president:{m['id']}") for m in f28["matchups"]}
     write_js("forecast_2028", "FORECAST_2028", f28)
     write_js("accuracy", "ACCURACY", build_accuracy())
+    stamp_versions()                              # last, once every data file is written
 
     avail = [f"{m['dem']} vs {m['rep']}" for m in forecast["matchups"] if m["available"]]
     unavail = [f"{m['dem']} vs {m['rep']}" for m in forecast["matchups"] if not m["available"]]
