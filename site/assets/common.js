@@ -97,10 +97,12 @@
   // Map --------------------------------------------------------------------------
   // rows: [{state, margin, hover}]; rows with color set (e.g. third-party wins)
   // are drawn as a separate flat-colored layer.
-  PM.renderMap = (el, rows) => {
+  // opts: { zmin, zmax } to color by something other than margin (e.g. win probability 0..1)
+  PM.renderMap = (el, rows, opts = {}) => {
     const css = getComputedStyle(document.documentElement);
     const border = css.getPropertyValue("--surface").trim() || "#fff";
     const ink = css.getPropertyValue("--ink").trim() || "#111";
+    const zmin = opts.zmin ?? -PM.MARGIN_RANGE, zmax = opts.zmax ?? PM.MARGIN_RANGE;
     const scaled = rows.filter((r) => !r.color);
     const flat = rows.filter((r) => r.color);
     const base = {
@@ -112,9 +114,9 @@
     const traces = [{
       ...base,
       locations: scaled.map((r) => r.state),
-      z: scaled.map((r) => Math.max(-PM.MARGIN_RANGE, Math.min(PM.MARGIN_RANGE, r.margin))),
+      z: scaled.map((r) => Math.max(zmin, Math.min(zmax, r.margin))),
       text: scaled.map((r) => r.hover),
-      zmin: -PM.MARGIN_RANGE, zmax: PM.MARGIN_RANGE, colorscale: PM.MARGIN_SCALE,
+      zmin, zmax, colorscale: PM.MARGIN_SCALE,
     }];
     // One flat-colored layer per color (third-party wins, states with no race, ...)
     [...new Set(flat.map((r) => r.color))].forEach((c) => {
@@ -143,12 +145,12 @@
   // Grey for states with nothing on the ballot (theme-aware)
   PM.noRaceColor = () => (window.matchMedia("(prefers-color-scheme: dark)").matches ? "#3a3d44" : "#dcd9d2");
 
-  PM.renderScale = (el, { other } = {}) => {
+  PM.renderScale = (el, { other, left, right } = {}) => {
     const stops = PM.MARGIN_SCALE.map(([p, c]) => `${c} ${p * 100}%`).join(",");
     el.innerHTML = `
-      <span>R+${PM.MARGIN_RANGE}</span>
+      <span>${left ?? `R+${PM.MARGIN_RANGE}`}</span>
       <span class="ramp" style="background:linear-gradient(90deg,${stops})"></span>
-      <span>D+${PM.MARGIN_RANGE}</span>
+      <span>${right ?? `D+${PM.MARGIN_RANGE}`}</span>
       ${other ? `<span class="other-key"><i></i>${PM.esc(other)}</span>` : ""}`;
   };
 
@@ -186,6 +188,104 @@
     };
     draw();
     return { update(newRows) { rows = newRows; draw(); } };
+  };
+
+  // Forecast helpers -----------------------------------------------------------
+  // Win probabilities use the same red-gray-blue scale as margins: 50% is gray,
+  // 95% or more for either side is the deepest color.
+  PM.PROB_MIN = 0.05; PM.PROB_MAX = 0.95;
+  PM.probColor = (p) => {
+    const x = (Math.max(PM.PROB_MIN, Math.min(PM.PROB_MAX, p)) - PM.PROB_MIN) / (PM.PROB_MAX - PM.PROB_MIN);
+    const sc = PM.MARGIN_SCALE, i = Math.min(sc.length - 2, Math.floor(x * (sc.length - 1)));
+    const f = (x - sc[i][0]) / (sc[i + 1][0] - sc[i][0]);
+    const rgb = (h) => [1, 3, 5].map((k) => parseInt(h.slice(k, k + 2), 16));
+    const [a, b] = [rgb(sc[i][1]), rgb(sc[i + 1][1])];
+    return `rgb(${a.map((v, k) => Math.round(v + (b[k] - v) * f)).join(",")})`;
+  };
+  // "63%", with the extremes shown as "<1%" / ">99%" rather than a false 0 or 100
+  PM.fmtProb = (p) => (p == null ? "—" : p < 0.005 ? "<1%" : p > 0.995 ? ">99%" : `${Math.round(p * 100)}%`);
+  // The leader's chance, e.g. "D 72%" / "R 88%"
+  PM.fmtChance = (pDem) => (pDem >= 0.5 ? `D ${PM.fmtProb(pDem)}` : `R ${PM.fmtProb(1 - pDem)}`);
+  PM.probClass = (pDem) => (pDem > 0.5 ? "d" : pDem < 0.5 ? "r" : "");
+  // Bar colors for the probability bands, reusing the rating shades
+  PM.BAND_COLORS = {
+    "Safe D": PM.SHADES.D[0], "Likely D": PM.SHADES.D[1], "Lean D": PM.SHADES.D[2], "Toss-up": PM.SHADES.tossup,
+    "Lean R": PM.SHADES.R[2], "Likely R": PM.SHADES.R[1], "Safe R": PM.SHADES.R[0],
+  };
+  // How much each ingredient counts, as a tiny stacked bar: polls / markets / fundamentals
+  PM.WEIGHT_COLORS = { polls: "var(--ink-2)", markets: "var(--other)", fundamentals: "var(--rule-strong)" };
+  PM.weightBar = (w) => `<span class="w-bar" title="Polls ${Math.round(w.polls * 100)}%, markets ${Math.round(w.markets * 100)}%, fundamentals ${Math.round(w.fundamentals * 100)}%">` +
+    ["polls", "markets", "fundamentals"].map((k) => `<i style="width:${w[k] * 100}%;background:${PM.WEIGHT_COLORS[k]}"></i>`).join("") +
+    `</span>${["polls", "markets", "fundamentals"].map((k) => Math.round(w[k] * 100)).join("/")}`;
+
+  // Polls / Forecast toggle. The choice lives in the URL hash ("#forecast" or
+  // "#polls", optionally followed by "&" and whatever else the page keeps there).
+  PM.hashParts = () => location.hash.slice(1).split("&").filter(Boolean);
+  PM.hashRest = () => PM.hashParts().filter((p) => p !== "polls" && p !== "forecast");
+  PM.setHash = (view, rest) => history.replaceState(null, "", "#" + [view, ...rest].filter(Boolean).join("&"));
+  PM.viewToggle = (el, onChange) => {
+    let view = PM.hashParts().includes("polls") ? "polls" : "forecast";
+    el.innerHTML = `<div class="toggle view-toggle" role="group" aria-label="View">
+      <button type="button" data-view="polls">Polls</button><button type="button" data-view="forecast">Forecast</button></div>`;
+    const set = (v, push) => {
+      view = v;
+      document.body.dataset.view = v;
+      el.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.view === v)));
+      if (push) PM.setHash(v, PM.hashRest());
+      onChange(v);
+    };
+    el.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { if (b.dataset.view !== view) set(b.dataset.view, true); }));
+    set(view, false);
+    return { get: () => view };
+  };
+
+  // Distribution of simulated seats: one bar per seat count, blue where Democrats
+  // have control, red where they don't, with the control line marked.
+  // opts: { hist: [{seats, p}], threshold, thresholdLabel, label, unit }
+  PM.renderHistogram = (el, opts) => {
+    const hist = opts.hist.filter((h) => h.p >= 0.0005);
+    const lo = Math.min(hist[0].seats, opts.threshold - 1), hi = Math.max(hist[hist.length - 1].seats, opts.threshold);
+    // Drawn at the container's real width so text stays full size on phones
+    const W = Math.max(280, el.clientWidth || 1000), H = W < 600 ? 190 : 260;
+    const n = hi - lo + 1, padL = 8, padR = 8, padT = 30, padB = 34;
+    const bw = (W - padL - padR) / n, maxP = Math.max(...hist.map((h) => h.p));
+    const x = (s) => padL + (s - lo) * bw;
+    const y = (p) => padT + (H - padT - padB) * (1 - p / maxP);
+    const gap = bw > 6 ? 2 : bw > 3 ? 1 : 0;
+    const bars = hist.map((h, i) => {
+      const yy = y(h.p), hh = H - padB - yy, w = Math.max(1, bw - gap), r = Math.max(0, Math.min(4, w / 2, hh));
+      const fill = h.seats >= opts.threshold ? "var(--dem)" : "var(--rep)";
+      // rounded top, square at the baseline
+      const path = `M${x(h.seats) + gap / 2},${H - padB}V${yy + r}q0,-${r} ${r},-${r}h${w - 2 * r}q${r},0 ${r},${r}V${H - padB}Z`;
+      return `<path d="${path}" fill="${fill}"/><rect class="hit" data-i="${i}" x="${x(h.seats)}" y="${padT}" width="${bw}" height="${H - padT - padB}" fill="transparent"/>`;
+    }).join("");
+    const step = [1, 2, 5, 10, 20, 50].find((k) => k * bw >= 40) || 50;   // tick labels at least 40px apart
+    const ticks = [];
+    for (let s = Math.ceil(lo / step) * step; s <= hi; s += step)
+      ticks.push(`<text x="${x(s) + bw / 2}" y="${H - padB + 20}" class="hist-tick">${s}</text>`);
+    const tx = x(opts.threshold);
+    el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" class="hist" role="img" aria-label="${PM.esc(opts.label)}: distribution across simulations">
+      <line x1="${padL}" x2="${W - padR}" y1="${H - padB}" y2="${H - padB}" class="hist-axis"/>
+      ${bars}
+      <line x1="${tx}" x2="${tx}" y1="${padT - 12}" y2="${H - padB}" class="hist-line"/>
+      <text x="${tx + 6}" y="${padT - 4}" class="hist-label">${PM.esc(opts.thresholdLabel)}</text>
+      ${ticks.join("")}
+    </svg>`;
+    const svg = el.querySelector("svg");
+    svg.addEventListener("mousemove", (e) => {
+      const t = e.target.closest(".hit");
+      if (!t) return PM.hideTip();
+      const h = hist[+t.dataset.i];
+      PM.showTip(`<strong>${h.seats} ${PM.esc(opts.unit)}</strong><br>${(h.p * 100).toFixed(1)}% of simulations` +
+        `<br>${h.seats >= opts.threshold ? "Democrats control" : "Republicans control"}`, e.clientX, e.clientY);
+    });
+    svg.addEventListener("mouseleave", PM.hideTip);
+    if (!el._resize) {
+      let lastW = el.clientWidth;
+      el._resize = () => { if (el.clientWidth !== lastW) { lastW = el.clientWidth; PM.renderHistogram(el, el._opts); } };
+      window.addEventListener("resize", el._resize);
+    }
+    el._opts = opts;
   };
 
   // Re-draw maps when the OS switches light/dark

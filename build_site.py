@@ -9,6 +9,8 @@ change when polls do. This script regenerates only site/data/*.js:
     polls.js      every 2028 poll, with how much it counts and why
     senate.js     2026 Senate estimates and polls (from fetch_midterms.py's CSVs)
     house.js      2026 House estimates by district
+    forecast_2026.js  2026 win probabilities (forecast_model.py; needs data/markets.csv
+                  and data/approval.csv from fetch_markets.py)
 
 The data is written as small JS files (window.X = {...}) rather than JSON so
 the pages work when opened straight from disk, with no local server needed.
@@ -24,6 +26,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+import forecast_model
 import midterms
 import polling_2028 as model
 
@@ -216,6 +219,8 @@ if __name__ == "__main__":
     senate, house = midterms.senate(), midterms.house()
     write_js("senate", "SENATE", senate)
     write_js("house", "HOUSE", house)
+    f26 = forecast_model.forecast_2026()
+    write_js("forecast_2026", "FORECAST_2026", f26)
 
     avail = [f"{m['dem']} vs {m['rep']}" for m in forecast["matchups"] if m["available"]]
     unavail = [f"{m['dem']} vs {m['rep']}" for m in forecast["matchups"] if not m["available"]]
@@ -225,4 +230,6 @@ if __name__ == "__main__":
     print(f"Polls: {len(poll_data['polls'])} ({sum(p['status'] == 'Used' for p in poll_data['polls'])} used)")
     print(f"Senate: D {senate['seats']['D']}, R {senate['seats']['R']}, tossup {senate['seats']['Tossup']}; "
           f"House: D {house['seats']['D']}, R {house['seats']['R']}, tossup {house['seats']['Tossup']}")
-    print(f"Wrote site/data/forecast.js, polls.js, history.js, senate.js, house.js")
+    print(f"Forecast ({f26['days_out']} days out): Democrats win the Senate {f26['senate']['summary']['p_dem_control']:.0%}, "
+          f"the House {f26['house']['summary']['p_dem_control']:.0%}")
+    print(f"Wrote site/data/forecast.js, polls.js, history.js, senate.js, house.js, forecast_2026.js")

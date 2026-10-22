@@ -113,12 +113,29 @@ The Senate and House pages are refreshed by a script, not by hand. Every run, af
 3. If it succeeds, look at `git diff --stat` and the diff of `data/senate_2026_polls.csv`. Expect a
    handful of new polls per day. If a large number of existing rows changed or vanished, something
    on Wikipedia changed format: discard the midterm changes and report it instead.
-4. `python3.13 build_site.py` (once, covering both the 2028 and midterm changes), then commit the
+4. Run `fetch_markets.py` (next section), then `python3.13 build_site.py` (once, covering the 2028,
+   midterm and market changes), then commit the
    CSVs and `site/data/` together. Mention the Senate poll count change in the commit message,
    e.g. "Senate: +6 polls".
 
 After November 3 the results replace the polls. Stop running `fetch_midterms.py` then; the site's
 owner will switch the pages to results.
+
+## Forecast inputs: prediction markets and approval
+
+The forecast (`forecast_model.py`, run by `build_site.py`) also uses prediction-market prices and the
+presidential approval average. Refresh them every run, **before** `build_site.py`:
+
+1. `python3.13 fetch_markets.py`. It reads Polymarket and Kalshi's public APIs and Wikipedia's approval
+   average, rewrites `data/markets.csv` and `data/approval.csv`, and stops with "validation failed" if
+   anything looks wrong (control markets missing, too few races matched, odd approval numbers).
+   It takes about a minute.
+2. If it fails (including network errors reaching polymarket.com or kalshi.com), `git checkout` those two
+   CSVs back and carry on: the build will use the previous prices. Mention the failure in your report.
+3. If it succeeds, commit both CSVs together with the rest. Prices change every day, so expect a diff.
+   In the commit message add the control odds the build prints, e.g. "Forecast: Senate D 65%, House D 94%".
+
+Never hand-edit `data/markets.csv` or `data/approval.csv`.
 
 ## Final report
 

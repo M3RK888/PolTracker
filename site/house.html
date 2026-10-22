@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>2026 House · Pollmap</title>
-  <meta name="description" content="A poll-based estimate of all 435 U.S. House races in 2026, shown as an equal-area district map.">
+  <meta name="description" content="A forecast and poll-based estimate of all 435 U.S. House races in 2026, shown as an equal-area district map.">
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body data-view="forecast">
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Pollmap</a>
@@ -27,12 +27,21 @@
         <h1>The 2026 House</h1>
         <p class="dek" id="dek"></p>
       </div>
+      <div id="view"></div>
     </div>
 
     <section class="card">
       <div id="bar"></div>
-      <div class="hexmap-wrap"><svg id="hexmap" role="img" aria-label="Map of all 435 House districts, one hexagon each, colored by rating"></svg></div>
+      <div class="hexmap-wrap"><svg id="hexmap" role="img" aria-label="Map of all 435 House districts, one hexagon each"></svg></div>
+      <div class="scale only-forecast" id="scale"></div>
       <p class="muted small" style="text-align:center;margin:6px 0 0">Each hexagon is one district, so every seat is the same size. Districts are grouped by state; their positions within a state aren't geographic.</p>
+    </section>
+
+    <section class="card only-forecast">
+      <h2>How many seats?</h2>
+      <p class="muted small" id="hist-note" style="margin:-6px 0 0"></p>
+      <div id="hist"></div>
+      <div class="compare" id="compare"></div>
     </section>
 
     <section class="stats" id="stats" aria-label="Key numbers"></section>
@@ -46,15 +55,20 @@
 
     <section>
       <h2>Every district</h2>
+      <p class="muted small only-forecast">Sorted closest race first. <strong>Forecast</strong> is the middle of the simulated
+        results, with the range that covers 80% of them. The last column is how much the
+        <span class="w-key"><i style="background:var(--ink-2)"></i>polls</span>,
+        <span class="w-key"><i style="background:var(--other)"></i>markets</span> and
+        <span class="w-key"><i style="background:var(--rule-strong)"></i>fundamentals</span> count, in percent.</p>
       <div class="filters">
         <label>State <select id="f-state"><option value="">All states</option></select></label>
-        <label>Rating <select id="f-rating"><option value="">All ratings</option></select></label>
+        <label><span id="f-rating-label">Rating</span> <select id="f-rating"></select></label>
         <span class="muted small" id="count" aria-live="polite"></span>
       </div>
       <div class="table-scroll"><table id="districts"></table></div>
     </section>
 
-    <section class="card prose">
+    <section class="card prose only-polls">
       <h2>How this estimate works</h2>
       <p>Individual House races are rarely polled, so every district is estimated the same way: its partisan lean
         (<a href="https://www.cookpolitical.com/cook-pvi" target="_blank" rel="noopener">Cook PVI</a>) applied to the
@@ -64,43 +78,85 @@
       <p>Cook's 2026 PVI is calculated for the district lines actually used this year, so states that redrew their maps
         mid-decade (Texas, California, Missouri, North Carolina, Ohio, Utah and others) are covered.</p>
       <p>This ignores candidates: incumbents, scandals and money often move a district several points from its lean.
-        Ratings use the same cutoffs as the other maps. A snapshot of the polls, not a forecast.</p>
+        Ratings use the same cutoffs as the other maps. This view is a snapshot of the polls; switch to
+        <a href="#forecast" data-goto="forecast">Forecast</a> for chances of winning.</p>
+    </section>
+
+    <section class="card prose only-forecast">
+      <h2>How the forecast works</h2>
+      <p class="caveat"><strong>This is an unvalidated hobby model.</strong> It uses a standard method, but its settings
+        are judgment calls, and it hasn't been tested against past elections the way professional forecasts are.
+        Treat the percentages as a rough guide.</p>
+      <p><strong>1. Three estimates for every district</strong>, each a margin (Democrat minus Republican):</p>
+      <p>• <strong>Polls</strong>: the estimate in the Polls view, the generic-ballot average plus the district's lean.
+        Districts are rarely polled on their own.<br>
+        • <strong>Markets</strong>: what traders on <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a>
+        and <a href="https://kalshi.com" target="_blank" rel="noopener">Kalshi</a> are paying, averaged when both list the district
+        (<span data-f="n_markets"></span> of 435 have a market with at least $<span data-f="min_volume"></span> traded).
+        A price of 70¢ means about a 70% chance; the model converts that into the margin that would give a 70% chance
+        under its own uncertainty.<br>
+        • <strong>Fundamentals</strong>: what history says without polls. In midterms since 1994 the president's party has
+        run about 4.5 points behind in the House vote, plus about 1 point for every 6 points of net approval.
+        Trump's net approval is <span data-f="approval"></span>, which points to a national environment of
+        <strong data-f="env_fund"></strong> (the generic-ballot polls say <span data-f="env_polls"></span>).
+        Each district adds its partisan lean (2 × Cook PVI), and an incumbent running again gets
+        <span data-f="incumbency"></span> points, since the lean alone ignores candidates.</p>
+      <p><strong>2. A weighted blend.</strong> Polls count more as Election Day nears: their weight is
+        1 ÷ (1 + days left ÷ <span data-f="poll_days"></span>). The rest goes 60% to markets and 40% to fundamentals.
+        Today, <span data-f="days"></span> days out: <strong data-f="weights"></strong>.
+        Where a district has no market, its share goes to the others.</p>
+      <p><strong>3. Uncertainty.</strong> The result will miss the blend. The model assumes a national miss shared by every
+        district (typically about <span data-f="sd_nat"></span> points), a regional miss shared by nearby states
+        (about <span data-f="sd_reg"></span>), and a miss in each district on its own (about <span data-f="sd_race"></span>,
+        larger than for states since district estimates are rougher). Big misses are drawn a little more often than a
+        bell curve would.</p>
+      <p><strong>4. Simulate.</strong> The model runs the election <span data-f="draws"></span> times with random misses.
+        A district's chances are the share of runs each party wins it; Democrats control the House in runs where
+        they win 218 or more seats.</p>
+      <p>The markets' own odds on House control are shown above for comparison. They aren't independent of this
+        forecast, since district market prices are one of its inputs. Market prices fetched <span data-f="fetched"></span>.</p>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="wrap">Districts, candidates and Cook PVI from Wikipedia's 2026 House elections article (read from its exact page source); generic ballot from the aggregators linked above.</div></footer>
+  <footer class="site-footer"><div class="wrap">Districts, candidates and Cook PVI from Wikipedia's 2026 House elections article (read from its exact page source); generic ballot from the aggregators linked above. Market prices from Polymarket and Kalshi's public data; approval from Wikipedia's average of approval trackers.</div></footer>
 
   <script src="assets/common.js"></script>
   <script src="data/forecast.js"></script>
   <script src="data/house.js"></script>
+  <script src="data/forecast_2026.js"></script>
   <script>
   (function () {
-    const H = window.HOUSE;
+    const H = window.HOUSE, F = window.FORECAST_2026, FH = F.house, sm = FH.summary, w = F.weights;
     const color = Object.fromEntries(window.FORECAST.ratings.map((r) => [r.name, r.color]));
     const D = H.districts;
+    const fc = Object.fromEntries(FH.races.map((r) => [r.key, r]));
     const byCell = new Map(D.map((d) => [`${d.q},${d.r}`, d]));
     const NAMES = Object.fromEntries(window.FORECAST.matchups.find((m) => m.available).states.map((s) => [s.state, s.name]));
     const cands = (d) => [d.dem && `${d.dem} (D)`, d.rep && `${d.rep} (R)`, d.others].filter(Boolean).join(", ") || "—";
     const pvi = (p) => (p === 0 ? "EVEN" : `${p > 0 ? "D" : "R"}+${Math.abs(p)}`);
+    const range = (f) => `${PM.fmtMargin(f.lo)} to ${PM.fmtMargin(f.hi)}`;
+    let view;
 
-    document.getElementById("dek").textContent =
-      `Estimate as of ${PM.fmtDate(H.as_of)} · Election Day is November 3 · based on polls, not a forecast`;
+    // Static text
+    const fill = {
+      n_markets: FH.races.filter((r) => r.market_p != null).length,
+      min_volume: F.settings.min_volume.toLocaleString("en-US"), approval: `${PM.fmtSigned(F.approval.net)} (${F.approval.approve}% approve, ${F.approval.disapprove}% disapprove)`,
+      env_fund: PM.fmtMargin(F.environment.fundamentals), env_polls: PM.fmtMargin(F.environment.polls),
+      incumbency: F.settings.incumbency, poll_days: F.settings.poll_days, days: F.days_out,
+      weights: `polls ${Math.round(w.polls * 100)}%, markets ${Math.round(w.markets * 100)}%, fundamentals ${Math.round(w.fundamentals * 100)}%`,
+      sd_nat: FH.sigma.national.toFixed(1), sd_reg: FH.sigma.region.toFixed(1), sd_race: FH.sigma.race.toFixed(1),
+      draws: F.settings.draws.toLocaleString("en-US"),
+      fetched: F.markets_fetched ? new Date(F.markets_fetched.replace("Z", ":00Z")).toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }) : "—",
+    };
+    document.querySelectorAll("[data-f]").forEach((el) => { el.textContent = fill[el.dataset.f]; });
     document.getElementById("m-env").textContent = PM.fmtMargin(H.environment);
     document.getElementById("generic-summary").textContent =
       `The generic ballot behind every district: ${PM.fmtMargin(H.environment)}`;
-
-    // Seat bar
-    const inRating = (rating) => {
-      const ds = D.filter((d) => d.rating === rating);
-      return ds.length > 24 ? `${ds.length} districts` : ds.map((d) => d.id).join(", ");
-    };
-    PM.renderEvBar(document.getElementById("bar"), {
-      total: 435, threshold: 218, thresholdLabel: "218 for control", unit: "seat",
-      left: { name: "Democrats", ev: H.seats.D, color: PM.SHADES.D[0], sub: "excluding tossups" },
-      right: { name: "Republicans", ev: H.seats.R, color: PM.SHADES.R[0], sub: "excluding tossups" },
-      center: H.seats.Tossup ? `<strong>${H.seats.Tossup}</strong>tossup` : "",
-      segments: H.segments.map((s) => ({ label: s.rating, ev: s.seats, color: color[s.rating], detail: inRating(s.rating) })),
-    });
+    document.getElementById("hist-note").textContent =
+      `Democratic seats after the election, across ${F.settings.draws.toLocaleString("en-US")} simulations. Blue: Democrats control.`;
+    document.getElementById("compare").innerHTML = `<span>This forecast: <strong>Democrats ${PM.fmtProb(sm.p_dem_control)}</strong></span>` +
+      Object.entries(FH.markets).map(([src, m]) => `<span>${src}: <strong>Democrats ${PM.fmtProb(m.p_dem)}</strong> <span class="muted">($${PM.fmtInt(m.volume)} traded)</span></span>`).join("");
+    PM.renderScale(document.getElementById("scale"), { left: "R 95%+", right: "D 95%+" });
 
     // Hex map (pointy-top hexagons in axial coordinates)
     const R3 = Math.sqrt(3);
@@ -117,7 +173,7 @@
     D.forEach((d) => {
       const [cx, cy] = center(d);
       const poly = [0, 1, 2, 3, 4, 5].map((i) => corner(cx, cy, i).map((v) => v.toFixed(3)).join(",")).join(" ");
-      hexes += `<polygon class="hex" data-id="${d.id}" points="${poly}" fill="${color[d.rating]}" tabindex="0"/>`;
+      hexes += `<polygon class="hex" data-id="${d.id}" points="${poly}" tabindex="0"/>`;
       DIRS.forEach(([dq, dr], i) => {
         const n = byCell.get(`${d.q + dq},${d.r + dr}`);
         if (!n || n.state !== d.state) {
@@ -134,10 +190,18 @@
       return `<text x="${x}" y="${y}" class="hex-label">${st}</text>`;
     }).join("");
     svg.innerHTML = `<g>${hexes}</g><path class="hex-border" d="${borders}"/><g>${labels}</g>`;
+    const hexEls = [...svg.querySelectorAll(".hex")];
 
-    const tip = (d) => `<strong>${PM.esc(d.name)}</strong> (${d.id})<br>Estimate: <strong>${PM.fmtMargin(d.estimate)}</strong>, ${d.rating}` +
-      `<br>Partisan lean: ${pvi(d.pvi)}<br>Incumbent: ${d.incumbent ? `${PM.esc(d.incumbent)} (${d.incumbent_party})` : "none (new or open seat)"}` +
-      `<br>Candidates: ${PM.esc(cands(d))}`;
+    const tip = (d) => {
+      const f = fc[d.id];
+      const head = `<strong>${PM.esc(d.name)}</strong> (${d.id})`;
+      const tail = `<br>Partisan lean: ${pvi(d.pvi)}<br>Incumbent: ${d.incumbent ? `${PM.esc(d.incumbent)} (${d.incumbent_party})` : "none (new or open seat)"}` +
+        `<br>Candidates: ${PM.esc(cands(d))}`;
+      if (view === "forecast") return head + `<br>Chance: <strong>${PM.fmtChance(f.p_dem)}</strong>` +
+        `<br>Forecast: ${PM.fmtMargin(f.median)} <span style="opacity:.75">(80%: ${range(f)})</span>` +
+        `<br>Polls ${PM.fmtMargin(f.polls)} · Markets ${f.market_p == null ? "—" : PM.fmtChance(f.market_p)} · Fundamentals ${PM.fmtMargin(f.fundamentals)}` + tail;
+      return head + `<br>Estimate: <strong>${PM.fmtMargin(d.estimate)}</strong>, ${d.rating}` + tail;
+    };
     svg.addEventListener("mousemove", (e) => {
       const h = e.target.closest(".hex");
       if (h) PM.showTip(tip(D.find((d) => d.id === h.dataset.id)), e.clientX, e.clientY); else PM.hideTip();
@@ -149,18 +213,6 @@
     });
     svg.addEventListener("focusout", PM.hideTip);
 
-    // Stats
-    const held = D.filter((d) => d.incumbent_party === "D" || d.incumbent_party === "R");
-    const flips = held.filter((d) => Math.abs(d.estimate) >= 2 && (d.estimate > 0 ? "D" : "R") !== d.incumbent_party);
-    const toD = flips.filter((d) => d.estimate > 0).length;
-    const competitive = D.filter((d) => Math.abs(d.estimate) < 5).length;
-    document.getElementById("stats").innerHTML = [
-      ["National environment", PM.fmtMargin(H.environment), "generic ballot, average of aggregators"],
-      ["Competitive seats", competitive, "within 5 points (Lean or Tossup)"],
-      ["Seats changing party", flips.length, `${toD} to Democrats, ${flips.length - toD} to Republicans (not counting tossups)`],
-      ["Open or new seats", D.filter((d) => !d.incumbent).length, "no incumbent on the ballot"],
-    ].map(([l, v, n]) => `<div class="stat"><div class="label">${l}</div><div class="value">${v}</div><div class="note">${PM.esc(n)}</div></div>`).join("");
-
     // Generic ballot table
     PM.sortableTable(document.getElementById("generic"), [
       { key: "source", label: "Aggregator", render: (g) => g.url ? `<a href="${PM.esc(g.url)}" target="_blank" rel="noopener">${PM.esc(g.source)}</a>` : PM.esc(g.source) },
@@ -170,29 +222,117 @@
       { key: "margin", label: "Margin", num: true, render: (g) => `<span class="${PM.marginClass(g.margin)}">${PM.fmtMargin(g.margin)}</span>` },
     ], H.generic, { key: "margin", dir: -1 });
 
-    // District table with filters
+    // District table: different columns per view, same filters
     const fState = document.getElementById("f-state"), fRating = document.getElementById("f-rating");
     fState.innerHTML += [...new Set(D.map((d) => d.state))].sort((a, b) => (NAMES[a] || a).localeCompare(NAMES[b] || b))
       .map((s) => `<option value="${s}">${PM.esc(NAMES[s] || s)}</option>`).join("");
-    fRating.innerHTML += H.segments.map((s) => `<option>${s.rating}</option>`).join("");
-    const filtered = () => D.filter((d) => (!fState.value || d.state === fState.value) && (!fRating.value || d.rating === fRating.value));
-    const table = PM.sortableTable(document.getElementById("districts"), [
+    const category = (d) => (view === "forecast" ? fc[d.id].band : d.rating);
+    const filtered = () => D.filter((d) => (!fState.value || d.state === fState.value) && (!fRating.value || category(d) === fRating.value));
+    const incCol = { key: "incumbent", label: "Incumbent", render: (d) => d.incumbent ? `${PM.esc(d.incumbent)} <span class="muted">(${d.incumbent_party})</span>` : `<span class="muted">open / new</span>` };
+    const pollCols = [
       { key: "id", label: "District" },
       { key: "pvi", label: "Lean", num: true, render: (d) => `<span class="muted">${pvi(d.pvi)}</span>` },
       { key: "estimate", label: "Estimate", num: true, sort: (d) => -Math.abs(d.estimate),
         render: (d) => `<span class="${PM.marginClass(d.estimate)}">${PM.fmtMargin(d.estimate)}</span>` },
       { key: "rating", label: "Rating", sort: (d) => H.segments.findIndex((s) => s.rating === d.rating),
         render: (d) => `<span class="chip"><i style="background:${color[d.rating]}"></i>${d.rating}</span>` },
-      { key: "incumbent", label: "Incumbent", render: (d) => d.incumbent ? `${PM.esc(d.incumbent)} <span class="muted">(${d.incumbent_party})</span>` : `<span class="muted">open / new</span>` },
+      incCol,
       { key: "cands", label: "Candidates", sort: (d) => d.dem, render: (d) => PM.esc(cands(d)) },
-    ], filtered(), { key: "estimate", dir: -1 });
+    ];
+    const marketTip = (f) => f.market_sources ? Object.entries(f.market_sources).map(([s, p]) => `${s} ${PM.fmtChance(p)}`).join(", ") : "";
+    const fCols = [
+      { key: "id", label: "District" },
+      { key: "chance", label: "Chance", num: true, sort: (d) => -Math.abs(fc[d.id].p_dem - 0.5),
+        render: (d) => `<span class="chip"><i style="background:${PM.probColor(fc[d.id].p_dem)}"></i><span class="${PM.probClass(fc[d.id].p_dem)}">${PM.fmtChance(fc[d.id].p_dem)}</span></span>` },
+      { key: "median", label: "Forecast", num: true, sort: (d) => fc[d.id].median,
+        render: (d) => `${PM.fmtMargin(fc[d.id].median)}<br><span class="muted small">${range(fc[d.id])}</span>` },
+      { key: "polls", label: "Polls", num: true, sort: (d) => fc[d.id].polls, render: (d) => PM.fmtMargin(fc[d.id].polls) },
+      { key: "market", label: "Markets", num: true, sort: (d) => fc[d.id].market_p,
+        render: (d) => fc[d.id].market_p == null ? `<span class="muted">—</span>` : `<span title="${PM.esc(marketTip(fc[d.id]))}">${PM.fmtChance(fc[d.id].market_p)}</span>` },
+      { key: "fund", label: "Fundamentals", num: true, sort: (d) => fc[d.id].fundamentals, render: (d) => `<span class="muted">${PM.fmtMargin(fc[d.id].fundamentals)}</span>` },
+      { key: "weights", label: "Weights", sort: (d) => fc[d.id].weights.polls, render: (d) => `<span class="small">${PM.weightBar(fc[d.id].weights)}</span>` },
+      incCol,
+    ];
+    let table;
     const update = () => {
       const rows = filtered();
       table.update(rows);
       document.getElementById("count").textContent = `Showing ${rows.length} of 435`;
     };
     [fState, fRating].forEach((el) => el.addEventListener("change", update));
-    update();
+
+    function render() {
+      const forecast = view === "forecast";
+      document.getElementById("dek").textContent = forecast
+        ? `Forecast as of ${PM.fmtDate(F.as_of)} · ${F.days_out} days to Election Day, November 3 · an unvalidated hobby model`
+        : `Estimate as of ${PM.fmtDate(H.as_of)} · Election Day is November 3 · based on polls, not a forecast`;
+
+      // Seat bar
+      const list = (ds) => (ds.length > 24 ? `${ds.length} districts` : ds.map((d) => d.id).join(", "));
+      if (forecast) {
+        PM.renderEvBar(document.getElementById("bar"), {
+          total: 435, threshold: 218, thresholdLabel: "218 for control", unit: "seat",
+          left: { name: "Democrats", ev: PM.fmtProb(sm.p_dem_control), color: PM.SHADES.D[0], sub: "chance of winning the House" },
+          right: { name: "Republicans", ev: PM.fmtProb(sm.p_rep_control), color: PM.SHADES.R[0], sub: "chance of keeping the House" },
+          center: `<strong>${sm.dem_median}–${435 - sm.dem_median}</strong>median seats`,
+          segments: FH.segments.map((s) => ({ label: s.label, ev: s.seats, color: PM.BAND_COLORS[s.band],
+            detail: list(D.filter((d) => fc[d.id].band === s.band)) })),
+        });
+      } else {
+        PM.renderEvBar(document.getElementById("bar"), {
+          total: 435, threshold: 218, thresholdLabel: "218 for control", unit: "seat",
+          left: { name: "Democrats", ev: H.seats.D, color: PM.SHADES.D[0], sub: "excluding tossups" },
+          right: { name: "Republicans", ev: H.seats.R, color: PM.SHADES.R[0], sub: "excluding tossups" },
+          center: H.seats.Tossup ? `<strong>${H.seats.Tossup}</strong>tossup` : "",
+          segments: H.segments.map((s) => ({ label: s.rating, ev: s.seats, color: color[s.rating], detail: list(D.filter((d) => d.rating === s.rating)) })),
+        });
+      }
+      hexEls.forEach((el, i) => el.setAttribute("fill", forecast ? PM.probColor(fc[D[i].id].p_dem) : color[D[i].rating]));
+      svg.setAttribute("aria-label", `Map of all 435 House districts, one hexagon each, colored by ${forecast ? "chance of winning" : "rating"}`);
+
+      // Stats
+      const held = D.filter((d) => d.incumbent_party === "D" || d.incumbent_party === "R");
+      if (forecast) {
+        const flips = held.filter((d) => (fc[d.id].p_dem > 0.5 ? "D" : "R") !== d.incumbent_party);
+        const toD = flips.filter((d) => fc[d.id].p_dem > 0.5).length;
+        const tossups = D.filter((d) => fc[d.id].band === "Toss-up").length;
+        document.getElementById("stats").innerHTML = [
+          ["Most likely result", `${sm.dem_median}–${435 - sm.dem_median}`, `Democratic seats: 80% of simulations between ${sm.dem_lo} and ${sm.dem_hi}`],
+          ["Toss-ups", tossups, "districts where neither party is above 60%"],
+          ["Seats likelier than not to flip", flips.length, `${toD} to Democrats, ${flips.length - toD} to Republicans`],
+          ["What counts today", `${Math.round(w.polls * 100)} / ${Math.round(w.markets * 100)} / ${Math.round(w.fundamentals * 100)}`, `polls / markets / fundamentals, %, ${F.days_out} days out`],
+        ].map(([l, v, n]) => `<div class="stat"><div class="label">${l}</div><div class="value">${v}</div><div class="note">${PM.esc(n)}</div></div>`).join("");
+        PM.renderHistogram(document.getElementById("hist"), {
+          hist: sm.histogram, threshold: 218, thresholdLabel: "218: Democratic control",
+          label: "Democratic House seats", unit: "Democratic seats",
+        });
+      } else {
+        const flips = held.filter((d) => Math.abs(d.estimate) >= 2 && (d.estimate > 0 ? "D" : "R") !== d.incumbent_party);
+        const toD = flips.filter((d) => d.estimate > 0).length;
+        document.getElementById("stats").innerHTML = [
+          ["National environment", PM.fmtMargin(H.environment), "generic ballot, average of aggregators"],
+          ["Competitive seats", D.filter((d) => Math.abs(d.estimate) < 5).length, "within 5 points (Lean or Tossup)"],
+          ["Seats changing party", flips.length, `${toD} to Democrats, ${flips.length - toD} to Republicans (not counting tossups)`],
+          ["Open or new seats", D.filter((d) => !d.incumbent).length, "no incumbent on the ballot"],
+        ].map(([l, v, n]) => `<div class="stat"><div class="label">${l}</div><div class="value">${v}</div><div class="note">${PM.esc(n)}</div></div>`).join("");
+      }
+
+      // Table + the second filter's options
+      document.getElementById("f-rating-label").textContent = forecast ? "Chance" : "Rating";
+      fRating.innerHTML = `<option value="">${forecast ? "All chances" : "All ratings"}</option>` + (forecast
+        ? FH.segments.map((s) => `<option value="${s.band}">${s.label}</option>`).join("")
+        : H.segments.map((s) => `<option>${s.rating}</option>`).join(""));
+      table = PM.sortableTable(document.getElementById("districts"), forecast ? fCols : pollCols, filtered(),
+        forecast ? { key: "chance", dir: -1 } : { key: "estimate", dir: -1 });
+      update();
+    }
+
+    PM.viewToggle(document.getElementById("view"), (v) => { view = v; render(); });
+    document.querySelectorAll("[data-goto]").forEach((a) => a.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelector(`#view button[data-view="${a.dataset.goto}"]`).click();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }));
   })();
   </script>
 </body>

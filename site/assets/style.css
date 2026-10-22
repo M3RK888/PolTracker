@@ -80,6 +80,22 @@ h2 { font-size: 20px; letter-spacing: -0.01em; margin: 0 0 12px; }
 .toggle .count { font-weight: 500; font-size: 12px; opacity: 0.75; }
 .toggle.years button { padding: 6px 11px; font-size: 13.5px; }
 
+/* Polls / Forecast view ------------------------------------------------- */
+.view-toggle button { padding: 7px 18px; }
+body[data-view="forecast"] .only-polls, body[data-view="polls"] .only-forecast { display: none !important; }
+.hist { width: 100%; height: auto; display: block; margin-top: 4px; }
+.hist .hist-axis { stroke: var(--rule-strong); stroke-width: 1; }
+.hist .hist-line { stroke: var(--ink); stroke-width: 2; }
+.hist .hist-label { font: 600 14px var(--sans); fill: var(--ink-2); }
+.hist .hist-tick { font: 13px var(--sans); fill: var(--ink-3); text-anchor: middle; }
+.compare { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13.5px; color: var(--ink-2); margin-top: 8px; }
+.compare strong { color: var(--ink); }
+.caveat { border-left: 3px solid var(--other); padding: 8px 12px; background: var(--bg); border-radius: 6px; }
+.w-bar { display: inline-flex; width: 56px; height: 8px; border-radius: 4px; overflow: hidden; vertical-align: middle; margin-right: 6px; gap: 1px; background: var(--surface); }
+.w-bar i { display: block; height: 100%; }
+.w-key { display: inline-flex; align-items: center; gap: 5px; }
+.w-key i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+
 /* Card --------------------------------------------------------------------- */
 .card { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); padding: 20px; }
 .card + .card, .card + section, section + section { margin-top: 20px; }
@@ -119,7 +135,7 @@ h2 { font-size: 20px; letter-spacing: -0.01em; margin: 0 0 12px; }
 /* Map --------------------------------------------------------------------- */
 .map { width: 100%; aspect-ratio: 7 / 4; min-height: 220px; margin-top: 8px; }
 .scale { display: flex; align-items: center; gap: 10px; justify-content: center; font-size: 12.5px; color: var(--ink-2); margin-top: 6px; flex-wrap: wrap; }
-.scale .ramp { width: min(320px, 60vw); height: 10px; border-radius: 5px; }
+.scale .ramp { width: min(320px, 44vw); height: 10px; border-radius: 5px; }
 .scale .other-key { display: inline-flex; align-items: center; gap: 6px; }
 .scale .other-key i { width: 12px; height: 12px; border-radius: 3px; background: var(--other); }
 
