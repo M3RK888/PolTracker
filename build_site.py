@@ -8,7 +8,8 @@ change when polls do. This script regenerates only site/data/*.js:
     history.js    actual results, 1960-2024, from data/results_1960_2024.csv
     polls.js      every 2028 poll, with how much it counts and why
     senate.js     2026 Senate estimates and polls (from fetch_midterms.py's CSVs)
-    house.js      2026 House estimates by district
+    house.js      2026 House estimates by district (plus results, once score_forecast.py has run)
+    accuracy.js   backtest results (backtest.py) and, after the election, the 2026 score
     forecast_2026.js  2026 win probabilities (forecast_model.py; needs data/markets.csv
                   and data/approval.csv from fetch_markets.py)
     forecast_2028.js  2028 win probabilities per matchup (also needs data/economy.csv)
@@ -212,6 +213,31 @@ def ordinal(n: str) -> str:
 
 
 # ---------------------------------------------------------------------------
+# After the election: results, and how accurate the forecast was
+# ---------------------------------------------------------------------------
+RESULTS_2026 = Path("data/results_2026.csv")      # written by score_forecast.py
+SCORE_2026 = Path("data/score_2026.json")         # written by score_forecast.py
+BACKTEST = Path("data/backtest_summary.json")     # written by backtest.py
+
+
+def load_results_2026() -> dict | None:
+    if not RESULTS_2026.exists():
+        return None
+    r = pd.read_csv(RESULTS_2026)
+    out = {"as_of": midterms.AS_OF.strftime("%Y-%m-%d")}     # results are re-read every daily build
+    for chamber in ("senate", "house"):
+        out[chamber] = {row["race"]: {"dem_won": None if pd.isna(row["dem_won"]) else bool(row["dem_won"]),
+                                      "margin": None if pd.isna(row["margin"]) else r2(row["margin"])}
+                        for _, row in r[r["chamber"] == chamber].iterrows()}
+    return out
+
+
+def build_accuracy() -> dict:
+    load = lambda p: json.loads(p.read_text(encoding="utf-8")) if p.exists() else None
+    return {"backtest": load(BACKTEST), "score_2026": load(SCORE_2026)}
+
+
+# ---------------------------------------------------------------------------
 if __name__ == "__main__":
     polls = model.load_polls()
     forecast, poll_data = build_forecast(polls)
@@ -220,22 +246,29 @@ if __name__ == "__main__":
     write_js("history", "HISTORY", build_history())
 
     senate, house = midterms.senate(), midterms.house()
+    results = load_results_2026()
+    if results is not None:                       # after Election Day: attach each race's result
+        for payload, chamber in ((senate, "senate"), (house, "house")):
+            payload["results"] = results.get(chamber, {})
+            payload["results_as_of"] = results["as_of"]
     write_js("senate", "SENATE", senate)
     write_js("house", "HOUSE", house)
-    f26 = forecast_model.forecast_2026()
+
+    # The 2026 forecast is frozen on Election Day: afterwards, market prices follow the
+    # results, so a rebuilt "forecast" would partly be hindsight. The Election Day
+    # version stays on the site (and in the history files) as what was predicted.
+    before_election = forecast_model.AS_OF <= forecast_model.ELECTION_2026
+    f26 = forecast_model.forecast_2026() if before_election else None
     f28 = forecast_model.forecast_2028()
     # Add today's numbers to the tracker's history, then ship the whole history with each forecast
-    # The 2026 record stops on Election Day: after that, market prices follow the
-    # results, so later numbers wouldn't be a forecast. Election Day itself is kept
-    # (the daily run happens hours before polls close) and is what gets scored.
-    before_election = forecast_model.AS_OF <= forecast_model.ELECTION_2026
-    hist = forecast_model.save_history(forecast_model.history_rows(f26 if before_election else None, f28))
-    if before_election:
+    hist = forecast_model.save_history(forecast_model.history_rows(f26, f28))
+    if f26:
         forecast_model.save_race_history(forecast_model.race_history_rows(f26))
-    f26["history"] = {c: forecast_model.history_series(hist, c) for c in ("senate", "house")}
+        f26["history"] = {c: forecast_model.history_series(hist, c) for c in ("senate", "house")}
+        write_js("forecast_2026", "FORECAST_2026", f26)
     f28["history"] = {m["id"]: forecast_model.history_series(hist, f"president:{m['id']}") for m in f28["matchups"]}
-    write_js("forecast_2026", "FORECAST_2026", f26)
     write_js("forecast_2028", "FORECAST_2028", f28)
+    write_js("accuracy", "ACCURACY", build_accuracy())
 
     avail = [f"{m['dem']} vs {m['rep']}" for m in forecast["matchups"] if m["available"]]
     unavail = [f"{m['dem']} vs {m['rep']}" for m in forecast["matchups"] if not m["available"]]
@@ -245,7 +278,12 @@ if __name__ == "__main__":
     print(f"Polls: {len(poll_data['polls'])} ({sum(p['status'] == 'Used' for p in poll_data['polls'])} used)")
     print(f"Senate: D {senate['seats']['D']}, R {senate['seats']['R']}, tossup {senate['seats']['Tossup']}; "
           f"House: D {house['seats']['D']}, R {house['seats']['R']}, tossup {house['seats']['Tossup']}")
-    print(f"Forecast ({f26['days_out']} days out): Democrats win the Senate {f26['senate']['summary']['p_dem_control']:.0%}, "
-          f"the House {f26['house']['summary']['p_dem_control']:.0%}; 2028 ({f28['days_out']} days out): "
-          + ", ".join(f"{m['dem']} {m['summary']['p_dem']:.0%} vs {m['rep']}" for m in f28["matchups"][:3]))
-    print(f"Wrote site/data/forecast.js, polls.js, history.js, senate.js, house.js, forecast_2026.js, forecast_2028.js")
+    if f26:
+        print(f"Forecast ({f26['days_out']} days out): Democrats win the Senate {f26['senate']['summary']['p_dem_control']:.0%}, "
+              f"the House {f26['house']['summary']['p_dem_control']:.0%}; 2028 ({f28['days_out']} days out): "
+              + ", ".join(f"{m['dem']} {m['summary']['p_dem']:.0%} vs {m['rep']}" for m in f28["matchups"][:3]))
+    else:
+        print("2026 forecast: frozen at its Election Day version (not rebuilt)")
+    if results is not None:
+        print(f"2026 results: {sum(r['dem_won'] is not None for c in ('senate', 'house') for r in results[c].values())} races called")
+    print("Wrote site/data/forecast.js, polls.js, history.js, senate.js, house.js, forecast_2026.js, forecast_2028.js, accuracy.js")

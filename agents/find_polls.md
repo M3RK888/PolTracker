@@ -89,7 +89,8 @@ is too old for the pinned packages, so use `python3.13` (if that doesn't exist, 
 1. `python3.13 -m pip install -q -r requirements.txt`
 2. `python3.13 validate_polls.py` and fix any problem it reports in the rows you added
 3. `python3.13 build_site.py`
-4. Commit `data/polls_2028.csv` and `site/data/` with a message like:
+4. `python3.13 -m pytest -q` (the tests must pass; don't change them)
+5. Commit `data/polls_2028.csv`, `site/data/` and any changed `data/*history*.csv` with a message like:
 
    ```
    Add 3 polls: Emerson (US, Oct 15), Quinnipiac (PA, Oct 12), ...
@@ -99,59 +100,21 @@ is too old for the pinned packages, so use `python3.13` (if that doesn't exist, 
 
 If you found nothing new, don't commit. Just report that no new polls were found.
 
-## 2026 Senate and House (through Election Day, November 3, 2026)
+## Everything else is automatic
 
-The Senate and House pages are refreshed by a script, not by hand. Every run, after the 2028 work:
+A GitHub job (`.github/workflows/refresh.yml`) runs at 11:00 UTC every day, an hour before you. It
+refreshes the 2026 Senate and House data, the prediction-market prices, approval and unemployment,
+and (after Election Day) the 2026 results; rebuilds the site data, which adds the day's points to the
+tracker history files; runs the tests; commits; and publishes. So:
 
-1. `python3.13 fetch_midterms.py`. It re-reads Wikipedia's 2026 Senate race articles and House article
-   (exact wikitext), rewrites `data/senate_2026_races.csv`, `data/senate_2026_polls.csv`,
-   `data/house_2026_districts.csv` and `data/generic_ballot_2026.csv`, and stops with
-   "validation failed" if anything looks wrong (wrong number of races or districts, missing partisan
-   leans, too few polls).
-2. If it fails, don't edit those CSVs by hand and don't commit them. `git checkout` them back and
-   mention the failure in your report.
-3. If it succeeds, look at `git diff --stat` and the diff of `data/senate_2026_polls.csv`. Expect a
-   handful of new polls per day. If a large number of existing rows changed or vanished, something
-   on Wikipedia changed format: discard the midterm changes and report it instead.
-4. Run `fetch_markets.py` (next section), then `python3.13 build_site.py` (once, covering the 2028,
-   midterm and market changes), then commit the
-   CSVs and `site/data/` together. Mention the Senate poll count change in the commit message,
-   e.g. "Senate: +6 polls".
-
-After November 3 the results replace the polls. Stop running `fetch_midterms.py` then; the site's
-owner will switch the pages to results.
-
-## Forecast inputs: prediction markets and approval
-
-The forecast (`forecast_model.py`, run by `build_site.py`) also uses prediction-market prices and the
-presidential approval average. Refresh them every run, **before** `build_site.py`:
-
-1. `python3.13 fetch_markets.py`. It reads Polymarket and Kalshi's public APIs, Wikipedia's approval
-   average and the unemployment rate (FRED), and rewrites `data/markets.csv`, `data/approval.csv` and
-   `data/economy.csv`. It takes a few minutes. The three parts are independent: if one site can't be
-   reached or its numbers fail the script's checks, the script prints `WARNING <part>: kept the previous
-   ...` and leaves that file as it was, and still updates the others. It only stops with an error if
-   none of the three could be updated.
-2. Don't restore or edit these files yourself, whatever the script printed. Mention every WARNING in
-   your report.
-3. Commit whichever of the three CSVs changed together with the rest. Prices change every day, so expect
-   a diff. In the commit message add the control odds the build prints, e.g. "Forecast: Senate D 65%, House D 94%".
-
-If Wikipedia answers "429 Too Many Requests", the scripts already wait and retry for a few minutes.
-If `fetch_midterms.py` still fails, skip it as described above but **still run `build_site.py` and
-commit**, so the tracker gets today's point from whatever data is current.
-
-Never hand-edit `data/markets.csv`, `data/approval.csv` or `data/economy.csv`.
-
-## Forecast history (the tracker charts)
-
-Every `build_site.py` run adds that day's control odds to `data/forecast_history.csv` (one row per
-race per day; a second build on the same day replaces that day's rows), and every 2026 Senate race's and
-House district's chance to `data/race_forecast_history.csv`. Commit both with `site/data/` every time
-you build. The run on **Election Day, November 3**, matters most: its rows are the forecast that gets
-scored against the results, so make sure that day's build is committed. After November 3 the build stops
-adding 2026 rows on its own. Never hand-edit these, and never delete rows from them: older rows can't be
-recreated, since they record what the forecast said on that day. Don't run `backfill_history.py`.
+- **Don't run** `fetch_midterms.py`, `fetch_markets.py`, `score_forecast.py`, `backtest.py` or
+  `backfill_history.py`, and don't edit any of the CSVs they write or the history files
+  (`data/forecast_history.csv`, `data/race_forecast_history.csv`).
+- Before you start, `git pull` so you have the job's commit from this morning.
+- When you add polls, `build_site.py` (step 3 above) rewrites `site/data/` and refreshes today's rows in
+  the history files from the same data. Commit those changes along with `data/polls_2028.csv`.
+- If the job's latest run failed (its commit is missing, or `site/data/forecast_2026.js` is more than a
+  day old), mention it in your report. Don't try to fix it.
 
 ## Final report
 

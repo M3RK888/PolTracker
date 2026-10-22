@@ -12,7 +12,7 @@ import sys
 
 import pandas as pd
 
-from polling_2028 import STATE_NAMES
+from polling_2028 import STATE_NAMES, today as eastern_today
 
 PATH = "data/polls_2028.csv"
 COLUMNS = ["state", "pollster", "start_date", "end_date", "sample_size", "voter_type",
@@ -27,7 +27,7 @@ def problems(df: pd.DataFrame) -> list[str]:
     out = []
     start = pd.to_datetime(df["start_date"], format="%Y-%m-%d", errors="coerce")
     end = pd.to_datetime(df["end_date"], format="%Y-%m-%d", errors="coerce")
-    today = pd.Timestamp.today().normalize()
+    today = eastern_today()
 
     for i, r in df.iterrows():
         row = f"row {i + 2} ({r['pollster']}, {r['end_date']})"   # +2: header line, 1-based

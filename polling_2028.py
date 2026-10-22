@@ -24,16 +24,12 @@ Data:
 Run:
     python polling_2028.py
 
-Outputs:
-    map_2028.html               interactive map
-    state_estimates_2028.csv    the numbers behind it
+Prints a summary for one matchup (DEM vs REP below). The website itself is built
+by build_site.py, which uses these functions for every matchup.
 """
 
 import numpy as np
 import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 
 # ---------------------------------------------------------------------------
 # Settings — change these and rerun
@@ -41,7 +37,14 @@ from plotly.subplots import make_subplots
 DEM = "Newsom"           # which hypothetical matchup to map
 REP = "Vance"
 
-AS_OF = pd.Timestamp.today().normalize()   # build the average as of today
+def today() -> pd.Timestamp:
+    """Today's date in US Eastern time, wherever the build runs. The cloud runs on
+    UTC and a laptop on local time, so without this an evening build could be filed
+    under a different day than the morning one."""
+    return pd.Timestamp.now(tz="America/New_York").tz_localize(None).normalize()
+
+
+AS_OF = today()          # build the average as of today
 HALF_LIFE_DAYS = 90      # polls are sparse this early, so decay slowly
 WINDOW_DAYS = 400        # ignore polls older than this
 PRIOR_WEIGHT = 1.5       # how much the baseline counts, in "fresh polls" (see blend_state)
@@ -225,95 +228,15 @@ def ev_totals(est: pd.DataFrame) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# 4. Map
-# ---------------------------------------------------------------------------
 def fmt_margin(m: float) -> str:
     if abs(m) < 0.05:
         return "Even"
     return f"{'D' if m > 0 else 'R'}+{abs(m):.1f}"
 
 
-def ev_bar(est: pd.DataFrame) -> list[go.Bar]:
-    """One stacked segment per rating, Almost certain D on the left to Almost certain R on the right."""
-    totals = ev_totals(est)
-    bars = []
-    for rating, color in RATING_COLORS.items():
-        ev = totals[rating]
-        states = ", ".join(sorted(est.loc[est["rating"] == rating, "state"])) or "none"
-        dark = rating.startswith(("Almost certain", "Likely"))
-        bars.append(go.Bar(
-            x=[ev], y=[""], orientation="h", name=f"{rating} ({ev})",
-            marker=dict(color=color, line=dict(color="white", width=2)),
-            text=[ev if ev else ""], textposition="inside", insidetextanchor="middle",
-            textfont=dict(color="white" if dark else "#222"),
-            hovertemplate=f"<b>{rating}</b>: {ev} electoral votes<br>{states}<extra></extra>",
-        ))
-    return bars
-
-
-def make_map(est: pd.DataFrame, summary: dict):
-    df = est.assign(
-        est_label=est["estimate"].apply(fmt_margin),
-        label_2024=est["margin_2024"].apply(fmt_margin),
-        basis=est["n_state_polls"].map(
-            lambda n: "2024 result + national swing" if n == 0
-            else f"{n} state poll{'s' if n > 1 else ''} + baseline"),
-    )
-    title = (f"2028: {DEM} (D) vs. {REP} (R) — estimate as of {AS_OF:%b %d, %Y}<br>"
-             f"<sup>National avg {fmt_margin(summary['national_avg'])} from "
-             f"{summary['n_national_polls']} polls · {summary['swing']:+.1f} pt swing vs. 2024 · "
-             f"early estimate, not a forecast</sup>")
-    choropleth = px.choropleth(
-        df, locations="state", locationmode="USA-states",
-        color="estimate", color_continuous_scale="RdBu", range_color=(-25, 25),
-        hover_name="state_name",
-        hover_data={"est_label": True, "label_2024": True, "rating": True, "ev": True,
-                    "basis": True, "estimate": False, "state": False},
-        labels={"est_label": "2028 estimate", "label_2024": "2024 result", "rating": "Rating",
-                "ev": "Electoral votes", "basis": "Based on"},
-    )
-
-    fig = make_subplots(rows=2, cols=1, row_heights=[0.1, 0.9], vertical_spacing=0.06,
-                        specs=[[{"type": "xy"}], [{"type": "choropleth"}]])
-    for bar in ev_bar(est):
-        fig.add_trace(bar, row=1, col=1)
-    for trace in choropleth.data:
-        fig.add_trace(trace.update(showlegend=False), row=2, col=1)
-
-    # Bar: fixed 0-538 axis with a marker at the halfway point
-    totals = ev_totals(est)
-    fig.update_xaxes(range=[0, 538], visible=False, row=1, col=1)
-    fig.update_yaxes(visible=False, row=1, col=1)
-    # Ticks above and below the bar rather than through it, so segment labels stay clear
-    for y0, y1 in [(-0.25, 0), (1, 1.25)]:
-        fig.add_shape(type="line", x0=269, x1=269, y0=y0, y1=y1, xref="x", yref="y domain",
-                      line=dict(color="#222", width=2))
-    fig.add_annotation(x=269, y=1.25, xref="x", yref="y domain", yanchor="bottom",
-                       text="270 to win", showarrow=False, font=dict(size=11))
-    fig.add_annotation(x=0, y=1, xref="x", yref="y domain", xanchor="left", yanchor="bottom",
-                       text=f"<b>{DEM} {totals['D']}</b>", showarrow=False, font=dict(size=14))
-    fig.add_annotation(x=538, y=1, xref="x", yref="y domain", xanchor="right", yanchor="bottom",
-                       text=f"<b>{REP} {totals['R']}</b>", showarrow=False, font=dict(size=14))
-
-    fig.update_geos(scope="usa")
-    fig.update_layout(
-        title=title, barmode="stack", uniformtext=dict(minsize=10, mode="hide"),
-        coloraxis=choropleth.layout.coloraxis,
-        coloraxis_colorbar=dict(title="Margin", tickvals=[-20, -10, 0, 10, 20],
-                                ticktext=["R+20", "R+10", "Even", "D+10", "D+20"],
-                                len=0.75, y=0.4),
-        legend=dict(orientation="h", x=0.5, xanchor="center", y=0, yanchor="top",
-                    traceorder="normal"),
-        plot_bgcolor="white", margin=dict(l=10, r=10, t=110, b=40),
-    )
-    return fig
-
-
-# ---------------------------------------------------------------------------
 if __name__ == "__main__":
     polls = load_polls()
     est, s = state_estimates(polls)
-    est.round(2).to_csv("state_estimates_2028.csv", index=False)
 
     print(f"Matchup: {DEM} (D) vs {REP} (R), as of {AS_OF.date()}")
     print(f"National average: {fmt_margin(s['national_avg'])} from {s['n_national_polls']} polls")
@@ -324,6 +247,3 @@ if __name__ == "__main__":
     t = ev_totals(est)
     print(f"Electoral votes (excluding tossups): {DEM} {t['D']}, {REP} {t['R']}, tossup {t['Tossup']}")
     print("  " + " · ".join(f"{r} {t[r]}" for r in RATING_COLORS))
-
-    make_map(est, s).write_html("map_2028.html", include_plotlyjs="cdn")
-    print("Wrote map_2028.html and state_estimates_2028.csv")

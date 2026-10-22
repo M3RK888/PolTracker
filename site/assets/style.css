@@ -82,7 +82,8 @@ h2 { font-size: 20px; letter-spacing: -0.01em; margin: 0 0 12px; }
 
 /* Polls / Forecast view ------------------------------------------------- */
 .view-toggle button { padding: 7px 18px; }
-body[data-view="forecast"] .only-polls, body[data-view="polls"] .only-forecast { display: none !important; }
+body:not([data-view="polls"]) .only-polls, body:not([data-view="forecast"]) .only-forecast,
+body:not([data-view="results"]) .only-results { display: none !important; }
 .hist { width: 100%; height: auto; display: block; margin-top: 4px; }
 .hist .hist-axis { stroke: var(--rule-strong); stroke-width: 1; }
 .hist .hist-line { stroke: var(--ink); stroke-width: 2; }
@@ -187,6 +188,7 @@ body[data-view="forecast"] .only-polls, body[data-view="polls"] .only-forecast {
 .polls-drawer + section { margin-top: 20px; }
 
 /* Notice ------------------------------------------------------------------ */
+.notice.stale { margin: 0 0 16px; border-left-color: var(--rep); }
 .notice { border-left: 3px solid var(--other); background: var(--surface); padding: 10px 14px; border-radius: 6px; font-size: 14px; color: var(--ink-2); margin-top: 12px; }
 
 /* Tables ------------------------------------------------------------------ */

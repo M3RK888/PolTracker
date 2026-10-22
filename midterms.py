@@ -19,15 +19,16 @@ Inputs come from fetch_midterms.py. Used by build_site.py.
 import numpy as np
 import pandas as pd
 
-from polling_2028 import RATING_COLORS, RATING_CUTOFFS, STATE_NAMES, rate
+from polling_2028 import RATING_COLORS, RATING_CUTOFFS, STATE_NAMES, rate, today
 
 HALF_LIFE_DAYS = 21      # close to Election Day, last month's polls matter much less
 WINDOW_DAYS = 120
 PRIOR_WEIGHT = 1.5       # the baseline counts as about 1.5 fresh 600-person polls
-AS_OF = pd.Timestamp.today().normalize()
+AS_OF = today()          # US Eastern date
 
 SENATE_NOT_UP = {"R": 31, "D": 34}   # 32 Democrats + 2 independents who caucus with them
 SENATE_SEATS, HOUSE_SEATS = 100, 435
+RATINGS = [{"name": k, "color": v} for k, v in RATING_COLORS.items()]   # for the pages
 
 
 def environment(generic: list[dict] | None = None) -> tuple[float, list[dict]]:
@@ -98,6 +99,7 @@ def senate(generic: list[dict] | None = None) -> dict:
 
     return {
         "as_of": AS_OF.strftime("%Y-%m-%d"), "environment": round(env, 2),
+        "ratings": RATINGS, "state_names": STATE_NAMES,
         "not_up": SENATE_NOT_UP, "seats": {"D": d, "R": rp, "Tossup": segs["Tossup"]},
         "segments": [{"rating": k, "seats": v} for k, v in segs.items()],
         "races": out, "polls": poll_rows,
@@ -206,6 +208,7 @@ def house(generic: list[dict] | None = None) -> dict:
     rep = sum(v for k, v in segs.items() if k.endswith(" R"))
     return {
         "as_of": AS_OF.strftime("%Y-%m-%d"), "environment": round(env, 2),
+        "ratings": RATINGS, "state_names": STATE_NAMES,
         "generic": [{**g, "margin": round(g["margin"], 2)} for g in generic],
         "seats": {"D": dem, "R": rep, "Tossup": segs["Tossup"]},
         "segments": [{"rating": k, "seats": v} for k, v in segs.items()],

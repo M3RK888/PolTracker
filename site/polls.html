@@ -5,7 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>2028 Polls · PolTracker</title>
   <meta name="description" content="Every 2028 presidential poll behind the PolTracker estimate, with dates, sample sizes, margins and weights.">
-  <link rel="stylesheet" href="assets/style.css?v=4">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PolTracker">
+  <meta property="og:title" content="2028 Polls · PolTracker">
+  <meta property="og:description" content="Every 2028 presidential poll behind the PolTracker estimate, with dates, sample sizes, margins and weights.">
+  <meta property="og:url" content="https://m3rk888.github.io/PolTracker/polls.html">
+  <meta property="og:image" content="https://m3rk888.github.io/PolTracker/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="assets/style.css?v=5">
 </head>
 <body>
   <header class="site-header">
@@ -17,6 +27,7 @@
         <a href="house.html">House</a>
         <a href="history.html">Past elections</a>
         <a href="polls.html" aria-current="page">Polls</a>
+        <a href="accuracy.html">Accuracy</a>
       </nav>
     </div>
   </header>
@@ -58,11 +69,12 @@
 
   <footer class="site-footer"><div class="wrap">Polls collected by hand from public releases and aggregators; each row links to its source.</div></footer>
 
-  <script src="assets/common.js?v=4"></script>
+  <script src="assets/common.js?v=5"></script>
   <script src="data/polls.js"></script>
   <script>
   (function () {
     const P = window.POLLS;
+    PM.staleNotice(P.as_of);
     const polls = P.polls.map((p) => ({ ...p, matchup: `${p.dem_candidate} vs ${p.rep_candidate}` }));
     const used = polls.filter((p) => p.status === "Used").length;
     document.getElementById("dek").textContent =

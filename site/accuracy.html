@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accuracy · PolTracker</title>
+  <meta name="description" content="How accurate is the PolTracker forecast? A test on the 2018-2024 Senate elections, and a race-by-race score of the 2026 forecast.">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PolTracker">
+  <meta property="og:title" content="Accuracy · PolTracker">
+  <meta property="og:description" content="How accurate is the PolTracker forecast? A test on the 2018-2024 Senate elections, and a race-by-race score of the 2026 forecast.">
+  <meta property="og:url" content="https://m3rk888.github.io/PolTracker/accuracy.html">
+  <meta property="og:image" content="https://m3rk888.github.io/PolTracker/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="assets/style.css?v=5">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>PolTracker</a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">2028</a>
+        <a href="senate.html">Senate</a>
+        <a href="house.html">House</a>
+        <a href="history.html">Past elections</a>
+        <a href="polls.html">Polls</a>
+        <a href="accuracy.html" aria-current="page">Accuracy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-head">
+      <div>
+        <h1>How accurate is this?</h1>
+        <p class="dek">A forecast is only worth something if its percentages come true about as often as they say.
+          Here's the evidence so far.</p>
+      </div>
+    </div>
+
+    <section class="card">
+      <h2>2026: how the forecast did</h2>
+      <div id="score-2026"></div>
+    </section>
+
+    <section>
+      <h2>Past elections: the backtest</h2>
+      <p class="muted small">The Senate model, rerun as it would have looked 12 days before each Election Day from 2018 to 2024,
+        using only polls published by then, then compared with what happened. <span id="bt-n"></span></p>
+    </section>
+    <section class="stats" id="bt-stats" aria-label="Backtest results"></section>
+
+    <section class="card">
+      <h2>When it says 70%, does it happen 70% of the time?</h2>
+      <p class="muted small" style="margin:-6px 0 0">Races grouped by the Democratic side's forecast chance. Dots on the diagonal
+        line mean the chances came true as often as stated. Bigger dots are bigger groups. Hover for details.</p>
+      <div id="calib"></div>
+      <div class="table-scroll" style="margin-top:12px"><table id="calib-table"></table></div>
+    </section>
+
+    <section>
+      <h2>Year by year</h2>
+      <p class="muted small"><strong>Polling miss</strong> is the average of (actual margin − forecast margin): negative means
+        Republicans did better than the polls said. <strong>Inside 80% range</strong> should be about 80%.</p>
+      <div class="table-scroll"><table id="cycles"></table></div>
+    </section>
+
+    <section class="card prose">
+      <h2>What the backtest shows</h2>
+      <div id="findings"></div>
+      <h2 style="margin-top:18px">What it can't show</h2>
+      <p>• <strong>Only the polls part is tested.</strong> Past prediction-market prices and approval numbers weren't
+        available, so the backtest uses polls alone. In the live forecast, 12 days out, polls carry 83% of the weight.<br>
+        • <strong>Only the Senate.</strong> House districts are rarely polled, so they'd need a different test.<br>
+        • <strong>Four elections is a small sample.</strong> All races in a year share one national polling miss, so this is
+        really four big draws, not 134 independent ones.<br>
+        • <strong>A few stand-ins.</strong> Past articles don't list Cook's partisan lean, so each state's lean comes from the two
+        previous presidential elections; and the national mood comes from each year's own Senate polls.</p>
+      <p>The settings have <strong>not</strong> been changed to fit these results: 2026 is being forecast with the settings as
+        they were, so its score is a fair test. They'll be revisited after it's scored. The code is
+        <a href="https://github.com/M3RK888/PolTracker/blob/main/backtest.py" target="_blank" rel="noopener">backtest.py</a>.</p>
+    </section>
+
+    <section class="card prose">
+      <h2>What the numbers mean</h2>
+      <p><strong>Called right</strong>: share of races where the side given more than 50% won. Easy to look good on, since
+        most races aren't close, so it's also shown for competitive races (5% to 95%).</p>
+      <p><strong>Brier score</strong>: the average of (forecast chance − outcome)², counting a win as 1 and a loss as 0.
+        0 is perfect; always saying 50% scores 0.250. Lower is better.</p>
+      <p><strong>Inside the 80% range</strong>: each race's forecast includes a range expected to catch the result 80% of the
+        time. Much less than 80% means the forecast was overconfident.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap">Past polls and results from Wikipedia's Senate race articles; presidential results for state leans from certified state totals.</div></footer>
+
+  <script src="assets/common.js?v=5"></script>
+  <script src="data/accuracy.js"></script>
+  <script>
+  (function () {
+    const A = window.ACCURACY, B = A.backtest;
+    const pct = (x) => (x == null ? "—" : `${Math.round(x * 100)}%`);
+    const stat = ([l, v, n]) => `<div class="stat"><div class="label">${l}</div><div class="value">${v}</div><div class="note">${PM.esc(n)}</div></div>`;
+
+    // 2026 -------------------------------------------------------------------------
+    const S = A.score_2026, box = document.getElementById("score-2026");
+    if (!S) {
+      box.innerHTML = `<p class="muted">Not scored yet. After Election Day (November 3, 2026), the forecast saved that morning
+        will be graded race by race against the results, along with the prediction markets' prices from the same day, and
+        the numbers will appear here. Until then, see the backtest below.</p>`;
+    } else {
+      box.innerHTML = ["senate", "house"].filter((c) => S.chambers[c]).map((c) => {
+        const s = S.chambers[c], ctl = s.control;
+        const tiles = [
+          ["Called right", pct(s.called_right), `${s.races} races decided${s.pending.length ? `, ${s.pending.length} pending` : ""}`],
+          ["Competitive races", pct(s.competitive.called_right), `${s.competitive.races} races the forecast gave 5% to 95%`],
+          ["Brier score", s.brier.toFixed(3), "0 is perfect; always saying 50% scores 0.250"],
+          ...(s.vs_markets ? [["Prediction markets' Brier", s.vs_markets.market_brier.toFixed(3), `the forecast scored ${s.vs_markets.forecast_brier.toFixed(3)} on the same ${s.vs_markets.races} races`]] : []),
+          ...(ctl ? [["Control", ctl.dem_controls ? "Democrats" : "Republicans", `forecast gave Democrats ${pct(ctl.forecast_p_dem)}; they won ${ctl.dem_seats} seats (forecast median ${ctl.forecast_median})`]] : []),
+        ];
+        const surprises = (s.surprises || []).map((x) => `${x.race} (${pct(x.p_winner)})`).join(", ");
+        return `<h3 style="margin:14px 0 8px">${c === "senate" ? "Senate" : "House"}</h3>
+          <div class="stats">${tiles.map(stat).join("")}</div>
+          ${surprises ? `<p class="muted small">Biggest surprises (the chance the forecast gave the winner): ${PM.esc(surprises)}</p>` : ""}`;
+      }).join("") + `<p class="muted small">Graded against the forecast saved ${PM.fmtDate(S.forecast_date)}.</p>`;
+    }
+
+    // Backtest ---------------------------------------------------------------------
+    const P = B.pooled["12"], U = B.uncertainty["12"];
+    document.getElementById("bt-n").textContent = `${P.races} races in four elections.`;
+    document.getElementById("bt-stats").innerHTML = [
+      ["Called right", pct(P.called_right), "races where the side given over 50% won"],
+      ["Competitive races", pct(P.competitive.called_right), `of ${P.competitive.races} races given 5% to 95%`],
+      ["Brier score", P.brier.toFixed(3), "0 is perfect; always saying 50% scores 0.250"],
+      ["Inside the 80% range", pct(P.margin.in_80pct_range), "should be about 80%"],
+    ].map(stat).join("");
+
+    // Calibration chart: forecast chance (x) vs how often that side won (y)
+    const bins = P.calibration, el = document.getElementById("calib");
+    const draw = () => {
+      const W = Math.min(560, Math.max(280, el.clientWidth)), H = W * 0.85, left = 48, right = 20, top = 20, bottom = 58;
+      const x = (v) => left + v * (W - left - right), y = (v) => H - bottom - v * (H - top - bottom);
+      const grid = [0, 0.25, 0.5, 0.75, 1].map((g) => `
+        <line x1="${x(g)}" x2="${x(g)}" y1="${y(0)}" y2="${y(1)}" class="trk-grid"/>
+        <line x1="${x(0)}" x2="${x(1)}" y1="${y(g)}" y2="${y(g)}" class="trk-grid"/>
+        <text x="${x(g)}" y="${y(0) + 30}" class="trk-axis" text-anchor="middle">${g * 100}%</text>
+        <text x="${x(0) - 16}" y="${y(g) + 4}" class="trk-axis" text-anchor="end">${g * 100}%</text>`).join("");
+      const dots = bins.map((b, i) => `<circle cx="${x(b.forecast)}" cy="${y(b.dem_won)}" r="${4 + Math.sqrt(b.races) * 1.6}"
+        fill="${PM.probColor(b.forecast)}" stroke="var(--ink)" stroke-width="1" data-i="${i}" class="calib-dot"/>`).join("");
+      el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" class="trk" style="width:100%;max-width:${W}px;height:auto;display:block;margin:8px auto 0" role="img"
+          aria-label="Calibration: forecast chance against how often that side won">
+        ${grid}<line x1="${x(0)}" y1="${y(0)}" x2="${x(1)}" y2="${y(1)}" class="trk-mid"/>
+        <text x="${(x(0) + x(1)) / 2}" y="${H - 4}" class="trk-axis" text-anchor="middle">Forecast chance for the Democratic side</text>
+        <text x="12" y="${(y(0) + y(1)) / 2}" class="trk-axis" text-anchor="middle" transform="rotate(-90 12 ${(y(0) + y(1)) / 2})">How often it won</text>
+        ${dots}</svg>`;
+      el.querySelectorAll(".calib-dot").forEach((c) => {
+        const b = bins[+c.dataset.i];
+        const html = `<strong>Forecast ${pct(b.from)}–${pct(b.to)}</strong><br>${b.races} races, average forecast ${pct(b.forecast)}<br>Democratic side won ${pct(b.dem_won)}`;
+        c.addEventListener("mousemove", (e) => PM.showTip(html, e.clientX, e.clientY));
+        c.addEventListener("mouseleave", PM.hideTip);
+      });
+    };
+    draw();
+    window.addEventListener("resize", draw);
+    PM.sortableTable(document.getElementById("calib-table"), [
+      { key: "from", label: "Forecast chance (D side)", render: (b) => `${pct(b.from)} to ${pct(b.to)}` },
+      { key: "races", label: "Races", num: true },
+      { key: "forecast", label: "Average forecast", num: true, render: (b) => pct(b.forecast) },
+      { key: "dem_won", label: "D side won", num: true, render: (b) => pct(b.dem_won) },
+    ], bins, { key: "from", dir: 1 });
+
+    const years = [2018, 2020, 2022, 2024].map((yr) => ({ year: yr, ...B.by_cycle[`${yr}/12`] }));
+    PM.sortableTable(document.getElementById("cycles"), [
+      { key: "year", label: "Year" },
+      { key: "races", label: "Races", num: true },
+      { key: "called_right", label: "Called right", num: true, render: (s) => pct(s.called_right) },
+      { key: "brier", label: "Brier", num: true, render: (s) => s.brier.toFixed(3) },
+      { key: "bias", label: "Polling miss", num: true, sort: (s) => s.margin.bias,
+        render: (s) => `<span class="${PM.marginClass(s.margin.bias)}">${PM.fmtSigned(s.margin.bias)} pts</span>` },
+      { key: "inside", label: "Inside 80% range", num: true, sort: (s) => s.margin.in_80pct_range, render: (s) => pct(s.margin.in_80pct_range) },
+    ], years, { key: "year", dir: 1 });
+
+    const worst = [...years].sort((a, b) => a.margin.bias - b.margin.bias)[0];
+    const leanR = years.filter((s) => s.margin.bias < -1).map((s) => s.year);
+    document.getElementById("findings").innerHTML = `
+      <p>• <strong>It picks winners well.</strong> ${pct(P.called_right)} of races called right, and races given 95% or more
+        never went the other way.</p>
+      <p>• <strong>Polls leaned toward Democrats.</strong> In ${leanR.join(", ")}, Republicans did better than the forecast
+        (by ${Math.abs(worst.margin.bias).toFixed(1)} points on average in ${worst.year}). The model assumes a miss is equally
+        likely in either direction, so it can't correct for this, and a lean toward one party isn't guaranteed to repeat.</p>
+      <p>• <strong>It's somewhat overconfident.</strong> Results landed inside the 80% range ${pct(P.margin.in_80pct_range)} of
+        the time. The misses fit best with about ${U.best_multiple.toFixed(2)}× the uncertainty the model uses, mainly because
+        the miss shared by every race in a year is bigger than assumed.</p>`;
+  })();
+  </script>
+</body>
+</html>

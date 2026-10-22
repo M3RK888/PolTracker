@@ -5,7 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>2026 Senate · PolTracker</title>
   <meta name="description" content="A forecast and poll-based estimate of every 2026 U.S. Senate race, with the polls behind each one.">
-  <link rel="stylesheet" href="assets/style.css?v=4">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PolTracker">
+  <meta property="og:title" content="2026 Senate · PolTracker">
+  <meta property="og:description" content="A forecast and poll-based estimate of every 2026 U.S. Senate race, with the polls behind each one.">
+  <meta property="og:url" content="https://m3rk888.github.io/PolTracker/senate.html">
+  <meta property="og:image" content="https://m3rk888.github.io/PolTracker/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="assets/style.css?v=5">
 </head>
 <body data-view="forecast">
   <header class="site-header">
@@ -17,6 +27,7 @@
         <a href="house.html">House</a>
         <a href="history.html">Past elections</a>
         <a href="polls.html">Polls</a>
+        <a href="accuracy.html">Accuracy</a>
       </nav>
     </div>
   </header>
@@ -35,6 +46,13 @@
       <div id="map" class="map" aria-label="Map of Senate races"></div>
       <div class="scale" id="scale"></div>
       <p class="muted small" style="text-align:center;margin:6px 0 0">Click a state to see the polls behind its race.</p>
+    </section>
+
+    <section class="card only-results">
+      <h2>How the forecast did</h2>
+      <p class="muted small" style="margin:-6px 0 8px">Compared with the forecast published on Election Day morning.
+        <a href="accuracy.html">More on accuracy</a>.</p>
+      <div class="compare" id="res-compare"></div>
     </section>
 
     <section class="card only-forecast">
@@ -64,6 +82,8 @@
     <section>
       <h2>Every race</h2>
       <p class="muted small only-polls">Sorted closest race first. Click a column to re-sort, or a race to see its polls.</p>
+      <p class="muted small only-results">Sorted by how close the forecast had it. <strong>Result</strong> is the winner's
+        margin; <strong>Forecast</strong> is the chance the forecast gave on Election Day.</p>
       <p class="muted small only-forecast">Sorted closest race first. <strong>Forecast</strong> is the middle of the simulated
         results, with the range that covers 80% of them. The last column is how much the
         <span class="w-key"><i style="background:var(--ink-2)"></i>polls</span>,
@@ -71,6 +91,14 @@
         <span class="w-key"><i style="background:var(--rule-strong)"></i>fundamentals</span> count, in percent.</p>
       <div class="table-scroll only-polls"><table id="races"></table></div>
       <div class="table-scroll only-forecast"><table id="f-races"></table></div>
+      <div class="table-scroll only-results"><table id="r-races"></table></div>
+    </section>
+
+    <section class="card prose only-results">
+      <h2>About these results</h2>
+      <p>Results come from Wikipedia's 2026 Senate elections article, read once a day, and update as races are called.
+        A race shows as uncalled until a winner is marked there. The Forecast view still shows the forecast exactly as it
+        stood on Election Day morning, and the <a href="accuracy.html">accuracy page</a> grades it race by race.</p>
     </section>
 
     <section class="card prose only-polls">
@@ -128,14 +156,14 @@
   <footer class="site-footer"><div class="wrap">Races, candidates, Cook PVI and polls from Wikipedia's 2026 Senate race articles (read from their exact page source); each poll links to its original source. Market prices from Polymarket and Kalshi's public data; approval from Wikipedia's average of approval trackers.</div></footer>
 
   <script src="https://cdn.plot.ly/plotly-geo-4.1.1.min.js"></script>
-  <script src="assets/common.js?v=4"></script>
-  <script src="data/forecast.js"></script>
+  <script src="assets/common.js?v=5"></script>
   <script src="data/senate.js"></script>
   <script src="data/forecast_2026.js"></script>
   <script>
   (function () {
     const S = window.SENATE, F = window.FORECAST_2026, FS = F.senate;
-    const color = Object.fromEntries(window.FORECAST.ratings.map((r) => [r.name, r.color]));
+    PM.staleNotice(S.as_of);
+    const color = Object.fromEntries(S.ratings.map((r) => [r.name, r.color]));
     const NOT_UP = { D: "#6b7d99", R: "#9a6b6b" };
     const races = [...S.races].sort((a, b) => Math.abs(a.estimate) - Math.abs(b.estimate));
     const fc = Object.fromEntries(FS.races.map((r) => [r.key, r]));
@@ -161,7 +189,81 @@
     document.getElementById("m-half").textContent = S.settings.half_life_days;
     document.getElementById("m-prior").textContent = S.settings.prior_weight;
 
+    // Results (after Election Day) ------------------------------------------------
+    const RES = S.results || {};
+    const res = (r) => RES[r.state];
+    const called = races.filter((r) => res(r) && res(r).dem_won != null);
+    const hasResults = called.length > 0;
+    const pWinner = (r) => (res(r).dem_won ? fkey(r).p_dem : 1 - fkey(r).p_dem);
+    const winnerName = (r) => (res(r).dem_won ? `${r.opp} (${r.opp_party})` : `${r.rep} (R)`);
+    const resultMargin = (r) => (res(r).margin ?? (res(r).dem_won ? PM.MARGIN_RANGE : -PM.MARGIN_RANGE));
+
+    function renderResults() {
+      const wonD = called.filter((r) => res(r).dem_won), wonR = called.filter((r) => !res(r).dem_won);
+      const open = races.length - called.length;
+      const dSeats = S.not_up.D + wonD.length, rSeats = S.not_up.R + wonR.length;
+      document.getElementById("dek").textContent =
+        `Results as of ${PM.fmtDate(S.results_as_of)} · ${called.length} of ${races.length} races called`;
+      PM.renderEvBar(document.getElementById("bar"), {
+        total: 100, threshold: 50, thresholdLabel: "51 for control (50 + VP for R)", unit: "seat",
+        left: { name: "Democrats & independents", ev: dSeats, color: PM.SHADES.D[0], sub: `${S.not_up.D} not up + ${wonD.length} won` },
+        right: { name: "Republicans", ev: rSeats, color: PM.SHADES.R[0], sub: `${S.not_up.R} not up + ${wonR.length} won` },
+        center: open ? `<strong>${open}</strong>not yet called` : "",
+        segments: [
+          { label: "Not up (D)", ev: S.not_up.D, color: NOT_UP.D, detail: "Seats not on the ballot this year" },
+          { label: "Won (D)", ev: wonD.length, color: PM.SHADES.D[0], detail: wonD.map((r) => r.state).join(", ") },
+          { label: "Not yet called", ev: open, color: PM.SHADES.tossup, detail: races.filter((r) => !called.includes(r)).map((r) => r.state).join(", ") },
+          { label: "Won (R)", ev: wonR.length, color: PM.SHADES.R[0], detail: wonR.map((r) => r.state).join(", ") },
+          { label: "Not up (R)", ev: S.not_up.R, color: NOT_UP.R, detail: "Seats not on the ballot this year" },
+        ],
+      });
+      const raceStates = new Set(races.map((r) => r.state));
+      const rows = races.map((r) => {
+        const f = fkey(r), head = `<b>${PM.esc(r.name)}</b><br>${PM.esc(opp(r))} vs ${PM.esc(r.rep)} (R)`;
+        if (!called.includes(r)) return { state: r.state, color: PM.SHADES.tossup, hover: head + `<br>Not yet called<br>Forecast: ${PM.fmtChance(f.p_dem)}` };
+        return { state: r.state, margin: resultMargin(r),
+          hover: head + `<br>Winner: <b>${PM.esc(winnerName(r))}</b>` + (res(r).margin != null ? ` by ${Math.abs(res(r).margin).toFixed(1)} pts` : "") +
+            `<br>Forecast gave the winner ${PM.fmtProb(pWinner(r))}` };
+      }).concat(Object.keys(S.state_names).filter((s) => !raceStates.has(s)).map((s) => ({ state: s, color: PM.noRaceColor(), hover: `<b>${s}</b><br>No Senate race in 2026` })));
+      PM.renderMap(document.getElementById("map"), rows);
+      PM.renderScale(document.getElementById("scale"), { other: open ? "Not yet called" : null, otherColor: PM.SHADES.tossup });
+
+      const right = called.filter((r) => pWinner(r) > 0.5).length;
+      const surprise = [...called].sort((a, b) => pWinner(a) - pWinner(b))[0];
+      const control = open ? (dSeats >= 51 ? "Democrats" : rSeats >= 50 ? "Republicans" : "Not decided yet") : (dSeats >= 51 ? "Democrats" : "Republicans");
+      document.getElementById("stats").innerHTML = [
+        ["Senate control", control, `Democrats & independents ${dSeats}, Republicans ${rSeats}${open ? `, ${open} to call` : ""}`],
+        ["Forecast called right", `${right} of ${called.length}`, "races where the side given over 50% won"],
+        ["Biggest surprise", surprise.state, `${winnerName(surprise)} won; the forecast gave them ${PM.fmtProb(pWinner(surprise))}`],
+        ["Forecast for control", PM.fmtProb(sm.p_dem_control), `Democrats' Election Day chance of winning the Senate`],
+      ].map(([l, v, n]) => `<div class="stat"><div class="label">${l}</div><div class="value">${v}</div><div class="note">${PM.esc(n)}</div></div>`).join("");
+      const brier = called.reduce((s, r) => s + (fkey(r).p_dem - (res(r).dem_won ? 1 : 0)) ** 2, 0) / called.length;
+      document.getElementById("res-compare").innerHTML =
+        `<span>Called right: <strong>${right} of ${called.length}</strong></span>` +
+        `<span>Brier score: <strong>${brier.toFixed(3)}</strong> <span class="muted">(0 is perfect; always saying 50% scores 0.250)</span></span>`;
+    }
+
+    if (hasResults) {
+      PM.sortableTable(document.getElementById("r-races"), [
+        { key: "name", label: "Race", render: (r) => `<a href="#${key(r)}" data-race="${key(r)}">${PM.esc(r.name)}</a>` },
+        { key: "winner", label: "Winner", sort: (r) => (res(r)?.dem_won == null ? 2 : res(r).dem_won ? 0 : 1),
+          render: (r) => (called.includes(r) ? `<span class="${res(r).dem_won ? "d" : "r"}">${PM.esc(winnerName(r))}</span>` : `<span class="muted">not yet called</span>`) },
+        { key: "result", label: "Result", num: true, sort: (r) => res(r)?.margin,
+          render: (r) => (called.includes(r) && res(r).margin != null ? `<span class="${PM.marginClass(res(r).margin)}">${PM.fmtMargin(res(r).margin)}</span>` : `<span class="muted">—</span>`) },
+        { key: "chance", label: "Forecast", num: true, sort: (r) => -Math.abs(fkey(r).p_dem - 0.5),
+          render: (r) => `<span class="${PM.probClass(fkey(r).p_dem)}">${PM.fmtChance(fkey(r).p_dem)}</span>` },
+        { key: "fmargin", label: "Forecast margin", num: true, sort: (r) => fkey(r).median, render: (r) => `<span class="muted">${PM.fmtMargin(fkey(r).median)}</span>` },
+        { key: "right", label: "Right?", sort: (r) => (called.includes(r) ? pWinner(r) > 0.5 : null),
+          render: (r) => (!called.includes(r) ? "" : pWinner(r) > 0.5 ? "✓" : `<strong class="r">✗ missed</strong>`) },
+      ], races, { key: "chance", dir: -1 });
+      document.getElementById("r-races").addEventListener("click", (e) => {
+        const a = e.target.closest("a[data-race]");
+        if (a) { e.preventDefault(); selectRace(a.dataset.race, true); }
+      });
+    }
+
     function render() {
+      if (view === "results") { renderResults(); selectRace(selected, false); return; }
       const forecast = view === "forecast";
       document.getElementById("dek").textContent = forecast
         ? `Forecast as of ${PM.fmtDate(F.as_of)} · ${F.days_out} days to Election Day, November 3 · an unvalidated hobby model`
@@ -206,7 +308,7 @@
           (r.n_polls ? `<br>Poll average: ${PM.fmtMargin(r.poll_avg)} from ${r.n_polls} poll${r.n_polls > 1 ? "s" : ""}` : "<br>No recent polls: baseline only") +
           `<br><span style="opacity:.75">Incumbent: ${PM.esc(r.incumbent)} (${r.incumbent_party})</span>`;
       };
-      const allStates = Object.keys(window.FORECAST.matchups.find((m) => m.available).states.reduce((o, s) => (o[s.state] = 1, o), {}));
+      const allStates = Object.keys(S.state_names);
       const rows = races.map((r) => ({ state: r.state, margin: forecast ? fkey(r).p_dem : r.estimate, hover: hover(r) }))
         .concat(allStates.filter((s) => !raceStates.has(s)).map((s) => ({ state: s, color: PM.noRaceColor(), hover: `<b>${s}</b><br>No Senate race in 2026` })));
       const mapEl = PM.renderMap(document.getElementById("map"), rows, forecast ? { zmin: PM.PROB_MIN, zmax: PM.PROB_MAX } : {});
@@ -347,7 +449,8 @@
     // Older links used "#TX"; newer ones "#forecast&TX"
     const fromHash = races.find((r) => PM.hashRest().includes(key(r)));
     if (fromHash) selected = key(fromHash);
-    const toggle = PM.viewToggle(document.getElementById("view"), (v) => { view = v; render(); });
+    const toggle = PM.viewToggle(document.getElementById("view"), (v) => { view = v; render(); },
+      hasResults ? { views: ["polls", "forecast", "results"], initial: "results" } : {});
     document.querySelectorAll("[data-goto]").forEach((a) => a.addEventListener("click", (e) => {
       e.preventDefault();
       document.querySelector(`#view button[data-view="${a.dataset.goto}"]`).click();

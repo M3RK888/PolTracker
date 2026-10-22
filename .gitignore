@@ -1,3 +1,6 @@
 .venv/
 __pycache__/
 data/.cache/
+.pytest_cache/
+.claude/
+build.log

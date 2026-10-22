@@ -5,7 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>2026 House · PolTracker</title>
   <meta name="description" content="A forecast and poll-based estimate of all 435 U.S. House races in 2026, shown as an equal-area district map.">
-  <link rel="stylesheet" href="assets/style.css?v=4">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PolTracker">
+  <meta property="og:title" content="2026 House · PolTracker">
+  <meta property="og:description" content="A forecast and poll-based estimate of all 435 U.S. House races in 2026, shown as an equal-area district map.">
+  <meta property="og:url" content="https://m3rk888.github.io/PolTracker/house.html">
+  <meta property="og:image" content="https://m3rk888.github.io/PolTracker/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="assets/style.css?v=5">
 </head>
 <body data-view="forecast">
   <header class="site-header">
@@ -17,6 +27,7 @@
         <a href="house.html" aria-current="page">House</a>
         <a href="history.html">Past elections</a>
         <a href="polls.html">Polls</a>
+        <a href="accuracy.html">Accuracy</a>
       </nav>
     </div>
   </header>
@@ -34,7 +45,15 @@
       <div id="bar"></div>
       <div class="hexmap-wrap"><svg id="hexmap" role="img" aria-label="Map of all 435 House districts, one hexagon each"></svg></div>
       <div class="scale only-forecast" id="scale"></div>
+      <div class="scale only-results" id="r-scale"></div>
       <p class="muted small" style="text-align:center;margin:6px 0 0">Each hexagon is one district, so every seat is the same size. Districts are grouped by state; their positions within a state aren't geographic.</p>
+    </section>
+
+    <section class="card only-results">
+      <h2>How the forecast did</h2>
+      <p class="muted small" style="margin:-6px 0 8px">Compared with the forecast published on Election Day morning.
+        <a href="accuracy.html">More on accuracy</a>.</p>
+      <div class="compare" id="res-compare"></div>
     </section>
 
     <section class="card only-forecast">
@@ -72,6 +91,13 @@
         <span class="muted small" id="count" aria-live="polite"></span>
       </div>
       <div class="table-scroll"><table id="districts"></table></div>
+    </section>
+
+    <section class="card prose only-results">
+      <h2>About these results</h2>
+      <p>Results come from Wikipedia's 2026 House elections article, read once a day, and update as races are called.
+        A district shows as uncalled until a winner is marked there. The Forecast view still shows the forecast exactly as
+        it stood on Election Day morning, and the <a href="accuracy.html">accuracy page</a> grades it district by district.</p>
     </section>
 
     <section class="card prose only-polls">
@@ -126,18 +152,18 @@
 
   <footer class="site-footer"><div class="wrap">Districts, candidates and Cook PVI from Wikipedia's 2026 House elections article (read from its exact page source); generic ballot from the aggregators linked above. Market prices from Polymarket and Kalshi's public data; approval from Wikipedia's average of approval trackers.</div></footer>
 
-  <script src="assets/common.js?v=4"></script>
-  <script src="data/forecast.js"></script>
+  <script src="assets/common.js?v=5"></script>
   <script src="data/house.js"></script>
   <script src="data/forecast_2026.js"></script>
   <script>
   (function () {
     const H = window.HOUSE, F = window.FORECAST_2026, FH = F.house, sm = FH.summary, w = F.weights;
-    const color = Object.fromEntries(window.FORECAST.ratings.map((r) => [r.name, r.color]));
+    PM.staleNotice(H.as_of);
+    const color = Object.fromEntries(H.ratings.map((r) => [r.name, r.color]));
     const D = H.districts;
     const fc = Object.fromEntries(FH.races.map((r) => [r.key, r]));
     const byCell = new Map(D.map((d) => [`${d.q},${d.r}`, d]));
-    const NAMES = Object.fromEntries(window.FORECAST.matchups.find((m) => m.available).states.map((s) => [s.state, s.name]));
+    const NAMES = H.state_names;
     const cands = (d) => [d.dem && `${d.dem} (D)`, d.rep && `${d.rep} (R)`, d.others].filter(Boolean).join(", ") || "—";
     const pvi = (p) => (p === 0 ? "EVEN" : `${p > 0 ? "D" : "R"}+${Math.abs(p)}`);
     const range = (f) => `${PM.fmtMargin(f.lo)} to ${PM.fmtMargin(f.hi)}`;
@@ -207,11 +233,24 @@
     svg.innerHTML = `<g>${hexes}</g><path class="hex-border" d="${borders}"/><g>${labels}</g>`;
     const hexEls = [...svg.querySelectorAll(".hex")];
 
+    // Results (after Election Day)
+    const RES = H.results || {};
+    const isCalled = (d) => RES[d.id] && RES[d.id].dem_won != null;
+    const calledD = D.filter(isCalled);
+    const hasResults = calledD.length > 0;
+    const pWinner = (d) => (RES[d.id].dem_won ? fc[d.id].p_dem : 1 - fc[d.id].p_dem);
+    const outcome = (d) => (!isCalled(d) ? "Not yet called" : pWinner(d) > 0.5 ? "Called right" : "Missed");
+    const winnerText = (d) => (RES[d.id].dem_won ? `${d.dem || "Democrat"} (D)` : `${d.rep || "Republican"} (R)`);
+
     const tip = (d) => {
       const f = fc[d.id];
       const head = `<strong>${PM.esc(d.name)}</strong> (${d.id})`;
       const tail = `<br>Partisan lean: ${pvi(d.pvi)}<br>Incumbent: ${d.incumbent ? `${PM.esc(d.incumbent)} (${d.incumbent_party})` : "none (new or open seat)"}` +
         `<br>Candidates: ${PM.esc(cands(d))}`;
+      if (view === "results") return head + (isCalled(d)
+        ? `<br>Winner: <strong>${PM.esc(winnerText(d))}</strong>` + (RES[d.id].margin != null ? ` by ${Math.abs(RES[d.id].margin).toFixed(1)} pts` : "") +
+          `<br>Forecast gave the winner ${PM.fmtProb(pWinner(d))}`
+        : `<br>Not yet called<br>Forecast: ${PM.fmtChance(f.p_dem)}`) + tail;
       if (view === "forecast") return head + `<br>Chance: <strong>${PM.fmtChance(f.p_dem)}</strong>` +
         `<br>Forecast: ${PM.fmtMargin(f.median)} <span style="opacity:.75">(80%: ${range(f)})</span>` +
         `<br>Polls ${PM.fmtMargin(f.polls)} · Markets ${f.market_p == null ? "—" : PM.fmtChance(f.market_p)} · Fundamentals ${PM.fmtMargin(f.fundamentals)}` + tail;
@@ -241,7 +280,7 @@
     const fState = document.getElementById("f-state"), fRating = document.getElementById("f-rating");
     fState.innerHTML += [...new Set(D.map((d) => d.state))].sort((a, b) => (NAMES[a] || a).localeCompare(NAMES[b] || b))
       .map((s) => `<option value="${s}">${PM.esc(NAMES[s] || s)}</option>`).join("");
-    const category = (d) => (view === "forecast" ? fc[d.id].band : d.rating);
+    const category = (d) => (view === "results" ? outcome(d) : view === "forecast" ? fc[d.id].band : d.rating);
     const filtered = () => D.filter((d) => (!fState.value || d.state === fState.value) && (!fRating.value || category(d) === fRating.value));
     const incCol = { key: "incumbent", label: "Incumbent", render: (d) => d.incumbent ? `${PM.esc(d.incumbent)} <span class="muted">(${d.incumbent_party})</span>` : `<span class="muted">open / new</span>` };
     const pollCols = [
@@ -276,7 +315,62 @@
     };
     [fState, fRating].forEach((el) => el.addEventListener("change", update));
 
+    const rCols = [
+      { key: "id", label: "District" },
+      { key: "winner", label: "Winner", sort: (d) => (isCalled(d) ? (RES[d.id].dem_won ? 0 : 1) : 2),
+        render: (d) => (isCalled(d) ? `<span class="${RES[d.id].dem_won ? "d" : "r"}">${PM.esc(winnerText(d))}</span>` : `<span class="muted">not yet called</span>`) },
+      { key: "result", label: "Result", num: true, sort: (d) => RES[d.id]?.margin,
+        render: (d) => (isCalled(d) && RES[d.id].margin != null ? `<span class="${PM.marginClass(RES[d.id].margin)}">${PM.fmtMargin(RES[d.id].margin)}</span>` : `<span class="muted">—</span>`) },
+      { key: "chance", label: "Forecast", num: true, sort: (d) => -Math.abs(fc[d.id].p_dem - 0.5),
+        render: (d) => `<span class="${PM.probClass(fc[d.id].p_dem)}">${PM.fmtChance(fc[d.id].p_dem)}</span>` },
+      { key: "right", label: "Right?", sort: (d) => outcome(d),
+        render: (d) => (outcome(d) === "Called right" ? "✓" : outcome(d) === "Missed" ? `<strong class="r">✗ missed</strong>` : "") },
+      incCol,
+    ];
+
+    function renderResults() {
+      const wonD = calledD.filter((d) => RES[d.id].dem_won).length, wonR = calledD.length - wonD, open = D.length - calledD.length;
+      document.getElementById("dek").textContent =
+        `Results as of ${PM.fmtDate(H.results_as_of)} · ${calledD.length} of 435 districts called`;
+      PM.renderEvBar(document.getElementById("bar"), {
+        total: 435, threshold: 218, thresholdLabel: "218 for control", unit: "seat",
+        left: { name: "Democrats", ev: wonD, color: PM.SHADES.D[0], sub: "seats won" },
+        right: { name: "Republicans", ev: wonR, color: PM.SHADES.R[0], sub: "seats won" },
+        center: open ? `<strong>${open}</strong>not yet called` : "",
+        segments: [
+          { label: "Won (D)", ev: wonD, color: PM.SHADES.D[0] },
+          { label: "Not yet called", ev: open, color: PM.SHADES.tossup },
+          { label: "Won (R)", ev: wonR, color: PM.SHADES.R[0] },
+        ],
+      });
+      hexEls.forEach((el, i) => {
+        const d = D[i];
+        el.setAttribute("fill", !isCalled(d) ? PM.SHADES.tossup
+          : PM.marginColor(RES[d.id].margin ?? (RES[d.id].dem_won ? PM.MARGIN_RANGE : -PM.MARGIN_RANGE)));
+      });
+      PM.renderScale(document.getElementById("r-scale"), { other: open ? "Not yet called" : null, otherColor: PM.SHADES.tossup });
+      const right = calledD.filter((d) => pWinner(d) > 0.5).length;
+      const control = wonD >= 218 ? "Democrats" : wonR >= 218 ? "Republicans" : "Not decided yet";
+      document.getElementById("stats").innerHTML = [
+        ["House control", control, `Democrats ${wonD}, Republicans ${wonR}${open ? `, ${open} to call` : ""}`],
+        ["Forecast called right", `${right} of ${calledD.length}`, "districts where the side given over 50% won"],
+        ["Forecast's median", `${sm.dem_median}–${435 - sm.dem_median}`, `80% range for Democrats: ${sm.dem_lo} to ${sm.dem_hi} seats`],
+        ["Forecast for control", PM.fmtProb(sm.p_dem_control), "Democrats' Election Day chance of winning the House"],
+      ].map(([l, v, n]) => `<div class="stat"><div class="label">${l}</div><div class="value">${v}</div><div class="note">${PM.esc(n)}</div></div>`).join("");
+      const brier = calledD.reduce((s, d) => s + (fc[d.id].p_dem - (RES[d.id].dem_won ? 1 : 0)) ** 2, 0) / calledD.length;
+      const misses = calledD.filter((d) => pWinner(d) <= 0.5).sort((a, b) => pWinner(a) - pWinner(b)).slice(0, 5);
+      document.getElementById("res-compare").innerHTML =
+        `<span>Called right: <strong>${right} of ${calledD.length}</strong></span>` +
+        `<span>Brier score: <strong>${brier.toFixed(3)}</strong> <span class="muted">(0 is perfect; always saying 50% scores 0.250)</span></span>` +
+        (misses.length ? `<span>Biggest misses: ${misses.map((d) => `${d.id} (${PM.fmtProb(pWinner(d))})`).join(", ")}</span>` : "");
+      document.getElementById("f-rating-label").textContent = "Outcome";
+      fRating.innerHTML = `<option value="">All districts</option>` + ["Called right", "Missed", "Not yet called"].map((o) => `<option>${o}</option>`).join("");
+      table = PM.sortableTable(document.getElementById("districts"), rCols, filtered(), { key: "chance", dir: -1 });
+      update();
+    }
+
     function render() {
+      if (view === "results") return renderResults();
       const forecast = view === "forecast";
       document.getElementById("dek").textContent = forecast
         ? `Forecast as of ${PM.fmtDate(F.as_of)} · ${F.days_out} days to Election Day, November 3 · an unvalidated hobby model`
@@ -347,7 +441,8 @@
       update();
     }
 
-    PM.viewToggle(document.getElementById("view"), (v) => { view = v; render(); });
+    PM.viewToggle(document.getElementById("view"), (v) => { view = v; render(); },
+      hasResults ? { views: ["polls", "forecast", "results"], initial: "results" } : {});
     document.querySelectorAll("[data-goto]").forEach((a) => a.addEventListener("click", (e) => {
       e.preventDefault();
       document.querySelector(`#view button[data-view="${a.dataset.goto}"]`).click();

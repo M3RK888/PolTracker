@@ -1,0 +1,66 @@
+<section begin="GenericBallotAgg"/>
+{|class="wikitable sortable" style="text-align:center;font-size:90%;line-height:17px"
+!Source of poll<br>aggregation
+!Dates<br>administered
+!Dates<br>updated
+!style="width:100px;" |Republicans
+!style="width:100px;" |Democrats
+!style="width:100px;" |Other/<br>Undecided{{efn |Calculated by taking the difference of 100% and all other candidates combined.|name=|group=}}
+!Margin
+|-
+|[[Decision Desk HQ]]<ref>{{cite web |url=https://votes.decisiondeskhq.com/polls/generic-ballot/national/lv-rv-adults|title=Generic Congressional Ballot|website=[[Decision Desk HQ]]|access-date=October 21, 2025}}</ref>
+|January 9, 2025 – July 29, 2026
+|July 31, 2026
+|41.4%
+|{{party shading/Democratic}} |'''46.7%'''
+|11.9%
+|{{party shading/Democratic}} |'''Democrats +5.3%'''
+|-
+|FiftyPlusOne<ref>{{cite web |url=https://fiftyplusone.news/polls/generic-ballot/generic-ballot|title=Generic Ballot|website=FiftyPlusOne|access-date=October 20, 2025}}</ref>
+|January 9, 2025 – July 29, 2026
+|July 31, 2026
+|43.5%
+|{{party shading/Democratic}} |'''49.4%'''
+|7.1%
+|{{party shading/Democratic}} |'''Democrats +5.9%'''
+|-
+|[[RealClearPolitics]]<ref>{{cite web |url=https://www.realclearpolling.com/polls/state-of-the-union/generic-congressional-vote|title=2026 Generic Congressional Vote|website=[[RealClearPolitics]]|access-date=October 21, 2025}}</ref>
+|July 9–29, 2026
+|July 31, 2026
+|42.4%
+|{{party shading/Democratic}} |'''48.4%'''
+|9.2%
+|{{party shading/Democratic}} |'''Democrats +6.0%'''
+|-
+|[[Nate Silver|Silver Bulletin]]<ref>{{cite web |url=https://www.natesilver.net/p/generic-ballot-average-2026-nate-silver-bulletin-congress-polls|title=Who's ahead on the generic congressional ballot?|website=Silver Bulletin|access-date=October 21, 2025}}</ref>
+|January 9, 2025 – July 29, 2026
+|July 31, 2026
+|41.9%
+|{{party shading/Democratic}} |'''48.4%'''
+|9.7%
+|{{party shading/Democratic}} |'''Democrats +6.5%'''
+|-
+|VoteHub<ref>{{cite web |url=https://votehub.com/polls/?poll=generic_ballot_2026|title=Who leads the 2026 generic congressional ballot?|website=VoteHub|access-date=October 21, 2025}}</ref>
+|January 9, 2025 – July 29, 2026
+|July 31, 2026
+|42.0%
+|{{party shading/Democratic}} |'''48.7%'''
+|9.3%
+|{{party shading/Democratic}} |'''Democrats +6.7%'''
+|-
+|[[Race to the WH]]<ref>{{cite web |title=2026 Generic Ballot Polling |url=https://www.racetothewh.com/polls/genericballot |access-date=November 25, 2025 |website=Race to the WH |language=en-US}}</ref>
+|January 9, 2025 – July 29, 2026
+|July 31, 2026
+|41.3%
+|{{party shading/Democratic}} |'''48.0%'''
+|10.7%
+|{{party shading/Democratic}} |'''Democrats +6.7%'''
+|-
+|colspan=2 |'''Average'''
+|July 31, 2026
+|42.1%
+|{{party shading/Democratic}} |'''48.3%'''
+|9.5%
+|{{party shading/Democratic}} |'''Democrats +6.2%'''
+|-
+|}<section end="GenericBallotAgg" />

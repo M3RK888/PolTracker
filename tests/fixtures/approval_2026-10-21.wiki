@@ -1,0 +1,79 @@
+==== Approval ====
+{| class="wikitable sortable" style="text-align:center;line-height:0.96"
+!Aggregator
+!Updated
+! Approve
+! Disapprove
+! Unsure/Other
+! Lead
+|-
+|[https://ballotpedia.org/Ballotpedia%27s_Polling_Index:_Presidential_approval_rating Ballotpedia]
+|October 21, 2026
+| 38.0%
+| style="background:#8B8B54; color: white"| 60.0%
+| 2.0%
+| style="background:#8B8B54; color: white"| −22.0%
+|-
+|[https://www.cnn.com/polling/approval/trump-cnn-poll-of-polls CNN]
+|October 21, 2026
+| 33.0%
+| style="background:#8B8B54; color: white" | 65.0%
+| 2.0%
+| style="background:#8B8B54; color: white" | −32.0%
+|-
+|[https://votes.decisiondeskhq.com/polls/presidential-approval/donald-j-trump-5/national/lv-rv-adults Decision Desk HQ]
+|October 21, 2026
+| 36.8%
+| style="background:#8B8B54; color: white"| 61.2%
+| 2.0%
+| style="background:#8B8B54; color: white"| −24.4%
+|-
+|[https://fiftyplusone.news/polls/approval/president FiftyPlusOne]
+|October 21, 2026
+| 34.8%
+| style="background:#8B8B54; color: white" | 62.0%
+| 3.2%
+| style="background:#8B8B54; color: white" | −27.2%
+|-
+|[https://www.nbcnews.com/politics/2026-elections/presidential-approval-polls NBC News]
+|October 21, 2026
+| 38.0%
+| style="background:#8B8B54; color: white" | 61.0%
+| 1.0%
+| style="background:#8B8B54; color: white" | −23.0%
+|-
+|[https://www.realclearpolling.com/polls/approval/donald-trump/approval-rating Real Clear Politics]
+|October 21, 2026
+| 38.3%
+| style="background:#8B8B54; color: white" | 60.5%
+| 1.2%
+| style="background:#8B8B54; color: white" | −22.2%
+|-
+|[https://www.natesilver.net/p/trump-approval-ratings-nate-silver-bulletin Silver Bulletin]
+|October 21, 2026
+| 36.3%
+| style="background:#8B8B54; color: white" | 60.6%
+| 3.1%
+| style="background:#8B8B54; color: white" | −24.3%
+|-
+|[https://www.economist.com/interactive/trump-approval-tracker The Economist]
+|October 21, 2026
+| 34.0%
+| style="background:#8B8B54; color: white"| 61.0%
+| 4.0%
+| style="background:#8B8B54; color: white"| −27.0%
+|-
+|[https://www.nytimes.com/interactive/polls/donald-trump-approval-rating-polls.html The New York Times]
+|October 21, 2026
+| 36.0%
+| style="background:#8B8B54; color: white"| 61.0%
+| 3.0%
+| style="background:#8B8B54; color: white"| −25.0%
+|-
+|'''Average'''
+|October 21, 2026
+| 36.1%
+| style="background:#8B8B54; color: white" | 61.4%
+| 2.4%
+| style="background:#8B8B54; color: white" | −25.2%
+|}

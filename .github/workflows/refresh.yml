@@ -1,0 +1,83 @@
+# Daily data refresh: runs the data scripts every morning, commits whatever
+# changed, and publishes. No AI involved: these steps are fixed scripts. (The
+# Claude routine still runs at 12:00 UTC, only to look for new 2028 polls,
+# which needs judgment.)
+#
+#   until Nov 3, 2026:  Senate/House polls and races (fetch_midterms.py)
+#   every day:          market prices, approval, unemployment (fetch_markets.py)
+#   after Nov 3, 2026:  election results and the forecast's score (score_forecast.py)
+#   then:               rebuild the site data (adds today's tracker points), test, commit, publish
+#
+# A failed fetch keeps the previous day's data and shows a warning on the run;
+# the build and the daily tracker point still happen.
+name: Daily data refresh
+
+on:
+  schedule:
+    - cron: "0 11 * * *"     # 11:00 UTC: 7am Eastern (6am after clocks change), before any polls close
+  workflow_dispatch:         # "Run workflow" button on the Actions tab
+  push:
+    branches: [main]
+    paths: [".github/workflows/refresh.yml"]   # runs once whenever this file changes, as a test
+
+permissions:
+  contents: write            # to commit the refreshed data
+  pages: write               # for the publish step
+  id-token: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - name: Is it after Election Day?
+        id: when
+        run: echo "after=$([ "$(TZ=America/New_York date +%F)" \> 2026-11-03 ] && echo yes || echo no)" >> "$GITHUB_OUTPUT"
+
+      - name: Senate and House polls and races
+        if: steps.when.outputs.after == 'no'
+        run: |
+          python fetch_midterms.py || {
+            echo "::warning::fetch_midterms.py failed; keeping yesterday's Senate/House data"
+            git checkout -- data/senate_2026_races.csv data/senate_2026_polls.csv data/house_2026_districts.csv data/generic_ballot_2026.csv
+          }
+
+      - name: Market prices, approval, unemployment
+        run: python fetch_markets.py || echo "::warning::fetch_markets.py couldn't update anything"
+
+      - name: Election results and score
+        if: steps.when.outputs.after == 'yes'
+        run: python score_forecast.py || echo "::notice::No 2026 results to score yet"
+
+      - name: Build the site data
+        run: python build_site.py | tee build.log
+
+      - name: Check before committing
+        run: python -m pytest -q && python check_site.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data site/data
+          if git diff --cached --quiet; then echo "Nothing changed"; exit 0; fi
+          summary=$(grep -m1 "^Forecast" build.log | sed 's/; 2028.*//' || true)
+          git commit -m "Daily data refresh" -m "$summary"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+  publish:
+    needs: refresh
+    uses: ./.github/workflows/pages.yml

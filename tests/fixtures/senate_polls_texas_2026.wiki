@@ -1,0 +1,112 @@
+{| class="wikitable sortable" style="text-align:center;font-size:90%;line-height:17px"
+!Source of poll<br>aggregation
+! Dates<br />administered
+! Dates<br />updated
+! style="width:100px;" |Ken Paxton (R)
+! style="width:100px;" |James Talarico (D)
+! style="width:100px;" |Other/<br />Undecided{{Efn|name=calculated}}
+! Margin
+|-
+|[[270toWin]]<ref name="270toWin">{{cite web|title=2026 Polls: Texas Senate|url=https://www.270towin.com/2026-senate-polls/texas|website=[[270toWin]]|access-date=October 20, 2026}}</ref>
+|October 5–16, 2026<!--Remember that dates listed on 270toWin are poll *publication dates*, not the dates when the polls were *administered*-->
+|October 20, 2026
+|46.9%
+|{{party shading/Democratic}} |'''48.7%'''
+|4.4%
+|{{party shading/Democratic}} |'''Talarico +1.8%'''
+|-
+|[[Decision Desk HQ]]<ref>{{Cite web |title=2026 Texas US Senate |url=https://votes.decisiondeskhq.com/races/2026-11-03/texas-us-senate-general-election/polling |access-date=October 22, 2026 |website=[[Decision Desk HQ]]}}</ref>
+|through October 21, 2026
+|October 21, 2026
+|47.3%
+|{{party shading/Democratic}}|'''49.9%'''
+|2.8%
+|{{party shading/Democratic}}|'''Talarico +2.6%'''
+|-
+|[[FiftyPlusOne]]<ref>{{Cite web |title=Texas General Senate Election |url=https://fiftyplusone.news/polls/senate/general/texas |website=[[FiftyPlusOne]] |access-date=October 22, 2026}}</ref>
+|through October 21, 2026
+|October 22, 2026
+|46.4%
+|{{party shading/Democratic}} |'''49.0%'''
+|4.6%
+|{{party shading/Democratic}} |'''Talarico +2.6%'''
+|-
+|[[RealClearPolitics]]<ref name="RCP19may">{{cite web |title=2026 Texas Senate - Paxton vs. Talarico |url=https://www.realclearpolling.com/polls/senate/general/2026/texas/talarico-vs-paxton |access-date=October 22, 2026 |website=[[RealClearPolitics]]}}</ref>
+|October 5–19, 2026
+|October 22, 2026
+|46.5%
+|{{party shading/Democratic}}|'''48.3%'''
+|5.2%
+|{{party shading/Democratic}}|'''Talarico +1.8%'''
+|-
+|''[[The Texas Tribune]]''<ref>{{Cite news |last=Ngo |first=Hien An |title=U.S. Senate race: Tracking poll results for James Talarico and Ken Paxton |url=https://www.texastribune.org/2026/08/07/texas-us-senate-james-talarico-ken-paxton-polls/ |work=[[The Texas Tribune]] |language=en-US |date=October 21, 2026 |orig-date=August 7, 2026 |access-date=October 22, 2026}}</ref>
+|through October 21, 2026
+|October 21, 2026
+|46.6%
+|{{party shading/Democratic}}|'''48.8%'''
+|5.6%
+|{{party shading/Democratic}}|'''Talarico +2.2%'''
+|-
+|''[[Silver Bulletin]]''<ref name="Silver"/>
+|through October 16, 2026
+|October 20, 2026
+|46.1%
+|{{party shading/Democratic}}|'''48.7%'''
+|5.2%
+|{{party shading/Democratic}}|'''Talarico +2.6%'''
+|-
+|colspan="3" |Average
+|46.6%
+|{{party shading/Democratic}} |'''48.9%'''
+|4.5%
+|{{party shading/Democratic}} |'''Talarico +2.3%'''
+|}
+
+{| class="wikitable" style="font-size:90%;text-align:center;"
+|- valign=bottom
+! Poll source{{Efn|Party affiliation labels according to ''[[The Texas Tribune]]''}}
+! Date(s)<br />administered
+! Sample<br />size{{efn|name="Key"}}
+! Margin<br />{{nowrap|of error}}
+! style="width:100px;"| Ken<br />Paxton (R)
+! style="width:100px;"| James<br />Talarico (D)
+! style="width:100px;"| Ted<br />Brown (L)
+! Other
+! Undecided
+|-
+|style="text-align:left;"|ActiVote<ref>{{cite web |title=Talarico Holds Narrow Lead Over Paxton in Texas Senate Race |url=https://www.activote.net/polls/2026/tx-u-s-senate/2026-10-21/ |publisher=ActiVote |access-date=October 22, 2026 |date=October 21, 2026}}</ref>
+|October 17–21, 2026
+|400 (LV)
+|±{{nbsp}}4.9%
+|49%
+|{{Party shading/Democratic}}|'''51%'''
+|{{sdash}}
+|{{sdash}}
+|{{sdash}}
+|-
+|rowspan="2" style="text-align:left;"|[[Emerson College]]<ref>{{cite web |title=Texas 2026 Poll: Toss-Up U.S. Senate Race; Abbott Maintains Edge for Governor |url=https://emersoncollegepolling.com/texas-2026-poll-toss-up/ |website=[[Emerson College Polling]] |access-date=October 22, 2026 |date=October 22, 2026}}</ref>
+|rowspan="2"|October 17–19, 2026
+|rowspan="2"|1,000 (LV)
+|rowspan="2"|±{{nbsp}}3.0%
+|48%{{efn|name=lean}}
+|{{party shading/Democratic}}|'''49%'''
+|3%
+|{{sdash}}
+|{{sdash}}
+|-
+|46%
+|{{party shading/Democratic}}|'''48%'''
+|1%
+|{{sdash}}
+|5%
+|-
+|style="text-align:left" rowspan="2"|Beacon Research (D)/<br />Shaw & Co. Research (R)<ref>{{Cite web |url=https://www.foxnews.com/politics/fox-news-poll-texas-senate-race-galloping-toward-photo-finish |first=Victoria |last=Balara |title=Fox News Poll: Texas Senate race galloping toward a photo finish |work=[[Fox News]] |date=October 21, 2026 |access-date=October 21, 2026}}</ref>{{efn-ua|name=Fox}}
+|rowspan="2"|October 15–19, 2026
+|1,398 (LV)
+|±{{nbsp}}2.5%
+|'''49%'''
+|'''49%'''
+|{{sdash}}
+|{{sdash}}
+|2%
+|-|}

@@ -26,7 +26,6 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd
@@ -177,7 +176,7 @@ def markets_by_day(days: list[pd.Timestamp]) -> dict[pd.Timestamp, pd.DataFrame]
 
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
-    today = pd.Timestamp(datetime.now(timezone.utc).date())
+    today = midterms.AS_OF
     days = list(pd.date_range(START, today - pd.Timedelta(days=1)))
     print(f"Rebuilding {len(days)} days, {days[0].date()} to {days[-1].date()}")
     print("Reading old versions of the Wikipedia articles...")

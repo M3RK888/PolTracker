@@ -1,13 +1,16 @@
 # Publishes the site/ folder to GitHub Pages (https://m3rk888.github.io/PolTracker/)
-# on every push to main, including the poll agent's daily commits.
-# The site's data files are committed already, so there's no build step.
+# on every push to main, including the daily data commits. The site's data files
+# are committed already, so there's no build step, but nothing goes live until
+# the checks pass: if they fail, the live site keeps its last good version and
+# the failed run shows on the Actions tab.
 name: Publish site
 
 on:
   push:
     branches: [main]
-    paths: ["site/**", ".github/workflows/pages.yml"]
+    paths: ["site/**", "*.py", "tests/**", "data/polls_2028.csv", "requirements.txt", ".github/workflows/pages.yml"]
   workflow_dispatch:   # "Run workflow" button on the Actions tab
+  workflow_call:       # run by the daily refresh after it commits (refresh.yml)
 
 permissions:
   contents: read
@@ -19,13 +22,34 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main      # the latest commit, including one the daily refresh just pushed
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Tests
+        run: python -m pytest -q
+      - name: 2028 polls are well-formed
+        run: python validate_polls.py
+      - name: Site data and links are sound
+        run: python check_site.py
+
   deploy:
+    needs: check
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

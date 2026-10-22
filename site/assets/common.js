@@ -145,13 +145,13 @@
   // Grey for states with nothing on the ballot (theme-aware)
   PM.noRaceColor = () => (window.matchMedia("(prefers-color-scheme: dark)").matches ? "#3a3d44" : "#dcd9d2");
 
-  PM.renderScale = (el, { other, left, right } = {}) => {
+  PM.renderScale = (el, { other, otherColor, left, right } = {}) => {
     const stops = PM.MARGIN_SCALE.map(([p, c]) => `${c} ${p * 100}%`).join(",");
     el.innerHTML = `
       <span>${left ?? `R+${PM.MARGIN_RANGE}`}</span>
       <span class="ramp" style="background:linear-gradient(90deg,${stops})"></span>
       <span>${right ?? `D+${PM.MARGIN_RANGE}`}</span>
-      ${other ? `<span class="other-key"><i></i>${PM.esc(other)}</span>` : ""}`;
+      ${other ? `<span class="other-key"><i${otherColor ? ` style="background:${otherColor}"` : ""}></i>${PM.esc(other)}</span>` : ""}`;
   };
 
   // Sortable table -------------------------------------------------------------
@@ -194,14 +194,17 @@
   // Win probabilities use the same red-gray-blue scale as margins: 50% is gray,
   // 95% or more for either side is the deepest color.
   PM.PROB_MIN = 0.05; PM.PROB_MAX = 0.95;
-  PM.probColor = (p) => {
-    const x = (Math.max(PM.PROB_MIN, Math.min(PM.PROB_MAX, p)) - PM.PROB_MIN) / (PM.PROB_MAX - PM.PROB_MIN);
+  // Color for a value on the red-gray-blue scale between lo (deep red) and hi (deep blue)
+  PM.scaleColor = (v, lo, hi) => {
+    const x = (Math.max(lo, Math.min(hi, v)) - lo) / (hi - lo);
     const sc = PM.MARGIN_SCALE, i = Math.min(sc.length - 2, Math.floor(x * (sc.length - 1)));
     const f = (x - sc[i][0]) / (sc[i + 1][0] - sc[i][0]);
     const rgb = (h) => [1, 3, 5].map((k) => parseInt(h.slice(k, k + 2), 16));
     const [a, b] = [rgb(sc[i][1]), rgb(sc[i + 1][1])];
-    return `rgb(${a.map((v, k) => Math.round(v + (b[k] - v) * f)).join(",")})`;
+    return `rgb(${a.map((c, k) => Math.round(c + (b[k] - c) * f)).join(",")})`;
   };
+  PM.probColor = (p) => PM.scaleColor(p, PM.PROB_MIN, PM.PROB_MAX);
+  PM.marginColor = (m) => PM.scaleColor(m, -PM.MARGIN_RANGE, PM.MARGIN_RANGE);
   // "63%", with the extremes shown as "<1%" / ">99%" rather than a false 0 or 100
   PM.fmtProb = (p) => (p == null ? "—" : p < 0.005 ? "<1%" : p > 0.995 ? ">99%" : `${Math.round(p * 100)}%`);
   // The leader's chance, e.g. "D 72%" / "R 88%"
@@ -220,13 +223,16 @@
 
   // Polls / Forecast toggle. The choice lives in the URL hash ("#forecast" or
   // "#polls", optionally followed by "&" and whatever else the page keeps there).
+  PM.VIEWS = { polls: "Polls", forecast: "Forecast", results: "Results" };
   PM.hashParts = () => location.hash.slice(1).split("&").filter(Boolean);
-  PM.hashRest = () => PM.hashParts().filter((p) => p !== "polls" && p !== "forecast");
+  PM.hashRest = () => PM.hashParts().filter((p) => !(p in PM.VIEWS));
   PM.setHash = (view, rest) => history.replaceState(null, "", "#" + [view, ...rest].filter(Boolean).join("&"));
-  PM.viewToggle = (el, onChange) => {
-    let view = PM.hashParts().includes("polls") ? "polls" : "forecast";
-    el.innerHTML = `<div class="toggle view-toggle" role="group" aria-label="View">
-      <button type="button" data-view="polls">Polls</button><button type="button" data-view="forecast">Forecast</button></div>`;
+  // opts: { views: ["polls", "forecast", "results"], initial: view shown when the URL doesn't pick one }
+  PM.viewToggle = (el, onChange, opts = {}) => {
+    const views = opts.views ?? ["polls", "forecast"];
+    let view = PM.hashParts().find((p) => views.includes(p)) ?? opts.initial ?? "forecast";
+    el.innerHTML = `<div class="toggle view-toggle" role="group" aria-label="View">${
+      views.map((v) => `<button type="button" data-view="${v}">${PM.VIEWS[v]}</button>`).join("")}</div>`;
     const set = (v, push) => {
       view = v;
       document.body.dataset.view = v;
@@ -365,6 +371,22 @@
       window.addEventListener("resize", el._resize);
     }
     el._opts = opts;
+  };
+
+  // Stale-data warning: if the newest data is more than two days old (US Eastern
+  // dates, like the build), say so at the top of the page. The daily update
+  // runs every morning, so this means it has failed at least twice in a row.
+  PM.staleNotice = (asOf) => {
+    if (!asOf) return;
+    const today = new Date().toLocaleDateString("en-CA", { timeZone: "America/New_York" });   // YYYY-MM-DD
+    const days = Math.round((new Date(today + "T00:00:00Z") - new Date(asOf + "T00:00:00Z")) / 864e5);
+    if (days <= 2) return;
+    const n = document.createElement("p");
+    n.className = "notice stale";
+    n.setAttribute("role", "status");
+    n.innerHTML = `<strong>Heads up:</strong> this page's data was last updated ${PM.fmtDate(asOf)}, ${days} days ago. ` +
+      `The daily update may have stopped working, so the numbers could be out of date.`;
+    document.querySelector("main").prepend(n);
   };
 
   // Re-draw maps when the OS switches light/dark

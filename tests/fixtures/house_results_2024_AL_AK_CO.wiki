@@ -1,0 +1,281 @@
+== Alabama ==
+{{main|2024 United States House of Representatives elections in Alabama}}
+
+{{see also|List of United States representatives from Alabama}}
+
+{| class="wikitable sortable"
+|-
+! colspan=2 | District
+! colspan=4 | Incumbent
+! rowspan=2 class="unsortable" | Candidates<ref name=AL2024>{{Cite web|title=General Election - November 5, 2024 |url=https://www.sos.alabama.gov/alabama-votes/voter/election-information/2024 |publisher=Alabama Secretary of State |date=December 22, 2023 |access-date=December 23, 2023}}</ref><!--State Certification Lists for each party individually -->
+
+|- valign=bottom
+! Location
+! [[Cook Partisan Voting Index|2022<br />PVI]]<ref name="new pvi">{{cite web|title=2022 Cook PVI: District Map and List|url=https://www.cookpolitical.com/cook-pvi/2022-partisan-voting-index/district-map-and-list|date=July 12, 2022|access-date=July 15, 2022|website=The Cook Political Report|language=en}}</ref>
+! Member
+! Party
+! First<br />elected
+! Status
+
+|-
+! rowspan=2 | {{ushr|AL|1|X}}
+| rowspan=2 {{shading PVI|R|28}}{{Efn|name=ALmap|A new congressional map was enacted in October 2023, after the most recent publication of the Cook PVI.<ref name="AL Map"/>}}
+| {{sortname|Jerry|Carl}}
+| {{party shading/Text/Republican}}
+| [[2020 United States House of Representatives elections in Alabama|2020]]
+| {{party shading/Loss}} | Incumbent lost renomination.<br />Republican loss.
+| rowspan=2 nowrap | {{Plainlist}}
+* {{Party stripe|Republican Party (US)}}{{Aye}} '''[[Barry Moore (American politician)|Barry Moore]]''' (Republican) 78.5%
+* {{Party stripe|Democratic Party (US)}}Tom Holmes (Democratic) 21.5%
+{{endplainlist}}
+
+|-
+| {{sortname|Barry|Moore|dab=American politician}}<br />{{small|Redistricted from the {{ushr|AL|2|C}}}}
+| {{party shading/Text/Republican}}
+| [[2020 United States House of Representatives elections in Alabama|2020]]
+| Incumbent re-elected.
+
+|-
+! {{ushr|AL|2|X}}
+| {{shading PVI|D|4}}{{Efn|name=ALmap}}
+| colspan=3| None (new district)
+| {{party shading/Democratic}} | New member elected.<br>'''Democratic gain.'''
+| nowrap | {{Plainlist}}
+* {{Party stripe|Democratic Party (US)}}{{Aye}} '''[[Shomari Figures]]''' (Democratic) 54.6%
+* {{Party stripe|Republican Party (US)}}Caroleene Dobson (Republican) 45.4%
+{{endplainlist}}
+
+|-
+! {{ushr|AL|3|X}}
+| {{shading PVI|R|23}}{{Efn|name=ALmap}}
+| {{sortname|Mike|Rogers|dab=Alabama politician}}
+| {{party shading/Text/Republican}}
+| [[2002 United States House of Representatives elections in Alabama|2002]]
+|Incumbent re-elected.
+| nowrap | {{Party stripe|Republican Party (US)}}{{Aye}} '''[[Mike Rogers (Alabama politician)|Mike Rogers]]''' (Republican) 100%
+
+|-
+! {{ushr|AL|4|X}}
+| {{shading PVI|R|33}}{{Efn|name=ALmap}}
+| {{sortname|Robert|Aderholt}}
+| {{party shading/Text/Republican}}
+| [[1996 United States House of Representatives elections in Alabama|1996]]
+|Incumbent re-elected.
+| nowrap | {{Party stripe|Republican Party (US)}}{{Aye}} '''[[Robert Aderholt]]''' (Republican) 100%
+
+|-
+! {{ushr|AL|5|X}}
+| {{shading PVI|R|17}}{{Efn|name=ALmap}}
+| {{sortname|Dale|Strong}}
+| {{party shading/Text/Republican}}
+| [[2022 United States House of Representatives elections in Alabama|2022]]
+|Incumbent re-elected.
+| nowrap | {{Party stripe|Republican Party (US)}}{{Aye}} '''[[Dale Strong]]''' (Republican) 100%
+
+|-
+! {{ushr|AL|6|X}}
+| {{shading PVI|R|22}}{{Efn|name=ALmap}}
+| {{sortname|Gary|Palmer|dab=politician}}
+| {{party shading/Text/Republican}}
+| [[2014 United States House of Representatives elections in Alabama|2014]]
+| Incumbent re-elected.
+| nowrap | {{Plainlist}}
+* {{Party stripe|Republican Party (US)}}{{Aye}} '''[[Gary Palmer (politician)|Gary Palmer]]''' (Republican) 70.4%
+* {{Party stripe|Democratic Party (US)}}Elizabeth Anderson (Democratic) 29.6%
+{{endplainlist}}
+
+|-
+! {{ushr|AL|7|X}}
+| {{shading PVI|D|12}}{{Efn|name=ALmap}}
+| {{sortname|Terri|Sewell}}
+| {{party shading/Text/Democratic}}
+| [[2010 United States House of Representatives elections in Alabama|2010]]
+| Incumbent re-elected.
+| nowrap | {{Plainlist}}
+* {{Party stripe|Democratic Party (US)}}{{Aye}} '''[[Terri Sewell]]''' (Democratic) 63.7%
+* {{Party stripe|Republican Party (US)}}Robin Litaker (Republican) 36.3%
+{{endplainlist}}
+
+|}
+
+== Alaska ==
+{{main|2024 United States House of Representatives election in Alaska}}
+
+{{see also|List of United States representatives from Alaska}}
+
+{| class="wikitable sortable"
+|-
+! colspan=2 | District
+! colspan=4 | Incumbent
+! rowspan=2 class="unsortable" | Candidates<ref>{{Cite web |last=Brooks |first=James |date=2024-09-04 |title=A meeting at an Eagle River brewery helped put a convicted felon on Alaska's U.S. House ballot |url=https://alaskabeacon.com/2024/09/03/a-meeting-at-an-eagle-river-brewery-helped-put-a-convicted-felon-on-alaskas-u-s-house-ballot/ |access-date=2024-09-08 |website=Alaska Beacon |language=en}}</ref>
+
+|- valign=bottom
+! Location
+! [[Cook Partisan Voting Index|2022<br />PVI]]<ref name="new pvi" />
+! Member
+! Party
+! First<br />elected
+! Status
+
+|-
+! {{ushr|AK|AL|X}}
+| {{shading PVI|R|8}}
+| [[Mary Peltola]]
+| {{Party shading/Text/Democratic}}
+| [[2022 Alaska's at-large congressional district special election|2022 {{small|(special)}}]]
+| {{Party shading/Republican}} | Incumbent lost re-election.<br>'''Republican gain.'''
+| nowrap | {{Plainlist}}
+* '''{{small|First round:}}'''
+* {{Party stripe|Republican Party (US)}}{{mby}} [[Nick Begich III]] (Republican) 48.4%
+* {{Party stripe|Democratic Party (US)}}{{mby}} [[Mary Peltola]] (Democratic) 46.4%
+* {{Party stripe|Independence Party (US)}}John Howe ([[Alaskan Independence Party|Independence]]) 3.9%
+* {{Party stripe|Democratic Party (US)}}[[Eric Hafner]] (Democratic) 1.0%
+* '''{{small|[[Instant-runoff voting|Instant runoff]]:}}'''
+* {{Party stripe|Republican Party (US)}}{{aye}} '''[[Nick Begich III]]''' (Republican) 51.2%
+* {{Party stripe|Democratic Party (US)}}[[Mary Peltola]] (Democratic) 48.8%
+{{endplainlist}}
+
+|}
+
+== Colorado ==
+{{main|2024 United States House of Representatives elections in Colorado}}
+
+{{see also|List of United States representatives from Colorado}}
+
+{| class="wikitable sortable"
+|-
+! colspan=2 | District
+! colspan=4 | Incumbent
+! rowspan=2 class="unsortable" | Candidates<ref name=CO2024>{{cite news |title=2024 General Election Official Candidate List |url=https://www.coloradosos.gov/pubs/elections/vote/generalCandidates.html |publisher=Colorado Secretary of State |access-date=September 22, 2024 |archive-date=September 13, 2024 |archive-url=https://web.archive.org/web/20240913215318/https://www.coloradosos.gov/pubs/elections/vote/generalCandidates.html |url-status=dead }}</ref>
+
+|- valign=bottom
+! Location
+! [[Cook Partisan Voting Index|2022<br />PVI]]<ref name="new pvi" />
+! Member
+! Party
+! First<br />elected
+! Status
+
+|-
+! {{ushr|CO|1|X}}
+| {{shading PVI|D|29}}
+| {{sortname|Diana|DeGette}}
+| {{party shading/Text/Democratic}}
+| [[1996 United States House of Representatives elections in Colorado|1996]]
+| Incumbent re-elected.
+| nowrap | {{Plainlist}}
+* {{Party stripe|Democratic Party (US)}}{{Aye}} '''[[Diana DeGette]]''' (Democratic) 76.6%
+* {{party stripe|Republican Party (US)}}Valdamar Archuleta (Republican) 21.6%
+{{collapsible list|title={{nobold|Others}}|
+| {{Party stripe|Unity Party of America}}Critter Milton ([[Unity Party of America|Unity]]) 1.2%
+| {{Party stripe|Approval Voting Party}}Daniel Lutz (Approval Voting) 0.7%}}
+{{endplainlist}}
+
+|-
+! {{ushr|CO|2|X}}
+| {{shading PVI|D|17}}
+| {{sortname|Joe|Neguse}}
+| {{party shading/Text/Democratic}}
+| [[2018 United States House of Representatives elections in Colorado|2018]]
+| Incumbent re-elected.
+| nowrap | {{Plainlist}}
+* {{Party stripe|Democratic Party (US)}}{{Aye}} '''[[Joe Neguse]]''' (Democratic) 68.4%
+* {{party stripe|Republican Party (US)}}Marshall Dawson (Republican) 28.9%
+{{collapsible list|title={{nobold|Others}}|
+| {{Party stripe|Libertarian Party (US)}}Gaylon Kent (Libertarian) 1.2%
+| {{Party stripe|Unity Party of America}}Cynthia Sirianni (Unity) 0.9%
+| {{Party stripe|Approval Voting Party}}Jan Kok (Approval Voting) 0.6%}}
+{{endplainlist}}
+
+|-
+! {{ushr|CO|3|X}}
+| {{shading PVI|R|7}}
+| {{sortname|Lauren|Boebert}}
+| {{party shading/Text/Republican}}
+| [[2020 United States House of Representatives elections in Colorado|2020]]
+| {{Party shading/Republican/Hold}} | Incumbent running in the 4th district.<ref name=CO2024/><br>New member elected.<br>Republican hold.
+| nowrap | {{Plainlist}}
+* {{Party stripe|Republican Party (US)}}{{Aye}} '''[[Jeff Hurd (politician)|Jeff Hurd]]''' (Republican) 50.8%
+* {{Party stripe|Democratic Party (US)}}[[Adam Frisch]] (Democratic) 45.8%
+* {{Party stripe|Libertarian Party (US)}}James Wiley (Libertarian) 2.7%
+* {{Party stripe|Unity Party of America}}Adam Withrow (Unity) 0.7%
+{{endplainlist}}
+
+|-
+! {{ushr|CO|4|X}}
+| {{shading PVI|R|13}}
+| {{sortname|Greg|Lopez}}
+| {{party shading/Text/Republican}}
+| [[2024 Colorado's 4th congressional district special election|2024 {{small|(special)}}]]
+| {{Party shading/Republican/Hold}} | Incumbent retired.<ref name="GregLopez">{{cite news |last1=Vakil |first1=Caroline |title=Republican Greg Lopez wins Colorado special election for Ken Buck's seat |url=https://thehill.com/homenews/campaign/4739621-greg-lopez-wins-special-election-ken-buck/ |access-date=June 25, 2024 |work=[[The Hill (newspaper)|The Hill]] |date=June 25, 2024}}</ref><br>Republican hold.
+| nowrap | {{Plainlist}}
+* {{Party stripe|Republican Party (US)}}{{Aye}} '''[[Lauren Boebert]]''' (Republican) 53.6%
+* {{party stripe|Democratic Party (US)}}Trisha Calvarese (Democratic) 42.0%
+* {{party stripe|Libertarian Party (US)}}Hannah Goodman (Libertarian) 2.6%
+{{collapsible list|title={{nobold|Others}}|
+| {{Party stripe|Approval Voting Party}}Frank Atwood (Approval Voting) 1.4%
+| {{Party stripe|Unity Party of America}}Paul Fiorino (Unity) 0.3%}}
+{{endplainlist}}
+
+|-
+! {{ushr|CO|5|X}}
+| {{shading PVI|R|9}}
+| {{sortname|Doug|Lamborn}}
+| {{party shading/Text/Republican}}
+| [[2006 United States House of Representatives elections in Colorado|2006]]
+| {{Party shading/Republican/Hold}} | Incumbent retired.<ref name="LambornCO" /><br>Republican hold.
+| nowrap | {{Plainlist}}
+* {{Party stripe|Republican Party (US)}}{{Aye}} '''[[Jeff Crank]]''' (Republican) 54.7%
+* {{Party stripe|Democratic Party (US)}}River Gassen (Democratic) 40.9%
+{{collapsible list|title={{nobold|Others}}|
+| {{Party stripe|Libertarian Party (US)}}Michael Vance (Libertarian) 1.8%
+| {{Party stripe|Independent}}Joseph Gaye (Independent) 1.1%
+| {{Party stripe|Constitution Party (US)}}Christopher Mitchell ([[Constitution Party (United States)|Constitution]]) 1.1%
+| {{Party stripe|Forward Party (US)}}Christopher Sweat ([[Forward Party (United States)|Forward]]) 0.4%}}
+{{endplainlist}}
+
+|-
+! {{ushr|CO|6|X}}
+| {{shading PVI|D|9}}
+| {{sortname|Jason|Crow}}
+| {{party shading/Text/Democratic}}
+| [[2018 United States House of Representatives elections in Colorado|2018]]
+| Incumbent re-elected.
+| nowrap | {{Plainlist}}
+* {{Party stripe|Democratic Party (US)}}{{Aye}} '''[[Jason Crow]]''' (Democratic) 59.0%
+* {{Party stripe|Republican Party (US)}}John Fabbricatore (Republican) 38.5%
+{{collapsible list|title={{nobold|Others}}|
+| {{Party stripe|Libertarian Party (US)}}John Kittleson (Libertarian) 1.4%
+| {{Party stripe|Approval Voting Party}}Travis Nicks (Approval Voting) 1.2%}}
+{{endplainlist}}
+
+|-
+! {{ushr|CO|7|X}}
+| {{shading PVI|D|4}}
+| {{sortname|Brittany|Pettersen}}
+| {{party shading/Text/Democratic}}
+| [[2022 United States House of Representatives elections in Colorado|2022]]
+| Incumbent re-elected.
+| nowrap | {{Plainlist}}
+* {{Party stripe|Democratic Party (US)}}{{Aye}} '''[[Brittany Pettersen]]''' (Democratic) 55.3%
+* {{party stripe|Republican Party (US)}}Sergei Matveyuk (Republican) 41.2%
+* {{Party stripe|Libertarian Party (US)}}Patrick Bohan (Libertarian) 2.3%
+* {{Party stripe|Unity Party of America}}Ron Tupa (Unity) 1.2%
+{{endplainlist}}
+
+|-
+! {{ushr|CO|8|X}}
+| {{shading PVI|EVEN}}
+| {{sortname|Yadira|Caraveo}}
+| {{party shading/Text/Democratic}}
+| [[2022 United States House of Representatives elections in Colorado|2022]]
+| {{party shading/Republican}} | Incumbent lost re-election.<br>'''Republican gain.'''
+| nowrap | {{Plainlist}}
+* {{Party stripe|Republican Party (US)}}{{Aye}} '''[[Gabe Evans]]''' (Republican) 49.0%
+* {{Party stripe|Democratic Party (US)}}[[Yadira Caraveo]] (Democratic) 48.2%
+{{collapsible list|title={{nobold|Others}}|
+| {{Party stripe|Approval Voting Party}}Chris Baum (Approval Voting) 1.7%
+| {{Party stripe|Unity Party of America}}Susan Hall (Unity) 1.1%}}
+{{endplainlist}}
+
+|}
