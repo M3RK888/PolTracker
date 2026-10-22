@@ -472,6 +472,32 @@ def save_history(rows: list[dict]) -> pd.DataFrame:
     return out
 
 
+# data/race_forecast_history.csv: every 2026 Senate race and House district, every day.
+# The Election Day rows are what score_forecast.py grades against the results.
+RACE_HISTORY_CSV = "data/race_forecast_history.csv"
+RACE_HISTORY_COLUMNS = ["date", "chamber", "race", "p_dem", "median", "lo", "hi",
+                        "polls", "fundamentals", "market_p", "blended"]
+
+
+def race_history_rows(f26: dict) -> list[dict]:
+    return [{"date": f26["as_of"], "chamber": chamber, "race": r["key"],
+             **{c: r[c] for c in RACE_HISTORY_COLUMNS[3:]}}
+            for chamber in ("senate", "house") for r in f26[chamber]["races"]]
+
+
+def save_race_history(rows: list[dict]) -> None:
+    """Add rows, replacing any already there for the same date, chamber and race."""
+    try:
+        old = pd.read_csv(RACE_HISTORY_CSV, dtype={"date": str})
+    except FileNotFoundError:
+        old = pd.DataFrame(columns=RACE_HISTORY_COLUMNS)
+    new = pd.DataFrame(rows, columns=RACE_HISTORY_COLUMNS)
+    keys = set(zip(new["date"], new["chamber"], new["race"]))
+    old = old[[k not in keys for k in zip(old["date"], old["chamber"], old["race"])]]
+    out = pd.concat([df for df in (old, new) if not df.empty]).sort_values(["date", "chamber", "race"])
+    out.to_csv(RACE_HISTORY_CSV, index=False)
+
+
 def history_series(hist: pd.DataFrame, race: str) -> list[dict]:
     h = hist[hist["race"] == race]
     cols = ["date", "kind", "p_dem", "p_rep", "median", "lo", "hi", "market_dem"]

@@ -225,7 +225,13 @@ if __name__ == "__main__":
     f26 = forecast_model.forecast_2026()
     f28 = forecast_model.forecast_2028()
     # Add today's numbers to the tracker's history, then ship the whole history with each forecast
-    hist = forecast_model.save_history(forecast_model.history_rows(f26, f28))
+    # The 2026 record stops on Election Day: after that, market prices follow the
+    # results, so later numbers wouldn't be a forecast. Election Day itself is kept
+    # (the daily run happens hours before polls close) and is what gets scored.
+    before_election = forecast_model.AS_OF <= forecast_model.ELECTION_2026
+    hist = forecast_model.save_history(forecast_model.history_rows(f26 if before_election else None, f28))
+    if before_election:
+        forecast_model.save_race_history(forecast_model.race_history_rows(f26))
     f26["history"] = {c: forecast_model.history_series(hist, c) for c in ("senate", "house")}
     f28["history"] = {m["id"]: forecast_model.history_series(hist, f"president:{m['id']}") for m in f28["matchups"]}
     write_js("forecast_2026", "FORECAST_2026", f26)

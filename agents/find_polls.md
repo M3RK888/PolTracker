@@ -146,8 +146,11 @@ Never hand-edit `data/markets.csv`, `data/approval.csv` or `data/economy.csv`.
 ## Forecast history (the tracker charts)
 
 Every `build_site.py` run adds that day's control odds to `data/forecast_history.csv` (one row per
-race per day; a second build on the same day replaces that day's rows). Commit it with `site/data/`
-every time you build. Never hand-edit it, and never delete rows from it: older rows can't be
+race per day; a second build on the same day replaces that day's rows), and every 2026 Senate race's and
+House district's chance to `data/race_forecast_history.csv`. Commit both with `site/data/` every time
+you build. The run on **Election Day, November 3**, matters most: its rows are the forecast that gets
+scored against the results, so make sure that day's build is committed. After November 3 the build stops
+adding 2026 rows on its own. Never hand-edit these, and never delete rows from them: older rows can't be
 recreated, since they record what the forecast said on that day. Don't run `backfill_history.py`.
 
 ## Final report
