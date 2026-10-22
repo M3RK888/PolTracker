@@ -88,7 +88,7 @@ def page(year: int) -> str:
     if not path.exists():
         CACHE.mkdir(parents=True, exist_ok=True)
         url = f"https://en.wikipedia.org/wiki/{year}_United_States_presidential_election"
-        req = urllib.request.Request(url, headers={"User-Agent": "pollmap-history-fetch/1.0"})
+        req = urllib.request.Request(url, headers={"User-Agent": "poltracker-history-fetch/1.0"})
         path.write_bytes(urllib.request.urlopen(req, timeout=60).read())
         time.sleep(1)   # be polite to Wikipedia
     return path.read_text(encoding="utf-8")

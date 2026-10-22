@@ -1,6 +1,6 @@
 # Forecast plan: win probabilities for 2026 and 2028
 
-Handoff document for building Pollmap's forecast model in a fresh Claude Code session.
+Handoff document for building PolTracker's forecast model in a fresh Claude Code session.
 Written 2026-10-21 at the end of the session that built the site. Read this whole file
 before starting; the decisions in it were made with the owner and shouldn't be reopened.
 
@@ -29,7 +29,7 @@ before starting; the decisions in it were made with the owner and shouldn't be r
   https://m3rk888.github.io/pollmap/ within about a minute (GitHub Pages workflow). Don't push
   broken or half-done pages. Work on a branch or keep the toggle hidden until a forecast is done.
 - Don't send his email address anywhere (e.g. in HTTP User-Agent headers). Use
-  `pollmap-build/1.0` style agents.
+  `poltracker-build/1.0` style agents.
 - His usage is limited. Be efficient: batch work, avoid re-reading large files, don't over-screenshot.
 
 ## How the site works today

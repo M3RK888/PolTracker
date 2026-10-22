@@ -14,7 +14,7 @@ Search the web, then confirm every number on a page you actually opened. Good st
 
 - Wikipedia: the "Opinion polling > General election" section of "2028 United States presidential
   election", which has one table per matchup (national, then statewide). Read its exact wikitext with
-  `curl -sL -A "pollmap-agent/1.0" "https://en.wikipedia.org/w/index.php?title=2028_United_States_presidential_election&action=raw"`.
+  `curl -sL -A "poltracker-agent/1.0" "https://en.wikipedia.org/w/index.php?title=2028_United_States_presidential_election&action=raw"`.
   If a separate "Nationwide/Statewide opinion polling for the 2028 ..." article exists by the time you
   run, use that instead (same `action=raw` trick).
 - 270toWin 2028 presidential polls
