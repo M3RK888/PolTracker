@@ -1,0 +1,4 @@
+# Store text files with Unix line endings, whichever computer wrote them (the daily
+# GitHub job runs on Linux, local builds on Windows), so diffs show real changes only.
+* text=auto eol=lf
+*.png binary
