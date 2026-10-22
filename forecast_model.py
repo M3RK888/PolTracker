@@ -164,17 +164,27 @@ def same_person(a: str, b: str) -> bool:
 # ---------------------------------------------------------------------------
 # Core: blend + simulate
 # ---------------------------------------------------------------------------
-def forecast_races(races: list[dict], t: int, s0: float) -> tuple[list[dict], np.ndarray, dict]:
-    """races: [{key, region_state, polls, fundamentals, market (dict|None)}].
-    Returns the races with forecast fields added, the simulated margins
-    (draws x races), and the uncertainty settings used."""
+def draw_errors(races: list[dict], sig: dict) -> np.ndarray:
+    """Simulated misses (draws x races): national + regional + each race's own."""
+    rng = np.random.default_rng(SEED)
+    region_idx = np.array([REGION_OF[r["region_state"]] for r in races])
+    national = t_errors(rng, sig["national"], (N_DRAWS, 1))
+    regional = t_errors(rng, sig["region"], (N_DRAWS, len(REGIONS)))[:, region_idx]
+    return national + regional + t_errors(rng, sig["race"], (N_DRAWS, len(races)))
+
+
+def forecast_races(races: list[dict], t: int, s0: float, errors: np.ndarray | None = None) -> tuple[list[dict], np.ndarray, dict]:
+    """races: [{key, region_state, polls, fundamentals, market (dict|None)}]; a race
+    may instead carry a ready-made market_margin. Returns the races with forecast
+    fields added, the simulated margins (draws x races), and the uncertainty used."""
     sig = sigmas(t, s0)
     sd = total_sigma(sig)
     blended = []
     for r in races:
         m = r.get("market")
-        r["market_margin"] = None if m is None else market_margin(m["p"], sd)
-        have = {"polls": r["polls"] is not None, "markets": m is not None,
+        if "market_margin" not in r:
+            r["market_margin"] = None if m is None else market_margin(m["p"], sd)
+        have = {"polls": r["polls"] is not None, "markets": r["market_margin"] is not None,
                 "fundamentals": r["fundamentals"] is not None}
         w = weights_for(t, have)
         r["weights"] = w
@@ -182,13 +192,9 @@ def forecast_races(races: list[dict], t: int, s0: float) -> tuple[list[dict], np
                                                   ("fundamentals", r["fundamentals"])) if w[k])
         blended.append(r["blended"])
 
-    rng = np.random.default_rng(SEED)
-    n = len(races)
-    region_idx = np.array([REGION_OF[r["region_state"]] for r in races])
-    national = t_errors(rng, sig["national"], (N_DRAWS, 1))
-    regional = t_errors(rng, sig["region"], (N_DRAWS, len(REGIONS)))[:, region_idx]
-    own = t_errors(rng, sig["race"], (N_DRAWS, n))
-    sims = np.array(blended)[None, :] + national + regional + own
+    if errors is None:
+        errors = draw_errors(races, sig)
+    sims = np.array(blended)[None, :] + errors
 
     for i, r in enumerate(races):
         col = sims[:, i]
@@ -307,6 +313,110 @@ def forecast_2026() -> dict:
 
 
 # ---------------------------------------------------------------------------
+# 2028
+# ---------------------------------------------------------------------------
+# Fundamentals for an open-seat presidential race (Trump can't run again), loosely
+# after Abramowitz's "time for change" model: the president's party gains about
+# 0.2 points of margin per point of net approval, and loses about 2 points per
+# point that unemployment rose over the past year. Two years out these readings
+# will change a lot, so the result is shrunk toward an even race by
+# 1 / (1 + days_left / 365): about a third today, all of it on Election Day.
+PRES_APPROVAL_SLOPE = 0.2
+PRES_UNEMPLOYMENT_SLOPE = -2.0
+PRES_SHRINK_DAYS = 365
+EV_TO_WIN = 270
+
+
+def presidential_environment(net_approval: float, unemployment_change: float, t: int) -> dict:
+    raw = PRES_APPROVAL_SLOPE * net_approval + PRES_UNEMPLOYMENT_SLOPE * unemployment_change   # Republican margin
+    shrink = 1 / (1 + t / PRES_SHRINK_DAYS)
+    return {"raw_rep": round(raw, 2), "shrink": round(shrink, 3), "dem": round(-raw * shrink, 2)}
+
+
+def market_shift(lean: np.ndarray, ev: np.ndarray, errors: np.ndarray, p: float) -> float:
+    """The national margin x at which states at (lean + x) give Democrats a p chance
+    of 270 electoral votes, using the model's own simulated misses."""
+    p = min(max(p, P_CLAMP[0]), P_CLAMP[1])
+    lo, hi = -40.0, 40.0
+    for _ in range(40):
+        x = (lo + hi) / 2
+        win = (((lean + x)[None, :] + errors > 0) * ev).sum(axis=1) >= EV_TO_WIN
+        lo, hi = (x, hi) if win.mean() < p else (lo, x)
+    return (lo + hi) / 2
+
+
+def economy() -> dict:
+    e = pd.read_csv("data/economy.csv").iloc[0]
+    return {"date": e["date"], "unemployment": float(e["unemployment"]), "change": float(e["change"]), "source": e["source"]}
+
+
+def forecast_2028() -> dict:
+    import polling_2028 as pm
+
+    t = days_until(ELECTION_2028)
+    markets = load_markets()
+    appr, econ = approval(), economy()
+    env = presidential_environment(appr["net"], econ["change"], t)
+    market = market_for(markets, "control:president")
+    polls = pm.load_polls()
+    pairs = polls.groupby(["dem_candidate", "rep_candidate"]).size().reset_index(name="n").sort_values("n", ascending=False)
+
+    out = []
+    for _, pair in pairs.iterrows():
+        dem, rep = pair["dem_candidate"], pair["rep_candidate"]
+        try:
+            est, s = pm.state_estimates(polls, dem, rep)
+        except ValueError:
+            continue                                   # no recent national polls: no map on the poll page either
+        lean = (est["margin_2024"] - s["national_2024"]).to_numpy()
+        ev = est["ev"].to_numpy()
+        races = [{"key": r["state"], "region_state": r["state"], "polls": float(r["estimate"]),
+                  "fundamentals": env["dem"] + lean[i]} for i, (_, r) in enumerate(est.iterrows())]
+        errors = draw_errors(races, sigmas(t, 4.0))
+        shift = None
+        if market is not None:
+            shift = market_shift(lean, ev, errors, market["p"])
+            for i, r in enumerate(races):
+                r["market_margin"] = lean[i] + shift
+        races, sims, sig_out = forecast_races(races, t, 4.0, errors)
+        dem_ev = ((sims > 0) * ev[None, :]).sum(axis=1)
+        values, counts = np.unique(dem_ev // 5 * 5, return_counts=True)
+        lo_, med, hi_ = np.percentile(dem_ev, [10, 50, 90])
+        segs = {b: 0 for _, b in BANDS}
+        for r, e in zip(races, ev):
+            segs[r["band"]] += int(e)
+        states = []
+        for i, ((_, r), f) in enumerate(zip(est.iterrows(), races)):
+            states.append(race_output(f) | {"name": r["state_name"], "ev": int(r["ev"]), "lean": r2(lean[i])})
+        out.append({
+            "id": f"{dem}-{rep}".lower().replace(" ", "-"), "dem": dem, "rep": rep,
+            "summary": {
+                "p_dem": round(float((dem_ev >= EV_TO_WIN).mean()), 4),
+                "p_rep": round(float((538 - dem_ev >= EV_TO_WIN).mean()), 4),
+                "p_tie": round(float((dem_ev == 269).mean()), 4),
+                "ev_median": int(med), "ev_lo": int(lo_), "ev_hi": int(hi_),
+                "histogram": [{"seats": int(v), "p": round(c / N_DRAWS, 5)} for v, c in zip(values, counts)],
+            },
+            "segments": [{"band": b, "label": BAND_LABELS[b], "ev": v} for b, v in segs.items()],
+            "national": {"polls": r2(s["national_avg"]), "fundamentals": env["dem"], "market": r2(shift)},
+            "sigma": sig_out, "states": states,
+        })
+
+    return {
+        "as_of": AS_OF.strftime("%Y-%m-%d"), "election": ELECTION_2028.strftime("%Y-%m-%d"), "days_out": t,
+        "weights": {k: round(v, 3) for k, v in base_weights(t).items()},
+        "approval": appr, "economy": econ, "environment": env,
+        "market": None if market is None else {"p_dem": round(market["p"], 4), "sources": market["sources"]},
+        "markets": control_markets(markets, "control:president"),
+        "markets_fetched": markets["fetched_at"].max() if len(markets) else None,
+        "settings": {"draws": N_DRAWS, "poll_days": POLL_DAYS, "approval_slope": PRES_APPROVAL_SLOPE,
+                     "unemployment_slope": PRES_UNEMPLOYMENT_SLOPE, "shrink_days": PRES_SHRINK_DAYS,
+                     "min_volume": MIN_VOLUME, "region_sd": REGION_SD},
+        "matchups": out,
+    }
+
+
+# ---------------------------------------------------------------------------
 # Sanity checks
 # ---------------------------------------------------------------------------
 def _check():
@@ -340,6 +450,15 @@ def _check():
     for r in sorted(f["senate"]["races"], key=lambda r: abs(r["p_dem"] - 0.5))[:10]:
         print(f"  {r['key']}  D {r['p_dem']:6.1%}  blended {r['blended']:+5.1f}  polls {r['polls']:+5.1f}  "
               f"fund {r['fundamentals']:+5.1f}  market {r['market_p'] if r['market_p'] is not None else '—'}")
+
+
+    f = forecast_2028()
+    print(f"2028 ({f['days_out']} days out): weights {f['weights']}; fundamentals {f['environment']}; "
+          f"markets {f['market']}")
+    for m in f["matchups"]:
+        s = m["summary"]
+        print(f"  {m['dem']:14} vs {m['rep']:6} D {s['p_dem']:.0%}  R {s['p_rep']:.0%}  tie {s['p_tie']:.1%}  "
+              f"EV median {s['ev_median']} ({s['ev_lo']}-{s['ev_hi']})  national: {m['national']}")
 
 
 if __name__ == "__main__":

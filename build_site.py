@@ -11,6 +11,7 @@ change when polls do. This script regenerates only site/data/*.js:
     house.js      2026 House estimates by district
     forecast_2026.js  2026 win probabilities (forecast_model.py; needs data/markets.csv
                   and data/approval.csv from fetch_markets.py)
+    forecast_2028.js  2028 win probabilities per matchup (also needs data/economy.csv)
 
 The data is written as small JS files (window.X = {...}) rather than JSON so
 the pages work when opened straight from disk, with no local server needed.
@@ -221,6 +222,8 @@ if __name__ == "__main__":
     write_js("house", "HOUSE", house)
     f26 = forecast_model.forecast_2026()
     write_js("forecast_2026", "FORECAST_2026", f26)
+    f28 = forecast_model.forecast_2028()
+    write_js("forecast_2028", "FORECAST_2028", f28)
 
     avail = [f"{m['dem']} vs {m['rep']}" for m in forecast["matchups"] if m["available"]]
     unavail = [f"{m['dem']} vs {m['rep']}" for m in forecast["matchups"] if not m["available"]]
@@ -231,5 +234,6 @@ if __name__ == "__main__":
     print(f"Senate: D {senate['seats']['D']}, R {senate['seats']['R']}, tossup {senate['seats']['Tossup']}; "
           f"House: D {house['seats']['D']}, R {house['seats']['R']}, tossup {house['seats']['Tossup']}")
     print(f"Forecast ({f26['days_out']} days out): Democrats win the Senate {f26['senate']['summary']['p_dem_control']:.0%}, "
-          f"the House {f26['house']['summary']['p_dem_control']:.0%}")
-    print(f"Wrote site/data/forecast.js, polls.js, history.js, senate.js, house.js, forecast_2026.js")
+          f"the House {f26['house']['summary']['p_dem_control']:.0%}; 2028 ({f28['days_out']} days out): "
+          + ", ".join(f"{m['dem']} {m['summary']['p_dem']:.0%} vs {m['rep']}" for m in f28["matchups"][:3]))
+    print(f"Wrote site/data/forecast.js, polls.js, history.js, senate.js, house.js, forecast_2026.js, forecast_2028.js")

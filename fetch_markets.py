@@ -6,13 +6,15 @@ Reads current prices from two public prediction markets (no account or key neede
   Polymarket  https://gamma-api.polymarket.com/events
   Kalshi      https://api.elections.kalshi.com/trade-api/v2/events
 
-and the presidential approval average from Wikipedia's "Opinion polling on the
-second Trump presidency" (exact page source, ?action=raw).
+the presidential approval average from Wikipedia's "Opinion polling on the
+second Trump presidency" (exact page source, ?action=raw), and the national
+unemployment rate from the St. Louis Fed (FRED series UNRATE, plain CSV).
 
 Writes:
   data/markets.csv    one row per race per market:
                       race, source, probability_dem, volume, label, fetched_at
   data/approval.csv   date, approve, disapprove, net, source
+  data/economy.csv    date, unemployment, year_ago, change, source
 
 Race keys:
   control:senate, control:house, control:president   who controls the chamber / wins in 2028
@@ -207,7 +209,22 @@ def approval() -> dict:
 
 
 # ---------------------------------------------------------------------------
-def check(rows: list[dict], appr: dict) -> None:
+# Unemployment: latest month and the same month a year earlier
+# ---------------------------------------------------------------------------
+def economy() -> dict:
+    url = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=UNRATE"
+    with urllib.request.urlopen(urllib.request.Request(url, headers=AGENT), timeout=60) as r:
+        lines = r.read().decode("utf-8").strip().splitlines()[1:]
+    rate = {d: float(v) for d, v in (l.split(",") for l in lines) if v.strip()}
+    latest = max(rate)
+    year_ago = f"{int(latest[:4]) - 1}{latest[4:]}"
+    return {"date": latest, "unemployment": rate[latest], "year_ago": rate.get(year_ago),
+            "change": None if year_ago not in rate else round(rate[latest] - rate[year_ago], 2),
+            "source": "https://fred.stlouisfed.org/series/UNRATE"}
+
+
+# ---------------------------------------------------------------------------
+def check(rows: list[dict], appr: dict, econ: dict) -> None:
     problems = []
     by = lambda src, prefix: {r["race"] for r in rows if r["source"] == src and r["race"].startswith(prefix)}
     for src in ("Polymarket", "Kalshi"):
@@ -223,6 +240,8 @@ def check(rows: list[dict], appr: dict) -> None:
         problems.append(f"probabilities outside 0-1: {bad[:3]}")
     if not (20 <= appr["approve"] <= 80 and abs(appr["approve"] - appr["disapprove"] - appr["net"]) < 0.6):
         problems.append(f"approval row looks wrong: {appr}")
+    if not (2 <= econ["unemployment"] <= 15) or econ["change"] is None:
+        problems.append(f"unemployment row looks wrong: {econ}")
     if problems:
         raise SystemExit("fetch_markets.py: validation failed\n  " + "\n  ".join(problems))
 
@@ -248,13 +267,15 @@ if __name__ == "__main__":
         r["probability_dem"] = round(r["probability_dem"], 4)
         r["volume"] = round(r["volume"])
         r["fetched_at"] = fetched
-    appr = approval()
-    check(rows, appr)
+    appr, econ = approval(), economy()
+    check(rows, appr, econ)
     write_csv("data/markets.csv", rows, ["race", "source", "probability_dem", "volume", "label", "fetched_at"])
     write_csv("data/approval.csv", [appr], ["date", "approve", "disapprove", "net", "source"])
+    write_csv("data/economy.csv", [econ], ["date", "unemployment", "year_ago", "change", "source"])
     count = lambda src, prefix: sum(r["source"] == src and r["race"].startswith(prefix) for r in rows)
     for src in ("Polymarket", "Kalshi"):
         ctrl = {r["race"].split(":")[1]: r["probability_dem"] for r in rows if r["source"] == src and r["race"].startswith("control:")}
         print(f"{src}: control {ctrl}; Senate races {count(src, 'senate:')}, House districts {count(src, 'house:')}, "
               f"2028 states {count(src, 'pres:')}")
+    print(f"Unemployment ({econ['date']}): {econ['unemployment']}%, {econ['change']:+} over the year")
     print(f"Approval ({appr['date']}): {appr['approve']}% approve, {appr['disapprove']}% disapprove, net {appr['net']:+}")

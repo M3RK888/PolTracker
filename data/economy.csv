@@ -1,0 +1,2 @@
+date,unemployment,year_ago,change,source
+2026-09-01,4.2,4.4,-0.2,https://fred.stlouisfed.org/series/UNRATE

@@ -241,10 +241,12 @@
 
   // Distribution of simulated seats: one bar per seat count, blue where Democrats
   // have control, red where they don't, with the control line marked.
-  // opts: { hist: [{seats, p}], threshold, thresholdLabel, label, unit }
+  // opts: { hist: [{seats, p}], threshold, thresholdLabel, label, unit, bin }
+  // bin > 1: each entry covers seats..seats+bin-1 (e.g. electoral votes in fives)
   PM.renderHistogram = (el, opts) => {
     const hist = opts.hist.filter((h) => h.p >= 0.0005);
-    const lo = Math.min(hist[0].seats, opts.threshold - 1), hi = Math.max(hist[hist.length - 1].seats, opts.threshold);
+    const b = opts.bin || 1;
+    const lo = Math.min(hist[0].seats, opts.threshold - b), hi = Math.max(hist[hist.length - 1].seats + b - 1, opts.threshold);
     // Drawn at the container's real width so text stays full size on phones
     const W = Math.max(280, el.clientWidth || 1000), H = W < 600 ? 190 : 260;
     const n = hi - lo + 1, padL = 8, padR = 8, padT = 30, padB = 34;
@@ -253,16 +255,16 @@
     const y = (p) => padT + (H - padT - padB) * (1 - p / maxP);
     const gap = bw > 6 ? 2 : bw > 3 ? 1 : 0;
     const bars = hist.map((h, i) => {
-      const yy = y(h.p), hh = H - padB - yy, w = Math.max(1, bw - gap), r = Math.max(0, Math.min(4, w / 2, hh));
+      const yy = y(h.p), hh = H - padB - yy, w = Math.max(1, b * bw - gap), r = Math.max(0, Math.min(4, w / 2, hh));
       const fill = h.seats >= opts.threshold ? "var(--dem)" : "var(--rep)";
       // rounded top, square at the baseline
       const path = `M${x(h.seats) + gap / 2},${H - padB}V${yy + r}q0,-${r} ${r},-${r}h${w - 2 * r}q${r},0 ${r},${r}V${H - padB}Z`;
-      return `<path d="${path}" fill="${fill}"/><rect class="hit" data-i="${i}" x="${x(h.seats)}" y="${padT}" width="${bw}" height="${H - padT - padB}" fill="transparent"/>`;
+      return `<path d="${path}" fill="${fill}"/><rect class="hit" data-i="${i}" x="${x(h.seats)}" y="${padT}" width="${b * bw}" height="${H - padT - padB}" fill="transparent"/>`;
     }).join("");
-    const step = [1, 2, 5, 10, 20, 50].find((k) => k * bw >= 40) || 50;   // tick labels at least 40px apart
+    const step = [1, 2, 5, 10, 20, 50, 100].map((k) => k * b).find((k) => k * bw >= 40) || 100 * b;   // labels at least 40px apart
     const ticks = [];
     for (let s = Math.ceil(lo / step) * step; s <= hi; s += step)
-      ticks.push(`<text x="${x(s) + bw / 2}" y="${H - padB + 20}" class="hist-tick">${s}</text>`);
+      ticks.push(`<text x="${x(s) + (b === 1 ? bw / 2 : 0)}" y="${H - padB + 20}" class="hist-tick">${s}</text>`);
     const tx = x(opts.threshold);
     el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" class="hist" role="img" aria-label="${PM.esc(opts.label)}: distribution across simulations">
       <line x1="${padL}" x2="${W - padR}" y1="${H - padB}" y2="${H - padB}" class="hist-axis"/>
@@ -276,8 +278,8 @@
       const t = e.target.closest(".hit");
       if (!t) return PM.hideTip();
       const h = hist[+t.dataset.i];
-      PM.showTip(`<strong>${h.seats} ${PM.esc(opts.unit)}</strong><br>${(h.p * 100).toFixed(1)}% of simulations` +
-        `<br>${h.seats >= opts.threshold ? "Democrats control" : "Republicans control"}`, e.clientX, e.clientY);
+      PM.showTip(`<strong>${b === 1 ? h.seats : `${h.seats}–${h.seats + b - 1}`} ${PM.esc(opts.unit)}</strong><br>${(h.p * 100).toFixed(1)}% of simulations` +
+        `<br>${h.seats >= opts.threshold ? (opts.demWins ?? "Democrats control") : (opts.repWins ?? "Republicans control")}`, e.clientX, e.clientY);
     });
     svg.addEventListener("mouseleave", PM.hideTip);
     if (!el._resize) {
