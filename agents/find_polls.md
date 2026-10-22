@@ -126,15 +126,20 @@ owner will switch the pages to results.
 The forecast (`forecast_model.py`, run by `build_site.py`) also uses prediction-market prices and the
 presidential approval average. Refresh them every run, **before** `build_site.py`:
 
-1. `python3.13 fetch_markets.py`. It reads Polymarket and Kalshi's public APIs and Wikipedia's approval
-   average and the unemployment rate (FRED), rewrites `data/markets.csv`, `data/approval.csv` and
-   `data/economy.csv`, and stops with "validation failed" if
-   anything looks wrong (control markets missing, too few races matched, odd approval numbers).
-   It takes about a minute.
-2. If it fails (including network errors reaching polymarket.com or kalshi.com), `git checkout` those three
-   CSVs back and carry on: the build will use the previous prices. Mention the failure in your report.
-3. If it succeeds, commit the three CSVs together with the rest. Prices change every day, so expect a diff.
-   In the commit message add the control odds the build prints, e.g. "Forecast: Senate D 65%, House D 94%".
+1. `python3.13 fetch_markets.py`. It reads Polymarket and Kalshi's public APIs, Wikipedia's approval
+   average and the unemployment rate (FRED), and rewrites `data/markets.csv`, `data/approval.csv` and
+   `data/economy.csv`. It takes a few minutes. The three parts are independent: if one site can't be
+   reached or its numbers fail the script's checks, the script prints `WARNING <part>: kept the previous
+   ...` and leaves that file as it was, and still updates the others. It only stops with an error if
+   none of the three could be updated.
+2. Don't restore or edit these files yourself, whatever the script printed. Mention every WARNING in
+   your report.
+3. Commit whichever of the three CSVs changed together with the rest. Prices change every day, so expect
+   a diff. In the commit message add the control odds the build prints, e.g. "Forecast: Senate D 65%, House D 94%".
+
+If Wikipedia answers "429 Too Many Requests", the scripts already wait and retry for a few minutes.
+If `fetch_midterms.py` still fails, skip it as described above but **still run `build_site.py` and
+commit**, so the tracker gets today's point from whatever data is current.
 
 Never hand-edit `data/markets.csv`, `data/approval.csv` or `data/economy.csv`.
 

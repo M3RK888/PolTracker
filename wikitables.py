@@ -9,6 +9,8 @@ Used by fetch_midterms.py.
 """
 
 import re
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -29,9 +31,32 @@ def raw_page(title: str, refresh: bool = True) -> str:
         CACHE.mkdir(parents=True, exist_ok=True)
         url = ("https://en.wikipedia.org/w/index.php?" +
                urllib.parse.urlencode({"title": title, "action": "raw", "redirect": "yes"}))
-        req = urllib.request.Request(url, headers={"User-Agent": "pollmap-build/1.0 (static site builder)"})
-        path.write_bytes(urllib.request.urlopen(req, timeout=60).read())
+        path.write_bytes(fetch(url))
     return path.read_text(encoding="utf-8")
+
+
+# Wikimedia asks automated tools to say who they are, with a way to get in touch;
+# requests from anonymous-looking tools are the first to be throttled.
+USER_AGENT = "pollmap-build/1.0 (https://github.com/M3RK888/pollmap)"
+
+
+def fetch(url: str) -> bytes:
+    """GET a URL, waiting and retrying (for up to about 4 minutes) when the site says
+    it's busy (HTTP 429) or has a temporary error (5xx)."""
+    for attempt in range(6):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return r.read()
+        except urllib.error.HTTPError as e:
+            if (e.code != 429 and e.code < 500) or attempt == 5:
+                raise
+            wait = e.headers.get("Retry-After", "")
+            time.sleep(int(wait) if wait.isdigit() else 15 * (attempt + 1))
+        except OSError:
+            if attempt == 5:
+                raise
+            time.sleep(5 * (attempt + 1))
 
 
 # ---------------------------------------------------------------------------

@@ -43,9 +43,10 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
+import wikitables
 from fetch_midterms import STATE_CODES
 
-AGENT = {"User-Agent": "pollmap-build/1.0"}
+AGENT = {"User-Agent": "pollmap-build/1.0 (https://github.com/M3RK888/pollmap)"}
 POLYMARKET = "https://gamma-api.polymarket.com/events"
 KALSHI = "https://api.elections.kalshi.com/trade-api/v2/events"
 APPROVAL_ARTICLE = "Opinion polling on the second Trump presidency"
@@ -211,8 +212,7 @@ def kalshi_rows() -> list[dict]:
 # ---------------------------------------------------------------------------
 def approval() -> dict:
     url = "https://en.wikipedia.org/w/index.php?" + urllib.parse.urlencode({"title": APPROVAL_ARTICLE, "action": "raw"})
-    with urllib.request.urlopen(urllib.request.Request(url, headers=AGENT), timeout=60) as r:
-        return approval_from_text(r.read().decode("utf-8"))
+    return approval_from_text(wikitables.fetch(url).decode("utf-8"))
 
 
 def approval_from_text(text: str) -> dict:
@@ -232,8 +232,7 @@ def approval_from_text(text: str) -> dict:
 # ---------------------------------------------------------------------------
 def economy() -> dict:
     url = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=UNRATE"
-    with urllib.request.urlopen(urllib.request.Request(url, headers=AGENT), timeout=60) as r:
-        lines = r.read().decode("utf-8").strip().splitlines()[1:]
+    lines = wikitables.fetch(url).decode("utf-8").strip().splitlines()[1:]
     rate = {d: float(v) for d, v in (l.split(",") for l in lines) if v.strip()}
     latest = max(rate)
     year_ago = f"{int(latest[:4]) - 1}{latest[4:]}"
@@ -243,7 +242,7 @@ def economy() -> dict:
 
 
 # ---------------------------------------------------------------------------
-def check(rows: list[dict], appr: dict, econ: dict) -> None:
+def check_markets(rows: list[dict]) -> list[str]:
     problems = []
     by = lambda src, prefix: {r["race"] for r in rows if r["source"] == src and r["race"].startswith(prefix)}
     for src in ("Polymarket", "Kalshi"):
@@ -257,12 +256,17 @@ def check(rows: list[dict], appr: dict, econ: dict) -> None:
     bad = [r for r in rows if not 0 <= r["probability_dem"] <= 1]
     if bad:
         problems.append(f"probabilities outside 0-1: {bad[:3]}")
-    if not (20 <= appr["approve"] <= 80 and abs(appr["approve"] - appr["disapprove"] - appr["net"]) < 0.6):
-        problems.append(f"approval row looks wrong: {appr}")
-    if not (2 <= econ["unemployment"] <= 15) or econ["change"] is None:
-        problems.append(f"unemployment row looks wrong: {econ}")
-    if problems:
-        raise SystemExit("fetch_markets.py: validation failed\n  " + "\n  ".join(problems))
+    return problems
+
+
+def check_approval(appr: dict) -> list[str]:
+    ok = 20 <= appr["approve"] <= 80 and abs(appr["approve"] - appr["disapprove"] - appr["net"]) < 0.6
+    return [] if ok else [f"approval row looks wrong: {appr}"]
+
+
+def check_economy(econ: dict) -> list[str]:
+    ok = 2 <= econ["unemployment"] <= 15 and econ["change"] is not None
+    return [] if ok else [f"unemployment row looks wrong: {econ}"]
 
 
 def write_csv(path: str, rows: list[dict], columns: list[str]) -> None:
@@ -272,7 +276,7 @@ def write_csv(path: str, rows: list[dict], columns: list[str]) -> None:
         w.writerows(rows)
 
 
-if __name__ == "__main__":
+def market_rows() -> list[dict]:
     fetched = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
     rows = polymarket_rows() + kalshi_rows()
     # One row per race per source: if a market is listed twice, keep the busier one
@@ -286,15 +290,43 @@ if __name__ == "__main__":
         r["probability_dem"] = round(r["probability_dem"], 4)
         r["volume"] = round(r["volume"])
         r["fetched_at"] = fetched
-    appr, econ = approval(), economy()
-    check(rows, appr, econ)
-    write_csv("data/markets.csv", rows, ["race", "source", "probability_dem", "volume", "label", "fetched_at"])
-    write_csv("data/approval.csv", [appr], ["date", "approve", "disapprove", "net", "source"])
-    write_csv("data/economy.csv", [econ], ["date", "unemployment", "year_ago", "change", "source"])
-    count = lambda src, prefix: sum(r["source"] == src and r["race"].startswith(prefix) for r in rows)
-    for src in ("Polymarket", "Kalshi"):
-        ctrl = {r["race"].split(":")[1]: r["probability_dem"] for r in rows if r["source"] == src and r["race"].startswith("control:")}
-        print(f"{src}: control {ctrl}; Senate races {count(src, 'senate:')}, House districts {count(src, 'house:')}, "
-              f"2028 states {count(src, 'pres:')}")
-    print(f"Unemployment ({econ['date']}): {econ['unemployment']}%, {econ['change']:+} over the year")
-    print(f"Approval ({appr['date']}): {appr['approve']}% approve, {appr['disapprove']}% disapprove, net {appr['net']:+}")
+    return rows
+
+
+if __name__ == "__main__":
+    # The three parts are independent: if one site is down or a check fails, that
+    # part's file keeps its previous contents and the others are still updated.
+    parts = [
+        ("markets", market_rows, check_markets, "data/markets.csv", ["race", "source", "probability_dem", "volume", "label", "fetched_at"]),
+        ("approval", approval, check_approval, "data/approval.csv", ["date", "approve", "disapprove", "net", "source"]),
+        ("unemployment", economy, check_economy, "data/economy.csv", ["date", "unemployment", "year_ago", "change", "source"]),
+    ]
+    got, failed = {}, []
+    for name, fetch, check, path, columns in parts:
+        try:
+            data = fetch()
+            problems = check(data)
+        except Exception as e:                       # network trouble or a page that changed format
+            problems = [f"couldn't fetch: {type(e).__name__}: {e}"]
+        if problems:
+            failed.append(name)
+            print(f"WARNING {name}: kept the previous {path}\n  " + "\n  ".join(problems))
+            continue
+        write_csv(path, data if name == "markets" else [data], columns)
+        got[name] = data
+
+    if "markets" in got:
+        rows = got["markets"]
+        count = lambda src, prefix: sum(r["source"] == src and r["race"].startswith(prefix) for r in rows)
+        for src in ("Polymarket", "Kalshi"):
+            ctrl = {r["race"].split(":")[1]: r["probability_dem"] for r in rows if r["source"] == src and r["race"].startswith("control:")}
+            print(f"{src}: control {ctrl}; Senate races {count(src, 'senate:')}, House districts {count(src, 'house:')}, "
+                  f"2028 states {count(src, 'pres:')}")
+    if "unemployment" in got:
+        e = got["unemployment"]
+        print(f"Unemployment ({e['date']}): {e['unemployment']}%, {e['change']:+} over the year")
+    if "approval" in got:
+        a = got["approval"]
+        print(f"Approval ({a['date']}): {a['approve']}% approve, {a['disapprove']}% disapprove, net {a['net']:+}")
+    if len(failed) == len(parts):
+        raise SystemExit("fetch_markets.py: nothing could be updated")
