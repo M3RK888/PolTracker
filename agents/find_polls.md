@@ -138,6 +138,13 @@ presidential approval average. Refresh them every run, **before** `build_site.py
 
 Never hand-edit `data/markets.csv`, `data/approval.csv` or `data/economy.csv`.
 
+## Forecast history (the tracker charts)
+
+Every `build_site.py` run adds that day's control odds to `data/forecast_history.csv` (one row per
+race per day; a second build on the same day replaces that day's rows). Commit it with `site/data/`
+every time you build. Never hand-edit it, and never delete rows from it: older rows can't be
+recreated, since they record what the forecast said on that day. Don't run `backfill_history.py`.
+
 ## Final report
 
 End with a short summary listing each poll added (pollster, where, matchup, dem–rep, source URL),

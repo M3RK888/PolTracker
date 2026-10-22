@@ -38,6 +38,7 @@ import csv
 import json
 import re
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
@@ -57,6 +58,10 @@ def get_json(url: str, params: dict) -> dict | list:
         try:
             with urllib.request.urlopen(urllib.request.Request(full, headers=AGENT), timeout=60) as r:
                 return json.load(r)
+        except urllib.error.HTTPError as e:
+            if e.code < 500 or attempt == 3:      # a refused request won't succeed on retry
+                raise
+            time.sleep(2 + 3 * attempt)
         except OSError:
             if attempt == 3:
                 raise
@@ -106,12 +111,15 @@ def polymarket_rows() -> list[dict]:
         markets = e.get("markets", [])
         volume = sum(float(m.get("volume") or 0) for m in markets)
 
+        used = {}                       # the market a price came from, for looking up its history
+
         def find(pattern):
             for m in markets:
                 text = f"{m.get('question', '')} {m.get('groupItemTitle', '')}"
                 if re.search(pattern, text, re.I):
                     p = polymarket_yes(m)
                     if p is not None:
+                        used.update(token=json.loads(m["clobTokenIds"])[0], p=p)
                         return p
             return None
 
@@ -137,7 +145,8 @@ def polymarket_rows() -> list[dict]:
             race, p_dem = f"pres:{STATE_CODES[m.group(1).title()]}", None if p_rep is None else 1 - p_rep
         if race and p_dem is not None and (e.get("endDate") or "")[:4] in ("2026", "2027", "2028", "2029"):
             rows.append({"race": race, "source": "Polymarket", "probability_dem": p_dem,
-                         "volume": volume, "label": title})
+                         "volume": volume, "label": title,
+                         "ref": {"token": used["token"], "invert": abs(p_dem - used["p"]) > 1e-9}})
     return rows
 
 
@@ -164,9 +173,14 @@ def kalshi_rows() -> list[dict]:
         markets = {m["ticker"].rsplit("-", 1)[-1]: m for m in e.get("markets", []) if m.get("status") == "active"}
         volume = sum(float(m.get("volume_fp") or 0) for m in e.get("markets", []))
 
+        used = {}
+
         def price(side):
             m = markets.get(side)
-            return None if m is None else mid_price(m.get("yes_bid_dollars"), m.get("yes_ask_dollars"), m.get("last_price_dollars"))
+            if m is None:
+                return None
+            used.update(series=e["series_ticker"], ticker=m["ticker"], invert=side == "R")
+            return mid_price(m.get("yes_bid_dollars"), m.get("yes_ask_dollars"), m.get("last_price_dollars"))
 
         race, p_dem = None, None
         if ticker == "CONTROLS-2026":
@@ -187,7 +201,8 @@ def kalshi_rows() -> list[dict]:
             p_rep = price("R")
             race, p_dem = f"pres:{STATE_CODES[m.group(1).title()]}", None if p_rep is None else 1 - p_rep
         if race and p_dem is not None:
-            rows.append({"race": race, "source": "Kalshi", "probability_dem": p_dem, "volume": volume, "label": title})
+            rows.append({"race": race, "source": "Kalshi", "probability_dem": p_dem, "volume": volume, "label": title,
+                         "ref": dict(used)})
     return rows
 
 
@@ -197,7 +212,11 @@ def kalshi_rows() -> list[dict]:
 def approval() -> dict:
     url = "https://en.wikipedia.org/w/index.php?" + urllib.parse.urlencode({"title": APPROVAL_ARTICLE, "action": "raw"})
     with urllib.request.urlopen(urllib.request.Request(url, headers=AGENT), timeout=60) as r:
-        text = r.read().decode("utf-8")
+        return approval_from_text(r.read().decode("utf-8"))
+
+
+def approval_from_text(text: str) -> dict:
+    """The aggregate table's "Average" row, from any version of the article."""
     section = text.split("==== Approval ====", 1)[1].split("|}", 1)[0]
     row = section.split("|'''Average'''", 1)[1]
     cells = [c.split("|")[-1].strip() for c in row.split("\n|")[1:]]

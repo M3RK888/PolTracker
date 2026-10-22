@@ -30,8 +30,10 @@ SENATE_NOT_UP = {"R": 31, "D": 34}   # 32 Democrats + 2 independents who caucus 
 SENATE_SEATS, HOUSE_SEATS = 100, 435
 
 
-def environment() -> tuple[float, list[dict]]:
-    g = pd.read_csv("data/generic_ballot_2026.csv")
+def environment(generic: list[dict] | None = None) -> tuple[float, list[dict]]:
+    """Pass generic (rows like data/generic_ballot_2026.csv) to use other numbers,
+    e.g. the aggregators as they stood on a past date."""
+    g = pd.read_csv("data/generic_ballot_2026.csv") if generic is None else pd.DataFrame(generic)
     g["margin"] = g["dem"] - g["rep"]
     return float(g["margin"].mean()), g.to_dict("records")
 
@@ -44,8 +46,8 @@ def poll_weights(polls: pd.DataFrame) -> pd.Series:
     return recency * size * flooding
 
 
-def senate() -> dict:
-    env, _ = environment()
+def senate(generic: list[dict] | None = None) -> dict:
+    env, _ = environment(generic)
     races = pd.read_csv("data/senate_2026_races.csv")
     polls = pd.read_csv("data/senate_2026_polls.csv", parse_dates=["start_date", "end_date"])
     polls["sample_reported"] = polls["sample_size"].notna()
@@ -182,8 +184,8 @@ def hex_layout(districts: list[dict]) -> dict[str, tuple[int, int]]:
     return out
 
 
-def house() -> dict:
-    env, generic = environment()
+def house(generic: list[dict] | None = None) -> dict:
+    env, generic = environment(generic)
     districts = pd.read_csv("data/house_2026_districts.csv", keep_default_na=False)
     out, segs = [], {k: 0 for k in RATING_COLORS}
     for _, d in districts.iterrows():

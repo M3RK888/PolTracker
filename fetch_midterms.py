@@ -206,7 +206,16 @@ def house() -> tuple[list[dict], list[dict]]:
                     "other_candidates": "; ".join(f"{n} ({p})" for n, p in cands if p not in ("D", "R")),
                 }
 
+    return sorted(districts.values(), key=lambda d: (d["state"], d["number"])), generic_ballot(lines)
+
+
+def generic_ballot(lines: list[str]) -> list[dict]:
+    """The generic-ballot aggregator table. Older versions of the article keep it under
+    "Opinion polling", so fall back to the section markers around the table."""
     a, b = w.section(lines, r"^Generic congressional ballot aggregate polls$")
+    if a < 0:
+        a = next((i for i, l in enumerate(lines) if 'section begin="GenericBallotAgg"' in l), -1)
+        b = next((i for i, l in enumerate(lines) if 'section end="GenericBallotAgg"' in l), len(lines)) + 1
     generic = []
     for t in w.tables(lines[a:b]):
         header = [w.plain(w.cell_parts(h)[1]).lower() for h in t["header"]]
@@ -223,7 +232,7 @@ def house() -> tuple[list[dict], list[dict]]:
             generic.append({"source": w.plain(w.cell_parts(row[0])[1]), "start_date": start or "",
                             "end_date": end or "", "updated": updated or end or "",
                             "dem": d, "rep": r, "url": w.first_url(row[0]) or ""})
-    return sorted(districts.values(), key=lambda d: (d["state"], d["number"])), generic
+    return generic
 
 
 # ---------------------------------------------------------------------------

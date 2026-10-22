@@ -290,6 +290,83 @@
     el._opts = opts;
   };
 
+  // Tracker: each party's chance over time, one point per day, plus the markets'
+  // Democratic chance as a dashed line for comparison. Days rebuilt after the fact
+  // ("reconstructed") sit on a shaded background.
+  // opts: { points: [{date, kind, p_dem, p_rep, market_dem}], end ("YYYY-MM-DD", right edge),
+  //         endLabel (e.g. "Election Day"), dem, rep (names), marketLabel }
+  PM.renderTracker = (el, opts) => {
+    const day = (s) => new Date(s + "T00:00:00Z").getTime();
+    const pts = opts.points.filter((p) => p.p_dem != null);
+    if (!pts.length) { el.innerHTML = `<p class="muted small">No history yet.</p>`; return; }
+    const t0 = day(pts[0].date), tEnd = Math.max(day(opts.end), day(pts[pts.length - 1].date));
+    const W = Math.max(280, el.clientWidth || 1000), H = W < 600 ? 220 : 280;
+    const padL = 40, padR = W < 600 ? 56 : 70, padT = 30, padB = 28;   // notes sit above the plot, clear of the lines
+    const x = (t) => padL + ((t - t0) / Math.max(1, tEnd - t0)) * (W - padL - padR);
+    const y = (p) => padT + (1 - p) * (H - padT - padB);
+    const line = (key) => {
+      const ps = pts.filter((p) => p[key] != null);
+      return ps.map((p, i) => `${i ? "L" : "M"}${x(day(p.date)).toFixed(1)},${y(p[key]).toFixed(1)}`).join("");
+    };
+    const grid = [0, 0.25, 0.5, 0.75, 1].map((g) => `
+      <line x1="${padL}" x2="${W - padR}" y1="${y(g)}" y2="${y(g)}" class="${g === 0.5 ? "trk-mid" : "trk-grid"}"/>
+      <text x="${padL - 6}" y="${y(g) + 4}" class="trk-axis" text-anchor="end">${g * 100}%</text>`).join("");
+    // x labels: weekly for short spans, monthly otherwise
+    const spanDays = (tEnd - t0) / 864e5, ticks = [];
+    const d = new Date(t0);
+    if (spanDays > 70 && d.getUTCDate() !== 1) { d.setUTCDate(1); d.setUTCMonth(d.getUTCMonth() + 1); }
+    while (d.getTime() <= tEnd) {
+      ticks.push(`<text x="${x(d.getTime())}" y="${H - 8}" class="trk-axis" text-anchor="middle">${
+        d.toLocaleDateString("en-US", spanDays > 70 ? { month: "short", timeZone: "UTC" } : { month: "short", day: "numeric", timeZone: "UTC" })}</text>`);
+      if (spanDays > 70) d.setUTCMonth(d.getUTCMonth() + 1); else d.setUTCDate(d.getUTCDate() + (spanDays > 21 ? 14 : 7));
+    }
+    const recon = pts.filter((p) => p.kind === "reconstructed");
+    const firstDaily = pts.find((p) => p.kind !== "reconstructed");
+    const shade = recon.length ? `<rect x="${x(t0)}" y="${padT}" width="${x(day(firstDaily ? firstDaily.date : recon[recon.length - 1].date)) - x(t0)}"
+      height="${H - padT - padB}" class="trk-recon"/><text x="${x(t0) + 2}" y="${padT - 10}" class="trk-note">Reconstructed</text>` : "";
+    const endMark = day(opts.end) <= tEnd && opts.endLabel ? `<line x1="${x(day(opts.end))}" x2="${x(day(opts.end))}" y1="${padT}" y2="${H - padB}" class="trk-end"/>
+      <text x="${x(day(opts.end))}" y="${padT - 10}" class="trk-note" text-anchor="middle">${PM.esc(opts.endLabel)}</text>` : "";
+    const last = pts[pts.length - 1], lx = x(day(last.date));
+    const dots = pts.length < 3 ? pts.map((p) => `<circle cx="${x(day(p.date))}" cy="${y(p.p_dem)}" r="4" fill="var(--dem)"/>
+      <circle cx="${x(day(p.date))}" cy="${y(p.p_rep)}" r="4" fill="var(--rep)"/>`).join("") : "";
+    // End labels, nudged apart if the two lines finish close together
+    let yd = y(last.p_dem), yr = y(last.p_rep);
+    if (Math.abs(yd - yr) < 16) { const m = (yd + yr) / 2, s = yd < yr ? -8 : 8; yd = m + s; yr = m - s; }
+    el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" class="trk" role="img" aria-label="Chance of winning over time">
+      ${shade}${grid}${ticks.join("")}${endMark}
+      <path d="${line("market_dem")}" class="trk-market"/>
+      <path d="${line("p_rep")}" class="trk-line" stroke="var(--rep)"/>
+      <path d="${line("p_dem")}" class="trk-line" stroke="var(--dem)"/>
+      ${dots}
+      <text x="${lx + 6}" y="${yd + 4}" class="trk-end-label" fill="var(--dem)">D ${PM.fmtProb(last.p_dem)}</text>
+      <text x="${lx + 6}" y="${yr + 4}" class="trk-end-label" fill="var(--rep)">R ${PM.fmtProb(last.p_rep)}</text>
+      <line class="trk-cross" y1="${padT}" y2="${H - padB}" visibility="hidden"/>
+      <rect x="${padL}" y="${padT}" width="${W - padL - padR}" height="${H - padT - padB}" fill="transparent" class="trk-hit"/>
+    </svg>
+    <div class="legend trk-legend">
+      <span><i style="background:var(--dem)"></i>${PM.esc(opts.dem)}</span>
+      <span><i style="background:var(--rep)"></i>${PM.esc(opts.rep)}</span>
+      <span><i class="dash"></i>${PM.esc(opts.marketLabel)}</span>
+    </div>`;
+    const svg = el.querySelector("svg"), cross = svg.querySelector(".trk-cross");
+    svg.querySelector(".trk-hit").addEventListener("mousemove", (e) => {
+      const r = svg.getBoundingClientRect(), mx = (e.clientX - r.left) * (W / r.width);
+      const p = pts.reduce((b, q) => (Math.abs(x(day(q.date)) - mx) < Math.abs(x(day(b.date)) - mx) ? q : b));
+      const px = x(day(p.date));
+      cross.setAttribute("x1", px); cross.setAttribute("x2", px); cross.setAttribute("visibility", "visible");
+      PM.showTip(`<strong>${PM.fmtDate(p.date)}</strong>${p.kind === "reconstructed" ? " <span style=\"opacity:.75\">(reconstructed)</span>" : ""}` +
+        `<br>${PM.esc(opts.dem)}: <strong>${PM.fmtProb(p.p_dem)}</strong><br>${PM.esc(opts.rep)}: <strong>${PM.fmtProb(p.p_rep)}</strong>` +
+        (p.market_dem != null ? `<br>${PM.esc(opts.marketLabel)}: ${PM.fmtProb(p.market_dem)}` : ""), e.clientX, e.clientY);
+    });
+    svg.querySelector(".trk-hit").addEventListener("mouseleave", () => { cross.setAttribute("visibility", "hidden"); PM.hideTip(); });
+    if (!el._resize) {
+      let lastW = el.clientWidth;
+      el._resize = () => { if (el.clientWidth !== lastW) { lastW = el.clientWidth; PM.renderTracker(el, el._opts); } };
+      window.addEventListener("resize", el._resize);
+    }
+    el._opts = opts;
+  };
+
   // Re-draw maps when the OS switches light/dark
   PM.onThemeChange = (fn) => window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", fn);
 

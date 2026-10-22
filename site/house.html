@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>2026 House · Pollmap</title>
   <meta name="description" content="A forecast and poll-based estimate of all 435 U.S. House races in 2026, shown as an equal-area district map.">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.css?v=3">
 </head>
 <body data-view="forecast">
   <header class="site-header">
@@ -42,6 +42,12 @@
       <p class="muted small" id="hist-note" style="margin:-6px 0 0"></p>
       <div id="hist"></div>
       <div class="compare" id="compare"></div>
+    </section>
+
+    <section class="card only-forecast">
+      <h2>Chance of control over time</h2>
+      <p class="muted small" id="trk-note" style="margin:-6px 0 0"></p>
+      <div id="tracker"></div>
     </section>
 
     <section class="stats" id="stats" aria-label="Key numbers"></section>
@@ -120,7 +126,7 @@
 
   <footer class="site-footer"><div class="wrap">Districts, candidates and Cook PVI from Wikipedia's 2026 House elections article (read from its exact page source); generic ballot from the aggregators linked above. Market prices from Polymarket and Kalshi's public data; approval from Wikipedia's average of approval trackers.</div></footer>
 
-  <script src="assets/common.js"></script>
+  <script src="assets/common.js?v=3"></script>
   <script src="data/forecast.js"></script>
   <script src="data/house.js"></script>
   <script src="data/forecast_2026.js"></script>
@@ -157,6 +163,15 @@
     document.getElementById("compare").innerHTML = `<span>This forecast: <strong>Democrats ${PM.fmtProb(sm.p_dem_control)}</strong></span>` +
       Object.entries(FH.markets).map(([src, m]) => `<span>${src}: <strong>Democrats ${PM.fmtProb(m.p_dem)}</strong> <span class="muted">($${PM.fmtInt(m.volume)} traded)</span></span>`).join("");
     PM.renderScale(document.getElementById("scale"), { left: "R 95%+", right: "D 95%+" });
+
+    // Tracker: the forecast as it stood each day
+    const firstDaily = (hist) => hist.find((p) => p.kind !== "reconstructed");
+    const trackerNote = (hist) => {
+      const fd = firstDaily(hist), rc = hist.filter((p) => p.kind === "reconstructed");
+      return `Each point is the forecast as it stood that day; a new one is added daily.` + (rc.length
+        ? ` Days before ${PM.fmtDate(fd ? fd.date : F.as_of)} are reconstructed: the same model rerun on the polls, aggregator ` +
+          `averages, approval and market prices as they stood then (with today's list of candidates).` : "");
+    };
 
     // Hex map (pointy-top hexagons in axial coordinates)
     const R3 = Math.sqrt(3);
@@ -305,6 +320,11 @@
         PM.renderHistogram(document.getElementById("hist"), {
           hist: sm.histogram, threshold: 218, thresholdLabel: "218: Democratic control",
           label: "Democratic House seats", unit: "Democratic seats",
+        });
+        document.getElementById("trk-note").textContent = trackerNote(F.history.house);
+        PM.renderTracker(document.getElementById("tracker"), {
+          points: F.history.house, end: F.election, endLabel: "Election Day",
+          dem: "Democrats", rep: "Republicans", marketLabel: "Markets (Democrats)",
         });
       } else {
         const flips = held.filter((d) => Math.abs(d.estimate) >= 2 && (d.estimate > 0 ? "D" : "R") !== d.incumbent_party);

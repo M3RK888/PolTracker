@@ -12,6 +12,8 @@ change when polls do. This script regenerates only site/data/*.js:
     forecast_2026.js  2026 win probabilities (forecast_model.py; needs data/markets.csv
                   and data/approval.csv from fetch_markets.py)
     forecast_2028.js  2028 win probabilities per matchup (also needs data/economy.csv)
+                  Both also carry the day-by-day history from data/forecast_history.csv,
+                  which each build adds today's numbers to.
 
 The data is written as small JS files (window.X = {...}) rather than JSON so
 the pages work when opened straight from disk, with no local server needed.
@@ -221,8 +223,12 @@ if __name__ == "__main__":
     write_js("senate", "SENATE", senate)
     write_js("house", "HOUSE", house)
     f26 = forecast_model.forecast_2026()
-    write_js("forecast_2026", "FORECAST_2026", f26)
     f28 = forecast_model.forecast_2028()
+    # Add today's numbers to the tracker's history, then ship the whole history with each forecast
+    hist = forecast_model.save_history(forecast_model.history_rows(f26, f28))
+    f26["history"] = {c: forecast_model.history_series(hist, c) for c in ("senate", "house")}
+    f28["history"] = {m["id"]: forecast_model.history_series(hist, f"president:{m['id']}") for m in f28["matchups"]}
+    write_js("forecast_2026", "FORECAST_2026", f26)
     write_js("forecast_2028", "FORECAST_2028", f28)
 
     avail = [f"{m['dem']} vs {m['rep']}" for m in forecast["matchups"] if m["available"]]

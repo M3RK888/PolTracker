@@ -243,14 +243,17 @@ def race_output(r: dict) -> dict:
 # ---------------------------------------------------------------------------
 # 2026
 # ---------------------------------------------------------------------------
-def forecast_2026() -> dict:
+def forecast_2026(markets: pd.DataFrame | None = None, appr: dict | None = None,
+                  generic: list[dict] | None = None) -> dict:
+    """Today's forecast from the data files. backfill_history.py passes in the
+    inputs as they stood on a past date instead."""
     t = days_until(ELECTION_2026)
-    markets = load_markets()
-    appr = approval()
+    markets = load_markets() if markets is None else markets
+    appr = approval() if appr is None else appr
     env_fund = midterm_environment(appr["net"])
 
     # Senate --------------------------------------------------------------
-    sen = midterms.senate()
+    sen = midterms.senate(generic)
     races = []
     for r in sen["races"]:
         inc_running = same_person(r["incumbent"], r["rep"]) or same_person(r["incumbent"], r["opp"])
@@ -273,7 +276,7 @@ def forecast_2026() -> dict:
     }
 
     # House ---------------------------------------------------------------
-    hou = midterms.house()
+    hou = midterms.house(generic)
     dists = pd.read_csv("data/house_2026_districts.csv", keep_default_na=False).set_index("district")
     races = []
     for d in hou["districts"]:
@@ -414,6 +417,65 @@ def forecast_2028() -> dict:
                      "min_volume": MIN_VOLUME, "region_sd": REGION_SD},
         "matchups": out,
     }
+
+
+# ---------------------------------------------------------------------------
+# History, for the tracker charts
+# ---------------------------------------------------------------------------
+# data/forecast_history.csv holds one row per day per race:
+#   race   "senate", "house", or "president:<matchup id>"
+#   kind   "daily"          recorded by build_site.py on that day
+#          "reconstructed"  rebuilt later by backfill_history.py from the data as it stood then
+HISTORY_CSV = "data/forecast_history.csv"
+HISTORY_COLUMNS = ["date", "race", "kind", "p_dem", "p_rep", "median", "lo", "hi",
+                   "market_dem", "polymarket", "kalshi"]
+
+
+def _history_row(date, race, kind, p_dem, p_rep, median, lo, hi, markets: dict) -> dict:
+    poly, kal = (markets.get(s, {}).get("p_dem") for s in ("Polymarket", "Kalshi"))
+    have = [v for v in (poly, kal) if v is not None]
+    return {"date": date, "race": race, "kind": kind, "p_dem": p_dem, "p_rep": p_rep,
+            "median": median, "lo": lo, "hi": hi,
+            "market_dem": round(sum(have) / len(have), 4) if have else None, "polymarket": poly, "kalshi": kal}
+
+
+def history_rows(f26: dict | None = None, f28: dict | None = None, kind: str = "daily") -> list[dict]:
+    rows = []
+    if f26:
+        for chamber in ("senate", "house"):
+            s = f26[chamber]["summary"]
+            rows.append(_history_row(f26["as_of"], chamber, kind, s["p_dem_control"], s["p_rep_control"],
+                                     s["dem_median"], s["dem_lo"], s["dem_hi"], f26[chamber]["markets"]))
+    if f28:
+        for m in f28["matchups"]:
+            s = m["summary"]
+            rows.append(_history_row(f28["as_of"], f"president:{m['id']}", kind, s["p_dem"], s["p_rep"],
+                                     s["ev_median"], s["ev_lo"], s["ev_hi"], f28["markets"]))
+    return rows
+
+
+def load_history() -> pd.DataFrame:
+    try:
+        return pd.read_csv(HISTORY_CSV, dtype={"date": str})
+    except FileNotFoundError:
+        return pd.DataFrame(columns=HISTORY_COLUMNS)
+
+
+def save_history(rows: list[dict]) -> pd.DataFrame:
+    """Add rows, replacing any already there for the same date and race
+    (if the site is rebuilt twice in a day, the later run wins)."""
+    old, new = load_history(), pd.DataFrame(rows, columns=HISTORY_COLUMNS)
+    keys = set(zip(new["date"], new["race"]))
+    old = old[[(d, r) not in keys for d, r in zip(old["date"], old["race"])]]
+    out = pd.concat([df for df in (old, new) if not df.empty]).sort_values(["race", "date"])
+    out.to_csv(HISTORY_CSV, index=False)
+    return out
+
+
+def history_series(hist: pd.DataFrame, race: str) -> list[dict]:
+    h = hist[hist["race"] == race]
+    cols = ["date", "kind", "p_dem", "p_rep", "median", "lo", "hi", "market_dem"]
+    return [{c: (None if pd.isna(r[c]) else r[c]) for c in cols} for _, r in h.iterrows()]
 
 
 # ---------------------------------------------------------------------------
