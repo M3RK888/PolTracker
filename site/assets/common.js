@@ -253,7 +253,7 @@
     const bw = (W - padL - padR) / n, maxP = Math.max(...hist.map((h) => h.p));
     const x = (s) => padL + (s - lo) * bw;
     const y = (p) => padT + (H - padT - padB) * (1 - p / maxP);
-    const gap = bw > 6 ? 2 : bw > 3 ? 1 : 0;
+    const gap = b * bw > 6 ? 2 : b * bw > 3 ? 1 : 0;   // a surface gap between bars, sized to the bar (not to one seat)
     const bars = hist.map((h, i) => {
       const yy = y(h.p), hh = H - padB - yy, w = Math.max(1, b * bw - gap), r = Math.max(0, Math.min(4, w / 2, hh));
       const fill = h.seats >= opts.threshold ? "var(--dem)" : "var(--rep)";
