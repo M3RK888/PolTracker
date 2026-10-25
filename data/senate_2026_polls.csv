@@ -1,7 +1,7 @@
 state,pollster,start_date,end_date,sample_size,voter_type,dem_candidate,rep_candidate,dem,rep,source
 VA,The Public Sentiment Institute,2026-06-12,2026-06-16,996,LV,Warner,Mizusawa,51.0,33.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Virginia
 VA,The Public Sentiment Institute/ Virginia Project (R),2026-05-01,2026-05-05,1047,LV,Warner,Mizusawa,55.0,29.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Virginia
-TX,Rasmussen Reports,2026-10-20,2026-10-21,965,LV,Talarico,Paxton,45.0,45.0,https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_texas_senate
+TX,Rasmussen Reports (R),2026-10-20,2026-10-21,965,LV,Talarico,Paxton,45.0,45.0,https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_texas_senate
 TX,ActiVote,2026-10-17,2026-10-21,400,LV,Talarico,Paxton,51.0,49.0,https://www.activote.net/polls/2026/tx-u-s-senate/2026-10-21/
 TX,Verasight/VoteHub,2026-10-01,2026-10-20,509,LV,Talarico,Paxton,48.0,45.0,https://cdn.votehub.com/pdfs/VoteHub_Verasight_Oct_2026_Texas_Report_D8A925D0.pdf
 TX,Emerson College,2026-10-17,2026-10-19,1000,LV,Talarico,Paxton,49.0,48.0,https://emersoncollegepolling.com/texas-2026-poll-toss-up/
@@ -20,7 +20,7 @@ TX,ReconMR/Siena University,2026-10-05,2026-10-08,617,LV,Talarico,Paxton,48.0,44
 TX,YouGov,2026-09-28,2026-10-05,3625,LV,Talarico,Paxton,50.0,44.0,https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_tx_20260921_lv.pdf
 TX,University of Texas/Texas Politics Project,2026-09-25,2026-10-05,861,LV,Talarico,Paxton,50.0,47.0,http://texaspolitics.utexas.edu/blog/latest-ut-texas-politics-poll-finds-historic-levels-of-competition-in-texas-midterm-elections
 TX,New York Times/Siena University,2026-09-21,2026-09-30,615,LV,Talarico,Paxton,51.0,45.0,https://www.nytimes.com/interactive/2026/10/03/polls/times-siena-texas-poll-toplines.html
-TX,Rasmussen Reports,2026-09-28,2026-09-29,1128,LV,Talarico,Paxton,46.0,45.0,https://www.rasmussenreports.com/public_content/politics/public_surveys/toplines_texas_senate_september_28_29_2026
+TX,Rasmussen Reports (R),2026-09-28,2026-09-29,1128,LV,Talarico,Paxton,46.0,45.0,https://www.rasmussenreports.com/public_content/politics/public_surveys/toplines_texas_senate_september_28_29_2026
 TX,Beacon Research (D)/ Shaw & Co. Research (R),2026-09-24,2026-09-28,881,LV,Talarico,Paxton,51.0,49.0,https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_september-24-28-2026_texas_topline_october-1-release.pdf
 TX,Guidant Polling & Strategy (R),2026-09-20,2026-09-28,800,LV,Talarico,Paxton,47.0,44.0,https://static01.nyt.com/newsgraphics/documenttools/b31cf2744465b8b7/1a8b655b-full.pdf
 TX,UMass Lowell/YouGov,2026-09-18,2026-09-28,850,LV,Talarico,Paxton,45.0,45.0,https://www.uml.edu/news/press-releases/2026/10092026-texas-poll.aspx
@@ -183,6 +183,7 @@ NE,Impact Research (D),2026-02-02,2026-02-05,600,LV,Osborn,Ricketts,47.0,48.0,ht
 NE,Lake Research Partners (D),2025-12-11,2025-12-17,900,LV,Osborn,Ricketts,47.0,48.0,https://drive.google.com/file/d/1Izlk1L3prsXm04d-1ZRi8cLSliHvySnC/view?
 NE,Lake Research Partners (D),2025-07-23,2025-07-29,900,LV,Osborn,Ricketts,47.0,46.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Nebraska
 NE,Change Research (D),2025-03-28,2025-04-01,524,LV,Osborn,Ricketts,45.0,46.0,https://journalstar.com/news/state-regional/government-politics/article_7be6b517-341e-42fd-80a9-56c0d0996353.html
+NC,Harper Polling (R),2026-10-18,2026-10-20,600,LV,Cooper,Whatley,49.0,39.0,https://www.carolinajournal.com/wp-content/uploads/2026/10/H25035-CJ-NC-Oct26-Toplines.pdf
 NC,ActiVote,2026-10-08,2026-10-20,400,LV,Cooper,Whatley,57.0,43.0,https://www.activote.net/polls/2026/nc-u-s-senate/
 NC,SurveyUSA,2026-10-07,2026-10-11,643,LV,Cooper,Whatley,54.0,40.0,https://results.surveyusa.com/client/PollReport.aspx?g=0a876c84-9a95-4995-9218-82b1015f5d77
 NC,Trafalgar Group (R),2026-10-08,2026-10-10,1091,LV,Cooper,Whatley,49.0,41.0,https://www.thetrafalgargroup.org/wp-content/uploads/2026/10/NC-Gen-Sen-Poll-Report-1011.pdf
@@ -191,7 +192,6 @@ NC,Change Research (D),2026-10-01,2026-10-07,829,LV,Cooper,Whatley,50.0,40.0,htt
 NC,East Carolina University,2026-09-30,2026-10-03,810,LV,Cooper,Whatley,50.0,43.0,https://surveyresearch-ecu.reportablenews.com/pr/ecu-poll-cooper-s-lead-holds-at-7-points
 NC,Big Data Poll,2026-09-27,2026-09-29,642,LV,Cooper,Whatley,47.0,35.0,https://www.bigdatapoll.com/blog/tar-heel-state-poll-roy-cooper-holds-solid-lead-over-michael-whatley-for-us-senate-in-north-carolina/
 NC,Quantus Insights (R),2026-09-21,2026-09-22,686,LV,Cooper,Whatley,48.0,43.0,https://insideradvantage.com/nc-top-line-tabs/
-NC,Harper Polling (R),2026-09-18,2026-09-20,608,LV,Cooper,Whatley,49.0,39.0,https://www.carolinajournal.com/polls/october-2026-coopers-lead-over-whatley-narrows-to-10-points-in-nc-senate-race/
 NC,Fabrizio Ward (R)/ Impact Research (D),2026-09-17,2026-09-20,1806,LV,Cooper,Whatley,53.0,42.0,https://www.documentcloud.org/documents/28686304-aarp-2026-north-carolina-statewide-survey-topline-1/
 NC,Opinion Diagnostics,2026-09-17,2026-09-20,857,LV,Cooper,Whatley,51.0,41.0,https://www.commoncause.org/north-carolina/wp-content/uploads/2026/09/CCNC-Sep-2026-Poll-Release-1.pdf
 NC,YouGov,2026-09-15,2026-09-18,3742,LV,Cooper,Whatley,53.0,41.0,https://quantusinsights.org/polling/f/roy-cooper-leads-michael-whatley-by-five-in-north-carolina
@@ -319,6 +319,7 @@ MI,Glengariff Group,2026-01-02,2026-01-06,600,LV,El-Sayed,Rogers,47.0,43.0,https
 MI,Mitchell Research & Communications,2025-11-18,2025-11-21,616,LV,El-Sayed,Rogers,38.0,41.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Michigan
 MI,Rosetta Stone Communications (R),2025-10-23,2025-10-25,637,LV,El-Sayed,Rogers,31.0,45.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Michigan
 MI,Glengariff Group,2025-05-05,2025-05-08,600,RV,El-Sayed,Rogers,41.0,47.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Michigan
+ME,Trafalgar Group (R),2026-10-21,2026-10-23,1077,LV,Jackson,Collins,47.0,47.0,https://www.thetrafalgargroup.org/wp-content/uploads/2026/10/ME-Midterms-Report-1025.pdf
 ME,Beacon Research (D)/ Shaw & Co. Research (R),2026-10-16,2026-10-20,1514,LV,Jackson,Collins,49.0,49.0,https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_october-16-20-2026_maine_topline_october-22-release.pdf
 ME,InsiderAdvantage (R),2026-10-13,2026-10-14,1200,LV,Jackson,Collins,49.0,47.0,https://insideradvantage.com/insideradvantage-senate-surveys-texas-paxton-49-talarico-48-kansas-marshall-48-hamilton-47-maine-jackson-49-collins-47/
 ME,Suffolk University,2026-10-08,2026-10-11,500,LV,Jackson,Collins,49.0,47.0,https://www.suffolk.edu/-/media/suffolk/documents/academics/research-at-suffolk/suprc/polls/other-states/2026/10_14_2026_maine_press_release.pdf
@@ -376,6 +377,7 @@ KS,GBAO (D),2026-07-08,2026-07-13,600,LV,Hamilton,Marshall,43.0,47.0,https://www
 KS,Tavern Research (D),2026-01-26,2026-01-28,1013,LV,Hamilton,Marshall,46.0,54.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Kansas
 IL,ActiVote,2026-09-26,2026-10-20,400,LV,Stratton,Tracy,58.5,41.5,https://www.activote.net/polls/2026/il-u-s-senate/
 IL,Public Policy Polling (D),2026-09-30,2026-10-01,569,LV,Stratton,Tracy,49.0,36.0,https://www.cnwmedia.com/article/cnw-poll-pritzker-leads-bailey-by-20-points-democrats-ahead-in-four-other-statewide-races
+ID,VoteNexus Research,2026-10-21,2026-10-22,700,LV,Achilles,Risch,43.0,49.0,https://drive.google.com/file/d/1ZWt7_rFQzMxjeueMCX4GoFyqIe9jRk8X/view
 ID,Peak Insights (R),2026-09-28,2026-09-30,500,LV,Achilles,Risch,24.0,49.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Idaho
 ID,Advanced Targeting Research,2026-09-13,2026-09-16,700,RV,Achilles,Risch,50.0,39.0,https://www.advancedtargetingresearch.com/_files/ugd/03a624_0fca9a6dd7f846f7bc96f97429561064.pdf
 ID,Peak Insights (R),2026-08-11,2026-08-13,500,LV,Achilles,Risch,18.0,52.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Idaho
