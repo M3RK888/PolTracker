@@ -1,7 +1,7 @@
 state,pollster,start_date,end_date,sample_size,voter_type,dem_candidate,rep_candidate,dem,rep,source
 VA,The Public Sentiment Institute,2026-06-12,2026-06-16,996,LV,Warner,Mizusawa,51.0,33.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Virginia
 VA,The Public Sentiment Institute/ Virginia Project (R),2026-05-01,2026-05-05,1047,LV,Warner,Mizusawa,55.0,29.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Virginia
-TX,Rasmussen Reports (R),2026-10-20,2026-10-21,965,LV,Talarico,Paxton,45.0,45.0,https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_texas_senate
+TX,Rasmussen Reports,2026-10-20,2026-10-21,965,LV,Talarico,Paxton,45.0,45.0,https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_texas_senate
 TX,ActiVote,2026-10-17,2026-10-21,400,LV,Talarico,Paxton,51.0,49.0,https://www.activote.net/polls/2026/tx-u-s-senate/2026-10-21/
 TX,Verasight/VoteHub,2026-10-01,2026-10-20,509,LV,Talarico,Paxton,48.0,45.0,https://cdn.votehub.com/pdfs/VoteHub_Verasight_Oct_2026_Texas_Report_D8A925D0.pdf
 TX,Emerson College,2026-10-17,2026-10-19,1000,LV,Talarico,Paxton,49.0,48.0,https://emersoncollegepolling.com/texas-2026-poll-toss-up/
@@ -20,7 +20,7 @@ TX,ReconMR/Siena University,2026-10-05,2026-10-08,617,LV,Talarico,Paxton,48.0,44
 TX,YouGov,2026-09-28,2026-10-05,3625,LV,Talarico,Paxton,50.0,44.0,https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_tx_20260921_lv.pdf
 TX,University of Texas/Texas Politics Project,2026-09-25,2026-10-05,861,LV,Talarico,Paxton,50.0,47.0,http://texaspolitics.utexas.edu/blog/latest-ut-texas-politics-poll-finds-historic-levels-of-competition-in-texas-midterm-elections
 TX,New York Times/Siena University,2026-09-21,2026-09-30,615,LV,Talarico,Paxton,51.0,45.0,https://www.nytimes.com/interactive/2026/10/03/polls/times-siena-texas-poll-toplines.html
-TX,Rasmussen Reports (R),2026-09-28,2026-09-29,1128,LV,Talarico,Paxton,46.0,45.0,https://www.rasmussenreports.com/public_content/politics/public_surveys/toplines_texas_senate_september_28_29_2026
+TX,Rasmussen Reports,2026-09-28,2026-09-29,1128,LV,Talarico,Paxton,46.0,45.0,https://www.rasmussenreports.com/public_content/politics/public_surveys/toplines_texas_senate_september_28_29_2026
 TX,Beacon Research (D)/ Shaw & Co. Research (R),2026-09-24,2026-09-28,881,LV,Talarico,Paxton,51.0,49.0,https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_september-24-28-2026_texas_topline_october-1-release.pdf
 TX,Guidant Polling & Strategy (R),2026-09-20,2026-09-28,800,LV,Talarico,Paxton,47.0,44.0,https://static01.nyt.com/newsgraphics/documenttools/b31cf2744465b8b7/1a8b655b-full.pdf
 TX,UMass Lowell/YouGov,2026-09-18,2026-09-28,850,LV,Talarico,Paxton,45.0,45.0,https://www.uml.edu/news/press-releases/2026/10092026-texas-poll.aspx
@@ -169,6 +169,7 @@ NH,co/efficient (R),2025-09-10,2025-09-12,904,LV,Pappas,Sununu,46.0,43.0,https:/
 NH,1892 Polling (R),2025-09-02,2025-09-04,500,LV,Pappas,Sununu,45.0,43.0,https://punchbowl.news/wp-content/uploads/NHSEN_Poll2Memo_d2b_090625.pdf
 NE,GBAO (D),2026-10-18,2026-10-22,800,LV,Osborn,Ricketts,46.0,45.0,https://data.ddhq.io/polls/2026/10/23/GBAO/Working-Class-Majority-Nebraska-2026-10-18-2026-10-22
 NE,Impact Research (D),2026-10-14,2026-10-20,600,LV,Osborn,Ricketts,47.0,49.0,https://mcusercontent.com/34be366ade846d769ee678a97/files/3ae10722-76ee-42da-fe74-aaa63817df92/IMPACT_NEBRASKA_INTERESTED_PARTIES_POLL_MEMO_OCTOBER_2026.pdf
+NE,Concord Public Opinion Partners (D),2026-10-15,2026-10-18,500,LV,Osborn,Ricketts,48.0,41.0,https://concordpublicopinionpartners.org/polls/nebraska-ge-2026
 NE,National Public Affairs (R),2026-10-15,2026-10-18,598,LV,Osborn,Ricketts,43.0,46.0,https://backend.natpublicaffairs.com/media/NE_Tracker_R2_Trend_Memo_102226.7.pdf
 NE,National Public Affairs (R),2026-10-02,2026-10-05,800,LV,Osborn,Ricketts,43.0,46.0,https://backend.natpublicaffairs.com/media/Nebraska_General_Election_Memo_100926.pdf
 NE,YouGov,2026-09-24,2026-10-03,1809,LV,Osborn,Ricketts,48.0,47.0,https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_ne_20260921_lv.pdf
@@ -267,6 +268,7 @@ MN,KTSP/SurveyUSA,2026-08-13,2026-08-17,661,LV,Flanagan,Tafoya,46.0,41.0,https:/
 MN,Impact Research (D),2026-05-26,2026-05-28,808,LV,Flanagan,Tafoya,51.0,44.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Minnesota
 MN,Emerson College,2026-02-06,2026-02-08,1000,LV,Flanagan,Tafoya,47.0,41.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Minnesota
 MN,Impact Research (D),2025-07-08,2025-07-11,604,LV,Flanagan,Tafoya,48.0,45.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Minnesota
+MI,RedBox Research,2026-10-20,2026-10-23,2696,LV,El-Sayed,Rogers,49.0,44.0,https://afightworthhaving.com/polling/2026/michigan
 MI,InsiderAdvantage (R),2026-10-21,2026-10-22,1200,LV,El-Sayed,Rogers,47.0,46.0,https://insideradvantage.com/insideradvantage-senate-surveys-mi-el-sayed-47-rogers-46-ia-hinson-47-turek-45-oh-brown-47-husted-44/
 MI,Marist University,2026-10-15,2026-10-18,,LV,El-Sayed,Rogers,50.0,48.0,https://maristpoll.marist.edu/wp-content/uploads/2026/10/Marist-Poll_MI-NOS-and-Tables_202610191238FFx09@Jal.pdf
 MI,Rasmussen Reports (R),2026-10-12,2026-10-14,798,LV,El-Sayed,Rogers,46.0,44.0,https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_michigan_senate
@@ -440,6 +442,7 @@ GA,TIPP Insights,2025-07-28,2025-08-01,2956,RV,Ossoff,Collins,45.0,44.0,https://
 GA,Cygnal (R),2025-05-15,2025-05-17,800,LV,Ossoff,Collins,46.0,43.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Georgia
 GA,Trafalgar Group (R),2025-04-24,2025-04-27,1426,LV,Ossoff,Collins,48.0,43.0,https://www.thetrafalgargroup.org/wp-content/uploads/2025/04/GA-26-US-Senate-0428_Full-Report.pdf
 GA,WPA Intelligence (R),2025-01-14,2025-01-15,500,LV,Ossoff,Collins,44.0,34.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Georgia
+FL,RedBox Research,2026-10-20,2026-10-23,4832,LV,Nixon,Moody,43.0,50.0,https://afightworthhaving.com/polling/2026/florida
 FL,co/efficient (R),2026-10-18,2026-10-20,1014,LV,Nixon,Moody,40.0,48.0,https://battlegrounds.coefficient.org/fl/
 FL,University of North Florida,2026-10-12,2026-10-19,1471,LV,Nixon,Moody,45.0,49.0,https://static1.squarespace.com/static/6994d571bce3436c60d86870/t/6ad8a5ec13c20404a1f8052b/1792583148294/UNF+PORL+FALL+Statewide+2026+FLLV+-+Press+Release+1021+EMBARGO.pdf
 FL,Univision/YouGov,2026-10-02,2026-10-15,825,RV,Nixon,Moody,42.0,51.0,https://st1.uvnimg.com/65/9b/a8b15584426684070c3d05cf6e34/n-univision-florida-poll-crosstabs-base-final.pdf
