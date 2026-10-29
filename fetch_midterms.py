@@ -112,6 +112,36 @@ def surname(name: str) -> str:
 # ---------------------------------------------------------------------------
 # Senate
 # ---------------------------------------------------------------------------
+def general_election_poll_rows(lines: list[str]) -> list[dict]:
+    """Poll rows from every "Polling" heading under "General election". Usually there's
+    one, but editors sometimes leave a duplicate (on Oct 28, 2026 the Texas article had an
+    empty "Polling" heading right above the real one, and reading only the first lost all
+    65 Texas polls). Stops at hypothetical matchups (other possible nominees)."""
+    g0, g1 = w.section(lines, r"^General election$", 2)
+    rows, start = [], g0
+    while g0 >= 0:
+        p0, p1 = w.section(lines, r"^Polling$", 3, start)
+        if p0 < 0 or p0 >= g1:
+            break
+        seg = lines[p0:min(p1, g1)]
+        hyp = next((i for i, l in enumerate(seg) if re.search(r"hypothetical", l, re.I)), len(seg))
+        for t in w.tables(seg[:hyp]):
+            rows += w.poll_rows(t)
+        start = p0 + 1
+    return rows
+
+
+def keep_previous_polls(new: list[dict], old: list[dict], min_old: int = 5) -> tuple[list[dict], list[str]]:
+    """If a race that had at least `min_old` polls in the last saved file now has none,
+    something went wrong reading its page (polls don't disappear). Keep that race's
+    previous polls instead and report it. Returns (polls, states kept from before)."""
+    old_by_state, new_states = {}, {p["state"] for p in new}
+    for p in old:
+        old_by_state.setdefault(p["state"], []).append(p)
+    kept = sorted(s for s, ps in old_by_state.items() if len(ps) >= min_old and s not in new_states)
+    return new + [p for s in kept for p in old_by_state[s]], kept
+
+
 def senate(year: int = 2026, refresh: bool = True, with_polls: bool = True) -> tuple[list[dict], list[dict]]:
     """Races and polls for one year's Senate elections. Past years (for backtest.py)
     work too: their articles have the same layout, plus results once decided.
@@ -140,16 +170,7 @@ def senate(year: int = 2026, refresh: bool = True, with_polls: bool = True) -> t
     polls = []
     for race in races if with_polls else []:
         time.sleep(0.3)
-        lines = w.raw_page(race["article"], refresh).split("\n")
-        g0, g1 = w.section(lines, r"^General election$", 2)
-        p0, p1 = w.section(lines, r"^Polling$", 3, g0) if g0 >= 0 else (-1, -1)
-        rows = []
-        if 0 <= p0 < g1:
-            seg = lines[p0:min(p1, g1)]
-            # Stop at hypothetical matchups (other possible nominees)
-            hyp = next((i for i, l in enumerate(seg) if re.search(r"hypothetical", l, re.I)), len(seg))
-            for t in w.tables(seg[:hyp]):
-                rows += w.poll_rows(t)
+        rows = general_election_poll_rows(w.raw_page(race["article"], refresh).split("\n"))
 
         # The main matchup: strongest Republican vs strongest non-Republican across all polls
         share = Counter()
@@ -284,6 +305,13 @@ def check(races, polls, districts, generic) -> None:
 if __name__ == "__main__":
     races, polls = senate()
     districts, generic = house()
+    previous = Path("data/senate_2026_polls.csv")
+    if previous.exists():
+        with open(previous, encoding="utf-8") as f:
+            polls, kept = keep_previous_polls(polls, list(csv.DictReader(f)))
+        for s in kept:
+            print(f"WARNING: no polls read for {s} today, though it had polls before. "
+                  f"Kept its previous polls; check its Wikipedia article.", file=sys.stderr)
     check(races, polls, districts, generic)
     write_csv("data/senate_2026_races.csv", races,
               ["state", "state_name", "special", "pvi", "incumbent", "incumbent_party",

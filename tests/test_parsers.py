@@ -66,6 +66,28 @@ def test_senate_poll_table():
     assert p["parties"]["James Talarico"] == "D" and p["parties"]["Ken Paxton"] == "R"
 
 
+def test_duplicate_polling_heading():
+    # Oct 28, 2026: an empty duplicate "Polling" heading sat above the real one on the
+    # Texas page, and the polls under the second heading were missed.
+    page = ["== General election ==", "=== Polling ===", "=== Polling ===",
+            "{| class=\"wikitable\"", "! Poll source", "! Date(s)<br />administered", "! Sample<br />size",
+            "! Margin<br />of error", "! Ken<br />Paxton (R)", "! James<br />Talarico (D)", "|-",
+            "| YouGov", "| October 20–23, 2026", "| 1,000 (LV)", "| ± 3%", "| 45%", "| 49%", "|}",
+            "=== Results ==="]
+    rows = fm.general_election_poll_rows(page)
+    assert len(rows) == 1 and rows[0]["values"] == {"Ken Paxton": 45.0, "James Talarico": 49.0}
+
+
+def test_keep_previous_polls_when_a_race_vanishes():
+    old = [{"state": "TX", "pollster": f"P{i}"} for i in range(6)] + [{"state": "IA", "pollster": "Q"}]
+    new = [{"state": "IA", "pollster": "Q"}, {"state": "IA", "pollster": "R"}]
+    polls, kept = fm.keep_previous_polls(new, old)
+    assert kept == ["TX"]                                    # Texas lost all 6: restored
+    assert sum(p["state"] == "TX" for p in polls) == 6
+    assert sum(p["state"] == "IA" for p in polls) == 2       # Iowa's fresh polls untouched
+    assert fm.keep_previous_polls(new, old[:3] + old[6:])[1] == []   # too few before to judge
+
+
 def test_generic_ballot_table():
     g = fm.generic_ballot(lines("generic_ballot_2026-08-01.wiki"))
     assert len(g) == 6
