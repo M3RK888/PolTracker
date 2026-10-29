@@ -1,7 +1,9 @@
 state,pollster,start_date,end_date,sample_size,voter_type,dem_candidate,rep_candidate,dem,rep,source
 VA,The Public Sentiment Institute,2026-06-12,2026-06-16,996,LV,Warner,Mizusawa,51.0,33.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Virginia
 VA,The Public Sentiment Institute/ Virginia Project (R),2026-05-01,2026-05-05,1047,LV,Warner,Mizusawa,55.0,29.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Virginia
+TX,SSRS,2026-10-20,2026-10-27,923,LV,Talarico,Paxton,49.0,43.0,https://www.documentcloud.org/documents/28856724-cnn-poll-conducted-by-ssrs-texas-october/
 TX,YouGov Blue (D),2026-10-21,2026-10-26,1000,RV,Talarico,Paxton,51.0,43.0,https://254labs.io/news/2026-10-tx
+TX,Texas Southern University,2026-10-21,2026-10-25,2000,LV,Talarico,Paxton,49.0,47.0,https://www.wfaa.com/article/news/politics/elections/new-poll-talarico-abbott-lead-as-early-voting-in-texas-nears-close/287-7f4cca13-6e1d-433c-9041-727931b591cd
 TX,Rasmussen Reports,2026-10-20,2026-10-21,965,LV,Talarico,Paxton,45.0,45.0,https://www.rasmussenreports.com/public_content/politics/elections/election_2026/election_2026_texas_senate
 TX,ActiVote,2026-10-17,2026-10-21,400,LV,Talarico,Paxton,51.0,49.0,https://www.activote.net/polls/2026/tx-u-s-senate/2026-10-21/
 TX,Univision/YouGov,2026-10-13,2026-10-21,1000,RV,Talarico,Paxton,50.0,45.0,https://www.univision.com/noticias/politica/poll-univision-texas-latinos
@@ -11,6 +13,7 @@ TX,Beacon Research (D)/ Shaw & Co. Research (R),2026-10-15,2026-10-19,1398,LV,Ta
 TX,Texas Public Opinion Research (D),2026-10-15,2026-10-18,969,LV,Talarico,Paxton,51.0,47.0,https://texaspublicopinionresearch.substack.com/p/october-poll-in-texas-general-election
 TX,Pollfinity Research,2026-10-15,2026-10-18,278,RV,Talarico,Paxton,48.0,43.0,https://pollfinity.com/polls/tx-governor-senate-2026-oct
 TX,CBS News/YouGov,2026-10-08,2026-10-16,1492,LV,Talarico,Paxton,51.0,49.0,https://www.cbsnews.com/news/texas-senate-talarico-paxton-poll/
+TX,Cor Strategies (R),2026-10-10,2026-10-15,1409,LV,Talarico,Paxton,44.0,40.0,https://static.dailysignalmedia.org/2026/10/TX-Poll-Crosstabs.pdf
 TX,InsiderAdvantage,2026-10-13,2026-10-14,1200,LV,Talarico,Paxton,48.0,49.0,https://insideradvantage.com/insideradvantage-senate-surveys-texas-paxton-49-talarico-48-kansas-marshall-48-hamilton-47-maine-jackson-49-collins-47/
 TX,University of Houston,2026-10-10,2026-10-14,2000,LV,Talarico,Paxton,48.0,46.0,https://www.uh.edu/hobby/texas2026/index.php
 TX,ActiVote,2026-09-30,2026-10-14,400,LV,Talarico,Paxton,52.0,48.0,https://www.activote.net/polls/2026/tx-u-s-senate/2026-10-14/
@@ -286,6 +289,7 @@ MN,Impact Research (D),2026-05-26,2026-05-28,808,LV,Flanagan,Tafoya,51.0,44.0,ht
 MN,Emerson College,2026-02-06,2026-02-08,1000,LV,Flanagan,Tafoya,47.0,41.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Minnesota
 MN,Impact Research (D),2025-07-08,2025-07-11,604,LV,Flanagan,Tafoya,48.0,45.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Minnesota
 MI,Mitchell Research & Communications,2026-10-26,2026-10-27,636,LV,El-Sayed,Rogers,51.0,44.0,https://www.cbsnews.com/detroit/news/el-sayed-widens-lead-rogers-michigan-senate-poll/
+MI,SSRS,2026-10-20,2026-10-27,768,LV,El-Sayed,Rogers,49.0,42.0,https://www.documentcloud.org/documents/28856720-cnn-poll-conducted-by-ssrs-michigan-october/
 MI,RedBox Research (D),2026-10-20,2026-10-23,2696,LV,El-Sayed,Rogers,49.0,44.0,https://afightworthhaving.com/polling/2026/michigan
 MI,InsiderAdvantage (R),2026-10-21,2026-10-22,1200,LV,El-Sayed,Rogers,47.0,46.0,https://insideradvantage.com/insideradvantage-senate-surveys-mi-el-sayed-47-rogers-46-ia-hinson-47-turek-45-oh-brown-47-husted-44/
 MI,Glengariff Group,2026-10-19,2026-10-22,600,LV,El-Sayed,Rogers,51.0,45.0,https://www.clickondetroit.com/news/local/2026/10/27/democratic-candidate-el-sayed-leads-michigan-us-senate-race-new-poll-finds/
@@ -341,6 +345,7 @@ MI,Glengariff Group,2026-01-02,2026-01-06,600,LV,El-Sayed,Rogers,47.0,43.0,https
 MI,Mitchell Research & Communications,2025-11-18,2025-11-21,616,LV,El-Sayed,Rogers,38.0,41.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Michigan
 MI,Rosetta Stone Communications (R),2025-10-23,2025-10-25,637,LV,El-Sayed,Rogers,31.0,45.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Michigan
 MI,Glengariff Group,2025-05-05,2025-05-08,600,RV,El-Sayed,Rogers,41.0,47.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Michigan
+ME,SSRS,2026-10-20,2026-10-26,783,LV,Jackson,Collins,49.0,45.0,https://www.documentcloud.org/documents/28856725-cnn-poll-conducted-by-ssrs-maine-october/
 ME,Marist University,2026-10-22,2026-10-25,,LV,Jackson,Collins,49.0,47.0,https://maristpoll.marist.edu/wp-content/uploads/2026/10/Marist-Poll_Maine-NOS-and-Tables_202610261228-3_43sjl2.pdf
 ME,Trafalgar Group (R),2026-10-21,2026-10-23,1077,LV,Jackson,Collins,47.0,47.0,https://www.thetrafalgargroup.org/wp-content/uploads/2026/10/ME-Midterms-Report-1025.pdf
 ME,Echelon Insights (R),2026-10-16,2026-10-23,413,LV,Jackson,Collins,51.0,44.0,https://netchoice.org/wp-content/uploads/2026/10/NetChoice-October-2026-Antitrust-Tech-Survey-Topline.pdf
@@ -386,6 +391,7 @@ LA,Hart Research Associates (D),2026-09-17,2026-09-19,500,LV,Davis,Letlow,44.0,4
 LA,Public Policy Polling (D),2026-07-21,2026-07-22,518,RV,Davis,Letlow,37.0,41.0,https://bayouprogressive.com/2026/08/new-poll-puts-jamie-davis-four-points-behind-julia-letlow-as-1-in-5-voters-remain-undecided/
 KY,Global Strategy Group (D),2026-08-24,2026-08-27,600,LV,Booker,Barr,40.0,49.0,https://fox56news.com/news/kentucky/new-poll-shows-charles-booker-trailing-just-behind-andy-barr-in-race-for-senate/
 KY,Public Policy Polling (D),2025-12-18,2025-12-19,650,,Booker,Barr,38.0,49.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Kentucky
+KS,SSRS,2026-10-20,2026-10-26,838,LV,Hamilton,Marshall,49.0,45.0,https://www.documentcloud.org/documents/28856723-cnn-poll-conducted-by-ssrs-kansas-october/
 KS,RedBox Research (D),2026-10-20,2026-10-23,1301,LV,Hamilton,Marshall,45.0,46.0,https://afightworthhaving.com/polling/2026/kansas
 KS,InsiderAdvantage (R),2026-10-13,2026-10-14,1200,LV,Hamilton,Marshall,47.0,48.0,https://insideradvantage.com/insideradvantage-senate-surveys-texas-paxton-49-talarico-48-kansas-marshall-48-hamilton-47-maine-jackson-49-collins-47/
 KS,InsiderAdvantage (R),2026-10-09,2026-10-10,1200,LV,Hamilton,Marshall,48.0,47.0,https://insideradvantage.com/insideradvantage-u-s-senate-surveys-alaska-ranks-choice-peltola-50-sullivan-48-kansas-hamilton-48-marshall-47-michigan-el-sayed-48-rogers-46/
