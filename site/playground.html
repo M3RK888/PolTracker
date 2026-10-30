@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playground · PolTracker</title>
+  <meta name="description" content="Pick who wins the states you're sure about, run 20,000 simulations, and see how the odds for the 2026 Senate and House and the 2028 presidency change.">
+  <link rel="icon" href="assets/icon.svg?v=8b0cd3b7" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PolTracker">
+  <meta property="og:title" content="Playground · PolTracker">
+  <meta property="og:description" content="Pick who wins the states you're sure about, run 20,000 simulations, and see how the odds change.">
+  <meta property="og:url" content="https://m3rk888.github.io/PolTracker/playground.html">
+  <meta property="og:image" content="https://m3rk888.github.io/PolTracker/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="assets/style.css?v=eb39618b">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>PolTracker</a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">2028</a>
+        <a href="senate.html">Senate</a>
+        <a href="house.html">House</a>
+        <a href="playground.html" aria-current="page">Playground</a>
+        <a href="history.html">Past elections</a>
+        <a href="polls.html">Polls</a>
+        <a href="accuracy.html">Accuracy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-head">
+      <div>
+        <h1>Playground</h1>
+        <p class="dek">Pick the races you think you know, run the simulations, and see how everything else moves.</p>
+      </div>
+      <div class="toggle" id="tabs" role="group" aria-label="Which election"></div>
+    </div>
+
+    <section class="card pg-controls">
+      <div class="pg-row">
+        <label class="pg-matchup" id="matchup-wrap" hidden>Matchup <select id="matchup"></select></label>
+        <label>Pick a <span id="pick-noun">state</span> <select id="pick-select"></select></label>
+        <div class="pg-buttons">
+          <button type="button" class="btn primary" id="run">Run 20,000 simulations</button>
+          <button type="button" class="btn" id="rerun" hidden title="Same picks, fresh random draws">Run again</button>
+        </div>
+      </div>
+      <div class="pg-picks" id="picks" aria-live="polite"></div>
+      <div class="pg-progress" id="progress" hidden><progress id="progress-bar" max="1" value="0"></progress><span id="progress-text"></span></div>
+      <p class="muted small pg-hint" id="hint"></p>
+    </section>
+
+    <p class="notice" id="status" role="status"></p>
+
+    <section class="card">
+      <div id="bar"></div>
+      <div id="map" class="map" aria-label="Map: click a state to pick a winner"></div>
+      <div class="hexmap-wrap" id="hexmap-wrap" hidden><svg id="hexmap" role="img" aria-label="Map of all 435 House districts, one hexagon each: click one to pick a winner"></svg></div>
+      <div class="scale" id="scale"></div>
+      <div class="legend pg-key" id="pick-key"></div>
+    </section>
+
+    <section class="stats" id="stats" aria-label="Key numbers"></section>
+
+    <section class="card">
+      <h2 id="hist-title">How many seats?</h2>
+      <p class="muted small" id="hist-note" style="margin:-6px 0 0"></p>
+      <div id="hist"></div>
+    </section>
+
+    <section>
+      <h2>What moved</h2>
+      <p class="muted small" id="table-note">Every race, biggest change first. Click a column to re-sort.</p>
+      <div class="table-scroll pg-table"><table id="races"></table></div>
+    </section>
+
+    <section class="card prose">
+      <h2>How it works</h2>
+      <p class="caveat"><strong>This is an unvalidated hobby model.</strong> It uses a standard method, but its settings
+        are judgment calls, and it hasn't been tested against past elections the way professional forecasts are.
+        Treat the percentages as a rough guide.</p>
+      <p><strong>The same simulation as the forecast.</strong> Your browser reruns the forecast's model: every race starts
+        from the forecast's estimate, then gets a random miss. Part of the miss is national (shared by every race), part is
+        regional (shared by states in the same part of the country), and part belongs to the race alone. Do that
+        20,000 times and you have 20,000 possible elections. With nothing picked, the odds here match the forecast pages
+        (give or take a point of random noise).</p>
+      <p><strong>Your picks keep only the elections where they come true.</strong> Say you pick Democrats to win Texas.
+        The playground throws away every simulated election where they lose it, and counts everything from the rest.
+        A Democratic win in Texas usually happens in a simulation where the national miss went their way, so in the
+        elections that are left, Democrats also tend to do better everywhere else, especially nearby. That's why one
+        pick moves the other states, not just the one you clicked.</p>
+      <p><strong>Long shots need more simulations.</strong> If few elections match your picks, the playground keeps going
+        in batches of 20,000 until at least 2,000 match (or 400,000 have been tried), and tells you how many it used.
+        If fewer than 200 match, the model thinks your scenario is very unlikely, and the odds are too rough to trust.</p>
+      <p><strong>Same picks, same answer.</strong> The random draws are seeded, so running the same picks again (or
+        opening a shared link) gives the same numbers. <em>Run again</em> uses fresh draws, which shows how much is noise.
+        The picks are saved in the page's address, so you can copy it to share a scenario.</p>
+      <p>More about the model on the <a href="senate.html#forecast">Senate</a>, <a href="house.html#forecast">House</a>
+        and <a href="index.html">2028</a> pages.</p>
+    </section>
+    <pre id="selftest" hidden></pre>
+  </main>
+
+  <footer class="site-footer"><div class="wrap">Built from the same forecast data as the Senate, House and 2028 pages; the simulations run in your browser.</div></footer>
+
+  <script src="https://cdn.plot.ly/plotly-geo-4.1.1.min.js"></script>
+  <script src="assets/common.js?v=204cd6ce"></script>
+  <script src="assets/sim.js?v=35769705"></script>
+  <script src="data/senate.js?v=c15254cc"></script>
+  <script src="data/house.js?v=b86acbf9"></script>
+  <script src="data/forecast_2026.js?v=e50e333c"></script>
+  <script src="data/forecast_2028.js?v=ffa304e7"></script>
+  <script>
+  (function () {
+    const S = window.SENATE, H = window.HOUSE, F26 = window.FORECAST_2026, F28 = window.FORECAST_2028;
+    PM.staleNotice(F28.as_of);
+    const BATCH = 20000;
+    const DEEP = { D: PM.MARGIN_SCALE[PM.MARGIN_SCALE.length - 1][1], R: PM.MARGIN_SCALE[0][1] };   // picked = certain
+    const PARTY = { D: "Democrats", R: "Republicans" };
+    const regionIndex = (settings) => Object.fromEntries(Object.values(settings.regions).flatMap((states, i) => states.map((s) => [s, i])));
+    const pct = (p) => PM.fmtProb(p);
+    const electionOver = new Date().toLocaleDateString("en-CA", { timeZone: "America/New_York" }) > F26.election;
+
+    // Each tab is a "model": its races (with the forecast's estimate and published chance),
+    // how seats add up, and the published numbers to compare against.
+    const senateRaces = Object.fromEntries(S.races.map((r) => [r.state, r]));
+    const houseDistricts = Object.fromEntries(H.districts.map((d) => [d.id, d]));
+    const modelFor = (tab, matchupId) => {
+      if (tab === "senate") {
+        const reg = regionIndex(F26.settings), sm = F26.senate.summary;
+        return {
+          tab, key: "senate", title: "Senate", unit: "seat", units: "seats", noun: "state", map: "geo",
+          dem: "Democrats & independents", rep: "Republicans", base: S.not_up.D, total: 100,
+          dWins: (d) => d >= 51, rWins: (d) => 100 - d >= 50, threshold: 51, barThreshold: 50,
+          thresholdLabel: "51 for control (50 + VP for R)", histLabel: "51: Democratic control", bin: 1,
+          sigma: F26.senate.sigma, df: F26.settings.t_df, nRegions: Object.keys(F26.settings.regions).length,
+          published: { d: sm.p_dem_control, r: sm.p_rep_control, hist: sm.histogram, median: sm.dem_median, lo: sm.dem_lo, hi: sm.dem_hi },
+          notUp: S.not_up,
+          races: F26.senate.races.map((f) => {
+            const r = senateRaces[f.key];
+            return { key: f.key, state: f.key, label: f.key, name: r.name, weight: 1, blended: f.blended, p: f.p_dem, region: reg[f.key],
+              sub: `${r.opp} (${r.opp_party}) vs ${r.rep} (R)` };
+          }),
+        };
+      }
+      if (tab === "house") {
+        const reg = regionIndex(F26.settings), sm = F26.house.summary;
+        return {
+          tab, key: "house", title: "House", unit: "seat", units: "seats", noun: "district", map: "hex",
+          dem: "Democrats", rep: "Republicans", base: 0, total: 435,
+          dWins: (d) => d >= 218, rWins: (d) => 435 - d >= 218, threshold: 218, barThreshold: 218,
+          thresholdLabel: "218 for control", histLabel: "218: Democratic control", bin: 1,
+          sigma: F26.house.sigma, df: F26.settings.t_df, nRegions: Object.keys(F26.settings.regions).length,
+          published: { d: sm.p_dem_control, r: sm.p_rep_control, hist: sm.histogram, median: sm.dem_median, lo: sm.dem_lo, hi: sm.dem_hi },
+          races: F26.house.races.map((f) => {
+            const d = houseDistricts[f.key];
+            return { key: f.key, state: d.state, label: f.key, name: d.name, weight: 1, blended: f.blended, p: f.p_dem, region: reg[d.state],
+              sub: [d.dem && `${d.dem} (D)`, d.rep && `${d.rep} (R)`].filter(Boolean).join(" vs ") || "Candidates not listed" };
+          }),
+        };
+      }
+      const m = F28.matchups.find((x) => x.id === matchupId) || F28.matchups[0];
+      const reg = regionIndex(F28.settings), sm = m.summary;
+      return {
+        tab, key: `president:${m.id}`, title: "Presidency", unit: "electoral vote", units: "electoral votes", noun: "state", map: "geo",
+        dem: m.dem, rep: m.rep, base: 0, total: 538, matchup: m.id,
+        dWins: (d) => d >= 270, rWins: (d) => 538 - d >= 270, threshold: 270, barThreshold: 270,
+        thresholdLabel: "270 to win", histLabel: "270 to win", bin: 5,
+        sigma: m.sigma, df: F28.settings.t_df, nRegions: Object.keys(F28.settings.regions).length,
+        published: { d: sm.p_dem, r: sm.p_rep, hist: sm.histogram, median: sm.ev_median, lo: sm.ev_lo, hi: sm.ev_hi },
+        races: m.states.map((s) => ({ key: s.key, state: s.key, label: s.key, name: s.name, weight: s.ev, blended: s.blended, p: s.p_dem,
+          region: reg[s.key], sub: `${s.ev} electoral votes` })),
+      };
+    };
+
+    // Run the simulation for a model and a set of picks ({key: "D" | "R"})
+    const simulate = async (model, picks, seed, opts = {}) => {
+      const idx = Object.fromEntries(model.races.map((r, i) => [r.key, i]));
+      const sidePicks = {};
+      Object.entries(picks).forEach(([k, side]) => { if (k in idx) sidePicks[idx[k]] = side === "D" ? 1 : -1; });
+      const res = await PMSim.run({
+        blended: model.races.map((r) => r.blended), region: model.races.map((r) => r.region), nRegions: model.nRegions,
+        weight: model.races.map((r) => r.weight), sigma: model.sigma, df: model.df,
+      }, sidePicks, { seed, batch: opts.batch ?? BATCH, ...opts });
+      const n = res.matched;
+      const out = { tried: res.tried, matched: n, seed, picks: { ...picks }, p: model.races.map((_, i) => (n ? res.wins[i] / n : null)) };
+      if (n) {
+        let d = 0, r = 0, cum = 0, lo = null, med = null, hi = null;
+        const hist = new Map();
+        res.hist.forEach((c, i) => {
+          if (!c) return;
+          const seats = model.base + i;
+          if (model.dWins(seats)) d += c;
+          if (model.rWins(seats)) r += c;
+          cum += c;
+          if (lo === null && cum >= 0.1 * n) lo = seats;
+          if (med === null && cum >= 0.5 * n) med = seats;
+          if (hi === null && cum >= 0.9 * n) hi = seats;
+          const b = Math.floor(seats / model.bin) * model.bin;
+          hist.set(b, (hist.get(b) || 0) + c);
+        });
+        Object.assign(out, { d: d / n, r: r / n, median: med, lo, hi,
+          hist: [...hist].sort((a, b) => a[0] - b[0]).map(([seats, c]) => ({ seats, p: c / n })) });
+      }
+      return out;
+    };
+
+    // ?selftest: with nothing picked, the browser's odds must match the published
+    // forecast; and a pick must move things the expected way. Prints a report.
+    if (new URLSearchParams(location.search).has("selftest")) {
+      (async () => {
+        const pre = document.getElementById("selftest"), lines = [];
+        pre.hidden = false;
+        const say = (s) => { lines.push(s); pre.textContent = lines.join("\n"); };
+        const check = async (model, draws) => {
+          const t0 = performance.now();
+          const r = await simulate(model, {}, 7, { batch: draws });
+          const diffs = model.races.map((x, i) => Math.abs(r.p[i] - x.p));
+          const worst = model.races[diffs.indexOf(Math.max(...diffs))];
+          say(`${model.key.padEnd(34)} D control ${(r.d * 100).toFixed(1)} vs ${(model.published.d * 100).toFixed(1)}` +
+            `  R ${(r.r * 100).toFixed(1)} vs ${(model.published.r * 100).toFixed(1)}` +
+            `  median ${r.median} vs ${model.published.median}` +
+            `  races: mean |diff| ${(diffs.reduce((a, b) => a + b, 0) / diffs.length * 100).toFixed(2)} pts, max ${(Math.max(...diffs) * 100).toFixed(2)} (${worst.key})` +
+            `  [${draws} draws, ${Math.round(performance.now() - t0)} ms]`);
+        };
+        say("SELFTEST unconditioned vs published (percent)");
+        await check(modelFor("senate"), 200000);
+        await check(modelFor("house"), 100000);
+        for (const m of F28.matchups) await check(modelFor("president", m.id), 200000);
+        say("SELFTEST timing, 20,000 draws");
+        for (const tab of ["senate", "house", "president"]) {
+          const t0 = performance.now();
+          await simulate(modelFor(tab), {}, 1);
+          say(`  ${tab}: ${Math.round(performance.now() - t0)} ms`);
+        }
+        say("SELFTEST picks move things the expected way");
+        const dir = async (tab, picks, watch) => {
+          const model = modelFor(tab), base = await simulate(model, {}, 3), cond = await simulate(model, picks, 3);
+          const i = model.races.findIndex((r) => r.key === watch);
+          say(`  ${tab} ${JSON.stringify(picks)}: control D ${pct(base.d)} -> ${pct(cond.d)}; ${watch} D ${pct(base.p[i])} -> ${pct(cond.p[i])};` +
+            ` matched ${cond.matched} of ${cond.tried}`);
+        };
+        await dir("senate", { TX: "D" }, "OK");
+        await dir("senate", { TX: "R" }, "OK");
+        await dir("president", { TX: "D" }, "OK");
+        await dir("president", { PA: "R" }, "MI");
+        await dir("house", { "TX-23": "D" }, "TX-28");
+        await dir("senate", { TX: "D", OK: "D", WY: "D", ID: "D" }, "MT");
+        say("SELFTEST done");
+      })();
+      return;
+    }
+
+    // State --------------------------------------------------------------------
+    const TABS = { senate: "Senate 2026", house: "House 2026", president: "President 2028" };
+    const picks = { senate: {}, house: {}, president: {} };
+    const results = {};          // model key -> last run
+    let tab = "senate", matchupId = F28.matchups[0].id, seed = 1, running = false, model;
+
+    // URL hash: #senate&d=TX,GA&r=OH  (2028 adds m=<matchup>; seed=N after "Run again")
+    const readHash = () => {
+      const parts = PM.hashParts();
+      tab = parts.find((p) => p in TABS) || "senate";
+      const kv = Object.fromEntries(parts.filter((p) => p.includes("=")).map((p) => p.split("=")));
+      if (kv.m && F28.matchups.some((m) => m.id === kv.m)) matchupId = kv.m;
+      seed = Math.max(1, parseInt(kv.seed, 10) || 1);
+      const valid = new Set(modelFor(tab, matchupId).races.map((r) => r.key));
+      picks[tab] = {};
+      ["d", "r"].forEach((s) => (kv[s] ? decodeURIComponent(kv[s]).split(",") : []).forEach((k) => {
+        if (valid.has(k)) picks[tab][k] = s.toUpperCase();
+      }));
+      return Object.keys(picks[tab]).length > 0;
+    };
+    const writeHash = () => {
+      const p = picks[tab], side = (s) => Object.keys(p).filter((k) => p[k] === s);
+      const parts = [tab, tab === "president" && `m=${matchupId}`, side("D").length && `d=${side("D").join(",")}`,
+        side("R").length && `r=${side("R").join(",")}`, seed !== 1 && `seed=${seed}`];
+      history.replaceState(null, "", "#" + parts.filter(Boolean).join("&"));
+    };
+    const picksKey = (p) => Object.keys(p).sort().map((k) => `${k}:${p[k]}`).join(",");
+    // The run being shown: the last one for this model, if it used the current picks and seed
+    const current = () => {
+      const r = results[model.key];
+      return r && picksKey(r.picks) === picksKey(picks[tab]) && r.seed === seed ? r : null;
+    };
+
+    // Picking -------------------------------------------------------------------
+    const cycle = (key) => {
+      const p = picks[tab];
+      if (!p[key]) p[key] = "D"; else if (p[key] === "D") p[key] = "R"; else delete p[key];
+      afterPick();
+    };
+    const setPick = (key, side) => { if (side) picks[tab][key] = side; else delete picks[tab][key]; afterPick(); };
+    const afterPick = () => { seed = 1; writeHash(); render(); };
+
+    // Controls --------------------------------------------------------------------
+    const tabsEl = document.getElementById("tabs");
+    tabsEl.innerHTML = Object.entries(TABS).map(([k, v]) => `<button type="button" data-tab="${k}">${v}</button>`).join("");
+    tabsEl.addEventListener("click", (e) => {
+      const b = e.target.closest("button");
+      if (!b || b.dataset.tab === tab) return;
+      tab = b.dataset.tab; seed = 1;
+      setup();
+    });
+    const matchupSel = document.getElementById("matchup");
+    matchupSel.innerHTML = F28.matchups.map((m) => `<option value="${m.id}">${PM.esc(m.dem)} vs ${PM.esc(m.rep)}</option>`).join("");
+    matchupSel.addEventListener("change", () => { matchupId = matchupSel.value; seed = 1; setup(); });
+    const pickSel = document.getElementById("pick-select");
+    pickSel.addEventListener("change", () => {
+      if (pickSel.value) { const [key, side] = pickSel.value.split("|"); setPick(key, side); }
+      pickSel.value = "";
+    });
+    document.getElementById("picks").addEventListener("click", (e) => {
+      const b = e.target.closest("button");
+      if (!b) return;
+      if (b.dataset.clear != null) { picks[tab] = {}; afterPick(); }
+      else if (b.dataset.remove) setPick(b.dataset.remove, null);
+      else if (b.dataset.flip) setPick(b.dataset.flip, picks[tab][b.dataset.flip] === "D" ? "R" : "D");
+    });
+    document.getElementById("run").addEventListener("click", () => go());
+    document.getElementById("rerun").addEventListener("click", () => { seed += 1; writeHash(); go(); });
+
+    async function go() {
+      if (running) return;
+      running = true;
+      const m = model, p = { ...picks[tab] }, s = seed;
+      const runBtn = document.getElementById("run"), rerun = document.getElementById("rerun");
+      const prog = document.getElementById("progress"), bar = document.getElementById("progress-bar"), txt = document.getElementById("progress-text");
+      runBtn.disabled = rerun.disabled = true;
+      runBtn.textContent = "Running…";
+      prog.hidden = false; bar.value = 0; txt.textContent = "";
+      const t0 = performance.now();
+      results[m.key] = await simulate(m, p, s, {
+        onProgress: (i) => {
+          bar.value = i.batchDone;
+          txt.textContent = i.batchNo > 1 || Object.keys(p).length
+            ? `Batch ${i.batchNo}: ${PM.fmtInt(i.matched)} of ${PM.fmtInt(i.tried)} simulations match your picks so far`
+            : `${PM.fmtInt(i.tried)} of ${PM.fmtInt(BATCH)} simulations`;
+        },
+      });
+      results[m.key].ms = performance.now() - t0;
+      running = false;
+      runBtn.disabled = rerun.disabled = false;
+      runBtn.textContent = "Run 20,000 simulations";
+      prog.hidden = true;
+      if (m === model) render();
+    }
+
+    // Rendering -------------------------------------------------------------------
+    const mapEl = document.getElementById("map"), svg = document.getElementById("hexmap");
+    let hexEls = null;
+
+    function setup() {
+      model = modelFor(tab, matchupId);
+      tabsEl.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.tab === tab)));
+      document.getElementById("matchup-wrap").hidden = tab !== "president";
+      matchupSel.value = matchupId;
+      document.getElementById("pick-noun").textContent = model.noun;
+      const geo = model.map === "geo";
+      mapEl.hidden = !geo;
+      document.getElementById("hexmap-wrap").hidden = geo;
+      if (!geo && !hexEls) buildHex();
+      if (geo) { window.Plotly.purge(mapEl); mapEl._wired = false; }   // drawn fresh, at its visible size
+      document.getElementById("hist-title").textContent = tab === "president" ? "How many electoral votes?" : "How many seats?";
+      writeHash();
+      render();
+    }
+
+    function buildHex() {
+      hexEls = PM.buildHexMap(svg, H.districts);
+      svg.insertAdjacentHTML("afterbegin", `<defs>${["D", "R"].map((s) => `
+        <pattern id="hatch-${s}" patternUnits="userSpaceOnUse" width="0.55" height="0.55" patternTransform="rotate(45)">
+          <rect width="0.55" height="0.55" fill="${DEEP[s]}"/><rect width="0.2" height="0.55" fill="rgba(255,255,255,0.6)"/>
+        </pattern>`).join("")}</defs>`);
+      const byId = (el) => model.races.find((r) => r.key === el.dataset.id);
+      svg.addEventListener("click", (e) => { const h = e.target.closest(".hex"); if (h) { cycle(h.dataset.id); PM.hideTip(); } });
+      svg.addEventListener("keydown", (e) => {
+        const h = e.target.closest(".hex");
+        if (h && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); cycle(h.dataset.id); showHexTip(h); }
+      });
+      const showHexTip = (h) => { const r = h.getBoundingClientRect(); PM.showTip(hover(byId(h)), r.right, r.bottom); };
+      svg.addEventListener("mousemove", (e) => {
+        const h = e.target.closest(".hex");
+        if (h) PM.showTip(hover(byId(h)), e.clientX, e.clientY); else PM.hideTip();
+      });
+      svg.addEventListener("mouseleave", PM.hideTip);
+      svg.addEventListener("focusin", (e) => { const h = e.target.closest(".hex"); if (h) showHexTip(h); });
+      svg.addEventListener("focusout", PM.hideTip);
+      hexEls.forEach((el) => el.setAttribute("role", "button"));
+    }
+
+    // The chance shown for each race: the run's, if it's current; otherwise the forecast's
+    const shownP = (i) => { const r = current(); return r && r.matched ? r.p[i] : model.races[i].p; };
+    const hover = (race) => {
+      const i = model.races.indexOf(race), pick = picks[tab][race.key];
+      const head = `<b>${PM.esc(race.name)}</b>${model.map === "hex" ? ` (${race.key})` : ""}<br>${PM.esc(race.sub)}`;
+      if (pick) return head + `<br>Your pick: <b>${pick === "D" ? PM.esc(model.dem) : PM.esc(model.rep)} win</b>` +
+        `<br><span style="opacity:.75">Forecast: ${PM.fmtChance(race.p)} · click to ${pick === "D" ? "switch to Republicans" : "clear"}</span>`;
+      const r = current(), run = r && r.matched && Object.keys(r.picks).length;
+      return head + (run ? `<br>Your scenario: <b>${PM.fmtChance(shownP(i))}</b><br>Forecast: ${PM.fmtChance(race.p)}`
+        : `<br>Forecast: <b>${PM.fmtChance(race.p)}</b>`) + `<br><span style="opacity:.75">Click to pick ${tab === "president" ? PM.esc(model.dem) : "Democrats"}</span>`;
+    };
+
+    function render() {
+      const p = picks[tab], r = current(), n = Object.keys(p).length;
+      const scen = r && r.matched ? r : null;           // numbers from a run with these picks
+      const shown = scen || model.published;
+      const races = model.races;
+      const dName = tab === "president" ? model.dem : "Democrats", rName = tab === "president" ? model.rep : "Republicans";
+      const short = (side) => (tab === "president" ? PM.surname(side === "D" ? model.dem : model.rep) : side);
+
+      // Picks list, pick menu, hint
+      const sorted = Object.keys(p).sort();
+      document.getElementById("picks").innerHTML = n
+        ? `<span class="muted small">Your picks:</span>` + sorted.map((k) => `<span class="pick-chip ${p[k] === "D" ? "d" : "r"}">
+            <button type="button" data-flip="${k}" title="Switch party">${PM.esc(k)}: ${PM.esc(short(p[k]))}</button>
+            <button type="button" data-remove="${k}" aria-label="Remove ${PM.esc(k)}">×</button></span>`).join("") +
+          `<button type="button" class="btn small" data-clear>Clear picks</button>`
+        : `<span class="muted small">No picks yet: with nothing picked, the simulations reproduce the published forecast.</span>`;
+      const opts = [...races].sort((a, b) => Math.abs(a.p - 0.5) - Math.abs(b.p - 0.5));
+      pickSel.innerHTML = `<option value="">Closest first…</option>` + opts.map((x) => {
+        const cur = p[x.key];
+        return `<optgroup label="${PM.esc(x.label)}: ${PM.esc(x.name)} (forecast ${PM.fmtChance(x.p)})">` +
+          (cur !== "D" ? `<option value="${x.key}|D">${PM.esc(x.label)}: ${PM.esc(dName)} win</option>` : "") +
+          (cur !== "R" ? `<option value="${x.key}|R">${PM.esc(x.label)}: ${PM.esc(rName)} win</option>` : "") +
+          (cur ? `<option value="${x.key}|">${PM.esc(x.label)}: remove pick</option>` : "") + `</optgroup>`;
+      }).join("");
+      document.getElementById("hint").textContent =
+        `Click a ${model.noun} on the map to pick it: once for ${dName}, twice for ${rName}, a third time to clear. Then press Run.`;
+      document.getElementById("rerun").hidden = !r;
+
+      // Status line: what's being shown
+      const status = document.getElementById("status");
+      status.classList.remove("warn");
+      const over = tab !== "president" && electionOver
+        ? ` Election Day has passed: this uses the forecast as it stood on Election Day morning.` : "";
+      if (!r) {
+        status.innerHTML = (n ? `<strong>Press Run</strong> to see how your ${n === 1 ? "pick changes" : "picks change"} the odds. Until then, the numbers below are the published forecast.`
+          : `Showing the published forecast. Pick some ${model.noun === "state" ? "states" : "districts"}, or just press Run to check the simulation matches it.`) + over;
+      } else if (!r.matched) {
+        status.classList.add("warn");
+        status.innerHTML = `<strong>None of the ${PM.fmtInt(r.tried)} simulations matched your picks.</strong> The model thinks this scenario has less than a
+          1 in ${PM.fmtInt(r.tried)} chance, so it can't say anything about it. Try fewer or less lopsided picks. The numbers below are the published forecast.` + over;
+      } else {
+        const share = r.matched / r.tried;
+        const base = !n ? `Ran ${PM.fmtInt(r.tried)} simulations with nothing picked: these should match the published forecast within about a point.`
+          : `Based on <strong>${PM.fmtInt(r.matched)} matching simulations</strong> of ${PM.fmtInt(r.tried)}. Your ${n === 1 ? "pick" : "picks"} came true in
+            ${share < 0.001 ? "fewer than 0.1%" : (share * 100).toFixed(share < 0.1 ? 1 : 0) + "%"} of simulations.`;
+        if (n && r.matched < 200) {
+          status.classList.add("warn");
+          status.innerHTML = `<strong>Very unlikely scenario.</strong> Only ${PM.fmtInt(r.matched)} of ${PM.fmtInt(r.tried)} simulations
+            (${(share * 100).toFixed(share < 0.01 ? 2 : 1)}%) matched your picks, so the odds below are rough. Treat them as a sketch, not a number.` + over;
+        } else status.innerHTML = base + over;
+      }
+
+      // Bar: control odds, then every race grouped by its chance in this scenario
+      const bands = F26.settings.bands;
+      const bandOf = (q) => bands.find((b) => q >= b.min).band;
+      const segs = bands.map((b) => ({ band: b.band, label: b.label, ev: 0, keys: [] }));
+      const pickD = { label: "Your picks (D)", ev: 0, keys: [], color: DEEP.D }, pickR = { label: "Your picks (R)", ev: 0, keys: [], color: DEEP.R };
+      races.forEach((x, i) => {
+        const s = p[x.key] === "D" ? pickD : p[x.key] === "R" ? pickR : segs.find((g) => g.band === bandOf(shownP(i)));
+        s.ev += x.weight; s.keys.push(x.label);
+      });
+      const verb = tab === "president" ? "winning" : "control";
+      const was = (q) => (scen && n ? `chance of ${verb} (forecast: ${pct(q)})` : `chance of ${verb}`);
+      const NOT_UP = { D: "#6b7d99", R: "#9a6b6b" };
+      PM.renderEvBar(document.getElementById("bar"), {
+        total: model.total, threshold: model.barThreshold, thresholdLabel: model.thresholdLabel, unit: model.unit,
+        left: { name: model.dem, ev: pct(shown.d), color: PM.SHADES.D[0], sub: was(model.published.d) },
+        right: { name: model.rep, ev: pct(shown.r), color: PM.SHADES.R[0], sub: was(model.published.r) },
+        center: `<strong>${shown.median}–${model.total - shown.median}</strong>median ${model.units}`,
+        segments: [
+          ...(model.notUp ? [{ label: "Not up (D)", ev: model.notUp.D, color: NOT_UP.D, detail: "Seats not on the ballot this year" }] : []),
+          ...(pickD.ev ? [{ ...pickD, detail: pickD.keys.join(", ") }] : []),
+          ...segs.map((s) => ({ label: s.label, ev: s.ev, color: PM.BAND_COLORS[s.band], detail: s.keys.length > 40 ? `${s.keys.length} races` : s.keys.join(", ") })),
+          ...(pickR.ev ? [{ ...pickR, detail: pickR.keys.join(", ") }] : []),
+          ...(model.notUp ? [{ label: "Not up (R)", ev: model.notUp.R, color: NOT_UP.R, detail: "Seats not on the ballot this year" }] : []),
+        ],
+      });
+
+      // Map
+      if (model.map === "geo") renderGeo(); else renderHex();
+      PM.renderScale(document.getElementById("scale"), { left: "R 95%+", right: "D 95%+" });
+      document.getElementById("pick-key").innerHTML =
+        `<span><i class="pk pk-d"></i>Picked: ${PM.esc(dName)}</span><span><i class="pk pk-r"></i>Picked: ${PM.esc(rName)}</span>` +
+        (model.map === "geo" ? `<span class="muted">Picked ${model.noun}s are outlined and lettered</span>` : `<span class="muted">Picked districts are striped</span>`);
+
+      // Stats
+      const change = (now, then) => (scen && n ? `${pct(then)} → ${pct(now)}` : pct(now));
+      const win = tab === "president" ? "wins" : "control";
+      const unl = r ? r.matched / r.tried : null;
+      document.getElementById("stats").innerHTML = [
+        [`${PM.esc(tab === "president" ? model.dem : "Democrats")} ${win}`, change(shown.d, model.published.d), scen && n ? "forecast → your scenario" : "published forecast"],
+        [`${PM.esc(tab === "president" ? model.rep : "Republicans")} ${win}`, change(shown.r, model.published.r), scen && n ? "forecast → your scenario" : "published forecast"],
+        [`Median ${tab === "president" ? PM.esc(PM.surname(model.dem)) + " electoral votes" : "Democratic seats"}`, shown.median,
+          `80% of simulations: ${shown.lo}–${shown.hi}${scen && n ? ` (forecast: ${model.published.median})` : ""}`],
+        ["Simulations used", r ? PM.fmtInt(r.matched) : "—",
+          r ? (n ? `of ${PM.fmtInt(r.tried)} run; your picks came true in ${unl < 0.001 ? "<0.1%" : (unl * 100).toFixed(unl < 0.1 ? 1 : 0) + "%"}` : `nothing picked`) : "press Run"],
+      ].map(([l, v, note]) => `<div class="stat"><div class="label">${l}</div><div class="value">${v}</div><div class="note">${note}</div></div>`).join("");
+
+      // Histogram
+      document.getElementById("hist-note").textContent = (scen && n
+        ? `In the ${PM.fmtInt(scen.matched)} simulations where your picks come true. `
+        : `Across the forecast's ${PM.fmtInt(BATCH)} simulations. `) +
+        (tab === "president" ? `Blue: ${model.dem} wins.` : tab === "senate" ? "Democratic and independent seats; blue: Democrats control." : "Blue: Democrats control.");
+      PM.renderHistogram(document.getElementById("hist"), {
+        hist: shown.hist, threshold: model.threshold, thresholdLabel: model.histLabel, bin: model.bin,
+        label: tab === "president" ? `${model.dem} electoral votes` : "Democratic seats", unit: model.units,
+        ...(tab === "president" ? { demWins: `${model.dem} wins`, repWins: `${model.rep} wins (or a tie)` } : {}),
+      });
+
+      renderTable();
+    }
+
+    function renderGeo() {
+      const p = picks[tab], css = getComputedStyle(document.documentElement);
+      const ink = css.getPropertyValue("--ink").trim() || "#111";
+      const inRace = new Set(model.races.map((x) => x.state));
+      const rows = model.races.filter((x) => !p[x.key]).map((x) => ({ state: x.state, margin: shownP(model.races.indexOf(x)), hover: hover(x) }))
+        .concat(Object.keys(S.state_names).filter((s) => !inRace.has(s))
+          .map((s) => ({ state: s, color: PM.noRaceColor(), hover: `<b>${s}</b><br>No Senate race in 2026` })));
+      const extra = [];
+      ["D", "R"].forEach((side) => {
+        const rs = model.races.filter((x) => p[x.key] === side);
+        if (!rs.length) return;
+        extra.push({
+          type: "choropleth", locationmode: "USA-states", locations: rs.map((x) => x.state), z: rs.map(() => 1),
+          zmin: 0, zmax: 1, colorscale: [[0, DEEP[side]], [1, DEEP[side]]], showscale: false,
+          text: rs.map(hover), hovertemplate: "%{text}<extra></extra>", marker: { line: { color: ink, width: 2.5 } },
+        }, {
+          type: "scattergeo", locationmode: "USA-states", locations: rs.map((x) => x.state), mode: "text",
+          text: rs.map(() => side), textfont: { color: "#ffffff", size: 14, family: css.getPropertyValue("--sans") },
+          hoverinfo: "skip",
+        });
+      });
+      PM.renderMap(mapEl, rows, { zmin: PM.PROB_MIN, zmax: PM.PROB_MAX, extra });
+      if (!mapEl._wired) {
+        mapEl.on("plotly_click", (e) => {
+          const loc = e.points[0] && e.points[0].location;
+          const race = model.races.find((x) => x.state === loc);
+          if (race) { cycle(race.key); PM.hideTip(); }
+        });
+        mapEl._wired = true;
+      }
+    }
+
+    function renderHex() {
+      const p = picks[tab], idx = Object.fromEntries(model.races.map((x, i) => [x.key, i]));
+      hexEls.forEach((el) => {
+        const k = el.dataset.id, side = p[k];
+        el.setAttribute("fill", side ? `url(#hatch-${side})` : PM.probColor(shownP(idx[k])));
+        el.classList.toggle("picked", !!side);
+        el.setAttribute("aria-label", `${k}: ${side ? `picked ${side === "D" ? "Democrats" : "Republicans"}` : PM.fmtChance(shownP(idx[k]))}`);
+      });
+    }
+
+    function renderTable() {
+      const r = current(), scen = r && r.matched && Object.keys(r.picks).length ? r : null, p = picks[tab];
+      document.getElementById("table-note").textContent = scen
+        ? `Every ${model.noun === "state" ? "race" : "district"}, biggest change from the forecast first. Click a column to re-sort.`
+        : `Run a scenario with some picks to see what moves. Until then, this lists the forecast, closest race first.`;
+      const rows = model.races.map((x, i) => ({ ...x, now: scen ? scen.p[i] : x.p, pick: p[x.key] || "" }));
+      const cols = [
+        { key: "label", label: model.map === "hex" ? "District" : "State", render: (x) => `<strong>${PM.esc(x.label)}</strong> <span class="muted">${PM.esc(x.name)}</span>` },
+        { key: "p", label: "Forecast", num: true, sort: (x) => x.p, render: (x) => `<span class="${PM.probClass(x.p)}">${PM.fmtChance(x.p)}</span>` },
+        { key: "now", label: "Your scenario", num: true, sort: (x) => x.now,
+          render: (x) => x.pick ? `<span class="${x.pick === "D" ? "d" : "r"}">your pick: ${x.pick}</span>`
+            : `<span class="chip"><i style="background:${PM.probColor(x.now)}"></i><span class="${PM.probClass(x.now)}">${PM.fmtChance(x.now)}</span></span>` },
+        // with no scenario yet, "biggest change first" becomes closest race first
+        { key: "change", label: "Change (D)", num: true, sort: (x) => (x.pick ? null : scen ? Math.abs(x.now - x.p) : -Math.abs(x.p - 0.5)),
+          render: (x) => { if (x.pick || !scen) return `<span class="muted">—</span>`; const d = (x.now - x.p) * 100;
+            return Math.abs(d) < 0.5 ? `<span class="muted">0</span>` : `<span class="${d > 0 ? "d" : "r"}">${d > 0 ? "+" : "−"}${Math.abs(d).toFixed(0)} pts</span>`; } },
+      ];
+      if (tab === "president") cols.splice(1, 0, { key: "weight", label: "EV", num: true });
+      const el = document.getElementById("races");
+      el.innerHTML = "";
+      PM.sortableTable(el, cols, rows, { key: "change", dir: -1 });
+    }
+
+    const autoRun = readHash();
+    setup();
+    if (autoRun) go();
+    window.addEventListener("hashchange", () => { if (!running && readHash()) { setup(); go(); } else setup(); });
+    PM.onThemeChange(render);
+  })();
+  </script>
+</body>
+</html>

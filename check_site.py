@@ -64,8 +64,23 @@ if "forecast_2026" in data:
         dates = [p["date"] for p in f["history"][chamber]]
         # one point per day (two copies of a day means a botched merge of the history file)
         check(len(dates) == len(set(dates)), f"forecast_2026.js: {chamber} history has repeated days")
+# The playground reruns the simulation in the browser and needs these settings and every race's estimate
+for name in ("forecast_2026", "forecast_2028"):
+    if name in data:
+        st = data[name]["settings"]
+        regions = st.get("regions") or {}
+        check(st.get("t_df", 0) > 2, f"{name}.js: settings.t_df missing (the playground needs it)")
+        check(len({s for states in regions.values() for s in states}) == 51, f"{name}.js: settings.regions should cover 50 states + DC")
+if "forecast_2026" in data:
+    for chamber in ("senate", "house"):
+        check(all(isinstance(r.get("blended"), (int, float)) for r in data["forecast_2026"][chamber]["races"]),
+              f"forecast_2026.js: a {chamber} race has no blended estimate")
+        check(all(k in data["forecast_2026"][chamber]["sigma"] for k in ("national", "region", "race")),
+              f"forecast_2026.js: {chamber} sigma incomplete")
 if "forecast_2028" in data:
     f = data["forecast_2028"]
+    check(all(isinstance(s.get("blended"), (int, float)) and s.get("ev") for mu in f["matchups"] for s in mu["states"]),
+          "forecast_2028.js: a state has no blended estimate or electoral votes")
     check(len(f["matchups"]) > 0, "forecast_2028.js: no matchups")
     for mu in f["matchups"]:
         check(is_prob(mu["summary"]["p_dem"]), f"forecast_2028.js: {mu['id']} chance out of range")

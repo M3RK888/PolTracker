@@ -70,6 +70,11 @@ REGIONS = {
 }
 REGION_OF = {s: i for i, (_, states) in enumerate(REGIONS.items()) for s in states.split()}
 
+def regions_out() -> dict:
+    """The regions, for the playground page (which reruns the simulation in the browser)."""
+    return {name: states.split() for name, states in REGIONS.items()}
+
+
 # Probability bands for the seat bar, Democratic chance of winning (lower bound)
 BANDS = [(0.95, "Safe D"), (0.75, "Likely D"), (0.60, "Lean D"), (0.40, "Toss-up"),
          (0.25, "Lean R"), (0.05, "Likely R"), (0.0, "Safe R")]
@@ -310,6 +315,7 @@ def forecast_2026(markets: pd.DataFrame | None = None, appr: dict | None = None,
             "draws": N_DRAWS, "t_df": T_DF, "poll_days": POLL_DAYS, "market_share": MARKET_SHARE,
             "min_volume": MIN_VOLUME, "p_clamp": list(P_CLAMP), "incumbency": INCUMBENCY,
             "region_sd": REGION_SD, "midterm_base": MIDTERM_BASE, "midterm_slope": MIDTERM_SLOPE,
+            "regions": regions_out(),
             "bands": [{"band": b, "label": BAND_LABELS[b], "min": lo} for lo, b in BANDS],
         },
         "senate": senate, "house": house,
@@ -415,7 +421,7 @@ def forecast_2028() -> dict:
         "markets_fetched": markets["fetched_at"].max() if len(markets) else None,
         "settings": {"draws": N_DRAWS, "poll_days": POLL_DAYS, "approval_slope": PRES_APPROVAL_SLOPE,
                      "unemployment_slope": PRES_UNEMPLOYMENT_SLOPE, "shrink_days": PRES_SHRINK_DAYS,
-                     "min_volume": MIN_VOLUME, "region_sd": REGION_SD},
+                     "min_volume": MIN_VOLUME, "region_sd": REGION_SD, "t_df": T_DF, "regions": regions_out()},
         "matchups": out,
     }
 

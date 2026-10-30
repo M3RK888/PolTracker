@@ -244,3 +244,38 @@ select {
   .ev-bar-wrap { --bar-h: 34px; }
   .ev-center { display: none; }
 }
+
+/* Playground ----------------------------------------------------------------- */
+.pg-row { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: end; }
+.pg-row label { display: flex; flex-direction: column; gap: 4px; font-size: 12.5px; color: var(--ink-3); font-weight: 550; }
+.pg-row select { min-width: 200px; }
+.pg-buttons { display: flex; gap: 8px; flex-wrap: wrap; margin-left: auto; }
+.btn {
+  font: inherit; font-weight: 600; font-size: 14px; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--rule-strong); border-radius: 8px; padding: 8px 14px; cursor: pointer;
+}
+.btn:hover:not(:disabled) { border-color: var(--ink-2); }
+.btn:disabled { opacity: 0.6; cursor: progress; }
+.btn.primary { background: var(--accent); color: var(--surface); border-color: var(--accent); }
+.btn.small { font-size: 13px; padding: 4px 10px; }
+.pg-picks { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin-top: 14px; min-height: 30px; }
+.pick-chip { display: inline-flex; align-items: stretch; border: 1.5px solid currentColor; border-radius: 999px; overflow: hidden; font-size: 13px; }
+.pick-chip button { font: inherit; font-weight: 650; color: inherit; background: none; border: 0; padding: 4px 10px; cursor: pointer; }
+.pick-chip button + button { border-left: 1px solid currentColor; padding: 4px 9px; }
+.pick-chip button:hover { background: var(--bg); }
+.pg-progress { display: flex; align-items: center; gap: 10px; margin-top: 12px; font-size: 13px; color: var(--ink-2); }
+.pg-progress progress { width: min(240px, 40vw); accent-color: var(--ink); }
+.pg-hint { margin: 10px 0 0; }
+.notice.warn { border-left-color: var(--rep); }
+.pg-key { justify-content: center; }
+.pg-key .pk { width: 14px; height: 14px; border: 2px solid var(--ink); }
+.pg-key .pk-d { background: #053061; }
+.pg-key .pk-r { background: #67001f; }
+#hexmap .hex[role="button"] { cursor: pointer; }
+#hexmap .hex.picked { stroke: var(--ink); stroke-width: 0.16; }
+.pg-table { max-height: 560px; overflow-y: auto; }
+@media (max-width: 560px) {
+  .pg-buttons { margin-left: 0; width: 100%; }
+  .pg-buttons .btn.primary { flex: 1; }
+  .pg-row label, .pg-row select { width: 100%; }
+}

@@ -15,7 +15,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="assets/style.css?v=d9c7d894">
+  <link rel="stylesheet" href="assets/style.css?v=eb39618b">
 </head>
 <body data-view="forecast">
   <header class="site-header">
@@ -25,6 +25,7 @@
         <a href="index.html">2028</a>
         <a href="senate.html">Senate</a>
         <a href="house.html" aria-current="page">House</a>
+        <a href="playground.html">Playground</a>
         <a href="history.html">Past elections</a>
         <a href="polls.html">Polls</a>
         <a href="accuracy.html">Accuracy</a>
@@ -152,9 +153,9 @@
 
   <footer class="site-footer"><div class="wrap">Districts, candidates and Cook PVI from Wikipedia's 2026 House elections article (read from its exact page source); generic ballot from the aggregators linked above. Market prices from Polymarket and Kalshi's public data; approval from Wikipedia's average of approval trackers.</div></footer>
 
-  <script src="assets/common.js?v=a4216483"></script>
+  <script src="assets/common.js?v=204cd6ce"></script>
   <script src="data/house.js?v=b86acbf9"></script>
-  <script src="data/forecast_2026.js?v=b18013fd"></script>
+  <script src="data/forecast_2026.js?v=e50e333c"></script>
   <script>
   (function () {
     const H = window.HOUSE, F = window.FORECAST_2026, FH = F.house, sm = FH.summary, w = F.weights;
@@ -162,7 +163,6 @@
     const color = Object.fromEntries(H.ratings.map((r) => [r.name, r.color]));
     const D = H.districts;
     const fc = Object.fromEntries(FH.races.map((r) => [r.key, r]));
-    const byCell = new Map(D.map((d) => [`${d.q},${d.r}`, d]));
     const NAMES = H.state_names;
     const cands = (d) => [d.dem && `${d.dem} (D)`, d.rep && `${d.rep} (R)`, d.others].filter(Boolean).join(", ") || "—";
     const pvi = (p) => (p === 0 ? "EVEN" : `${p > 0 ? "D" : "R"}+${Math.abs(p)}`);
@@ -199,39 +199,9 @@
           `averages, approval and market prices as they stood then (with today's list of candidates).` : "");
     };
 
-    // Hex map (pointy-top hexagons in axial coordinates)
-    const R3 = Math.sqrt(3);
-    const center = (d) => [R3 * (d.q + d.r / 2), 1.5 * d.r];
-    const corner = (cx, cy, i) => [cx + Math.cos(Math.PI / 180 * (60 * i - 30)), cy + Math.sin(Math.PI / 180 * (60 * i - 30))];
-    const DIRS = [[1, 0], [0, 1], [-1, 1], [-1, 0], [0, -1], [1, -1]];   // edge i joins corners i and i+1
-    const pts = D.map(center);
-    const minX = Math.min(...pts.map((p) => p[0])) - 1.2, maxX = Math.max(...pts.map((p) => p[0])) + 1.2;
-    const minY = Math.min(...pts.map((p) => p[1])) - 1.2, maxY = Math.max(...pts.map((p) => p[1])) + 1.2;
+    // Hex map
     const svg = document.getElementById("hexmap");
-    svg.setAttribute("viewBox", `${minX} ${minY} ${maxX - minX} ${maxY - minY}`);
-
-    let hexes = "", borders = "";
-    D.forEach((d) => {
-      const [cx, cy] = center(d);
-      const poly = [0, 1, 2, 3, 4, 5].map((i) => corner(cx, cy, i).map((v) => v.toFixed(3)).join(",")).join(" ");
-      hexes += `<polygon class="hex" data-id="${d.id}" points="${poly}" tabindex="0"/>`;
-      DIRS.forEach(([dq, dr], i) => {
-        const n = byCell.get(`${d.q + dq},${d.r + dr}`);
-        if (!n || n.state !== d.state) {
-          const [a, b] = [corner(cx, cy, i), corner(cx, cy, (i + 1) % 6)];
-          borders += `M${a[0].toFixed(3)} ${a[1].toFixed(3)}L${b[0].toFixed(3)} ${b[1].toFixed(3)}`;
-        }
-      });
-    });
-    const labels = [...new Set(D.map((d) => d.state))].map((st) => {
-      const ps = D.filter((d) => d.state === st).map(center);
-      // label the hex nearest the state's middle, so it sits on the state
-      const mx = ps.reduce((s, p) => s + p[0], 0) / ps.length, my = ps.reduce((s, p) => s + p[1], 0) / ps.length;
-      const [x, y] = ps.reduce((b, p) => (Math.hypot(p[0] - mx, p[1] - my) < Math.hypot(b[0] - mx, b[1] - my) ? p : b));
-      return `<text x="${x}" y="${y}" class="hex-label">${st}</text>`;
-    }).join("");
-    svg.innerHTML = `<g>${hexes}</g><path class="hex-border" d="${borders}"/><g>${labels}</g>`;
-    const hexEls = [...svg.querySelectorAll(".hex")];
+    const hexEls = PM.buildHexMap(svg, D);
 
     // Results (after Election Day)
     const RES = H.results || {};

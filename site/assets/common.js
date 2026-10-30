@@ -113,6 +113,7 @@
   // rows: [{state, margin, hover}]; rows with color set (e.g. third-party wins)
   // are drawn as a separate flat-colored layer.
   // opts: { zmin, zmax } to color by something other than margin (e.g. win probability 0..1)
+  //       extra: more Plotly traces drawn on top (e.g. outlines and labels for the playground's picks)
   PM.renderMap = (el, rows, opts = {}) => {
     const css = getComputedStyle(document.documentElement);
     const border = css.getPropertyValue("--surface").trim() || "#fff";
@@ -142,6 +143,7 @@
         zmin: 0, zmax: 1, colorscale: [[0, c], [1, c]],
       });
     });
+    traces.push(...(opts.extra || []));
     const layout = {
       geo: {
         scope: "usa", projection: { type: "albers usa" },
@@ -155,6 +157,44 @@
     };
     window.Plotly.react(el, traces, layout, { displayModeBar: false, responsive: true, scrollZoom: false });
     return el;
+  };
+
+  // House hex map: one pointy-top hexagon per district (axial coordinates d.q, d.r),
+  // a line around each state and the state's label. Returns the hexagons, in the
+  // same order as districts; the page colors them and wires up hovering.
+  PM.buildHexMap = (svg, districts) => {
+    const R3 = Math.sqrt(3);
+    const center = (d) => [R3 * (d.q + d.r / 2), 1.5 * d.r];
+    const corner = (cx, cy, i) => [cx + Math.cos(Math.PI / 180 * (60 * i - 30)), cy + Math.sin(Math.PI / 180 * (60 * i - 30))];
+    const DIRS = [[1, 0], [0, 1], [-1, 1], [-1, 0], [0, -1], [1, -1]];   // edge i joins corners i and i+1
+    const byCell = new Map(districts.map((d) => [`${d.q},${d.r}`, d]));
+    const pts = districts.map(center);
+    const minX = Math.min(...pts.map((p) => p[0])) - 1.2, maxX = Math.max(...pts.map((p) => p[0])) + 1.2;
+    const minY = Math.min(...pts.map((p) => p[1])) - 1.2, maxY = Math.max(...pts.map((p) => p[1])) + 1.2;
+    svg.setAttribute("viewBox", `${minX} ${minY} ${maxX - minX} ${maxY - minY}`);
+
+    let hexes = "", borders = "";
+    districts.forEach((d) => {
+      const [cx, cy] = center(d);
+      const poly = [0, 1, 2, 3, 4, 5].map((i) => corner(cx, cy, i).map((v) => v.toFixed(3)).join(",")).join(" ");
+      hexes += `<polygon class="hex" data-id="${d.id}" points="${poly}" tabindex="0"/>`;
+      DIRS.forEach(([dq, dr], i) => {
+        const n = byCell.get(`${d.q + dq},${d.r + dr}`);
+        if (!n || n.state !== d.state) {
+          const [a, b] = [corner(cx, cy, i), corner(cx, cy, (i + 1) % 6)];
+          borders += `M${a[0].toFixed(3)} ${a[1].toFixed(3)}L${b[0].toFixed(3)} ${b[1].toFixed(3)}`;
+        }
+      });
+    });
+    const labels = [...new Set(districts.map((d) => d.state))].map((st) => {
+      const ps = districts.filter((d) => d.state === st).map(center);
+      // label the hex nearest the state's middle, so it sits on the state
+      const mx = ps.reduce((s, p) => s + p[0], 0) / ps.length, my = ps.reduce((s, p) => s + p[1], 0) / ps.length;
+      const [x, y] = ps.reduce((b, p) => (Math.hypot(p[0] - mx, p[1] - my) < Math.hypot(b[0] - mx, b[1] - my) ? p : b));
+      return `<text x="${x}" y="${y}" class="hex-label">${st}</text>`;
+    }).join("");
+    svg.innerHTML = `<g>${hexes}</g><path class="hex-border" d="${borders}"/><g>${labels}</g>`;
+    return [...svg.querySelectorAll(".hex")];
   };
 
   // Grey for states with nothing on the ballot (theme-aware)

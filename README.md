@@ -10,6 +10,12 @@ Election Day 2026 the Senate and House pages add a **Results** view. The forecas
 hobby model; the [Accuracy page](https://m3rk888.github.io/PolTracker/accuracy.html) shows how it has
 done on past elections.
 
+The [Playground](https://m3rk888.github.io/PolTracker/playground.html) reruns the forecast's 20,000
+simulations in the browser: pick who wins some states (or House districts) and it keeps only the
+simulations where those picks come true, so you can see how the rest of the map and the odds of control
+move. The simulation itself is `site/assets/sim.js`; open `playground.html?selftest` to check it
+against the published forecast.
+
 ## How it works
 
 ```
