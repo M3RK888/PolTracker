@@ -78,6 +78,25 @@ def test_duplicate_polling_heading():
     assert len(rows) == 1 and rows[0]["values"] == {"Ken Paxton": 45.0, "James Talarico": 49.0}
 
 
+def test_hypothetical_footnote_does_not_end_the_polls():
+    # Alaska, Oct 2026: a footnote on a real poll says "Hypothetical scenario...". Only the
+    # "Hypothetical polling" box below the real polls should end them.
+    head = ["== General election ==", "=== Polling ===",
+            "{| class=\"wikitable\"", "! Poll source", "! Date(s)<br />administered", "! Sample<br />size",
+            "! Margin<br />of error", "! Dan S.<br />Sullivan (R)", "! Mary<br />Peltola (D)"]
+    poll = lambda who, n, dates, s, p: ["|-", f"| {who}", f"| {dates}", f"| {n} (LV)", "| ± 3%", f"| {s}%", f"| {p}%"]
+    page = (head + poll("Data for Progress (D)", 694, "October 8–16, 2026", 44, 47)
+            + ["|-", '| Data for Progress (D){{efn|name="Sullivan Hypothetical"|Hypothetical scenario where voters '
+               'who ranked Dan J. Sullivan are instead distributed to Dan S. Sullivan}}',
+               "| October 8–16, 2026", "| 660 (LV)", "| ± 4%", "| 50%", "| 50%"]
+            + poll("InsiderAdvantage (R)", 1200, "October 9–10, 2026", 43, 48) + ["|}",
+            "{{hidden begin|titlestyle=background:#cff|title=Hypothetical polling}}"]
+            + head[2:] + poll("Someone", 500, "June 1–2, 2026", 40, 40) + ["|}", "=== Results ==="])
+    pollsters = [r["pollster"] for r in fm.general_election_poll_rows(page)]
+    assert "InsiderAdvantage (R)" in pollsters                 # below the footnote: still read
+    assert "Someone" not in pollsters                          # inside the hypothetical box: not read
+
+
 def test_keep_previous_polls_when_a_race_vanishes():
     old = [{"state": "TX", "pollster": f"P{i}"} for i in range(6)] + [{"state": "IA", "pollster": "Q"}]
     new = [{"state": "IA", "pollster": "Q"}, {"state": "IA", "pollster": "R"}]

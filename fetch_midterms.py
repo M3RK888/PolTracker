@@ -112,11 +112,18 @@ def surname(name: str) -> str:
 # ---------------------------------------------------------------------------
 # Senate
 # ---------------------------------------------------------------------------
+# Where the hypothetical-matchup polls (other possible nominees) begin: a collapsible box
+# titled "Hypothetical polling", a bold label, or a heading. Not just the word anywhere:
+# Alaska's article has a footnote on a real poll reading "Hypothetical scenario where voters
+# who ranked Dan J. Sullivan...", and stopping there skipped every poll below it.
+HYPOTHETICAL = re.compile(r"title\s*=\s*['\"]?\s*Hypothetical|^\s*'''+\s*Hypothetical|^=+\s*Hypothetical|^;\s*Hypothetical", re.I)
+
+
 def general_election_poll_rows(lines: list[str]) -> list[dict]:
     """Poll rows from every "Polling" heading under "General election". Usually there's
     one, but editors sometimes leave a duplicate (on Oct 28, 2026 the Texas article had an
     empty "Polling" heading right above the real one, and reading only the first lost all
-    65 Texas polls). Stops at hypothetical matchups (other possible nominees)."""
+    65 Texas polls). Stops where the hypothetical matchups begin (see HYPOTHETICAL)."""
     g0, g1 = w.section(lines, r"^General election$", 2)
     rows, start = [], g0
     while g0 >= 0:
@@ -124,7 +131,7 @@ def general_election_poll_rows(lines: list[str]) -> list[dict]:
         if p0 < 0 or p0 >= g1:
             break
         seg = lines[p0:min(p1, g1)]
-        hyp = next((i for i, l in enumerate(seg) if re.search(r"hypothetical", l, re.I)), len(seg))
+        hyp = next((i for i, l in enumerate(seg) if HYPOTHETICAL.search(l)), len(seg))
         for t in w.tables(seg[:hyp]):
             rows += w.poll_rows(t)
         start = p0 + 1
