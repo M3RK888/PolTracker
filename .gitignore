@@ -4,3 +4,4 @@ data/.cache/
 .pytest_cache/
 .claude/
 build.log
+fetch_warnings.txt

@@ -9,19 +9,26 @@
 #   then:               rebuild the site data (adds today's tracker points), test, commit, publish
 #
 # A failed fetch keeps the previous day's data and shows a warning on the run;
-# the build and the daily tracker point still happen.
+# the build and the daily tracker point still happen. Failed fetches and suspicious
+# data (fetch_midterms.py's day-over-day comparison) open a GitHub issue, which emails the owner.
 name: Daily data refresh
 
 on:
   schedule:
     - cron: "0 11 * * *"     # 11:00 UTC: 7am Eastern (6am after clocks change), before any polls close
   workflow_dispatch:         # "Run workflow" button on the Actions tab
+    inputs:
+      test_report:
+        description: "Send a test data-check report (opens or comments on the GitHub issue)"
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths: [".github/workflows/refresh.yml"]   # runs once whenever this file changes, as a test
 
 permissions:
   contents: write            # to commit the refreshed data
+  issues: write              # to report suspicious data as a GitHub issue
   pages: write               # for the publish step
   id-token: write
 
@@ -51,11 +58,16 @@ jobs:
         run: |
           python fetch_midterms.py || {
             echo "::warning::fetch_midterms.py failed; keeping yesterday's Senate/House data"
+            echo "- fetch_midterms.py failed its own checks, so the site kept yesterday's Senate/House data. See this run's log." >> fetch_warnings.txt
             git checkout -- data/senate_2026_races.csv data/senate_2026_polls.csv data/house_2026_districts.csv data/generic_ballot_2026.csv
           }
 
       - name: Market prices, approval, unemployment
-        run: python fetch_markets.py || echo "::warning::fetch_markets.py couldn't update anything"
+        run: |
+          python fetch_markets.py || {
+            echo "::warning::fetch_markets.py couldn't update anything"
+            echo "- fetch_markets.py couldn't update market prices, approval or unemployment; the forecast used yesterday's." >> fetch_warnings.txt
+          }
 
       - name: Election results and score
         if: steps.when.outputs.after == 'yes'
@@ -77,6 +89,32 @@ jobs:
           git commit -m "Daily data refresh" -m "$summary"
           git pull --rebase origin main
           git push origin HEAD:main
+
+      # If the data looked wrong (a race's polls dropped by half or more, a matchup changed,
+      # or a fetch failed), open a GitHub issue so the owner gets an email. One open issue
+      # at a time: later days add a comment to it instead of opening another.
+      - name: Report anything that looked wrong
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ inputs.test_report }}" = "true" ]; then
+            echo "- TEST: this is a test of the data-check report, started from the Run workflow button. Nothing is wrong; close this issue." >> fetch_warnings.txt
+          fi
+          [ -s fetch_warnings.txt ] || { echo "No data warnings"; exit 0; }
+          {
+            echo "The daily refresh on $(TZ=America/New_York date +%F) found something that looks like a misread page:"
+            echo
+            cat fetch_warnings.txt
+            echo
+            echo "Races whose polls dropped were kept with yesterday's polls as well, so the site didn't lose them."
+            echo "Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          } > issue.md
+          gh label create data-check --color d93f0b --description "Daily refresh found suspicious data" --force
+          open=$(gh issue list --label data-check --state open --json number --jq '.[0].number')
+          if [ -n "$open" ]; then gh issue comment "$open" --body-file issue.md
+          else gh issue create --title "Data check: something looked wrong in the daily refresh" --label data-check --body-file issue.md
+          fi
 
   publish:
     needs: refresh

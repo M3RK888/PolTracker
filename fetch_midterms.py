@@ -138,15 +138,35 @@ def general_election_poll_rows(lines: list[str]) -> list[dict]:
     return rows
 
 
-def keep_previous_polls(new: list[dict], old: list[dict], min_old: int = 5) -> tuple[list[dict], list[str]]:
-    """If a race that had at least `min_old` polls in the last saved file now has none,
-    something went wrong reading its page (polls don't disappear). Keep that race's
-    previous polls instead and report it. Returns (polls, states kept from before)."""
-    old_by_state, new_states = {}, {p["state"] for p in new}
-    for p in old:
-        old_by_state.setdefault(p["state"], []).append(p)
-    kept = sorted(s for s, ps in old_by_state.items() if len(ps) >= min_old and s not in new_states)
-    return new + [p for s in kept for p in old_by_state[s]], kept
+def keep_previous_polls(new: list[dict], old: list[dict], min_old: int = 5,
+                        drop: float = 0.5) -> tuple[list[dict], list[str]]:
+    """Polls get added to a race's article, almost never removed. So if a race that had at
+    least `min_old` polls in the last saved file now has fewer than half as many (or none),
+    its page was probably misread (Texas, Oct 28, 2026: 65 -> 0; Alaska: one footnote cut
+    27 polls to 1). For those races, keep yesterday's polls alongside today's so the site
+    doesn't lose them, and report the race. Returns (polls, states flagged)."""
+    by_state = lambda ps: {s: [p for p in ps if p["state"] == s] for s in {p["state"] for p in ps}}
+    old_by, new_by = by_state(old), by_state(new)
+    flagged = sorted(s for s, ps in old_by.items()
+                     if len(ps) >= min_old and len(new_by.get(s, [])) < drop * len(ps))
+    out = list(new)
+    for s in flagged:
+        have = {(p["pollster"], p["end_date"]) for p in new_by.get(s, [])}
+        out += [p for p in old_by[s] if (p["pollster"], p["end_date"]) not in have]
+    return out, flagged
+
+
+def matchup_changes(new_races: list[dict], old_races: list[dict]) -> list[str]:
+    """Races whose main matchup (the Republican and their main opponent) differs from the
+    last saved file. Nominees don't change two weeks out, so this usually means a misread page."""
+    old = {r["state"] + ("-special" if str(r.get("special")) == "True" else ""): r for r in old_races}
+    out = []
+    for r in new_races:
+        o = old.get(r["state"] + ("-special" if r["special"] else ""))
+        if o and (o["rep_candidate"], o["opp_candidate"]) != (r["rep_candidate"], r["opp_candidate"]):
+            out.append(f"{r['state_name']}: matchup changed from {o['opp_candidate']} vs {o['rep_candidate']} "
+                       f"to {r['opp_candidate']} vs {r['rep_candidate']}")
+    return out
 
 
 def senate(year: int = 2026, refresh: bool = True, with_polls: bool = True) -> tuple[list[dict], list[dict]]:
@@ -312,13 +332,22 @@ def check(races, polls, districts, generic) -> None:
 if __name__ == "__main__":
     races, polls = senate()
     districts, generic = house()
-    previous = Path("data/senate_2026_polls.csv")
-    if previous.exists():
-        with open(previous, encoding="utf-8") as f:
-            polls, kept = keep_previous_polls(polls, list(csv.DictReader(f)))
-        for s in kept:
-            print(f"WARNING: no polls read for {s} today, though it had polls before. "
-                  f"Kept its previous polls; check its Wikipedia article.", file=sys.stderr)
+    # Compare with the last saved data, to catch a misread page (see keep_previous_polls).
+    # Anything found goes to fetch_warnings.txt; the daily refresh turns that into a GitHub issue.
+    warnings = []
+    read = lambda p: list(csv.DictReader(open(p, encoding="utf-8"))) if Path(p).exists() else []
+    old_polls, old_races = read("data/senate_2026_polls.csv"), read("data/senate_2026_races.csv")
+    before = Counter(p["state"] for p in old_polls)
+    today_n = Counter(p["state"] for p in polls)
+    polls, flagged = keep_previous_polls(polls, old_polls)
+    names = {r["state"]: r["state_name"] for r in races}
+    for s in flagged:
+        warnings.append(f"{names.get(s, s)}: {today_n[s]} polls read today, {before[s]} yesterday. "
+                        f"Kept yesterday's polls too; check the race's Wikipedia article and the parser.")
+    warnings += matchup_changes(races, old_races)
+    Path("fetch_warnings.txt").write_text("".join(f"- {w}\n" for w in warnings), encoding="utf-8")
+    for w in warnings:
+        print(f"WARNING: {w}", file=sys.stderr)
     check(races, polls, districts, generic)
     write_csv("data/senate_2026_races.csv", races,
               ["state", "state_name", "special", "pvi", "incumbent", "incumbent_party",

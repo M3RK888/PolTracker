@@ -98,13 +98,32 @@ def test_hypothetical_footnote_does_not_end_the_polls():
 
 
 def test_keep_previous_polls_when_a_race_vanishes():
-    old = [{"state": "TX", "pollster": f"P{i}"} for i in range(6)] + [{"state": "IA", "pollster": "Q"}]
-    new = [{"state": "IA", "pollster": "Q"}, {"state": "IA", "pollster": "R"}]
+    old = [{"state": "TX", "pollster": f"P{i}", "end_date": "2026-10-01"} for i in range(6)] \
+        + [{"state": "IA", "pollster": "Q", "end_date": "2026-10-01"}]
+    new = [{"state": "IA", "pollster": "Q", "end_date": "2026-10-01"}, {"state": "IA", "pollster": "R", "end_date": "2026-10-02"}]
     polls, kept = fm.keep_previous_polls(new, old)
     assert kept == ["TX"]                                    # Texas lost all 6: restored
     assert sum(p["state"] == "TX" for p in polls) == 6
     assert sum(p["state"] == "IA" for p in polls) == 2       # Iowa's fresh polls untouched
     assert fm.keep_previous_polls(new, old[:3] + old[6:])[1] == []   # too few before to judge
+
+
+def test_keep_previous_polls_when_a_race_mostly_vanishes():
+    # Alaska, Oct 2026: a footnote cut 27 polls to 1. Keep yesterday's alongside today's.
+    old = [{"state": "AK", "pollster": f"P{i}", "end_date": f"2026-10-{i + 1:02d}"} for i in range(8)]
+    new = [old[7], {"state": "AK", "pollster": "New", "end_date": "2026-10-20"}]
+    polls, flagged = fm.keep_previous_polls(new, old)
+    assert flagged == ["AK"] and len(polls) == 9              # 8 old (one already in today's) + 1 new
+    grown = old + [{"state": "AK", "pollster": "New", "end_date": "2026-10-20"}]
+    assert fm.keep_previous_polls(grown[2:], old)[1] == []    # a normal day: 7 of 8 kept + 1 new, not flagged
+
+
+def test_matchup_changes():
+    old = [{"state": "NE", "special": "False", "rep_candidate": "Pete Ricketts", "opp_candidate": "Dan Osborn"}]
+    same = [{"state": "NE", "state_name": "Nebraska", "special": False, "rep_candidate": "Pete Ricketts", "opp_candidate": "Dan Osborn"}]
+    moved = [{**same[0], "opp_candidate": "Someone Else"}]
+    assert fm.matchup_changes(same, old) == []
+    assert fm.matchup_changes(moved, old) == ["Nebraska: matchup changed from Dan Osborn vs Pete Ricketts to Someone Else vs Pete Ricketts"]
 
 
 def test_generic_ballot_table():
