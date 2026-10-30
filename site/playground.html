@@ -48,7 +48,7 @@
         <label><span>Pick a <span id="pick-noun">state</span></span> <select id="pick-select"></select></label>
         <div class="pg-buttons">
           <button type="button" class="btn primary" id="run">Run 20,000 simulations</button>
-          <button type="button" class="btn" id="rerun" hidden title="Same picks, fresh random draws">Run again</button>
+          <button type="button" class="btn" id="rerun" hidden title="Same picks, fresh random numbers: shows how much of the result is luck">Try new random draws</button>
         </div>
       </div>
       <div class="pg-picks" id="picks" aria-live="polite"></div>
@@ -99,7 +99,7 @@
         in batches of 20,000 until at least 2,000 match (or 400,000 have been tried), and tells you how many it used.
         If fewer than 200 match, the model thinks your scenario is very unlikely, and the odds are too rough to trust.</p>
       <p><strong>Same picks, same answer.</strong> The random draws are seeded, so running the same picks again (or
-        opening a shared link) gives the same numbers. <em>Run again</em> uses fresh draws, which shows how much is noise.
+        opening a shared link) gives the same numbers. <em>Try new random draws</em> reruns your picks with fresh random numbers; how much the odds wiggle shows how much of the result is luck.
         The picks are saved in the page's address, so you can copy it to share a scenario.</p>
       <p>More about the model on the <a href="senate.html#forecast">Senate</a>, <a href="house.html#forecast">House</a>
         and <a href="index.html">2028</a> pages.</p>
@@ -263,7 +263,7 @@
     const results = {};          // model key -> last run
     let tab = "senate", matchupId = F28.matchups[0].id, seed = 1, running = false, model;
 
-    // URL hash: #senate&d=TX,GA&r=OH  (2028 adds m=<matchup>; seed=N after "Run again")
+    // URL hash: #senate&d=TX,GA&r=OH  (2028 adds m=<matchup>; seed=N after "Try new random draws")
     const readHash = () => {
       const parts = PM.hashParts();
       tab = parts.find((p) => p in TABS) || "senate";
