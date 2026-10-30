@@ -61,6 +61,9 @@ if "forecast_2026" in data:
         check(len(c["races"]) == n, f"forecast_2026.js: {chamber} has {len(c['races'])} races, expected {n}")
         check(all(is_prob(r["p_dem"]) for r in c["races"]), f"forecast_2026.js: a {chamber} race's chance is out of range")
         check(len(f["history"][chamber]) > 0, f"forecast_2026.js: no {chamber} history for the tracker")
+        dates = [p["date"] for p in f["history"][chamber]]
+        # one point per day (two copies of a day means a botched merge of the history file)
+        check(len(dates) == len(set(dates)), f"forecast_2026.js: {chamber} history has repeated days")
 if "forecast_2028" in data:
     f = data["forecast_2028"]
     check(len(f["matchups"]) > 0, "forecast_2028.js: no matchups")
@@ -69,6 +72,13 @@ if "forecast_2028" in data:
         check(len(mu["states"]) == 51, f"forecast_2028.js: {mu['id']} has {len(mu['states'])} states, expected 51")
 if "forecast" in data:
     check(any(m["available"] for m in data["forecast"]["matchups"]), "forecast.js: no matchup has a map")
+
+# No data file may contain unresolved git merge-conflict markers
+# (on Oct 30, 2026 a conflicted data/forecast_history.csv was committed and published)
+for path in list(Path("data").glob("*.csv")) + list((SITE / "data").glob("*.js")):
+    text = path.read_text(encoding="utf-8")
+    if re.search(r"^(<<<<<<<|>>>>>>>) ", text, re.M):
+        problems.append(f"{path}: unresolved merge conflict")
 
 # Every local file a page links to must exist
 for page in SITE.glob("*.html"):
