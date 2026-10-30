@@ -246,6 +246,7 @@ select {
 }
 
 /* Playground ----------------------------------------------------------------- */
+.pg-controls [hidden] { display: none !important; }   /* the flex rules below would otherwise show hidden controls */
 .pg-row { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: end; }
 .pg-row label { display: flex; flex-direction: column; gap: 4px; font-size: 12.5px; color: var(--ink-3); font-weight: 550; }
 .pg-row select { min-width: 200px; }
