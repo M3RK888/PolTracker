@@ -1,861 +1,861 @@
 race,source,probability_dem,volume,label,fetched_at
-control:house,Kalshi,0.9355,91278497,Who will control the House?,2026-11-01T16:58Z
-control:house,Polymarket,0.945,35704709,Which party will win the House in 2026?,2026-11-01T16:58Z
-control:president,Kalshi,0.615,620078,2028 Presidential Election winner? (Party),2026-11-01T16:58Z
-control:president,Polymarket,0.655,2540099,Which party wins 2028 US Presidential Election?,2026-11-01T16:58Z
-control:senate,Kalshi,0.715,25398108,Who will control the Senate?,2026-11-01T16:58Z
-control:senate,Polymarket,0.725,13804746,Which party will win the Senate in 2026?,2026-11-01T16:58Z
-house:AK-AL,Polymarket,0.205,69657,AK-AL House Election Winner,2026-11-01T16:58Z
-house:AL-01,Kalshi,0.015,3025,AL-01 House winner?,2026-11-01T16:58Z
-house:AL-01,Polymarket,0.007,49782,AL-01 House Election Winner,2026-11-01T16:58Z
-house:AL-02,Kalshi,0.415,483171,AL-02 House winner?,2026-11-01T16:58Z
-house:AL-02,Polymarket,0.43,246571,AL-02 House Election Winner,2026-11-01T16:58Z
-house:AL-03,Kalshi,0.0115,15701,AL-03 House winner?,2026-11-01T16:58Z
-house:AL-03,Polymarket,0.0145,45091,AL-03 House Election Winner,2026-11-01T16:58Z
-house:AL-04,Kalshi,0.015,2646,AL-04 House winner?,2026-11-01T16:58Z
-house:AL-04,Polymarket,0.005,38951,AL-04 House Election Winner,2026-11-01T16:58Z
-house:AL-05,Kalshi,0.0395,8031,AL-05 House winner?,2026-11-01T16:58Z
-house:AL-05,Polymarket,0.0325,71427,AL-05 House Election Winner,2026-11-01T16:58Z
-house:AL-06,Kalshi,0.014,2367,AL-06 House winner?,2026-11-01T16:58Z
-house:AL-06,Polymarket,0.0305,27238,AL-06 House Election Winner,2026-11-01T16:58Z
-house:AL-07,Kalshi,0.985,16507,AL-07 House winner?,2026-11-01T16:58Z
-house:AL-07,Polymarket,0.9915,95644,AL-07 House Election Winner,2026-11-01T16:58Z
-house:AR-01,Kalshi,0.0125,22236,AR-01 House winner?,2026-11-01T16:58Z
-house:AR-01,Polymarket,0.0065,27382,AR-01 House Election Winner,2026-11-01T16:58Z
-house:AR-02,Kalshi,0.175,126473,AR-02 House winner?,2026-11-01T16:58Z
-house:AR-02,Polymarket,0.18,94790,AR-02 House Election Winner,2026-11-01T16:58Z
-house:AR-03,Kalshi,0.0135,9383,AR-03 House winner?,2026-11-01T16:58Z
-house:AR-03,Polymarket,0.0135,39620,AR-03 House Election Winner,2026-11-01T16:58Z
-house:AR-04,Kalshi,0.0115,4976,AR-04 House winner?,2026-11-01T16:58Z
-house:AR-04,Polymarket,0.014,25354,AR-04 House Election Winner,2026-11-01T16:58Z
-house:AZ-01,Polymarket,0.815,219222,AZ-01 House Election Winner,2026-11-01T16:58Z
-house:AZ-02,Polymarket,0.42,30874,AZ-02 House Election Winner,2026-11-01T16:58Z
-house:AZ-03,Kalshi,0.9905,980,AZ-03 House winner?,2026-11-01T16:58Z
-house:AZ-03,Polymarket,0.994,53529,AZ-03 House Election Winner,2026-11-01T16:58Z
-house:AZ-04,Kalshi,0.9625,13930,AZ-04 House winner?,2026-11-01T16:58Z
-house:AZ-04,Polymarket,0.965,40739,AZ-04 House Election Winner,2026-11-01T16:58Z
-house:AZ-05,Kalshi,0.125,29553,AZ-05 House winner?,2026-11-01T16:58Z
-house:AZ-05,Polymarket,0.115,45779,AZ-05 House Election Winner,2026-11-01T16:58Z
-house:AZ-06,Polymarket,0.885,40504,AZ-06 House Election Winner,2026-11-01T16:58Z
-house:AZ-07,Kalshi,0.991,1452,AZ-07 House winner?,2026-11-01T16:58Z
-house:AZ-07,Polymarket,0.992,41182,AZ-07 House Election Winner,2026-11-01T16:58Z
-house:AZ-08,Kalshi,0.135,13489,AZ-08 House winner?,2026-11-01T16:58Z
-house:AZ-08,Polymarket,0.14,19060,AZ-08 House Election Winner,2026-11-01T16:58Z
-house:AZ-09,Kalshi,0.0205,5127,AZ-09 House winner?,2026-11-01T16:58Z
-house:AZ-09,Polymarket,0.013,38770,AZ-09 House Election Winner,2026-11-01T16:58Z
-house:CA-01,Kalshi,0.957,18065,CA-01 House winner?,2026-11-01T16:58Z
-house:CA-01,Polymarket,0.9665,50384,CA-01 House Election Winner,2026-11-01T16:58Z
-house:CA-02,Kalshi,0.9875,1336,CA-02 House winner?,2026-11-01T16:58Z
-house:CA-02,Polymarket,0.9925,22250,CA-02 House Election Winner,2026-11-01T16:58Z
-house:CA-03,Polymarket,0.9605,44510,CA-03 House Election Winner,2026-11-01T16:58Z
-house:CA-04,Polymarket,0.9985,52281,CA-04 House Election Winner,2026-11-01T16:58Z
-house:CA-05,Kalshi,0.0595,21146,CA-05 House winner?,2026-11-01T16:58Z
-house:CA-05,Polymarket,0.07,33954,CA-05 House Election Winner,2026-11-01T16:58Z
-house:CA-06,Kalshi,0.9825,102652,CA-06 House winner?,2026-11-01T16:58Z
-house:CA-06,Polymarket,0.9875,93790,CA-06 House Election Winner,2026-11-01T16:58Z
-house:CA-07,Polymarket,0.9855,14589,CA-07 House Election Winner,2026-11-01T16:58Z
-house:CA-08,Kalshi,0.9935,3717,CA-08 House winner?,2026-11-01T16:58Z
-house:CA-08,Polymarket,0.9915,58328,CA-08 House Election Winner,2026-11-01T16:58Z
-house:CA-09,Polymarket,0.997,28193,CA-09 House Election Winner,2026-11-01T16:58Z
-house:CA-10,Kalshi,0.9835,2547,CA-10 House winner?,2026-11-01T16:58Z
-house:CA-10,Polymarket,0.988,29078,CA-10 House Election Winner,2026-11-01T16:58Z
-house:CA-11,Polymarket,0.9975,22573,CA-11 House Election Winner,2026-11-01T16:58Z
-house:CA-12,Polymarket,0.993,48765,CA-12 House Election Winner,2026-11-01T16:58Z
-house:CA-13,Polymarket,0.9665,49943,CA-13 House Election Winner,2026-11-01T16:58Z
-house:CA-14,Polymarket,0.9985,43316,CA-14 House Election Winner,2026-11-01T16:58Z
-house:CA-15,Kalshi,0.995,17107,CA-15 House winner?,2026-11-01T16:58Z
-house:CA-15,Polymarket,0.992,124042,CA-15 House Election Winner,2026-11-01T16:58Z
-house:CA-16,Kalshi,0.986,11400,CA-16 House winner?,2026-11-01T16:58Z
-house:CA-16,Polymarket,0.98,109837,CA-16 House Election Winner,2026-11-01T16:58Z
-house:CA-17,Kalshi,0.988,1336,CA-17 House winner?,2026-11-01T16:58Z
-house:CA-17,Polymarket,0.976,16855,CA-17 House Election Winner,2026-11-01T16:58Z
-house:CA-18,Kalshi,0.983,1682,CA-18 House winner?,2026-11-01T16:58Z
-house:CA-18,Polymarket,0.99,50273,CA-18 House Election Winner,2026-11-01T16:58Z
-house:CA-19,Kalshi,0.986,6345,CA-19 House winner?,2026-11-01T16:58Z
-house:CA-19,Polymarket,0.991,50805,CA-19 House Election Winner,2026-11-01T16:58Z
-house:CA-20,Kalshi,0.024,5464,CA-20 House winner?,2026-11-01T16:58Z
-house:CA-20,Polymarket,0.044,50411,CA-20 House Election Winner,2026-11-01T16:58Z
-house:CA-21,Polymarket,0.9645,44080,CA-21 House Election Winner,2026-11-01T16:58Z
-house:CA-22,Polymarket,0.925,64045,CA-22 House Election Winner,2026-11-01T16:58Z
-house:CA-23,Kalshi,0.035,4303,CA-23 House winner?,2026-11-01T16:58Z
-house:CA-23,Polymarket,0.0235,111562,CA-23 House Election Winner,2026-11-01T16:58Z
-house:CA-24,Kalshi,0.988,15000,CA-24 House winner?,2026-11-01T16:58Z
-house:CA-24,Polymarket,0.993,52738,CA-24 House Election Winner,2026-11-01T16:58Z
-house:CA-25,Kalshi,0.9855,2052,CA-25 House winner?,2026-11-01T16:58Z
-house:CA-25,Polymarket,0.9735,26911,CA-25 House Election Winner,2026-11-01T16:58Z
-house:CA-26,Kalshi,0.9675,2117,CA-26 House winner?,2026-11-01T16:58Z
-house:CA-26,Polymarket,0.9635,36728,CA-26 House Election Winner,2026-11-01T16:58Z
-house:CA-27,Polymarket,0.9795,24051,CA-27 House Election Winner,2026-11-01T16:58Z
-house:CA-28,Kalshi,0.986,3819,CA-28 House winner?,2026-11-01T16:58Z
-house:CA-28,Polymarket,0.99,142809,CA-28 House Election Winner,2026-11-01T16:58Z
-house:CA-29,Polymarket,0.986,32200,CA-29 House Election Winner,2026-11-01T16:58Z
-house:CA-30,Kalshi,0.981,4572,CA-30 House winner?,2026-11-01T16:58Z
-house:CA-30,Polymarket,0.9915,35558,CA-30 House Election Winner,2026-11-01T16:58Z
-house:CA-31,Kalshi,0.9755,1009,CA-31 House winner?,2026-11-01T16:58Z
-house:CA-31,Polymarket,0.973,19599,CA-31 House Election Winner,2026-11-01T16:58Z
-house:CA-32,Kalshi,0.9955,2636,CA-32 House winner?,2026-11-01T16:58Z
-house:CA-32,Polymarket,0.9955,29716,CA-32 House Election Winner,2026-11-01T16:58Z
-house:CA-33,Kalshi,0.9815,6882,CA-33 House winner?,2026-11-01T16:58Z
-house:CA-33,Polymarket,0.986,22314,CA-33 House Election Winner,2026-11-01T16:58Z
-house:CA-34,Polymarket,0.9985,50701,CA-34 House Election Winner,2026-11-01T16:58Z
-house:CA-35,Kalshi,0.986,1007,CA-35 House winner?,2026-11-01T16:58Z
-house:CA-35,Polymarket,0.999,46147,CA-35 House Election Winner,2026-11-01T16:58Z
-house:CA-36,Kalshi,0.9895,5233,CA-36 House winner?,2026-11-01T16:58Z
-house:CA-36,Polymarket,0.993,86290,CA-36 House Election Winner,2026-11-01T16:58Z
-house:CA-37,Polymarket,0.9635,4018,CA-37 House Election Winner,2026-11-01T16:58Z
-house:CA-38,Kalshi,0.9915,2573,CA-38 House winner?,2026-11-01T16:58Z
-house:CA-38,Polymarket,0.989,66080,CA-38 House Election Winner,2026-11-01T16:58Z
-house:CA-39,Kalshi,0.98,4394,CA-39 House winner?,2026-11-01T16:58Z
-house:CA-39,Polymarket,0.9895,59403,CA-39 House Election Winner,2026-11-01T16:58Z
-house:CA-41,Polymarket,0.98,24223,CA-41 House Election Winner,2026-11-01T16:58Z
-house:CA-42,Kalshi,0.981,1217,CA-42 House winner?,2026-11-01T16:58Z
-house:CA-42,Polymarket,0.991,43182,CA-42 House Election Winner,2026-11-01T16:58Z
-house:CA-43,Kalshi,0.981,4062,CA-43 House winner?,2026-11-01T16:58Z
-house:CA-43,Polymarket,0.9895,34583,CA-43 House Election Winner,2026-11-01T16:58Z
-house:CA-44,Kalshi,0.9845,1082,CA-44 House winner?,2026-11-01T16:58Z
-house:CA-44,Polymarket,0.9845,47711,CA-44 House Election Winner,2026-11-01T16:58Z
-house:CA-45,Polymarket,0.94,54875,CA-45 House Election Winner,2026-11-01T16:58Z
-house:CA-46,Kalshi,0.982,1608,CA-46 House winner?,2026-11-01T16:58Z
-house:CA-46,Polymarket,0.969,51660,CA-46 House Election Winner,2026-11-01T16:58Z
-house:CA-47,Polymarket,0.9805,31720,CA-47 House Election Winner,2026-11-01T16:58Z
-house:CA-48,Kalshi,0.943,40381,CA-48 House winner?,2026-11-01T16:58Z
-house:CA-48,Polymarket,0.955,48476,CA-48 House Election Winner,2026-11-01T16:58Z
-house:CA-49,Polymarket,0.991,28772,CA-49 House Election Winner,2026-11-01T16:58Z
-house:CA-50,Kalshi,0.9725,2830,CA-50 House winner?,2026-11-01T16:58Z
-house:CA-50,Polymarket,0.968,69887,CA-50 House Election Winner,2026-11-01T16:58Z
-house:CA-51,Kalshi,0.9815,1125,CA-51 House winner?,2026-11-01T16:58Z
-house:CA-51,Polymarket,0.9825,35490,CA-51 House Election Winner,2026-11-01T16:58Z
-house:CA-52,Kalshi,0.986,15214,CA-52 House winner?,2026-11-01T16:58Z
-house:CA-52,Polymarket,0.987,51388,CA-52 House Election Winner,2026-11-01T16:58Z
-house:CO-01,Kalshi,0.984,3318,CO-01 House winner?,2026-11-01T16:58Z
-house:CO-01,Polymarket,0.9915,43921,CO-01 House Election Winner,2026-11-01T16:58Z
-house:CO-02,Kalshi,0.9885,8539,CO-02 House winner?,2026-11-01T16:58Z
-house:CO-02,Polymarket,0.9865,44880,CO-02 House Election Winner,2026-11-01T16:58Z
-house:CO-03,Polymarket,0.35,51799,CO-03 House Election Winner,2026-11-01T16:58Z
-house:CO-04,Kalshi,0.385,225526,CO-04 House winner?,2026-11-01T16:58Z
-house:CO-04,Polymarket,0.415,84797,CO-04 House Election Winner,2026-11-01T16:58Z
-house:CO-05,Kalshi,0.445,225197,CO-05 House winner?,2026-11-01T16:58Z
-house:CO-05,Polymarket,0.415,63751,CO-05 House Election Winner,2026-11-01T16:58Z
-house:CO-06,Kalshi,0.983,1131,CO-06 House winner?,2026-11-01T16:58Z
-house:CO-06,Polymarket,0.9815,32561,CO-06 House Election Winner,2026-11-01T16:58Z
-house:CO-07,Kalshi,0.987,2365,CO-07 House winner?,2026-11-01T16:58Z
-house:CO-07,Polymarket,0.993,28252,CO-07 House Election Winner,2026-11-01T16:58Z
-house:CO-08,Polymarket,0.875,36591,CO-08 House Election Winner,2026-11-01T16:58Z
-house:CT-01,Kalshi,0.9935,6305,CT-01 House winner?,2026-11-01T16:58Z
-house:CT-01,Polymarket,0.9905,20398,CT-01 House Election Winner,2026-11-01T16:58Z
-house:CT-02,Kalshi,0.9895,4514,CT-02 House winner?,2026-11-01T16:58Z
-house:CT-02,Polymarket,0.994,20617,CT-02 House Election Winner,2026-11-01T16:58Z
-house:CT-03,Kalshi,0.978,1787,CT-03 House winner?,2026-11-01T16:58Z
-house:CT-03,Polymarket,0.982,31498,CT-03 House Election Winner,2026-11-01T16:58Z
-house:CT-04,Kalshi,0.98,2498,CT-04 House winner?,2026-11-01T16:58Z
-house:CT-04,Polymarket,0.9805,49404,CT-04 House Election Winner,2026-11-01T16:58Z
-house:CT-05,Polymarket,0.976,12190,CT-05 House Election Winner,2026-11-01T16:58Z
-house:DE-AL,Kalshi,0.9855,5842,DE-AL House winner?,2026-11-01T16:58Z
-house:DE-AL,Polymarket,0.991,48961,DE-AL House Election Winner,2026-11-01T16:58Z
-house:FL-01,Kalshi,0.0295,6008,FL-01 House winner?,2026-11-01T16:58Z
-house:FL-01,Polymarket,0.017,119358,FL-01 House Election Winner,2026-11-01T16:58Z
-house:FL-02,Kalshi,0.083,12386,FL-02 House winner?,2026-11-01T16:58Z
-house:FL-02,Polymarket,0.08,19478,FL-02 House Election Winner,2026-11-01T16:58Z
-house:FL-03,Kalshi,0.0435,8340,FL-03 House winner?,2026-11-01T16:58Z
-house:FL-03,Polymarket,0.04,66612,FL-03 House Election Winner,2026-11-01T16:58Z
-house:FL-04,Kalshi,0.195,102946,FL-04 House winner?,2026-11-01T16:58Z
-house:FL-04,Polymarket,0.205,41474,FL-04 House Election Winner,2026-11-01T16:58Z
-house:FL-05,Kalshi,0.055,14641,FL-05 House winner?,2026-11-01T16:58Z
-house:FL-05,Polymarket,0.045,25295,FL-05 House Election Winner,2026-11-01T16:58Z
-house:FL-06,Kalshi,0.037,10332,FL-06 House winner?,2026-11-01T16:58Z
-house:FL-06,Polymarket,0.0365,42391,FL-06 House Election Winner,2026-11-01T16:58Z
-house:FL-07,Kalshi,0.345,111476,FL-07 House winner?,2026-11-01T16:58Z
-house:FL-07,Polymarket,0.35,90993,FL-07 House Election Winner,2026-11-01T16:58Z
-house:FL-08,Kalshi,0.0615,10571,FL-08 House winner?,2026-11-01T16:58Z
-house:FL-08,Polymarket,0.0575,64995,FL-08 House Election Winner,2026-11-01T16:58Z
-house:FL-09,Kalshi,0.365,191080,FL-09 House winner?,2026-11-01T16:58Z
-house:FL-09,Polymarket,0.34,95580,FL-09 House Election Winner,2026-11-01T16:58Z
-house:FL-10,Kalshi,0.9815,38530,FL-10 House winner?,2026-11-01T16:58Z
-house:FL-10,Polymarket,0.989,25413,FL-10 House Election Winner,2026-11-01T16:58Z
-house:FL-11,Kalshi,0.125,75840,FL-11 House winner?,2026-11-01T16:58Z
-house:FL-11,Polymarket,0.11,49395,FL-11 House Election Winner,2026-11-01T16:58Z
-house:FL-12,Kalshi,0.15,47836,FL-12 House winner?,2026-11-01T16:58Z
-house:FL-12,Polymarket,0.145,99344,FL-12 House Election Winner,2026-11-01T16:58Z
-house:FL-13,Polymarket,0.35,83736,FL-13 House Election Winner,2026-11-01T16:58Z
-house:FL-14,Kalshi,0.745,512714,FL-14 House winner?,2026-11-01T16:58Z
-house:FL-14,Polymarket,0.775,146160,FL-14 House Election Winner,2026-11-01T16:58Z
-house:FL-15,Kalshi,0.064,19241,FL-15 House winner?,2026-11-01T16:58Z
-house:FL-15,Polymarket,0.0535,40779,FL-15 House Election Winner,2026-11-01T16:58Z
-house:FL-16,Kalshi,0.245,30215,FL-16 House winner?,2026-11-01T16:58Z
-house:FL-16,Polymarket,0.235,31632,FL-16 House Election Winner,2026-11-01T16:58Z
-house:FL-17,Kalshi,0.03,5951,FL-17 House winner?,2026-11-01T16:58Z
-house:FL-17,Polymarket,0.026,32792,FL-17 House Election Winner,2026-11-01T16:58Z
-house:FL-18,Kalshi,0.0805,14641,FL-18 House winner?,2026-11-01T16:58Z
-house:FL-18,Polymarket,0.08,76853,FL-18 House Election Winner,2026-11-01T16:58Z
-house:FL-19,Kalshi,0.032,3067,FL-19 House winner?,2026-11-01T16:58Z
-house:FL-19,Polymarket,0.0345,39217,FL-19 House Election Winner,2026-11-01T16:58Z
-house:FL-20,Kalshi,0.9825,9712,FL-20 House winner?,2026-11-01T16:58Z
-house:FL-20,Polymarket,0.9855,43651,FL-20 House Election Winner,2026-11-01T16:58Z
-house:FL-21,Kalshi,0.115,47297,FL-21 House winner?,2026-11-01T16:58Z
-house:FL-21,Polymarket,0.105,47244,FL-21 House Election Winner,2026-11-01T16:58Z
-house:FL-22,Kalshi,0.725,181744,FL-22 House winner?,2026-11-01T16:58Z
-house:FL-22,Polymarket,0.745,91903,FL-22 House Election Winner,2026-11-01T16:58Z
-house:FL-23,Polymarket,0.9735,27368,FL-23 House Election Winner,2026-11-01T16:58Z
-house:FL-24,Kalshi,0.986,31431,FL-24 House winner?,2026-11-01T16:58Z
-house:FL-24,Polymarket,0.9945,35401,FL-24 House Election Winner,2026-11-01T16:58Z
-house:FL-25,Kalshi,0.815,845601,FL-25 House winner?,2026-11-01T16:58Z
-house:FL-25,Polymarket,0.815,135856,FL-25 House Election Winner,2026-11-01T16:58Z
-house:FL-26,Kalshi,0.15,95123,FL-26 House winner?,2026-11-01T16:58Z
-house:FL-26,Polymarket,0.145,113042,FL-26 House Election Winner,2026-11-01T16:58Z
-house:FL-27,Kalshi,0.375,167259,FL-27 House winner?,2026-11-01T16:58Z
-house:FL-27,Polymarket,0.365,67977,FL-27 House Election Winner,2026-11-01T16:58Z
-house:FL-28,Kalshi,0.07,18163,FL-28 House winner?,2026-11-01T16:58Z
-house:FL-28,Polymarket,0.065,77982,FL-28 House Election Winner,2026-11-01T16:58Z
-house:GA-01,Kalshi,0.0945,86436,GA-01 House winner?,2026-11-01T16:58Z
-house:GA-01,Polymarket,0.105,31332,GA-01 House Election Winner,2026-11-01T16:58Z
-house:GA-02,Kalshi,0.9775,27522,GA-02 House winner?,2026-11-01T16:58Z
-house:GA-02,Polymarket,0.9885,27408,GA-02 House Election Winner,2026-11-01T16:58Z
-house:GA-03,Kalshi,0.047,11257,GA-03 House winner?,2026-11-01T16:58Z
-house:GA-03,Polymarket,0.047,33375,GA-03 House Election Winner,2026-11-01T16:58Z
-house:GA-04,Kalshi,0.9915,1867,GA-04 House winner?,2026-11-01T16:58Z
-house:GA-04,Polymarket,0.9895,48337,GA-04 House Election Winner,2026-11-01T16:58Z
-house:GA-05,Kalshi,0.9915,2222,GA-05 House winner?,2026-11-01T16:58Z
-house:GA-05,Polymarket,0.9985,54671,GA-05 House Election Winner,2026-11-01T16:58Z
-house:GA-06,Kalshi,0.991,11459,GA-06 House winner?,2026-11-01T16:58Z
-house:GA-06,Polymarket,0.9935,24401,GA-06 House Election Winner,2026-11-01T16:58Z
-house:GA-07,Kalshi,0.072,45070,GA-07 House winner?,2026-11-01T16:58Z
-house:GA-07,Polymarket,0.06,49861,GA-07 House Election Winner,2026-11-01T16:58Z
-house:GA-08,Kalshi,0.012,8020,GA-08 House winner?,2026-11-01T16:58Z
-house:GA-08,Polymarket,0.0065,50484,GA-08 House Election Winner,2026-11-01T16:58Z
-house:GA-09,Kalshi,0.0275,13986,GA-09 House winner?,2026-11-01T16:58Z
-house:GA-09,Polymarket,0.019,61261,GA-09 House Election Winner,2026-11-01T16:58Z
-house:GA-10,Kalshi,0.025,4319,GA-10 House winner?,2026-11-01T16:58Z
-house:GA-10,Polymarket,0.012,67802,GA-10 House Election Winner,2026-11-01T16:58Z
-house:GA-11,Kalshi,0.0435,27729,GA-11 House winner?,2026-11-01T16:58Z
-house:GA-11,Polymarket,0.0425,94512,GA-11 House Election Winner,2026-11-01T16:58Z
-house:GA-12,Kalshi,0.135,73383,GA-12 House winner?,2026-11-01T16:58Z
-house:GA-12,Polymarket,0.135,63848,GA-12 House Election Winner,2026-11-01T16:58Z
-house:GA-13,Kalshi,0.987,9303,GA-13 House winner?,2026-11-01T16:58Z
-house:GA-13,Polymarket,0.9885,39710,GA-13 House Election Winner,2026-11-01T16:58Z
-house:GA-14,Kalshi,0.022,19648,GA-14 House winner?,2026-11-01T16:58Z
-house:GA-14,Polymarket,0.025,19569,GA-14 House Election Winner,2026-11-01T16:58Z
-house:HI-01,Kalshi,0.9855,247,HI-01 House winner?,2026-11-01T16:58Z
-house:HI-01,Polymarket,0.9865,54315,HI-01 House Election Winner,2026-11-01T16:58Z
-house:HI-02,Kalshi,0.9645,55097,HI-02 House winner?,2026-11-01T16:58Z
-house:HI-02,Polymarket,0.978,83504,HI-02 House Election Winner,2026-11-01T16:58Z
-house:IA-01,Polymarket,0.93,77910,IA-01 House Election Winner,2026-11-01T16:58Z
-house:IA-02,Kalshi,0.715,134469,IA-02 House winner?,2026-11-01T16:58Z
-house:IA-02,Polymarket,0.73,74274,IA-02 House Election Winner,2026-11-01T16:58Z
-house:IA-03,Polymarket,0.86,25698,IA-03 House Election Winner,2026-11-01T16:58Z
-house:IA-04,Kalshi,0.0155,17325,IA-04 House winner?,2026-11-01T16:58Z
-house:IA-04,Polymarket,0.03,67389,IA-04 House Election Winner,2026-11-01T16:58Z
-house:ID-01,Kalshi,0.02,2091,ID-01 House winner?,2026-11-01T16:58Z
-house:ID-01,Polymarket,0.01,49606,ID-01 House Election Winner,2026-11-01T16:58Z
-house:ID-02,Kalshi,0.0365,7799,ID-02 House winner?,2026-11-01T16:58Z
-house:ID-02,Polymarket,0.03,43775,ID-02 House Election Winner,2026-11-01T16:58Z
-house:IL-01,Kalshi,0.971,9772,IL-01 House winner?,2026-11-01T16:58Z
-house:IL-01,Polymarket,0.9725,61019,IL-01 House Election Winner,2026-11-01T16:58Z
-house:IL-02,Kalshi,0.991,1334,IL-02 House winner?,2026-11-01T16:58Z
-house:IL-02,Polymarket,0.993,36918,IL-02 House Election Winner,2026-11-01T16:58Z
-house:IL-03,Kalshi,0.98,1642,IL-03 House winner?,2026-11-01T16:58Z
-house:IL-03,Polymarket,0.9745,52598,IL-03 House Election Winner,2026-11-01T16:58Z
-house:IL-04,Kalshi,0.9975,41951,IL-04 House winner?,2026-11-01T16:58Z
-house:IL-04,Polymarket,0.9945,70664,IL-04 House Election Winner,2026-11-01T16:58Z
-house:IL-05,Kalshi,0.9715,2067,IL-05 House winner?,2026-11-01T16:58Z
-house:IL-05,Polymarket,0.9785,35854,IL-05 House Election Winner,2026-11-01T16:58Z
-house:IL-06,Kalshi,0.9845,1032,IL-06 House winner?,2026-11-01T16:58Z
-house:IL-06,Polymarket,0.991,43835,IL-06 House Election Winner,2026-11-01T16:58Z
-house:IL-07,Kalshi,0.9895,445,IL-07 House winner?,2026-11-01T16:58Z
-house:IL-07,Polymarket,0.9895,27121,IL-07 House Election Winner,2026-11-01T16:58Z
-house:IL-08,Kalshi,0.9575,11149,IL-08 House winner?,2026-11-01T16:58Z
-house:IL-08,Polymarket,0.961,23492,IL-08 House Election Winner,2026-11-01T16:58Z
-house:IL-09,Kalshi,0.985,3220,IL-09 House winner?,2026-11-01T16:58Z
-house:IL-09,Polymarket,0.989,32117,IL-09 House Election Winner,2026-11-01T16:58Z
-house:IL-10,Kalshi,0.978,2934,IL-10 House winner?,2026-11-01T16:58Z
-house:IL-10,Polymarket,0.9765,34087,IL-10 House Election Winner,2026-11-01T16:58Z
-house:IL-11,Kalshi,0.9835,1540,IL-11 House winner?,2026-11-01T16:58Z
-house:IL-11,Polymarket,0.9925,47734,IL-11 House Election Winner,2026-11-01T16:58Z
-house:IL-12,Kalshi,0.0295,10053,IL-12 House winner?,2026-11-01T16:58Z
-house:IL-12,Polymarket,0.024,27183,IL-12 House Election Winner,2026-11-01T16:58Z
-house:IL-13,Kalshi,0.981,2317,IL-13 House winner?,2026-11-01T16:58Z
-house:IL-13,Polymarket,0.975,21684,IL-13 House Election Winner,2026-11-01T16:58Z
-house:IL-14,Kalshi,0.9815,3403,IL-14 House winner?,2026-11-01T16:58Z
-house:IL-14,Polymarket,0.9925,25923,IL-14 House Election Winner,2026-11-01T16:58Z
-house:IL-15,Kalshi,0.0365,6031,IL-15 House winner?,2026-11-01T16:58Z
-house:IL-15,Polymarket,0.0365,50848,IL-15 House Election Winner,2026-11-01T16:58Z
-house:IL-16,Kalshi,0.0335,34416,IL-16 House winner?,2026-11-01T16:58Z
-house:IL-16,Polymarket,0.029,73146,IL-16 House Election Winner,2026-11-01T16:58Z
-house:IL-17,Polymarket,0.975,32940,IL-17 House Election Winner,2026-11-01T16:58Z
-house:IN-01,Polymarket,0.9805,24783,IN-01 House Election Winner,2026-11-01T16:58Z
-house:IN-02,Kalshi,0.032,4138,IN-02 House winner?,2026-11-01T16:58Z
-house:IN-02,Polymarket,0.0375,41833,IN-02 House Election Winner,2026-11-01T16:58Z
-house:IN-03,Kalshi,0.0345,1905,IN-03 House winner?,2026-11-01T16:58Z
-house:IN-03,Polymarket,0.036,48683,IN-03 House Election Winner,2026-11-01T16:58Z
-house:IN-04,Kalshi,0.027,10260,IN-04 House winner?,2026-11-01T16:58Z
-house:IN-04,Polymarket,0.016,50337,IN-04 House Election Winner,2026-11-01T16:58Z
-house:IN-05,Kalshi,0.165,214402,IN-05 House winner?,2026-11-01T16:58Z
-house:IN-05,Polymarket,0.15,74635,IN-05 House Election Winner,2026-11-01T16:58Z
-house:IN-06,Kalshi,0.027,3160,IN-06 House winner?,2026-11-01T16:58Z
-house:IN-06,Polymarket,0.031,38147,IN-06 House Election Winner,2026-11-01T16:58Z
-house:IN-07,Polymarket,0.9895,46057,IN-07 House Election Winner,2026-11-01T16:58Z
-house:IN-08,Kalshi,0.035,76255,IN-08 House winner?,2026-11-01T16:58Z
-house:IN-08,Polymarket,0.04,52888,IN-08 House Election Winner,2026-11-01T16:58Z
-house:IN-09,Kalshi,0.0255,9992,IN-09 House winner?,2026-11-01T16:58Z
-house:IN-09,Polymarket,0.0205,36373,IN-09 House Election Winner,2026-11-01T16:58Z
-house:KS-01,Kalshi,0.0305,5919,KS-01 House winner?,2026-11-01T16:58Z
-house:KS-01,Polymarket,0.0445,37711,KS-01 House Election Winner,2026-11-01T16:58Z
-house:KS-02,Kalshi,0.19,56070,KS-02 House winner?,2026-11-01T16:58Z
-house:KS-02,Polymarket,0.205,49121,KS-02 House Election Winner,2026-11-01T16:58Z
-house:KS-03,Kalshi,0.958,18011,KS-03 House winner?,2026-11-01T16:58Z
-house:KS-03,Polymarket,0.9615,35435,KS-03 House Election Winner,2026-11-01T16:58Z
-house:KS-04,Kalshi,0.0275,14312,KS-04 House winner?,2026-11-01T16:58Z
-house:KS-04,Polymarket,0.029,157538,KS-04 House Election Winner,2026-11-01T16:58Z
-house:KY-01,Kalshi,0.0215,5243,KY-01 House winner?,2026-11-01T16:58Z
-house:KY-01,Polymarket,0.0105,50884,KY-01 House Election Winner,2026-11-01T16:58Z
-house:KY-02,Kalshi,0.02,3346,KY-02 House winner?,2026-11-01T16:58Z
-house:KY-02,Polymarket,0.019,18845,KY-02 House Election Winner,2026-11-01T16:58Z
-house:KY-03,Kalshi,0.98,4888,KY-03 House winner?,2026-11-01T16:58Z
-house:KY-03,Polymarket,0.989,48735,KY-03 House Election Winner,2026-11-01T16:58Z
-house:KY-04,Kalshi,0.0325,54257,KY-04 House winner?,2026-11-01T16:58Z
-house:KY-04,Polymarket,0.028,50309,KY-04 House Election Winner,2026-11-01T16:58Z
-house:KY-05,Kalshi,0.007,3628,KY-05 House winner?,2026-11-01T16:58Z
-house:KY-05,Polymarket,0.01,73056,KY-05 House Election Winner,2026-11-01T16:58Z
-house:KY-06,Kalshi,0.555,245934,KY-06 House winner?,2026-11-01T16:58Z
-house:KY-06,Polymarket,0.565,117669,KY-06 House Election Winner,2026-11-01T16:58Z
-house:LA-01,Kalshi,0.033,4754,LA-01 House winner?,2026-11-01T16:58Z
-house:LA-01,Polymarket,0.0315,53436,LA-01 House Election Winner,2026-11-01T16:58Z
-house:LA-02,Kalshi,0.985,33035,LA-02 House winner?,2026-11-01T16:58Z
-house:LA-02,Polymarket,0.9895,62765,LA-02 House Election Winner,2026-11-01T16:58Z
-house:LA-03,Kalshi,0.026,4412,LA-03 House winner?,2026-11-01T16:58Z
-house:LA-03,Polymarket,0.019,36283,LA-03 House Election Winner,2026-11-01T16:58Z
-house:LA-04,Kalshi,0.045,4230,LA-04 House winner?,2026-11-01T16:58Z
-house:LA-04,Polymarket,0.0445,21587,LA-04 House Election Winner,2026-11-01T16:58Z
-house:LA-05,Kalshi,0.0125,15673,LA-05 House winner?,2026-11-01T16:58Z
-house:LA-05,Polymarket,0.007,26726,LA-05 House Election Winner,2026-11-01T16:58Z
-house:LA-06,Kalshi,0.048,106833,LA-06 House winner?,2026-11-01T16:58Z
-house:LA-06,Polymarket,0.042,76466,LA-06 House Election Winner,2026-11-01T16:58Z
-house:MA-01,Kalshi,0.9925,2917,MA-01 House winner?,2026-11-01T16:58Z
-house:MA-01,Polymarket,0.9905,56272,MA-01 House Election Winner,2026-11-01T16:58Z
-house:MA-02,Kalshi,0.989,1632,MA-02 House winner?,2026-11-01T16:58Z
-house:MA-02,Polymarket,0.993,75839,MA-02 House Election Winner,2026-11-01T16:58Z
-house:MA-03,Kalshi,0.9715,3585,MA-03 House winner?,2026-11-01T16:58Z
-house:MA-03,Polymarket,0.984,24349,MA-03 House Election Winner,2026-11-01T16:58Z
-house:MA-04,Kalshi,0.9835,2662,MA-04 House winner?,2026-11-01T16:58Z
-house:MA-04,Polymarket,0.9895,49530,MA-04 House Election Winner,2026-11-01T16:58Z
-house:MA-05,Kalshi,0.99,1708,MA-05 House winner?,2026-11-01T16:58Z
-house:MA-05,Polymarket,0.9925,38034,MA-05 House Election Winner,2026-11-01T16:58Z
-house:MA-06,Kalshi,0.9605,28305,MA-06 House winner?,2026-11-01T16:58Z
-house:MA-06,Polymarket,0.973,29949,MA-06 House Election Winner,2026-11-01T16:58Z
-house:MA-07,Kalshi,0.989,385,MA-07 House winner?,2026-11-01T16:58Z
-house:MA-07,Polymarket,0.9915,36774,MA-07 House Election Winner,2026-11-01T16:58Z
-house:MA-08,Kalshi,0.979,770,MA-08 House winner?,2026-11-01T16:58Z
-house:MA-08,Polymarket,0.9735,29142,MA-08 House Election Winner,2026-11-01T16:58Z
-house:MA-09,Kalshi,0.9875,1213,MA-09 House winner?,2026-11-01T16:58Z
-house:MA-09,Polymarket,0.992,30681,MA-09 House Election Winner,2026-11-01T16:58Z
-house:MD-01,Kalshi,0.145,130854,MD-01 House winner?,2026-11-01T16:58Z
-house:MD-01,Polymarket,0.13,98890,MD-01 House Election Winner,2026-11-01T16:58Z
-house:MD-02,Kalshi,0.9915,4418,MD-02 House winner?,2026-11-01T16:58Z
-house:MD-02,Polymarket,0.992,25153,MD-02 House Election Winner,2026-11-01T16:58Z
-house:MD-03,Kalshi,0.981,2504,MD-03 House winner?,2026-11-01T16:58Z
-house:MD-03,Polymarket,0.9785,54427,MD-03 House Election Winner,2026-11-01T16:58Z
-house:MD-04,Kalshi,0.992,976,MD-04 House winner?,2026-11-01T16:58Z
-house:MD-04,Polymarket,0.9945,48646,MD-04 House Election Winner,2026-11-01T16:58Z
-house:MD-05,Kalshi,0.978,641,MD-05 House winner?,2026-11-01T16:58Z
-house:MD-05,Polymarket,0.9715,24785,MD-05 House Election Winner,2026-11-01T16:58Z
-house:MD-06,Kalshi,0.984,7852,MD-06 House winner?,2026-11-01T16:58Z
-house:MD-06,Polymarket,0.9895,35860,MD-06 House Election Winner,2026-11-01T16:58Z
-house:MD-07,Kalshi,0.9925,891,MD-07 House winner?,2026-11-01T16:58Z
-house:MD-07,Polymarket,0.9945,24616,MD-07 House Election Winner,2026-11-01T16:58Z
-house:MD-08,Kalshi,0.986,689,MD-08 House winner?,2026-11-01T16:58Z
-house:MD-08,Polymarket,0.9915,28717,MD-08 House Election Winner,2026-11-01T16:58Z
-house:ME-01,Kalshi,0.9835,4778,ME-01 House winner?,2026-11-01T16:58Z
-house:ME-01,Polymarket,0.991,48511,ME-01 House Election Winner,2026-11-01T16:58Z
-house:ME-02,Polymarket,0.475,98725,ME-02 House Election Winner,2026-11-01T16:58Z
-house:MI-01,Kalshi,0.125,30974,MI-01 House winner?,2026-11-01T16:58Z
-house:MI-01,Polymarket,0.125,33685,MI-01 House Election Winner,2026-11-01T16:58Z
-house:MI-02,Kalshi,0.01,9960,MI-02 House winner?,2026-11-01T16:58Z
-house:MI-02,Polymarket,0.0105,55414,MI-02 House Election Winner,2026-11-01T16:58Z
-house:MI-03,Polymarket,0.9615,62839,MI-03 House Election Winner,2026-11-01T16:58Z
-house:MI-04,Polymarket,0.615,52670,MI-04 House Election Winner,2026-11-01T16:58Z
-house:MI-05,Kalshi,0.054,18722,MI-05 House winner?,2026-11-01T16:58Z
-house:MI-05,Polymarket,0.051,48542,MI-05 House Election Winner,2026-11-01T16:58Z
-house:MI-06,Kalshi,0.9825,1492,MI-06 House winner?,2026-11-01T16:58Z
-house:MI-06,Polymarket,0.984,54186,MI-06 House Election Winner,2026-11-01T16:58Z
-house:MI-07,Polymarket,0.8,71718,MI-07 House Election Winner,2026-11-01T16:58Z
-house:MI-08,Polymarket,0.9755,26685,MI-08 House Election Winner,2026-11-01T16:58Z
-house:MI-09,Kalshi,0.028,6775,MI-09 House winner?,2026-11-01T16:58Z
-house:MI-09,Polymarket,0.037,38903,MI-09 House Election Winner,2026-11-01T16:58Z
-house:MI-10,Polymarket,0.755,31084,MI-10 House Election Winner,2026-11-01T16:58Z
-house:MI-11,Kalshi,0.9825,3396,MI-11 House winner?,2026-11-01T16:58Z
-house:MI-11,Polymarket,0.9925,82669,MI-11 House Election Winner,2026-11-01T16:58Z
-house:MI-12,Kalshi,0.985,2300,MI-12 House winner?,2026-11-01T16:58Z
-house:MI-12,Polymarket,0.993,41894,MI-12 House Election Winner,2026-11-01T16:58Z
-house:MI-13,Kalshi,0.978,1559,MI-13 House winner?,2026-11-01T16:58Z
-house:MI-13,Polymarket,0.989,51979,MI-13 House Election Winner,2026-11-01T16:58Z
-house:MN-01,Kalshi,0.385,399394,MN-01 House winner?,2026-11-01T16:58Z
-house:MN-01,Polymarket,0.365,101817,MN-01 House Election Winner,2026-11-01T16:58Z
-house:MN-02,Polymarket,0.959,65056,MN-02 House Election Winner,2026-11-01T16:58Z
-house:MN-03,Kalshi,0.975,2109,MN-03 House winner?,2026-11-01T16:58Z
-house:MN-03,Polymarket,0.9895,30237,MN-03 House Election Winner,2026-11-01T16:58Z
-house:MN-04,Kalshi,0.9745,22434,MN-04 House winner?,2026-11-01T16:58Z
-house:MN-04,Polymarket,0.9805,29442,MN-04 House Election Winner,2026-11-01T16:58Z
-house:MN-05,Kalshi,0.973,1861407,MN-05 House winner?,2026-11-01T16:58Z
-house:MN-05,Polymarket,0.9815,79945,MN-05 House Election Winner,2026-11-01T16:58Z
-house:MN-06,Kalshi,0.0615,32681,MN-06 House winner?,2026-11-01T16:58Z
-house:MN-06,Polymarket,0.0465,103432,MN-06 House Election Winner,2026-11-01T16:58Z
-house:MN-07,Kalshi,0.03,8456,MN-07 House winner?,2026-11-01T16:58Z
-house:MN-07,Polymarket,0.0345,36753,MN-07 House Election Winner,2026-11-01T16:58Z
-house:MN-08,Kalshi,0.145,56825,MN-08 House winner?,2026-11-01T16:58Z
-house:MN-08,Polymarket,0.14,26729,MN-08 House Election Winner,2026-11-01T16:58Z
-house:MO-01,Kalshi,0.9895,6074,MO-01 House winner?,2026-11-01T16:58Z
-house:MO-01,Polymarket,0.994,37097,MO-01 House Election Winner,2026-11-01T16:58Z
-house:MO-02,Kalshi,0.365,300662,MO-02 House winner?,2026-11-01T16:58Z
-house:MO-02,Polymarket,0.395,165771,MO-02 House Election Winner,2026-11-01T16:58Z
-house:MO-03,Kalshi,0.0225,5992,MO-03 House winner?,2026-11-01T16:58Z
-house:MO-03,Polymarket,0.017,44563,MO-03 House Election Winner,2026-11-01T16:58Z
-house:MO-04,Kalshi,0.0325,8831,MO-04 House winner?,2026-11-01T16:58Z
-house:MO-04,Polymarket,0.043,73358,MO-04 House Election Winner,2026-11-01T16:58Z
-house:MO-05,Polymarket,0.974,82151,MO-05 House Election Winner,2026-11-01T16:58Z
-house:MO-06,Kalshi,0.032,13622,MO-06 House winner?,2026-11-01T16:58Z
-house:MO-06,Polymarket,0.032,69068,MO-06 House Election Winner,2026-11-01T16:58Z
-house:MO-07,Kalshi,0.0285,1830,MO-07 House winner?,2026-11-01T16:58Z
-house:MO-07,Polymarket,0.028,39159,MO-07 House Election Winner,2026-11-01T16:58Z
-house:MO-08,Kalshi,0.013,928,MO-08 House winner?,2026-11-01T16:58Z
-house:MO-08,Polymarket,0.011,47055,MO-08 House Election Winner,2026-11-01T16:58Z
-house:MS-01,Kalshi,0.0225,18070,MS-01 House winner?,2026-11-01T16:58Z
-house:MS-01,Polymarket,0.018,118712,MS-01 House Election Winner,2026-11-01T16:58Z
-house:MS-02,Kalshi,0.985,39124,MS-02 House winner?,2026-11-01T16:58Z
-house:MS-02,Polymarket,0.9895,45924,MS-02 House Election Winner,2026-11-01T16:58Z
-house:MS-03,Kalshi,0.0165,4315,MS-03 House winner?,2026-11-01T16:58Z
-house:MS-03,Polymarket,0.012,62871,MS-03 House Election Winner,2026-11-01T16:58Z
-house:MS-04,Kalshi,0.026,11595,MS-04 House winner?,2026-11-01T16:58Z
-house:MS-04,Polymarket,0.043,41940,MS-04 House Election Winner,2026-11-01T16:58Z
-house:MT-01,Polymarket,0.595,165288,MT-01 House Election Winner,2026-11-01T16:58Z
-house:MT-02,Kalshi,0.019,9791,MT-02 House winner?,2026-11-01T16:58Z
-house:MT-02,Polymarket,0.0135,70163,MT-02 House Election Winner,2026-11-01T16:58Z
-house:NC-01,Polymarket,0.87,78600,NC-01 House Election Winner,2026-11-01T16:58Z
-house:NC-02,Kalshi,0.985,8504,NC-02 House winner?,2026-11-01T16:58Z
-house:NC-02,Polymarket,0.9895,32410,NC-02 House Election Winner,2026-11-01T16:58Z
-house:NC-03,Kalshi,0.435,871532,NC-03 House winner?,2026-11-01T16:58Z
-house:NC-03,Polymarket,0.445,191349,NC-03 House Election Winner,2026-11-01T16:58Z
-house:NC-04,Kalshi,0.975,1279,NC-04 House winner?,2026-11-01T16:58Z
-house:NC-04,Polymarket,0.9795,85724,NC-04 House Election Winner,2026-11-01T16:58Z
-house:NC-05,Kalshi,0.175,13086,NC-05 House winner?,2026-11-01T16:58Z
-house:NC-05,Polymarket,0.19,54203,NC-05 House Election Winner,2026-11-01T16:58Z
-house:NC-06,Kalshi,0.125,12810,NC-06 House winner?,2026-11-01T16:58Z
-house:NC-06,Polymarket,0.12,68624,NC-06 House Election Winner,2026-11-01T16:58Z
-house:NC-07,Kalshi,0.245,79586,NC-07 House winner?,2026-11-01T16:58Z
-house:NC-07,Polymarket,0.235,44408,NC-07 House Election Winner,2026-11-01T16:58Z
-house:NC-08,Kalshi,0.057,70657,NC-08 House winner?,2026-11-01T16:58Z
-house:NC-08,Polymarket,0.0485,59627,NC-08 House Election Winner,2026-11-01T16:58Z
-house:NC-09,Kalshi,0.345,515534,NC-09 House winner?,2026-11-01T16:58Z
-house:NC-09,Polymarket,0.335,350039,NC-09 House Election Winner,2026-11-01T16:58Z
-house:NC-10,Kalshi,0.057,5515,NC-10 House winner?,2026-11-01T16:58Z
-house:NC-10,Polymarket,0.0555,16374,NC-10 House Election Winner,2026-11-01T16:58Z
-house:NC-11,Polymarket,0.85,314115,NC-11 House Election Winner,2026-11-01T16:58Z
-house:NC-12,Kalshi,0.9835,3324,NC-12 House winner?,2026-11-01T16:58Z
-house:NC-12,Polymarket,0.992,66530,NC-12 House Election Winner,2026-11-01T16:58Z
-house:NC-13,Kalshi,0.415,514670,NC-13 House winner?,2026-11-01T16:58Z
-house:NC-13,Polymarket,0.445,537279,NC-13 House Election Winner,2026-11-01T16:58Z
-house:NC-14,Kalshi,0.235,195379,NC-14 House winner?,2026-11-01T16:58Z
-house:NC-14,Polymarket,0.23,44483,NC-14 House Election Winner,2026-11-01T16:58Z
-house:ND-AL,Kalshi,0.023,13559,ND-AL House winner?,2026-11-01T16:58Z
-house:ND-AL,Polymarket,0.0255,61168,ND-AL House Election Winner,2026-11-01T16:58Z
-house:NE-01,Kalshi,0.235,189748,NE-01 House winner?,2026-11-01T16:58Z
-house:NE-01,Polymarket,0.25,58592,NE-01 House Election Winner,2026-11-01T16:58Z
-house:NE-02,Polymarket,0.9315,68767,NE-02 House Election Winner,2026-11-01T16:58Z
-house:NE-03,Kalshi,0.0115,5976,NE-03 House winner?,2026-11-01T16:58Z
-house:NE-03,Polymarket,0.0125,16571,NE-03 House Election Winner,2026-11-01T16:58Z
-house:NH-01,Polymarket,0.9545,56991,NH-01 House Election Winner,2026-11-01T16:58Z
-house:NH-02,Kalshi,0.94,76538,NH-02 House winner?,2026-11-01T16:58Z
-house:NH-02,Polymarket,0.9565,69972,NH-02 House Election Winner,2026-11-01T16:58Z
-house:NJ-01,Kalshi,0.9745,3121,NJ-01 House winner?,2026-11-01T16:58Z
-house:NJ-01,Polymarket,0.972,54687,NJ-01 House Election Winner,2026-11-01T16:58Z
-house:NJ-02,Kalshi,0.3,320898,NJ-02 House winner?,2026-11-01T16:58Z
-house:NJ-02,Polymarket,0.315,225565,NJ-02 House Election Winner,2026-11-01T16:58Z
-house:NJ-03,Kalshi,0.9835,5906,NJ-03 House winner?,2026-11-01T16:58Z
-house:NJ-03,Polymarket,0.99,41212,NJ-03 House Election Winner,2026-11-01T16:58Z
-house:NJ-04,Kalshi,0.0465,100337,NJ-04 House winner?,2026-11-01T16:58Z
-house:NJ-04,Polymarket,0.0505,34511,NJ-04 House Election Winner,2026-11-01T16:58Z
-house:NJ-05,Polymarket,0.9855,32888,NJ-05 House Election Winner,2026-11-01T16:58Z
-house:NJ-06,Kalshi,0.99,1472,NJ-06 House winner?,2026-11-01T16:58Z
-house:NJ-06,Polymarket,0.9925,34827,NJ-06 House Election Winner,2026-11-01T16:58Z
-house:NJ-07,Polymarket,0.94,63779,NJ-07 House Election Winner,2026-11-01T16:58Z
-house:NJ-08,Kalshi,0.987,16915,NJ-08 House winner?,2026-11-01T16:58Z
-house:NJ-08,Polymarket,0.9905,50059,NJ-08 House Election Winner,2026-11-01T16:58Z
-house:NJ-09,Polymarket,0.9745,48530,NJ-09 House Election Winner,2026-11-01T16:58Z
-house:NJ-10,Kalshi,0.9895,1634,NJ-10 House winner?,2026-11-01T16:58Z
-house:NJ-10,Polymarket,0.991,59207,NJ-10 House Election Winner,2026-11-01T16:58Z
-house:NJ-11,Kalshi,0.989,20615,NJ-11 House winner?,2026-11-01T16:58Z
-house:NJ-11,Polymarket,0.9845,47621,NJ-11 House Election Winner,2026-11-01T16:58Z
-house:NJ-12,Kalshi,0.983,13555,NJ-12 House winner?,2026-11-01T16:58Z
-house:NJ-12,Polymarket,0.985,30443,NJ-12 House Election Winner,2026-11-01T16:58Z
-house:NM-01,Kalshi,0.971,6563,NM-01 House winner?,2026-11-01T16:58Z
-house:NM-01,Polymarket,0.9715,46091,NM-01 House Election Winner,2026-11-01T16:58Z
-house:NM-02,Polymarket,0.9265,87296,NM-02 House Election Winner,2026-11-01T16:58Z
-house:NM-03,Kalshi,0.959,9800,NM-03 House winner?,2026-11-01T16:58Z
-house:NM-03,Polymarket,0.975,54993,NM-03 House Election Winner,2026-11-01T16:58Z
-house:NV-01,Polymarket,0.9585,37515,NV-01 House Election Winner,2026-11-01T16:58Z
-house:NV-02,Kalshi,0.395,182713,NV-02 House winner?,2026-11-01T16:58Z
-house:NV-02,Polymarket,0.37,87289,NV-02 House Election Winner,2026-11-01T16:58Z
-house:NV-03,Polymarket,0.954,12606,NV-03 House Election Winner,2026-11-01T16:58Z
-house:NV-04,Polymarket,0.9775,37251,NV-04 House Election Winner,2026-11-01T16:58Z
-house:NY-01,Kalshi,0.165,365262,NY-01 House winner?,2026-11-01T16:58Z
-house:NY-01,Polymarket,0.175,88924,NY-01 House Election Winner,2026-11-01T16:58Z
-house:NY-02,Kalshi,0.165,185159,NY-02 House winner?,2026-11-01T16:58Z
-house:NY-02,Polymarket,0.185,23647,NY-02 House Election Winner,2026-11-01T16:58Z
-house:NY-03,Polymarket,0.905,58977,NY-03 House Election Winner,2026-11-01T16:58Z
-house:NY-04,Polymarket,0.918,28528,NY-04 House Election Winner,2026-11-01T16:58Z
-house:NY-05,Kalshi,0.9875,4349,NY-05 House winner?,2026-11-01T16:58Z
-house:NY-05,Polymarket,0.996,64617,NY-05 House Election Winner,2026-11-01T16:58Z
-house:NY-06,Kalshi,0.9835,1941,NY-06 House winner?,2026-11-01T16:58Z
-house:NY-06,Polymarket,0.9975,27829,NY-06 House Election Winner,2026-11-01T16:58Z
-house:NY-07,Kalshi,0.9815,1489,NY-07 House winner?,2026-11-01T16:58Z
-house:NY-07,Polymarket,0.993,31748,NY-07 House Election Winner,2026-11-01T16:58Z
-house:NY-08,Kalshi,0.988,1513,NY-08 House winner?,2026-11-01T16:58Z
-house:NY-08,Polymarket,0.991,33328,NY-08 House Election Winner,2026-11-01T16:58Z
-house:NY-09,Kalshi,0.978,4107,NY-09 House winner?,2026-11-01T16:58Z
-house:NY-09,Polymarket,0.9735,62158,NY-09 House Election Winner,2026-11-01T16:58Z
-house:NY-10,Kalshi,0.9885,20940,NY-10 House winner?,2026-11-01T16:58Z
-house:NY-10,Polymarket,0.9915,57137,NY-10 House Election Winner,2026-11-01T16:58Z
-house:NY-11,Kalshi,0.0755,45701,NY-11 House winner?,2026-11-01T16:58Z
-house:NY-11,Polymarket,0.0675,52812,NY-11 House Election Winner,2026-11-01T16:58Z
-house:NY-12,Kalshi,0.9765,17523,NY-12 House winner?,2026-11-01T16:58Z
-house:NY-12,Polymarket,0.973,35500,NY-12 House Election Winner,2026-11-01T16:58Z
-house:NY-13,Kalshi,0.9865,5230,NY-13 House winner?,2026-11-01T16:58Z
-house:NY-13,Polymarket,0.994,41089,NY-13 House Election Winner,2026-11-01T16:58Z
-house:NY-14,Kalshi,0.989,6408,NY-14 House winner?,2026-11-01T16:58Z
-house:NY-14,Polymarket,0.9965,66977,NY-14 House Election Winner,2026-11-01T16:58Z
-house:NY-15,Kalshi,0.972,3523,NY-15 House winner?,2026-11-01T16:58Z
-house:NY-15,Polymarket,0.977,49559,NY-15 House Election Winner,2026-11-01T16:58Z
-house:NY-16,Kalshi,0.992,2071,NY-16 House winner?,2026-11-01T16:58Z
-house:NY-16,Polymarket,0.9905,42056,NY-16 House Election Winner,2026-11-01T16:58Z
-house:NY-17,Polymarket,0.63,111523,NY-17 House Election Winner,2026-11-01T16:58Z
-house:NY-18,Polymarket,0.976,46677,NY-18 House Election Winner,2026-11-01T16:58Z
-house:NY-19,Polymarket,0.9615,36106,NY-19 House Election Winner,2026-11-01T16:58Z
-house:NY-20,Kalshi,0.981,2198,NY-20 House winner?,2026-11-01T16:58Z
-house:NY-20,Polymarket,0.987,47819,NY-20 House Election Winner,2026-11-01T16:58Z
-house:NY-21,Kalshi,0.335,215830,NY-21 House winner?,2026-11-01T16:58Z
-house:NY-21,Polymarket,0.345,119297,NY-21 House Election Winner,2026-11-01T16:58Z
-house:NY-22,Polymarket,0.9835,41154,NY-22 House Election Winner,2026-11-01T16:58Z
-house:NY-23,Kalshi,0.0225,22131,NY-23 House winner?,2026-11-01T16:58Z
-house:NY-23,Polymarket,0.0135,90053,NY-23 House Election Winner,2026-11-01T16:58Z
-house:NY-24,Kalshi,0.034,20261,NY-24 House winner?,2026-11-01T16:58Z
-house:NY-24,Polymarket,0.026,53711,NY-24 House Election Winner,2026-11-01T16:58Z
-house:NY-25,Kalshi,0.988,1975,NY-25 House winner?,2026-11-01T16:58Z
-house:NY-25,Polymarket,0.9885,42230,NY-25 House Election Winner,2026-11-01T16:58Z
-house:NY-26,Kalshi,0.9815,1127,NY-26 House winner?,2026-11-01T16:58Z
-house:NY-26,Polymarket,0.9865,43024,NY-26 House Election Winner,2026-11-01T16:58Z
-house:OH-01,Polymarket,0.9535,65751,OH-01 House Election Winner,2026-11-01T16:58Z
-house:OH-02,Kalshi,0.02,7924,OH-02 House winner?,2026-11-01T16:58Z
-house:OH-02,Polymarket,0.01,61344,OH-02 House Election Winner,2026-11-01T16:58Z
-house:OH-03,Kalshi,0.979,5385,OH-03 House winner?,2026-11-01T16:58Z
-house:OH-03,Polymarket,0.9815,58976,OH-03 House Election Winner,2026-11-01T16:58Z
-house:OH-04,Kalshi,0.035,4047,OH-04 House winner?,2026-11-01T16:58Z
-house:OH-04,Polymarket,0.0385,24302,OH-04 House Election Winner,2026-11-01T16:58Z
-house:OH-05,Kalshi,0.0305,8784,OH-05 House winner?,2026-11-01T16:58Z
-house:OH-05,Polymarket,0.042,67202,OH-05 House Election Winner,2026-11-01T16:58Z
-house:OH-06,Kalshi,0.023,10561,OH-06 House winner?,2026-11-01T16:58Z
-house:OH-06,Polymarket,0.0085,83378,OH-06 House Election Winner,2026-11-01T16:58Z
-house:OH-07,Kalshi,0.845,314201,OH-07 House winner?,2026-11-01T16:58Z
-house:OH-07,Polymarket,0.865,149394,OH-07 House Election Winner,2026-11-01T16:58Z
-house:OH-08,Kalshi,0.0695,3022,OH-08 House winner?,2026-11-01T16:58Z
-house:OH-08,Polymarket,0.07,19129,OH-08 House Election Winner,2026-11-01T16:58Z
-house:OH-09,Polymarket,0.815,65500,OH-09 House Election Winner,2026-11-01T16:58Z
-house:OH-10,Kalshi,0.315,244811,OH-10 House winner?,2026-11-01T16:58Z
-house:OH-10,Polymarket,0.315,75281,OH-10 House Election Winner,2026-11-01T16:58Z
-house:OH-11,Kalshi,0.983,2928,OH-11 House winner?,2026-11-01T16:58Z
-house:OH-11,Polymarket,0.9935,39526,OH-11 House Election Winner,2026-11-01T16:58Z
-house:OH-12,Kalshi,0.0405,11182,OH-12 House winner?,2026-11-01T16:58Z
-house:OH-12,Polymarket,0.045,40353,OH-12 House Election Winner,2026-11-01T16:58Z
-house:OH-13,Polymarket,0.977,47294,OH-13 House Election Winner,2026-11-01T16:58Z
-house:OH-14,Kalshi,0.028,8353,OH-14 House winner?,2026-11-01T16:58Z
-house:OH-14,Polymarket,0.016,102890,OH-14 House Election Winner,2026-11-01T16:58Z
-house:OH-15,Kalshi,0.375,126122,OH-15 House winner?,2026-11-01T16:58Z
-house:OH-15,Polymarket,0.39,57372,OH-15 House Election Winner,2026-11-01T16:58Z
-house:OK-01,Kalshi,0.06,9076,OK-01 House winner?,2026-11-01T16:58Z
-house:OK-01,Polymarket,0.055,45642,OK-01 House Election Winner,2026-11-01T16:58Z
-house:OK-02,Kalshi,0.022,6377,OK-02 House winner?,2026-11-01T16:58Z
-house:OK-02,Polymarket,0.0135,34751,OK-02 House Election Winner,2026-11-01T16:58Z
-house:OK-03,Kalshi,0.019,14354,OK-03 House winner?,2026-11-01T16:58Z
-house:OK-03,Polymarket,0.0165,107397,OK-03 House Election Winner,2026-11-01T16:58Z
-house:OK-04,Kalshi,0.03,5397,OK-04 House winner?,2026-11-01T16:58Z
-house:OK-04,Polymarket,0.03,37400,OK-04 House Election Winner,2026-11-01T16:58Z
-house:OK-05,Kalshi,0.115,78635,OK-05 House winner?,2026-11-01T16:58Z
-house:OK-05,Polymarket,0.11,63716,OK-05 House Election Winner,2026-11-01T16:58Z
-house:OR-01,Kalshi,0.9905,795,OR-01 House winner?,2026-11-01T16:58Z
-house:OR-01,Polymarket,0.9905,27707,OR-01 House Election Winner,2026-11-01T16:58Z
-house:OR-02,Kalshi,0.027,2675,OR-02 House winner?,2026-11-01T16:58Z
-house:OR-02,Polymarket,0.037,23377,OR-02 House Election Winner,2026-11-01T16:58Z
-house:OR-03,Kalshi,0.993,1755,OR-03 House winner?,2026-11-01T16:58Z
-house:OR-03,Polymarket,0.992,21632,OR-03 House Election Winner,2026-11-01T16:58Z
-house:OR-04,Kalshi,0.973,2237,OR-04 House winner?,2026-11-01T16:58Z
-house:OR-04,Polymarket,0.988,35931,OR-04 House Election Winner,2026-11-01T16:58Z
-house:OR-05,Polymarket,0.9635,35883,OR-05 House Election Winner,2026-11-01T16:58Z
-house:OR-06,Kalshi,0.975,41155,OR-06 House winner?,2026-11-01T16:58Z
-house:OR-06,Polymarket,0.9875,27211,OR-06 House Election Winner,2026-11-01T16:58Z
-house:PA-01,Polymarket,0.55,130820,PA-01 House Election Winner,2026-11-01T16:58Z
-house:PA-02,Kalshi,0.9925,141,PA-02 House winner?,2026-11-01T16:58Z
-house:PA-02,Polymarket,0.992,40637,PA-02 House Election Winner,2026-11-01T16:58Z
-house:PA-03,Kalshi,0.97,1638,PA-03 House winner?,2026-11-01T16:58Z
-house:PA-03,Polymarket,0.976,33856,PA-03 House Election Winner,2026-11-01T16:58Z
-house:PA-04,Kalshi,0.9775,4235,PA-04 House winner?,2026-11-01T16:58Z
-house:PA-04,Polymarket,0.975,22212,PA-04 House Election Winner,2026-11-01T16:58Z
-house:PA-05,Kalshi,0.9855,2228,PA-05 House winner?,2026-11-01T16:58Z
-house:PA-05,Polymarket,0.9925,39631,PA-05 House Election Winner,2026-11-01T16:58Z
-house:PA-06,Kalshi,0.9855,7242,PA-06 House winner?,2026-11-01T16:58Z
-house:PA-06,Polymarket,0.9935,41572,PA-06 House Election Winner,2026-11-01T16:58Z
-house:PA-07,Polymarket,0.87,45232,PA-07 House Election Winner,2026-11-01T16:58Z
-house:PA-08,Polymarket,0.895,66826,PA-08 House Election Winner,2026-11-01T16:58Z
-house:PA-09,Kalshi,0.034,10975,PA-09 House winner?,2026-11-01T16:58Z
-house:PA-09,Polymarket,0.027,33965,PA-09 House Election Winner,2026-11-01T16:58Z
-house:PA-10,Polymarket,0.82,34247,PA-10 House Election Winner,2026-11-01T16:58Z
-house:PA-11,Kalshi,0.044,9337,PA-11 House winner?,2026-11-01T16:58Z
-house:PA-11,Polymarket,0.048,67923,PA-11 House Election Winner,2026-11-01T16:58Z
-house:PA-12,Kalshi,0.9845,72170,PA-12 House winner?,2026-11-01T16:58Z
-house:PA-12,Polymarket,0.984,25021,PA-12 House Election Winner,2026-11-01T16:58Z
-house:PA-13,Kalshi,0.0205,2304,PA-13 House winner?,2026-11-01T16:58Z
-house:PA-13,Polymarket,0.018,18124,PA-13 House Election Winner,2026-11-01T16:58Z
-house:PA-14,Kalshi,0.0385,3076,PA-14 House winner?,2026-11-01T16:58Z
-house:PA-14,Polymarket,0.0305,44706,PA-14 House Election Winner,2026-11-01T16:58Z
-house:PA-15,Kalshi,0.0425,16076,PA-15 House winner?,2026-11-01T16:58Z
-house:PA-15,Polymarket,0.0505,30862,PA-15 House Election Winner,2026-11-01T16:58Z
-house:PA-16,Kalshi,0.0665,15966,PA-16 House winner?,2026-11-01T16:58Z
-house:PA-16,Polymarket,0.048,90183,PA-16 House Election Winner,2026-11-01T16:58Z
-house:PA-17,Polymarket,0.9695,33466,PA-17 House Election Winner,2026-11-01T16:58Z
-house:RI-01,Kalshi,0.9815,4254,RI-01 House winner?,2026-11-01T16:58Z
-house:RI-01,Polymarket,0.9775,47425,RI-01 House Election Winner,2026-11-01T16:58Z
-house:RI-02,Kalshi,0.9545,89096,RI-02 House winner?,2026-11-01T16:58Z
-house:RI-02,Polymarket,0.962,65238,RI-02 House Election Winner,2026-11-01T16:58Z
-house:SC-01,Kalshi,0.495,268119,SC-01 House winner?,2026-11-01T16:58Z
-house:SC-01,Polymarket,0.495,152756,SC-01 House Election Winner,2026-11-01T16:58Z
-house:SC-02,Kalshi,0.125,49047,SC-02 House winner?,2026-11-01T16:58Z
-house:SC-02,Polymarket,0.14,67258,SC-02 House Election Winner,2026-11-01T16:58Z
-house:SC-03,Kalshi,0.0205,7496,SC-03 House winner?,2026-11-01T16:58Z
-house:SC-03,Polymarket,0.0105,55764,SC-03 House Election Winner,2026-11-01T16:58Z
-house:SC-04,Kalshi,0.0325,8462,SC-04 House winner?,2026-11-01T16:58Z
-house:SC-04,Polymarket,0.0375,48866,SC-04 House Election Winner,2026-11-01T16:58Z
-house:SC-05,Kalshi,0.0605,15043,SC-05 House winner?,2026-11-01T16:58Z
-house:SC-05,Polymarket,0.06,11731,SC-05 House Election Winner,2026-11-01T16:58Z
-house:SC-06,Kalshi,0.9895,44958,SC-06 House winner?,2026-11-01T16:58Z
-house:SC-06,Polymarket,0.989,45052,SC-06 House Election Winner,2026-11-01T16:58Z
-house:SC-07,Kalshi,0.0375,49724,SC-07 House winner?,2026-11-01T16:58Z
-house:SC-07,Polymarket,0.0195,68347,SC-07 House Election Winner,2026-11-01T16:58Z
-house:SD-AL,Kalshi,0.0285,6773,SD-AL House winner?,2026-11-01T16:58Z
-house:SD-AL,Polymarket,0.025,39626,SD-AL House Election Winner,2026-11-01T16:58Z
-house:TN-01,Kalshi,0.02,4132,TN-01 House winner?,2026-11-01T16:58Z
-house:TN-01,Polymarket,0.035,28299,TN-01 House Election Winner,2026-11-01T16:58Z
-house:TN-02,Kalshi,0.0335,5599,TN-02 House winner?,2026-11-01T16:58Z
-house:TN-02,Polymarket,0.028,39317,TN-02 House Election Winner,2026-11-01T16:58Z
-house:TN-03,Kalshi,0.0245,14827,TN-03 House winner?,2026-11-01T16:58Z
-house:TN-03,Polymarket,0.0195,45680,TN-03 House Election Winner,2026-11-01T16:58Z
-house:TN-04,Kalshi,0.0175,8526,TN-04 House winner?,2026-11-01T16:58Z
-house:TN-04,Polymarket,0.023,136052,TN-04 House Election Winner,2026-11-01T16:58Z
-house:TN-05,Kalshi,0.095,65248,TN-05 House winner?,2026-11-01T16:58Z
-house:TN-05,Polymarket,0.1,78430,TN-05 House Election Winner,2026-11-01T16:58Z
-house:TN-06,Kalshi,0.039,3734,TN-06 House winner?,2026-11-01T16:58Z
-house:TN-06,Polymarket,0.041,30903,TN-06 House Election Winner,2026-11-01T16:58Z
-house:TN-07,Kalshi,0.0445,10230,TN-07 House winner?,2026-11-01T16:58Z
-house:TN-07,Polymarket,0.0375,56121,TN-07 House Election Winner,2026-11-01T16:58Z
-house:TN-08,Kalshi,0.038,11103,TN-08 House winner?,2026-11-01T16:58Z
-house:TN-08,Polymarket,0.0365,51590,TN-08 House Election Winner,2026-11-01T16:58Z
-house:TN-09,Kalshi,0.15,235858,TN-09 House winner?,2026-11-01T16:58Z
-house:TN-09,Polymarket,0.155,70122,TN-09 House Election Winner,2026-11-01T16:58Z
-house:TX-01,Kalshi,0.0145,9125,TX-01 House winner?,2026-11-01T16:58Z
-house:TX-01,Polymarket,0.014,60446,TX-01 House Election Winner,2026-11-01T16:58Z
-house:TX-02,Kalshi,0.0715,2654,TX-02 House winner?,2026-11-01T16:58Z
-house:TX-02,Polymarket,0.07,35443,TX-02 House Election Winner,2026-11-01T16:58Z
-house:TX-03,Kalshi,0.0645,20266,TX-03 House winner?,2026-11-01T16:58Z
-house:TX-03,Polymarket,0.0575,63550,TX-03 House Election Winner,2026-11-01T16:58Z
-house:TX-04,Kalshi,0.03,5636,TX-04 House winner?,2026-11-01T16:58Z
-house:TX-04,Polymarket,0.0255,93393,TX-04 House Election Winner,2026-11-01T16:58Z
-house:TX-05,Kalshi,0.037,6144,TX-05 House winner?,2026-11-01T16:58Z
-house:TX-05,Polymarket,0.0435,65286,TX-05 House Election Winner,2026-11-01T16:58Z
-house:TX-06,Kalshi,0.0185,7761,TX-06 House winner?,2026-11-01T16:58Z
-house:TX-06,Polymarket,0.007,131186,TX-06 House Election Winner,2026-11-01T16:58Z
-house:TX-07,Kalshi,0.9845,50432,TX-07 House winner?,2026-11-01T16:58Z
-house:TX-07,Polymarket,0.989,31070,TX-07 House Election Winner,2026-11-01T16:58Z
-house:TX-08,Kalshi,0.0285,23472,TX-08 House winner?,2026-11-01T16:58Z
-house:TX-08,Polymarket,0.03,65748,TX-08 House Election Winner,2026-11-01T16:58Z
-house:TX-09,Polymarket,0.245,52199,TX-09 House Election Winner,2026-11-01T16:58Z
-house:TX-10,Kalshi,0.0775,9693,TX-10 House winner?,2026-11-01T16:58Z
-house:TX-10,Polymarket,0.085,37270,TX-10 House Election Winner,2026-11-01T16:58Z
-house:TX-11,Kalshi,0.035,4280,TX-11 House winner?,2026-11-01T16:58Z
-house:TX-11,Polymarket,0.025,35685,TX-11 House Election Winner,2026-11-01T16:58Z
-house:TX-12,Kalshi,0.036,10124,TX-12 House winner?,2026-11-01T16:58Z
-house:TX-12,Polymarket,0.0435,69514,TX-12 House Election Winner,2026-11-01T16:58Z
-house:TX-13,Kalshi,0.011,26159,TX-13 House winner?,2026-11-01T16:58Z
-house:TX-13,Polymarket,0.0235,19606,TX-13 House Election Winner,2026-11-01T16:58Z
-house:TX-14,Kalshi,0.0325,5547,TX-14 House winner?,2026-11-01T16:58Z
-house:TX-14,Polymarket,0.034,40249,TX-14 House Election Winner,2026-11-01T16:58Z
-house:TX-15,Polymarket,0.885,115528,TX-15 House Election Winner,2026-11-01T16:58Z
-house:TX-16,Kalshi,0.981,1316,TX-16 House winner?,2026-11-01T16:58Z
-house:TX-16,Polymarket,0.98,27789,TX-16 House Election Winner,2026-11-01T16:58Z
-house:TX-17,Kalshi,0.0325,34384,TX-17 House winner?,2026-11-01T16:58Z
-house:TX-17,Polymarket,0.017,69896,TX-17 House Election Winner,2026-11-01T16:58Z
-house:TX-18,Kalshi,0.992,1617,TX-18 House winner?,2026-11-01T16:58Z
-house:TX-18,Polymarket,0.992,17534,TX-18 House Election Winner,2026-11-01T16:58Z
-house:TX-19,Kalshi,0.026,7070,TX-19 House winner?,2026-11-01T16:58Z
-house:TX-19,Polymarket,0.0175,32159,TX-19 House Election Winner,2026-11-01T16:58Z
-house:TX-20,Kalshi,0.9745,2650,TX-20 House winner?,2026-11-01T16:58Z
-house:TX-20,Polymarket,0.9785,40417,TX-20 House Election Winner,2026-11-01T16:58Z
-house:TX-21,Kalshi,0.02,16278,TX-21 House winner?,2026-11-01T16:58Z
-house:TX-21,Polymarket,0.011,85129,TX-21 House Election Winner,2026-11-01T16:58Z
-house:TX-22,Kalshi,0.0535,5573,TX-22 House winner?,2026-11-01T16:58Z
-house:TX-22,Polymarket,0.055,43304,TX-22 House Election Winner,2026-11-01T16:58Z
-house:TX-23,Kalshi,0.465,892959,TX-23 House winner?,2026-11-01T16:58Z
-house:TX-23,Polymarket,0.475,197833,TX-23 House Election Winner,2026-11-01T16:58Z
-house:TX-24,Kalshi,0.0485,43783,TX-24 House winner?,2026-11-01T16:58Z
-house:TX-24,Polymarket,0.05,90908,TX-24 House Election Winner,2026-11-01T16:58Z
-house:TX-25,Kalshi,0.0445,22749,TX-25 House winner?,2026-11-01T16:58Z
-house:TX-25,Polymarket,0.031,64457,TX-25 House Election Winner,2026-11-01T16:58Z
-house:TX-26,Kalshi,0.0185,21883,TX-26 House winner?,2026-11-01T16:58Z
-house:TX-26,Polymarket,0.009,93590,TX-26 House Election Winner,2026-11-01T16:58Z
-house:TX-27,Kalshi,0.0235,15770,TX-27 House winner?,2026-11-01T16:58Z
-house:TX-27,Polymarket,0.0125,74837,TX-27 House Election Winner,2026-11-01T16:58Z
-house:TX-28,Polymarket,0.925,23850,TX-28 House Election Winner,2026-11-01T16:58Z
-house:TX-29,Kalshi,0.966,2743,TX-29 House winner?,2026-11-01T16:58Z
-house:TX-29,Polymarket,0.9755,20434,TX-29 House Election Winner,2026-11-01T16:58Z
-house:TX-30,Kalshi,0.9845,5045,TX-30 House winner?,2026-11-01T16:58Z
-house:TX-30,Polymarket,0.9895,48892,TX-30 House Election Winner,2026-11-01T16:58Z
-house:TX-31,Kalshi,0.0575,16026,TX-31 House winner?,2026-11-01T16:58Z
-house:TX-31,Polymarket,0.05,70203,TX-31 House Election Winner,2026-11-01T16:58Z
-house:TX-32,Polymarket,0.155,49475,TX-32 House Election Winner,2026-11-01T16:58Z
-house:TX-33,Kalshi,0.9765,2797,TX-33 House winner?,2026-11-01T16:58Z
-house:TX-33,Polymarket,0.983,18361,TX-33 House Election Winner,2026-11-01T16:58Z
-house:TX-34,Polymarket,0.9,32878,TX-34 House Election Winner,2026-11-01T16:58Z
-house:TX-35,Polymarket,0.735,104765,TX-35 House Election Winner,2026-11-01T16:58Z
-house:TX-36,Kalshi,0.034,6762,TX-36 House winner?,2026-11-01T16:58Z
-house:TX-36,Polymarket,0.027,67985,TX-36 House Election Winner,2026-11-01T16:58Z
-house:TX-37,Kalshi,0.984,3488,TX-37 House winner?,2026-11-01T16:58Z
-house:TX-37,Polymarket,0.9905,45613,TX-37 House Election Winner,2026-11-01T16:58Z
-house:TX-38,Kalshi,0.0455,11107,TX-38 House winner?,2026-11-01T16:58Z
-house:TX-38,Polymarket,0.0375,37476,TX-38 House Election Winner,2026-11-01T16:58Z
-house:UT-01,Polymarket,0.978,54381,UT-01 House Election Winner,2026-11-01T16:58Z
-house:UT-02,Polymarket,0.065,34135,UT-02 House Election Winner,2026-11-01T16:58Z
-house:UT-03,Polymarket,0.021,18455,UT-03 House Election Winner,2026-11-01T16:58Z
-house:UT-04,Kalshi,0.0445,5860,UT-04 House winner?,2026-11-01T16:58Z
-house:UT-04,Polymarket,0.0445,60508,UT-04 House Election Winner,2026-11-01T16:58Z
-house:VA-01,Polymarket,0.645,141151,VA-01 House Election Winner,2026-11-01T16:58Z
-house:VA-02,Polymarket,0.91,64430,VA-02 House Election Winner,2026-11-01T16:58Z
-house:VA-03,Kalshi,0.988,1365,VA-03 House winner?,2026-11-01T16:58Z
-house:VA-03,Polymarket,0.99,69524,VA-03 House Election Winner,2026-11-01T16:58Z
-house:VA-04,Kalshi,0.983,9975,VA-04 House winner?,2026-11-01T16:58Z
-house:VA-04,Polymarket,0.9855,42831,VA-04 House Election Winner,2026-11-01T16:58Z
-house:VA-05,Kalshi,0.355,958789,VA-05 House winner?,2026-11-01T16:58Z
-house:VA-05,Polymarket,0.35,327013,VA-05 House Election Winner,2026-11-01T16:58Z
-house:VA-06,Kalshi,0.0555,189305,VA-06 House winner?,2026-11-01T16:58Z
-house:VA-06,Polymarket,0.045,140884,VA-06 House Election Winner,2026-11-01T16:58Z
-house:VA-07,Polymarket,0.971,17131,VA-07 House Election Winner,2026-11-01T16:58Z
-house:VA-08,Kalshi,0.98,15607,VA-08 House winner?,2026-11-01T16:58Z
-house:VA-08,Polymarket,0.9895,41808,VA-08 House Election Winner,2026-11-01T16:58Z
-house:VA-09,Kalshi,0.018,9412,VA-09 House winner?,2026-11-01T16:58Z
-house:VA-09,Polymarket,0.0255,67075,VA-09 House Election Winner,2026-11-01T16:58Z
-house:VA-10,Polymarket,0.9775,8473,VA-10 House Election Winner,2026-11-01T16:58Z
-house:VA-11,Kalshi,0.9835,4423,VA-11 House winner?,2026-11-01T16:58Z
-house:VA-11,Polymarket,0.9785,29660,VA-11 House Election Winner,2026-11-01T16:58Z
-house:VT-AL,Kalshi,0.9815,7597,VT-AL House winner?,2026-11-01T16:58Z
-house:VT-AL,Polymarket,0.9835,51821,VT-AL House Election Winner,2026-11-01T16:58Z
-house:WA-01,Kalshi,0.9895,17414,WA-01 House winner?,2026-11-01T16:58Z
-house:WA-01,Polymarket,0.9905,47245,WA-01 House Election Winner,2026-11-01T16:58Z
-house:WA-02,Kalshi,0.9805,1664,WA-02 House winner?,2026-11-01T16:58Z
-house:WA-02,Polymarket,0.9815,33095,WA-02 House Election Winner,2026-11-01T16:58Z
-house:WA-03,Polymarket,0.905,71349,WA-03 House Election Winner,2026-11-01T16:58Z
-house:WA-04,Kalshi,0.079,38622,WA-04 House winner?,2026-11-01T16:58Z
-house:WA-04,Polymarket,0.055,65849,WA-04 House Election Winner,2026-11-01T16:58Z
-house:WA-05,Kalshi,0.165,191594,WA-05 House winner?,2026-11-01T16:58Z
-house:WA-05,Polymarket,0.16,126128,WA-05 House Election Winner,2026-11-01T16:58Z
-house:WA-06,Kalshi,0.9845,1918,WA-06 House winner?,2026-11-01T16:58Z
-house:WA-06,Polymarket,0.99,46078,WA-06 House Election Winner,2026-11-01T16:58Z
-house:WA-07,Kalshi,0.986,3277,WA-07 House winner?,2026-11-01T16:58Z
-house:WA-07,Polymarket,0.983,35269,WA-07 House Election Winner,2026-11-01T16:58Z
-house:WA-08,Polymarket,0.991,29223,WA-08 House Election Winner,2026-11-01T16:58Z
-house:WA-09,Kalshi,0.983,18274,WA-09 House winner?,2026-11-01T16:58Z
-house:WA-09,Polymarket,0.984,56029,WA-09 House Election Winner,2026-11-01T16:58Z
-house:WA-10,Kalshi,0.9905,1362,WA-10 House winner?,2026-11-01T16:58Z
-house:WA-10,Polymarket,0.992,37683,WA-10 House Election Winner,2026-11-01T16:58Z
-house:WI-01,Polymarket,0.505,30509,WI-01 House Election Winner,2026-11-01T16:58Z
-house:WI-02,Kalshi,0.987,2000,WI-02 House winner?,2026-11-01T16:58Z
-house:WI-02,Polymarket,0.9925,104557,WI-02 House Election Winner,2026-11-01T16:58Z
-house:WI-03,Polymarket,0.88,22975,WI-03 House Election Winner,2026-11-01T16:58Z
-house:WI-04,Kalshi,0.978,1873,WI-04 House winner?,2026-11-01T16:58Z
-house:WI-04,Polymarket,0.9835,37615,WI-04 House Election Winner,2026-11-01T16:58Z
-house:WI-05,Kalshi,0.0215,10873,WI-05 House winner?,2026-11-01T16:58Z
-house:WI-05,Polymarket,0.0225,109142,WI-05 House Election Winner,2026-11-01T16:58Z
-house:WI-06,Kalshi,0.0825,47874,WI-06 House winner?,2026-11-01T16:58Z
-house:WI-06,Polymarket,0.08,49375,WI-06 House Election Winner,2026-11-01T16:58Z
-house:WI-07,Kalshi,0.0625,14338,WI-07 House winner?,2026-11-01T16:58Z
-house:WI-07,Polymarket,0.065,80406,WI-07 House Election Winner,2026-11-01T16:58Z
-house:WI-08,Kalshi,0.115,31770,WI-08 House winner?,2026-11-01T16:58Z
-house:WI-08,Polymarket,0.115,32467,WI-08 House Election Winner,2026-11-01T16:58Z
-house:WV-01,Kalshi,0.0205,4250,WV-01 House winner?,2026-11-01T16:58Z
-house:WV-01,Polymarket,0.016,63036,WV-01 House Election Winner,2026-11-01T16:58Z
-house:WV-02,Kalshi,0.022,3975,WV-02 House winner?,2026-11-01T16:58Z
-house:WV-02,Polymarket,0.0195,101466,WV-02 House Election Winner,2026-11-01T16:58Z
-house:WY-AL,Kalshi,0.0365,23171,WY-AL House winner?,2026-11-01T16:58Z
-house:WY-AL,Polymarket,0.037,55123,WY-AL House Election Winner,2026-11-01T16:58Z
-senate:AK,Kalshi,0.705,5493449,Alaska Senate winner?,2026-11-01T16:58Z
-senate:AK,Polymarket,0.735,2378350,Alaska Senate Election Winner,2026-11-01T16:58Z
-senate:AL,Kalshi,0.021,21793,Alabama Senate winner?,2026-11-01T16:58Z
-senate:AL,Polymarket,0.016,16338,Alabama Senate Election Winner,2026-11-01T16:58Z
-senate:AR,Kalshi,0.0485,471750,Arkansas Senate winner?,2026-11-01T16:58Z
-senate:AR,Polymarket,0.039,110439,Arkansas Senate Election Winner,2026-11-01T16:58Z
-senate:CO,Kalshi,0.9875,80652,Colorado Senate winner?,2026-11-01T16:58Z
-senate:CO,Polymarket,0.9965,53870,Colorado Senate Election Winner,2026-11-01T16:58Z
-senate:DE,Kalshi,0.9835,43878,Delaware Senate winner?,2026-11-01T16:58Z
-senate:DE,Polymarket,0.9845,34566,Delaware Senate Election Winner,2026-11-01T16:58Z
-senate:FL,Kalshi,0.115,3618564,Florida Senate winner?,2026-11-01T16:58Z
-senate:FL,Polymarket,0.095,591499,Florida Senate Election Winner,2026-11-01T16:58Z
-senate:GA,Kalshi,0.9655,3599205,Georgia Senate winner?,2026-11-01T16:58Z
-senate:GA,Polymarket,0.9765,431627,Georgia Senate Election Winner,2026-11-01T16:58Z
-senate:IA,Kalshi,0.425,8169486,Iowa Senate winner?,2026-11-01T16:58Z
-senate:IA,Polymarket,0.415,1874150,Iowa Senate Election Winner,2026-11-01T16:58Z
-senate:ID,Kalshi,0.0475,1187351,Idaho Senate winner?,2026-11-01T16:58Z
-senate:ID,Polymarket,0.0325,477652,Idaho Senate Election Winner,2026-11-01T16:58Z
-senate:IL,Kalshi,0.9715,59008,Illinois Senate winner?,2026-11-01T16:58Z
-senate:IL,Polymarket,0.9915,40542,Illinois Senate Election Winner,2026-11-01T16:58Z
-senate:KS,Kalshi,0.515,7900314,Kansas Senate winner?,2026-11-01T16:58Z
-senate:KS,Polymarket,0.515,2016066,Kansas Senate Election Winner,2026-11-01T16:58Z
-senate:KY,Kalshi,0.0335,262378,Kentucky Senate winner?,2026-11-01T16:58Z
-senate:KY,Polymarket,0.0215,39785,Kentucky Senate Election Winner,2026-11-01T16:58Z
-senate:LA,Kalshi,0.105,343917,Louisiana Senate winner?,2026-11-01T16:58Z
-senate:LA,Polymarket,0.085,127608,Louisiana Senate Election Winner,2026-11-01T16:58Z
-senate:MA,Kalshi,0.983,179007,Massachusetts Senate winner?,2026-11-01T16:58Z
-senate:MA,Polymarket,0.996,58288,Massachusetts Senate Election Winner,2026-11-01T16:58Z
-senate:ME,Kalshi,0.685,13219037,Maine Senate winner?,2026-11-01T16:58Z
-senate:ME,Polymarket,0.675,3174288,Maine Senate Election Winner,2026-11-01T16:58Z
-senate:MI,Kalshi,0.735,15370361,Michigan Senate winner?,2026-11-01T16:58Z
-senate:MI,Polymarket,0.735,5852906,Michigan Senate Election Winner,2026-11-01T16:58Z
-senate:MN,Kalshi,0.904,5953865,Minnesota Senate winner?,2026-11-01T16:58Z
-senate:MN,Polymarket,0.925,638590,Minnesota Senate Election Winner,2026-11-01T16:58Z
-senate:MS,Kalshi,0.11,1513119,Mississippi Senate winner?,2026-11-01T16:58Z
-senate:MS,Polymarket,0.115,545262,Mississippi Senate Election Winner,2026-11-01T16:58Z
-senate:MT,Kalshi,0.115,1610304,Montana Senate winner?,2026-11-01T16:58Z
-senate:MT,Polymarket,0.095,378214,Montana Senate Election Winner,2026-11-01T16:58Z
-senate:NC,Kalshi,0.97,5298651,North Carolina Senate winner?,2026-11-01T16:58Z
-senate:NC,Polymarket,0.9755,317573,North Carolina Senate Election Winner,2026-11-01T16:58Z
-senate:NE,Kalshi,0.255,5665284,Nebraska Senate winner?,2026-11-01T16:58Z
-senate:NE,Polymarket,0.255,2117393,Nebraska Senate Election Winner,2026-11-01T16:58Z
-senate:NH,Kalshi,0.9225,2984169,New Hampshire Senate winner?,2026-11-01T16:58Z
-senate:NH,Polymarket,0.94,566738,New Hampshire Senate Election Winner,2026-11-01T16:58Z
-senate:NJ,Kalshi,0.9805,274908,New Jersey Senate winner?,2026-11-01T16:58Z
-senate:NJ,Polymarket,0.9915,35158,New Jersey Senate Election Winner,2026-11-01T16:58Z
-senate:NM,Kalshi,0.986,130899,New Mexico Senate winner?,2026-11-01T16:58Z
-senate:NM,Polymarket,0.9915,33050,New Mexico Senate Election Winner,2026-11-01T16:58Z
-senate:OH,Kalshi,0.705,9536862,Ohio Senate winner?,2026-11-01T16:58Z
-senate:OH,Polymarket,0.725,2423535,Ohio Senate Election Winner,2026-11-01T16:58Z
-senate:OK,Kalshi,0.023,72321,Oklahoma Senate winner?,2026-11-01T16:58Z
-senate:OK,Polymarket,0.0105,30608,Oklahoma Senate Election Winner,2026-11-01T16:58Z
-senate:OR,Kalshi,0.988,24155,Oregon Senate winner?,2026-11-01T16:58Z
-senate:OR,Polymarket,0.9905,10504,Oregon Senate Election Winner,2026-11-01T16:58Z
-senate:RI,Kalshi,0.9875,56266,Rhode Island Senate winner?,2026-11-01T16:58Z
-senate:RI,Polymarket,0.992,28354,Rhode Island Senate Election Winner,2026-11-01T16:58Z
-senate:SC,Kalshi,0.285,8280891,South Carolina Senate winner?,2026-11-01T16:58Z
-senate:SC,Polymarket,0.255,1677179,South Carolina Senate Election Winner,2026-11-01T16:58Z
-senate:SD,Kalshi,0.054,648776,South Dakota Senate winner?,2026-11-01T16:58Z
-senate:SD,Polymarket,0.056,123101,South Dakota Senate Election Winner,2026-11-01T16:58Z
-senate:TN,Kalshi,0.0275,553213,Tennessee Senate winner?,2026-11-01T16:58Z
-senate:TN,Polymarket,0.017,124647,Tennessee Senate Election Winner,2026-11-01T16:58Z
-senate:TX,Kalshi,0.685,64408364,Texas Senate winner?,2026-11-01T16:58Z
-senate:TX,Polymarket,0.695,9643233,Texas Senate Election Winner,2026-11-01T16:58Z
-senate:VA,Kalshi,0.9865,69083,Virginia Senate winner?,2026-11-01T16:58Z
-senate:VA,Polymarket,0.992,24336,Virginia Senate Election Winner,2026-11-01T16:58Z
-senate:WV,Kalshi,0.0185,43720,West Virginia Senate winner?,2026-11-01T16:58Z
-senate:WV,Polymarket,0.017,22861,West Virginia Senate Election Winner,2026-11-01T16:58Z
-senate:WY,Kalshi,0.011,35395,Wyoming Senate winner?,2026-11-01T16:58Z
-senate:WY,Polymarket,0.0095,22473,Wyoming Senate Election Winner,2026-11-01T16:58Z
+control:house,Kalshi,0.9375,101383195,Who will control the House?,2026-11-02T20:36Z
+control:house,Polymarket,0.955,39542001,Which party will win the House in 2026?,2026-11-02T20:36Z
+control:president,Kalshi,0.615,621295,2028 Presidential Election winner? (Party),2026-11-02T20:36Z
+control:president,Polymarket,0.66,2590799,Which party wins 2028 US Presidential Election?,2026-11-02T20:36Z
+control:senate,Kalshi,0.745,29248120,Who will control the Senate?,2026-11-02T20:36Z
+control:senate,Polymarket,0.775,16820073,Which party will win the Senate in 2026?,2026-11-02T20:36Z
+house:AK-AL,Polymarket,0.205,69888,AK-AL House Election Winner,2026-11-02T20:36Z
+house:AL-01,Kalshi,0.017,3043,AL-01 House winner?,2026-11-02T20:36Z
+house:AL-01,Polymarket,0.013,49827,AL-01 House Election Winner,2026-11-02T20:36Z
+house:AL-02,Kalshi,0.455,492854,AL-02 House winner?,2026-11-02T20:36Z
+house:AL-02,Polymarket,0.475,265560,AL-02 House Election Winner,2026-11-02T20:36Z
+house:AL-03,Kalshi,0.0145,15732,AL-03 House winner?,2026-11-02T20:36Z
+house:AL-03,Polymarket,0.014,45322,AL-03 House Election Winner,2026-11-02T20:36Z
+house:AL-04,Kalshi,0.0105,2899,AL-04 House winner?,2026-11-02T20:36Z
+house:AL-04,Polymarket,0.005,38951,AL-04 House Election Winner,2026-11-02T20:36Z
+house:AL-05,Kalshi,0.022,9664,AL-05 House winner?,2026-11-02T20:36Z
+house:AL-05,Polymarket,0.0185,72280,AL-05 House Election Winner,2026-11-02T20:36Z
+house:AL-06,Kalshi,0.015,2385,AL-06 House winner?,2026-11-02T20:36Z
+house:AL-06,Polymarket,0.0135,27248,AL-06 House Election Winner,2026-11-02T20:36Z
+house:AL-07,Kalshi,0.9935,16647,AL-07 House winner?,2026-11-02T20:36Z
+house:AL-07,Polymarket,0.9895,95664,AL-07 House Election Winner,2026-11-02T20:36Z
+house:AR-01,Kalshi,0.0125,22254,AR-01 House winner?,2026-11-02T20:36Z
+house:AR-01,Polymarket,0.0105,27407,AR-01 House Election Winner,2026-11-02T20:36Z
+house:AR-02,Kalshi,0.205,135226,AR-02 House winner?,2026-11-02T20:36Z
+house:AR-02,Polymarket,0.235,114886,AR-02 House Election Winner,2026-11-02T20:36Z
+house:AR-03,Kalshi,0.013,9472,AR-03 House winner?,2026-11-02T20:36Z
+house:AR-03,Polymarket,0.0075,39741,AR-03 House Election Winner,2026-11-02T20:36Z
+house:AR-04,Kalshi,0.0135,4994,AR-04 House winner?,2026-11-02T20:36Z
+house:AR-04,Polymarket,0.013,25365,AR-04 House Election Winner,2026-11-02T20:36Z
+house:AZ-01,Polymarket,0.825,233691,AZ-01 House Election Winner,2026-11-02T20:36Z
+house:AZ-02,Polymarket,0.43,39638,AZ-02 House Election Winner,2026-11-02T20:36Z
+house:AZ-03,Kalshi,0.9895,1012,AZ-03 House winner?,2026-11-02T20:36Z
+house:AZ-03,Polymarket,0.9875,53593,AZ-03 House Election Winner,2026-11-02T20:36Z
+house:AZ-04,Kalshi,0.964,13947,AZ-04 House winner?,2026-11-02T20:36Z
+house:AZ-04,Polymarket,0.9675,40840,AZ-04 House Election Winner,2026-11-02T20:36Z
+house:AZ-05,Kalshi,0.115,30854,AZ-05 House winner?,2026-11-02T20:36Z
+house:AZ-05,Polymarket,0.115,45829,AZ-05 House Election Winner,2026-11-02T20:36Z
+house:AZ-06,Polymarket,0.895,43761,AZ-06 House Election Winner,2026-11-02T20:36Z
+house:AZ-07,Kalshi,0.9885,1495,AZ-07 House winner?,2026-11-02T20:36Z
+house:AZ-07,Polymarket,0.9885,41282,AZ-07 House Election Winner,2026-11-02T20:36Z
+house:AZ-08,Kalshi,0.11,17543,AZ-08 House winner?,2026-11-02T20:36Z
+house:AZ-08,Polymarket,0.115,19081,AZ-08 House Election Winner,2026-11-02T20:36Z
+house:AZ-09,Kalshi,0.0225,5241,AZ-09 House winner?,2026-11-02T20:36Z
+house:AZ-09,Polymarket,0.0165,38848,AZ-09 House Election Winner,2026-11-02T20:36Z
+house:CA-01,Kalshi,0.9635,18507,CA-01 House winner?,2026-11-02T20:36Z
+house:CA-01,Polymarket,0.9655,50504,CA-01 House Election Winner,2026-11-02T20:36Z
+house:CA-02,Kalshi,0.992,1444,CA-02 House winner?,2026-11-02T20:36Z
+house:CA-02,Polymarket,0.9925,22339,CA-02 House Election Winner,2026-11-02T20:36Z
+house:CA-03,Polymarket,0.969,44536,CA-03 House Election Winner,2026-11-02T20:36Z
+house:CA-04,Polymarket,0.998,52691,CA-04 House Election Winner,2026-11-02T20:36Z
+house:CA-05,Kalshi,0.0595,21199,CA-05 House winner?,2026-11-02T20:36Z
+house:CA-05,Polymarket,0.06,33954,CA-05 House Election Winner,2026-11-02T20:36Z
+house:CA-06,Kalshi,0.989,106349,CA-06 House winner?,2026-11-02T20:36Z
+house:CA-06,Polymarket,0.9875,95738,CA-06 House Election Winner,2026-11-02T20:36Z
+house:CA-07,Polymarket,0.9845,14589,CA-07 House Election Winner,2026-11-02T20:36Z
+house:CA-08,Kalshi,0.9935,3768,CA-08 House winner?,2026-11-02T20:36Z
+house:CA-08,Polymarket,0.989,58478,CA-08 House Election Winner,2026-11-02T20:36Z
+house:CA-09,Polymarket,0.995,28237,CA-09 House Election Winner,2026-11-02T20:36Z
+house:CA-10,Kalshi,0.9825,2565,CA-10 House winner?,2026-11-02T20:36Z
+house:CA-10,Polymarket,0.9855,29271,CA-10 House Election Winner,2026-11-02T20:36Z
+house:CA-11,Polymarket,0.996,22613,CA-11 House Election Winner,2026-11-02T20:36Z
+house:CA-12,Polymarket,0.993,49043,CA-12 House Election Winner,2026-11-02T20:36Z
+house:CA-13,Polymarket,0.9395,58554,CA-13 House Election Winner,2026-11-02T20:36Z
+house:CA-14,Polymarket,0.998,43482,CA-14 House Election Winner,2026-11-02T20:36Z
+house:CA-15,Kalshi,0.995,17183,CA-15 House winner?,2026-11-02T20:36Z
+house:CA-15,Polymarket,0.9915,124156,CA-15 House Election Winner,2026-11-02T20:36Z
+house:CA-16,Kalshi,0.9855,11418,CA-16 House winner?,2026-11-02T20:36Z
+house:CA-16,Polymarket,0.9805,109888,CA-16 House Election Winner,2026-11-02T20:36Z
+house:CA-17,Kalshi,0.9875,1408,CA-17 House winner?,2026-11-02T20:36Z
+house:CA-17,Polymarket,0.9875,16921,CA-17 House Election Winner,2026-11-02T20:36Z
+house:CA-18,Kalshi,0.985,1700,CA-18 House winner?,2026-11-02T20:36Z
+house:CA-18,Polymarket,0.9835,50315,CA-18 House Election Winner,2026-11-02T20:36Z
+house:CA-19,Kalshi,0.996,6519,CA-19 House winner?,2026-11-02T20:36Z
+house:CA-19,Polymarket,0.9935,50958,CA-19 House Election Winner,2026-11-02T20:36Z
+house:CA-20,Kalshi,0.0305,5531,CA-20 House winner?,2026-11-02T20:36Z
+house:CA-20,Polymarket,0.0125,50461,CA-20 House Election Winner,2026-11-02T20:36Z
+house:CA-21,Polymarket,0.968,44100,CA-21 House Election Winner,2026-11-02T20:36Z
+house:CA-22,Polymarket,0.935,71109,CA-22 House Election Winner,2026-11-02T20:36Z
+house:CA-23,Kalshi,0.037,4562,CA-23 House winner?,2026-11-02T20:36Z
+house:CA-23,Polymarket,0.033,111960,CA-23 House Election Winner,2026-11-02T20:36Z
+house:CA-24,Kalshi,0.993,15113,CA-24 House winner?,2026-11-02T20:36Z
+house:CA-24,Polymarket,0.9905,53092,CA-24 House Election Winner,2026-11-02T20:36Z
+house:CA-25,Kalshi,0.981,2231,CA-25 House winner?,2026-11-02T20:36Z
+house:CA-25,Polymarket,0.9805,26948,CA-25 House Election Winner,2026-11-02T20:36Z
+house:CA-26,Kalshi,0.9765,2393,CA-26 House winner?,2026-11-02T20:36Z
+house:CA-26,Polymarket,0.9725,36728,CA-26 House Election Winner,2026-11-02T20:36Z
+house:CA-27,Polymarket,0.9775,24071,CA-27 House Election Winner,2026-11-02T20:36Z
+house:CA-28,Kalshi,0.9875,3837,CA-28 House winner?,2026-11-02T20:36Z
+house:CA-28,Polymarket,0.9845,142861,CA-28 House Election Winner,2026-11-02T20:36Z
+house:CA-29,Polymarket,0.9915,32225,CA-29 House Election Winner,2026-11-02T20:36Z
+house:CA-30,Kalshi,0.987,4796,CA-30 House winner?,2026-11-02T20:36Z
+house:CA-30,Polymarket,0.987,35573,CA-30 House Election Winner,2026-11-02T20:36Z
+house:CA-31,Kalshi,0.98,1093,CA-31 House winner?,2026-11-02T20:36Z
+house:CA-31,Polymarket,0.9855,19638,CA-31 House Election Winner,2026-11-02T20:36Z
+house:CA-32,Kalshi,0.995,3978,CA-32 House winner?,2026-11-02T20:36Z
+house:CA-32,Polymarket,0.995,29736,CA-32 House Election Winner,2026-11-02T20:36Z
+house:CA-33,Kalshi,0.9855,6964,CA-33 House winner?,2026-11-02T20:36Z
+house:CA-33,Polymarket,0.979,22444,CA-33 House Election Winner,2026-11-02T20:36Z
+house:CA-34,Polymarket,0.999,50774,CA-34 House Election Winner,2026-11-02T20:36Z
+house:CA-35,Kalshi,0.9865,1081,CA-35 House winner?,2026-11-02T20:36Z
+house:CA-35,Polymarket,0.999,46147,CA-35 House Election Winner,2026-11-02T20:36Z
+house:CA-36,Kalshi,0.9925,5276,CA-36 House winner?,2026-11-02T20:36Z
+house:CA-36,Polymarket,0.9885,86410,CA-36 House Election Winner,2026-11-02T20:36Z
+house:CA-37,Polymarket,0.966,4018,CA-37 House Election Winner,2026-11-02T20:36Z
+house:CA-38,Kalshi,0.9885,2615,CA-38 House winner?,2026-11-02T20:36Z
+house:CA-38,Polymarket,0.9875,66090,CA-38 House Election Winner,2026-11-02T20:36Z
+house:CA-39,Kalshi,0.9845,4668,CA-39 House winner?,2026-11-02T20:36Z
+house:CA-39,Polymarket,0.9895,59508,CA-39 House Election Winner,2026-11-02T20:36Z
+house:CA-41,Polymarket,0.986,24263,CA-41 House Election Winner,2026-11-02T20:36Z
+house:CA-42,Kalshi,0.98,1224,CA-42 House winner?,2026-11-02T20:36Z
+house:CA-42,Polymarket,0.9805,43187,CA-42 House Election Winner,2026-11-02T20:36Z
+house:CA-43,Kalshi,0.9825,4097,CA-43 House winner?,2026-11-02T20:36Z
+house:CA-43,Polymarket,0.9835,34636,CA-43 House Election Winner,2026-11-02T20:36Z
+house:CA-44,Kalshi,0.98,1261,CA-44 House winner?,2026-11-02T20:36Z
+house:CA-44,Polymarket,0.9845,47717,CA-44 House Election Winner,2026-11-02T20:36Z
+house:CA-45,Polymarket,0.935,55011,CA-45 House Election Winner,2026-11-02T20:36Z
+house:CA-46,Kalshi,0.9865,1626,CA-46 House winner?,2026-11-02T20:36Z
+house:CA-46,Polymarket,0.988,51661,CA-46 House Election Winner,2026-11-02T20:36Z
+house:CA-47,Polymarket,0.974,31775,CA-47 House Election Winner,2026-11-02T20:36Z
+house:CA-48,Kalshi,0.946,40475,CA-48 House winner?,2026-11-02T20:36Z
+house:CA-48,Polymarket,0.9545,48493,CA-48 House Election Winner,2026-11-02T20:36Z
+house:CA-49,Polymarket,0.988,28836,CA-49 House Election Winner,2026-11-02T20:36Z
+house:CA-50,Kalshi,0.975,2910,CA-50 House winner?,2026-11-02T20:36Z
+house:CA-50,Polymarket,0.9695,69898,CA-50 House Election Winner,2026-11-02T20:36Z
+house:CA-51,Kalshi,0.9825,1262,CA-51 House winner?,2026-11-02T20:36Z
+house:CA-51,Polymarket,0.9835,35514,CA-51 House Election Winner,2026-11-02T20:36Z
+house:CA-52,Kalshi,0.9825,15232,CA-52 House winner?,2026-11-02T20:36Z
+house:CA-52,Polymarket,0.981,51423,CA-52 House Election Winner,2026-11-02T20:36Z
+house:CO-01,Kalshi,0.9875,18458,CO-01 House winner?,2026-11-02T20:36Z
+house:CO-01,Polymarket,0.9925,44415,CO-01 House Election Winner,2026-11-02T20:36Z
+house:CO-02,Kalshi,0.986,8557,CO-02 House winner?,2026-11-02T20:36Z
+house:CO-02,Polymarket,0.985,44910,CO-02 House Election Winner,2026-11-02T20:36Z
+house:CO-03,Polymarket,0.385,89590,CO-03 House Election Winner,2026-11-02T20:36Z
+house:CO-04,Kalshi,0.345,231270,CO-04 House winner?,2026-11-02T20:36Z
+house:CO-04,Polymarket,0.365,88123,CO-04 House Election Winner,2026-11-02T20:36Z
+house:CO-05,Kalshi,0.445,232796,CO-05 House winner?,2026-11-02T20:36Z
+house:CO-05,Polymarket,0.435,65609,CO-05 House Election Winner,2026-11-02T20:36Z
+house:CO-06,Kalshi,0.9865,1201,CO-06 House winner?,2026-11-02T20:36Z
+house:CO-06,Polymarket,0.984,32566,CO-06 House Election Winner,2026-11-02T20:36Z
+house:CO-07,Kalshi,0.99,2720,CO-07 House winner?,2026-11-02T20:36Z
+house:CO-07,Polymarket,0.994,28299,CO-07 House Election Winner,2026-11-02T20:36Z
+house:CO-08,Polymarket,0.875,36636,CO-08 House Election Winner,2026-11-02T20:36Z
+house:CT-01,Kalshi,0.9935,6428,CT-01 House winner?,2026-11-02T20:36Z
+house:CT-01,Polymarket,0.9895,20468,CT-01 House Election Winner,2026-11-02T20:36Z
+house:CT-02,Kalshi,0.9805,4579,CT-02 House winner?,2026-11-02T20:36Z
+house:CT-02,Polymarket,0.983,20617,CT-02 House Election Winner,2026-11-02T20:36Z
+house:CT-03,Kalshi,0.983,1827,CT-03 House winner?,2026-11-02T20:36Z
+house:CT-03,Polymarket,0.9775,31498,CT-03 House Election Winner,2026-11-02T20:36Z
+house:CT-04,Kalshi,0.984,2516,CT-04 House winner?,2026-11-02T20:36Z
+house:CT-04,Polymarket,0.9815,49409,CT-04 House Election Winner,2026-11-02T20:36Z
+house:CT-05,Polymarket,0.9805,12191,CT-05 House Election Winner,2026-11-02T20:36Z
+house:DE-AL,Kalshi,0.9855,8125,DE-AL House winner?,2026-11-02T20:36Z
+house:DE-AL,Polymarket,0.984,49008,DE-AL House Election Winner,2026-11-02T20:36Z
+house:FL-01,Kalshi,0.0205,6520,FL-01 House winner?,2026-11-02T20:36Z
+house:FL-01,Polymarket,0.0225,119394,FL-01 House Election Winner,2026-11-02T20:36Z
+house:FL-02,Kalshi,0.085,12594,FL-02 House winner?,2026-11-02T20:36Z
+house:FL-02,Polymarket,0.08,19478,FL-02 House Election Winner,2026-11-02T20:36Z
+house:FL-03,Kalshi,0.0415,8514,FL-03 House winner?,2026-11-02T20:36Z
+house:FL-03,Polymarket,0.0375,66637,FL-03 House Election Winner,2026-11-02T20:36Z
+house:FL-04,Kalshi,0.185,113662,FL-04 House winner?,2026-11-02T20:36Z
+house:FL-04,Polymarket,0.175,46802,FL-04 House Election Winner,2026-11-02T20:36Z
+house:FL-05,Kalshi,0.0535,14948,FL-05 House winner?,2026-11-02T20:36Z
+house:FL-05,Polymarket,0.045,25295,FL-05 House Election Winner,2026-11-02T20:36Z
+house:FL-06,Kalshi,0.0255,15623,FL-06 House winner?,2026-11-02T20:36Z
+house:FL-06,Polymarket,0.025,42546,FL-06 House Election Winner,2026-11-02T20:36Z
+house:FL-07,Kalshi,0.355,113726,FL-07 House winner?,2026-11-02T20:36Z
+house:FL-07,Polymarket,0.36,92390,FL-07 House Election Winner,2026-11-02T20:36Z
+house:FL-08,Kalshi,0.0785,11383,FL-08 House winner?,2026-11-02T20:36Z
+house:FL-08,Polymarket,0.075,65536,FL-08 House Election Winner,2026-11-02T20:36Z
+house:FL-09,Kalshi,0.365,201188,FL-09 House winner?,2026-11-02T20:36Z
+house:FL-09,Polymarket,0.365,100089,FL-09 House Election Winner,2026-11-02T20:36Z
+house:FL-10,Kalshi,0.9855,38745,FL-10 House winner?,2026-11-02T20:36Z
+house:FL-10,Polymarket,0.99,25523,FL-10 House Election Winner,2026-11-02T20:36Z
+house:FL-11,Kalshi,0.125,78915,FL-11 House winner?,2026-11-02T20:36Z
+house:FL-11,Polymarket,0.115,49764,FL-11 House Election Winner,2026-11-02T20:36Z
+house:FL-12,Kalshi,0.125,51114,FL-12 House winner?,2026-11-02T20:36Z
+house:FL-12,Polymarket,0.12,100132,FL-12 House Election Winner,2026-11-02T20:36Z
+house:FL-13,Polymarket,0.345,85540,FL-13 House Election Winner,2026-11-02T20:36Z
+house:FL-14,Kalshi,0.755,526130,FL-14 House winner?,2026-11-02T20:36Z
+house:FL-14,Polymarket,0.785,155053,FL-14 House Election Winner,2026-11-02T20:36Z
+house:FL-15,Kalshi,0.0645,19367,FL-15 House winner?,2026-11-02T20:36Z
+house:FL-15,Polymarket,0.0655,41059,FL-15 House Election Winner,2026-11-02T20:36Z
+house:FL-16,Kalshi,0.275,37135,FL-16 House winner?,2026-11-02T20:36Z
+house:FL-16,Polymarket,0.275,33572,FL-16 House Election Winner,2026-11-02T20:36Z
+house:FL-17,Kalshi,0.036,6209,FL-17 House winner?,2026-11-02T20:36Z
+house:FL-17,Polymarket,0.031,32792,FL-17 House Election Winner,2026-11-02T20:36Z
+house:FL-18,Kalshi,0.0775,16973,FL-18 House winner?,2026-11-02T20:36Z
+house:FL-18,Polymarket,0.08,76953,FL-18 House Election Winner,2026-11-02T20:36Z
+house:FL-19,Kalshi,0.0335,4043,FL-19 House winner?,2026-11-02T20:36Z
+house:FL-19,Polymarket,0.032,39257,FL-19 House Election Winner,2026-11-02T20:36Z
+house:FL-20,Kalshi,0.9845,9834,FL-20 House winner?,2026-11-02T20:36Z
+house:FL-20,Polymarket,0.9845,43726,FL-20 House Election Winner,2026-11-02T20:36Z
+house:FL-21,Kalshi,0.105,55048,FL-21 House winner?,2026-11-02T20:36Z
+house:FL-21,Polymarket,0.105,49754,FL-21 House Election Winner,2026-11-02T20:36Z
+house:FL-22,Kalshi,0.725,203784,FL-22 House winner?,2026-11-02T20:36Z
+house:FL-22,Polymarket,0.755,99501,FL-22 House Election Winner,2026-11-02T20:36Z
+house:FL-23,Polymarket,0.9855,27407,FL-23 House Election Winner,2026-11-02T20:36Z
+house:FL-24,Kalshi,0.991,31667,FL-24 House winner?,2026-11-02T20:36Z
+house:FL-24,Polymarket,0.9945,35470,FL-24 House Election Winner,2026-11-02T20:36Z
+house:FL-25,Kalshi,0.805,857349,FL-25 House winner?,2026-11-02T20:36Z
+house:FL-25,Polymarket,0.815,145534,FL-25 House Election Winner,2026-11-02T20:36Z
+house:FL-26,Kalshi,0.145,113176,FL-26 House winner?,2026-11-02T20:36Z
+house:FL-26,Polymarket,0.135,122763,FL-26 House Election Winner,2026-11-02T20:36Z
+house:FL-27,Kalshi,0.405,193734,FL-27 House winner?,2026-11-02T20:36Z
+house:FL-27,Polymarket,0.425,77989,FL-27 House Election Winner,2026-11-02T20:36Z
+house:FL-28,Kalshi,0.0715,36092,FL-28 House winner?,2026-11-02T20:36Z
+house:FL-28,Polymarket,0.065,77982,FL-28 House Election Winner,2026-11-02T20:36Z
+house:GA-01,Kalshi,0.105,87565,GA-01 House winner?,2026-11-02T20:36Z
+house:GA-01,Polymarket,0.115,32825,GA-01 House Election Winner,2026-11-02T20:36Z
+house:GA-02,Kalshi,0.98,28810,GA-02 House winner?,2026-11-02T20:36Z
+house:GA-02,Polymarket,0.981,27463,GA-02 House Election Winner,2026-11-02T20:36Z
+house:GA-03,Kalshi,0.033,15223,GA-03 House winner?,2026-11-02T20:36Z
+house:GA-03,Polymarket,0.0265,33700,GA-03 House Election Winner,2026-11-02T20:36Z
+house:GA-04,Kalshi,0.985,1947,GA-04 House winner?,2026-11-02T20:36Z
+house:GA-04,Polymarket,0.9825,48386,GA-04 House Election Winner,2026-11-02T20:36Z
+house:GA-05,Kalshi,0.9915,2457,GA-05 House winner?,2026-11-02T20:36Z
+house:GA-05,Polymarket,0.992,54763,GA-05 House Election Winner,2026-11-02T20:36Z
+house:GA-06,Kalshi,0.986,11991,GA-06 House winner?,2026-11-02T20:36Z
+house:GA-06,Polymarket,0.985,24447,GA-06 House Election Winner,2026-11-02T20:36Z
+house:GA-07,Kalshi,0.0685,47796,GA-07 House winner?,2026-11-02T20:36Z
+house:GA-07,Polymarket,0.065,49861,GA-07 House Election Winner,2026-11-02T20:36Z
+house:GA-08,Kalshi,0.0175,8364,GA-08 House winner?,2026-11-02T20:36Z
+house:GA-08,Polymarket,0.0125,50690,GA-08 House Election Winner,2026-11-02T20:36Z
+house:GA-09,Kalshi,0.015,14107,GA-09 House winner?,2026-11-02T20:36Z
+house:GA-09,Polymarket,0.015,61372,GA-09 House Election Winner,2026-11-02T20:36Z
+house:GA-10,Kalshi,0.0255,4558,GA-10 House winner?,2026-11-02T20:36Z
+house:GA-10,Polymarket,0.022,67977,GA-10 House Election Winner,2026-11-02T20:36Z
+house:GA-11,Kalshi,0.0435,29994,GA-11 House winner?,2026-11-02T20:36Z
+house:GA-11,Polymarket,0.044,94512,GA-11 House Election Winner,2026-11-02T20:36Z
+house:GA-12,Kalshi,0.135,90482,GA-12 House winner?,2026-11-02T20:36Z
+house:GA-12,Polymarket,0.125,82653,GA-12 House Election Winner,2026-11-02T20:36Z
+house:GA-13,Kalshi,0.9895,9354,GA-13 House winner?,2026-11-02T20:36Z
+house:GA-13,Polymarket,0.986,39710,GA-13 House Election Winner,2026-11-02T20:36Z
+house:GA-14,Kalshi,0.031,22636,GA-14 House winner?,2026-11-02T20:36Z
+house:GA-14,Polymarket,0.024,19742,GA-14 House Election Winner,2026-11-02T20:36Z
+house:HI-01,Kalshi,0.988,493,HI-01 House winner?,2026-11-02T20:36Z
+house:HI-01,Polymarket,0.987,54649,HI-01 House Election Winner,2026-11-02T20:36Z
+house:HI-02,Kalshi,0.985,68193,HI-02 House winner?,2026-11-02T20:36Z
+house:HI-02,Polymarket,0.99,83893,HI-02 House Election Winner,2026-11-02T20:36Z
+house:IA-01,Polymarket,0.935,81334,IA-01 House Election Winner,2026-11-02T20:36Z
+house:IA-02,Kalshi,0.715,141925,IA-02 House winner?,2026-11-02T20:36Z
+house:IA-02,Polymarket,0.725,77225,IA-02 House Election Winner,2026-11-02T20:36Z
+house:IA-03,Polymarket,0.845,26624,IA-03 House Election Winner,2026-11-02T20:36Z
+house:IA-04,Kalshi,0.0225,18180,IA-04 House winner?,2026-11-02T20:36Z
+house:IA-04,Polymarket,0.017,67397,IA-04 House Election Winner,2026-11-02T20:36Z
+house:ID-01,Kalshi,0.022,2162,ID-01 House winner?,2026-11-02T20:36Z
+house:ID-01,Polymarket,0.0165,49606,ID-01 House Election Winner,2026-11-02T20:36Z
+house:ID-02,Kalshi,0.025,8183,ID-02 House winner?,2026-11-02T20:36Z
+house:ID-02,Polymarket,0.025,43775,ID-02 House Election Winner,2026-11-02T20:36Z
+house:IL-01,Kalshi,0.9795,11775,IL-01 House winner?,2026-11-02T20:36Z
+house:IL-01,Polymarket,0.9785,61154,IL-01 House Election Winner,2026-11-02T20:36Z
+house:IL-02,Kalshi,0.9905,1382,IL-02 House winner?,2026-11-02T20:36Z
+house:IL-02,Polymarket,0.9885,36923,IL-02 House Election Winner,2026-11-02T20:36Z
+house:IL-03,Kalshi,0.981,1751,IL-03 House winner?,2026-11-02T20:36Z
+house:IL-03,Polymarket,0.9765,52689,IL-03 House Election Winner,2026-11-02T20:36Z
+house:IL-04,Kalshi,0.9915,62232,IL-04 House winner?,2026-11-02T20:36Z
+house:IL-04,Polymarket,0.9875,74799,IL-04 House Election Winner,2026-11-02T20:36Z
+house:IL-05,Kalshi,0.987,2176,IL-05 House winner?,2026-11-02T20:36Z
+house:IL-05,Polymarket,0.988,35865,IL-05 House Election Winner,2026-11-02T20:36Z
+house:IL-06,Kalshi,0.981,1061,IL-06 House winner?,2026-11-02T20:36Z
+house:IL-06,Polymarket,0.985,43835,IL-06 House Election Winner,2026-11-02T20:36Z
+house:IL-07,Kalshi,0.9925,620,IL-07 House winner?,2026-11-02T20:36Z
+house:IL-07,Polymarket,0.9925,27222,IL-07 House Election Winner,2026-11-02T20:36Z
+house:IL-08,Kalshi,0.9595,11303,IL-08 House winner?,2026-11-02T20:36Z
+house:IL-08,Polymarket,0.961,23517,IL-08 House Election Winner,2026-11-02T20:36Z
+house:IL-09,Kalshi,0.991,3418,IL-09 House winner?,2026-11-02T20:36Z
+house:IL-09,Polymarket,0.992,32117,IL-09 House Election Winner,2026-11-02T20:36Z
+house:IL-10,Kalshi,0.9815,4347,IL-10 House winner?,2026-11-02T20:36Z
+house:IL-10,Polymarket,0.9805,34496,IL-10 House Election Winner,2026-11-02T20:36Z
+house:IL-11,Kalshi,0.9835,1727,IL-11 House winner?,2026-11-02T20:36Z
+house:IL-11,Polymarket,0.9875,47913,IL-11 House Election Winner,2026-11-02T20:36Z
+house:IL-12,Kalshi,0.0165,10794,IL-12 House winner?,2026-11-02T20:36Z
+house:IL-12,Polymarket,0.017,27268,IL-12 House Election Winner,2026-11-02T20:36Z
+house:IL-13,Kalshi,0.981,2512,IL-13 House winner?,2026-11-02T20:36Z
+house:IL-13,Polymarket,0.982,21749,IL-13 House Election Winner,2026-11-02T20:36Z
+house:IL-14,Kalshi,0.984,3546,IL-14 House winner?,2026-11-02T20:36Z
+house:IL-14,Polymarket,0.9895,26070,IL-14 House Election Winner,2026-11-02T20:36Z
+house:IL-15,Kalshi,0.0145,7091,IL-15 House winner?,2026-11-02T20:36Z
+house:IL-15,Polymarket,0.0105,50962,IL-15 House Election Winner,2026-11-02T20:36Z
+house:IL-16,Kalshi,0.0315,34590,IL-16 House winner?,2026-11-02T20:36Z
+house:IL-16,Polymarket,0.0285,73176,IL-16 House Election Winner,2026-11-02T20:36Z
+house:IL-17,Polymarket,0.979,33064,IL-17 House Election Winner,2026-11-02T20:36Z
+house:IN-01,Polymarket,0.973,24831,IN-01 House Election Winner,2026-11-02T20:36Z
+house:IN-02,Kalshi,0.034,4336,IN-02 House winner?,2026-11-02T20:36Z
+house:IN-02,Polymarket,0.032,41833,IN-02 House Election Winner,2026-11-02T20:36Z
+house:IN-03,Kalshi,0.02,2227,IN-03 House winner?,2026-11-02T20:36Z
+house:IN-03,Polymarket,0.025,48860,IN-03 House Election Winner,2026-11-02T20:36Z
+house:IN-04,Kalshi,0.0245,10845,IN-04 House winner?,2026-11-02T20:36Z
+house:IN-04,Polymarket,0.0255,50362,IN-04 House Election Winner,2026-11-02T20:36Z
+house:IN-05,Kalshi,0.195,231632,IN-05 House winner?,2026-11-02T20:36Z
+house:IN-05,Polymarket,0.19,76204,IN-05 House Election Winner,2026-11-02T20:36Z
+house:IN-06,Kalshi,0.0265,3214,IN-06 House winner?,2026-11-02T20:36Z
+house:IN-06,Polymarket,0.0305,38224,IN-06 House Election Winner,2026-11-02T20:36Z
+house:IN-07,Polymarket,0.981,46062,IN-07 House Election Winner,2026-11-02T20:36Z
+house:IN-08,Kalshi,0.0245,86339,IN-08 House winner?,2026-11-02T20:36Z
+house:IN-08,Polymarket,0.023,53775,IN-08 House Election Winner,2026-11-02T20:36Z
+house:IN-09,Kalshi,0.024,10236,IN-09 House winner?,2026-11-02T20:36Z
+house:IN-09,Polymarket,0.0125,36373,IN-09 House Election Winner,2026-11-02T20:36Z
+house:KS-01,Kalshi,0.016,8332,KS-01 House winner?,2026-11-02T20:36Z
+house:KS-01,Polymarket,0.019,37756,KS-01 House Election Winner,2026-11-02T20:36Z
+house:KS-02,Kalshi,0.195,62784,KS-02 House winner?,2026-11-02T20:36Z
+house:KS-02,Polymarket,0.205,56012,KS-02 House Election Winner,2026-11-02T20:36Z
+house:KS-03,Kalshi,0.965,18226,KS-03 House winner?,2026-11-02T20:36Z
+house:KS-03,Polymarket,0.964,35435,KS-03 House Election Winner,2026-11-02T20:36Z
+house:KS-04,Kalshi,0.0335,14997,KS-04 House winner?,2026-11-02T20:36Z
+house:KS-04,Polymarket,0.0355,157888,KS-04 House Election Winner,2026-11-02T20:36Z
+house:KY-01,Kalshi,0.019,5446,KY-01 House winner?,2026-11-02T20:36Z
+house:KY-01,Polymarket,0.018,50955,KY-01 House Election Winner,2026-11-02T20:36Z
+house:KY-02,Kalshi,0.019,3364,KY-02 House winner?,2026-11-02T20:36Z
+house:KY-02,Polymarket,0.015,18845,KY-02 House Election Winner,2026-11-02T20:36Z
+house:KY-03,Kalshi,0.9835,5300,KY-03 House winner?,2026-11-02T20:36Z
+house:KY-03,Polymarket,0.9825,48976,KY-03 House Election Winner,2026-11-02T20:36Z
+house:KY-04,Kalshi,0.029,63233,KY-04 House winner?,2026-11-02T20:36Z
+house:KY-04,Polymarket,0.03,50309,KY-04 House Election Winner,2026-11-02T20:36Z
+house:KY-05,Kalshi,0.0075,4439,KY-05 House winner?,2026-11-02T20:36Z
+house:KY-05,Polymarket,0.0055,73124,KY-05 House Election Winner,2026-11-02T20:36Z
+house:KY-06,Kalshi,0.555,254749,KY-06 House winner?,2026-11-02T20:36Z
+house:KY-06,Polymarket,0.545,131131,KY-06 House Election Winner,2026-11-02T20:36Z
+house:LA-01,Kalshi,0.0275,4869,LA-01 House winner?,2026-11-02T20:36Z
+house:LA-01,Polymarket,0.0225,53447,LA-01 House Election Winner,2026-11-02T20:36Z
+house:LA-02,Kalshi,0.9825,33859,LA-02 House winner?,2026-11-02T20:36Z
+house:LA-02,Polymarket,0.9855,62811,LA-02 House Election Winner,2026-11-02T20:36Z
+house:LA-03,Kalshi,0.0195,4840,LA-03 House winner?,2026-11-02T20:36Z
+house:LA-03,Polymarket,0.022,36288,LA-03 House Election Winner,2026-11-02T20:36Z
+house:LA-04,Kalshi,0.025,9062,LA-04 House winner?,2026-11-02T20:36Z
+house:LA-04,Polymarket,0.0305,21649,LA-04 House Election Winner,2026-11-02T20:36Z
+house:LA-05,Kalshi,0.022,16237,LA-05 House winner?,2026-11-02T20:36Z
+house:LA-05,Polymarket,0.023,27106,LA-05 House Election Winner,2026-11-02T20:36Z
+house:LA-06,Kalshi,0.054,109384,LA-06 House winner?,2026-11-02T20:36Z
+house:LA-06,Polymarket,0.0505,76651,LA-06 House Election Winner,2026-11-02T20:36Z
+house:MA-01,Kalshi,0.986,3520,MA-01 House winner?,2026-11-02T20:36Z
+house:MA-01,Polymarket,0.9865,56341,MA-01 House Election Winner,2026-11-02T20:36Z
+house:MA-02,Kalshi,0.991,1650,MA-02 House winner?,2026-11-02T20:36Z
+house:MA-02,Polymarket,0.993,75866,MA-02 House Election Winner,2026-11-02T20:36Z
+house:MA-03,Kalshi,0.983,3629,MA-03 House winner?,2026-11-02T20:36Z
+house:MA-03,Polymarket,0.984,24390,MA-03 House Election Winner,2026-11-02T20:36Z
+house:MA-04,Kalshi,0.983,2730,MA-04 House winner?,2026-11-02T20:36Z
+house:MA-04,Polymarket,0.984,49530,MA-04 House Election Winner,2026-11-02T20:36Z
+house:MA-05,Kalshi,0.994,1776,MA-05 House winner?,2026-11-02T20:36Z
+house:MA-05,Polymarket,0.995,38188,MA-05 House Election Winner,2026-11-02T20:36Z
+house:MA-06,Kalshi,0.9765,31285,MA-06 House winner?,2026-11-02T20:36Z
+house:MA-06,Polymarket,0.98,30039,MA-06 House Election Winner,2026-11-02T20:36Z
+house:MA-07,Kalshi,0.988,443,MA-07 House winner?,2026-11-02T20:36Z
+house:MA-07,Polymarket,0.987,37012,MA-07 House Election Winner,2026-11-02T20:36Z
+house:MA-08,Kalshi,0.9855,788,MA-08 House winner?,2026-11-02T20:36Z
+house:MA-08,Polymarket,0.9825,29147,MA-08 House Election Winner,2026-11-02T20:36Z
+house:MA-09,Kalshi,0.983,1283,MA-09 House winner?,2026-11-02T20:36Z
+house:MA-09,Polymarket,0.982,30809,MA-09 House Election Winner,2026-11-02T20:36Z
+house:MD-01,Kalshi,0.115,142351,MD-01 House winner?,2026-11-02T20:36Z
+house:MD-01,Polymarket,0.125,99519,MD-01 House Election Winner,2026-11-02T20:36Z
+house:MD-02,Kalshi,0.9885,4436,MD-02 House winner?,2026-11-02T20:36Z
+house:MD-02,Polymarket,0.986,25153,MD-02 House Election Winner,2026-11-02T20:36Z
+house:MD-03,Kalshi,0.981,2573,MD-03 House winner?,2026-11-02T20:36Z
+house:MD-03,Polymarket,0.982,54462,MD-03 House Election Winner,2026-11-02T20:36Z
+house:MD-04,Kalshi,0.99,994,MD-04 House winner?,2026-11-02T20:36Z
+house:MD-04,Polymarket,0.989,48723,MD-04 House Election Winner,2026-11-02T20:36Z
+house:MD-05,Kalshi,0.98,664,MD-05 House winner?,2026-11-02T20:36Z
+house:MD-05,Polymarket,0.9755,25102,MD-05 House Election Winner,2026-11-02T20:36Z
+house:MD-06,Kalshi,0.9785,8702,MD-06 House winner?,2026-11-02T20:36Z
+house:MD-06,Polymarket,0.9795,35984,MD-06 House Election Winner,2026-11-02T20:36Z
+house:MD-07,Kalshi,0.9925,909,MD-07 House winner?,2026-11-02T20:36Z
+house:MD-07,Polymarket,0.9935,24651,MD-07 House Election Winner,2026-11-02T20:36Z
+house:MD-08,Kalshi,0.986,742,MD-08 House winner?,2026-11-02T20:36Z
+house:MD-08,Polymarket,0.985,28786,MD-08 House Election Winner,2026-11-02T20:36Z
+house:ME-01,Kalshi,0.981,4816,ME-01 House winner?,2026-11-02T20:36Z
+house:ME-01,Polymarket,0.982,48526,ME-01 House Election Winner,2026-11-02T20:36Z
+house:ME-02,Polymarket,0.455,111009,ME-02 House Election Winner,2026-11-02T20:36Z
+house:MI-01,Kalshi,0.105,34438,MI-01 House winner?,2026-11-02T20:36Z
+house:MI-01,Polymarket,0.115,39590,MI-01 House Election Winner,2026-11-02T20:36Z
+house:MI-02,Kalshi,0.016,10217,MI-02 House winner?,2026-11-02T20:36Z
+house:MI-02,Polymarket,0.017,55444,MI-02 House Election Winner,2026-11-02T20:36Z
+house:MI-03,Polymarket,0.959,63685,MI-03 House Election Winner,2026-11-02T20:36Z
+house:MI-04,Polymarket,0.595,56364,MI-04 House Election Winner,2026-11-02T20:36Z
+house:MI-05,Kalshi,0.0455,19383,MI-05 House winner?,2026-11-02T20:36Z
+house:MI-05,Polymarket,0.038,49101,MI-05 House Election Winner,2026-11-02T20:36Z
+house:MI-06,Kalshi,0.9805,1582,MI-06 House winner?,2026-11-02T20:36Z
+house:MI-06,Polymarket,0.982,54196,MI-06 House Election Winner,2026-11-02T20:36Z
+house:MI-07,Polymarket,0.785,72708,MI-07 House Election Winner,2026-11-02T20:36Z
+house:MI-08,Polymarket,0.982,26746,MI-08 House Election Winner,2026-11-02T20:36Z
+house:MI-09,Kalshi,0.03,7043,MI-09 House winner?,2026-11-02T20:36Z
+house:MI-09,Polymarket,0.0315,38927,MI-09 House Election Winner,2026-11-02T20:36Z
+house:MI-10,Polymarket,0.74,35410,MI-10 House Election Winner,2026-11-02T20:36Z
+house:MI-11,Kalshi,0.9855,3464,MI-11 House winner?,2026-11-02T20:36Z
+house:MI-11,Polymarket,0.984,82695,MI-11 House Election Winner,2026-11-02T20:36Z
+house:MI-12,Kalshi,0.991,2568,MI-12 House winner?,2026-11-02T20:36Z
+house:MI-12,Polymarket,0.991,42076,MI-12 House Election Winner,2026-11-02T20:36Z
+house:MI-13,Kalshi,0.982,1791,MI-13 House winner?,2026-11-02T20:36Z
+house:MI-13,Polymarket,0.984,52038,MI-13 House Election Winner,2026-11-02T20:36Z
+house:MN-01,Kalshi,0.395,404957,MN-01 House winner?,2026-11-02T20:36Z
+house:MN-01,Polymarket,0.375,104978,MN-01 House Election Winner,2026-11-02T20:36Z
+house:MN-02,Polymarket,0.9525,65116,MN-02 House Election Winner,2026-11-02T20:36Z
+house:MN-03,Kalshi,0.98,2185,MN-03 House winner?,2026-11-02T20:36Z
+house:MN-03,Polymarket,0.9795,30345,MN-03 House Election Winner,2026-11-02T20:36Z
+house:MN-04,Kalshi,0.985,22728,MN-04 House winner?,2026-11-02T20:36Z
+house:MN-04,Polymarket,0.9865,29447,MN-04 House Election Winner,2026-11-02T20:36Z
+house:MN-05,Kalshi,0.9795,2071373,MN-05 House winner?,2026-11-02T20:36Z
+house:MN-05,Polymarket,0.994,80202,MN-05 House Election Winner,2026-11-02T20:36Z
+house:MN-06,Kalshi,0.056,32924,MN-06 House winner?,2026-11-02T20:36Z
+house:MN-06,Polymarket,0.054,103547,MN-06 House Election Winner,2026-11-02T20:36Z
+house:MN-07,Kalshi,0.021,10267,MN-07 House winner?,2026-11-02T20:36Z
+house:MN-07,Polymarket,0.026,37158,MN-07 House Election Winner,2026-11-02T20:36Z
+house:MN-08,Kalshi,0.145,60102,MN-08 House winner?,2026-11-02T20:36Z
+house:MN-08,Polymarket,0.14,28077,MN-08 House Election Winner,2026-11-02T20:36Z
+house:MO-01,Kalshi,0.988,6274,MO-01 House winner?,2026-11-02T20:36Z
+house:MO-01,Polymarket,0.9885,37132,MO-01 House Election Winner,2026-11-02T20:36Z
+house:MO-02,Kalshi,0.365,337842,MO-02 House winner?,2026-11-02T20:36Z
+house:MO-02,Polymarket,0.375,214789,MO-02 House Election Winner,2026-11-02T20:36Z
+house:MO-03,Kalshi,0.02,6172,MO-03 House winner?,2026-11-02T20:36Z
+house:MO-03,Polymarket,0.02,44641,MO-03 House Election Winner,2026-11-02T20:36Z
+house:MO-04,Kalshi,0.0295,9362,MO-04 House winner?,2026-11-02T20:36Z
+house:MO-04,Polymarket,0.033,73564,MO-04 House Election Winner,2026-11-02T20:36Z
+house:MO-05,Polymarket,0.975,84552,MO-05 House Election Winner,2026-11-02T20:36Z
+house:MO-06,Kalshi,0.022,13849,MO-06 House winner?,2026-11-02T20:36Z
+house:MO-06,Polymarket,0.0235,69267,MO-06 House Election Winner,2026-11-02T20:36Z
+house:MO-07,Kalshi,0.021,2124,MO-07 House winner?,2026-11-02T20:36Z
+house:MO-07,Polymarket,0.015,39185,MO-07 House Election Winner,2026-11-02T20:36Z
+house:MO-08,Kalshi,0.0185,1080,MO-08 House winner?,2026-11-02T20:36Z
+house:MO-08,Polymarket,0.016,47110,MO-08 House Election Winner,2026-11-02T20:36Z
+house:MS-01,Kalshi,0.019,18741,MS-01 House winner?,2026-11-02T20:36Z
+house:MS-01,Polymarket,0.0205,118727,MS-01 House Election Winner,2026-11-02T20:36Z
+house:MS-02,Kalshi,0.9945,40515,MS-02 House winner?,2026-11-02T20:36Z
+house:MS-02,Polymarket,0.99,45948,MS-02 House Election Winner,2026-11-02T20:36Z
+house:MS-03,Kalshi,0.0175,4446,MS-03 House winner?,2026-11-02T20:36Z
+house:MS-03,Polymarket,0.016,62876,MS-03 House Election Winner,2026-11-02T20:36Z
+house:MS-04,Kalshi,0.0295,11613,MS-04 House winner?,2026-11-02T20:36Z
+house:MS-04,Polymarket,0.0305,41940,MS-04 House Election Winner,2026-11-02T20:36Z
+house:MT-01,Polymarket,0.595,165976,MT-01 House Election Winner,2026-11-02T20:36Z
+house:MT-02,Kalshi,0.022,10753,MT-02 House winner?,2026-11-02T20:36Z
+house:MT-02,Polymarket,0.0155,70361,MT-02 House Election Winner,2026-11-02T20:36Z
+house:NC-01,Polymarket,0.875,83293,NC-01 House Election Winner,2026-11-02T20:36Z
+house:NC-02,Kalshi,0.989,8747,NC-02 House winner?,2026-11-02T20:36Z
+house:NC-02,Polymarket,0.9885,32593,NC-02 House Election Winner,2026-11-02T20:36Z
+house:NC-03,Kalshi,0.435,914347,NC-03 House winner?,2026-11-02T20:36Z
+house:NC-03,Polymarket,0.415,256398,NC-03 House Election Winner,2026-11-02T20:36Z
+house:NC-04,Kalshi,0.9795,3404,NC-04 House winner?,2026-11-02T20:36Z
+house:NC-04,Polymarket,0.98,87112,NC-04 House Election Winner,2026-11-02T20:36Z
+house:NC-05,Kalshi,0.16,70624,NC-05 House winner?,2026-11-02T20:36Z
+house:NC-05,Polymarket,0.155,56116,NC-05 House Election Winner,2026-11-02T20:36Z
+house:NC-06,Kalshi,0.125,14617,NC-06 House winner?,2026-11-02T20:36Z
+house:NC-06,Polymarket,0.115,71877,NC-06 House Election Winner,2026-11-02T20:36Z
+house:NC-07,Kalshi,0.255,87699,NC-07 House winner?,2026-11-02T20:36Z
+house:NC-07,Polymarket,0.255,45294,NC-07 House Election Winner,2026-11-02T20:36Z
+house:NC-08,Kalshi,0.0655,133424,NC-08 House winner?,2026-11-02T20:36Z
+house:NC-08,Polymarket,0.067,59957,NC-08 House Election Winner,2026-11-02T20:36Z
+house:NC-09,Kalshi,0.345,532767,NC-09 House winner?,2026-11-02T20:36Z
+house:NC-09,Polymarket,0.325,369141,NC-09 House Election Winner,2026-11-02T20:36Z
+house:NC-10,Kalshi,0.0575,5777,NC-10 House winner?,2026-11-02T20:36Z
+house:NC-10,Polymarket,0.0505,16440,NC-10 House Election Winner,2026-11-02T20:36Z
+house:NC-11,Polymarket,0.865,316808,NC-11 House Election Winner,2026-11-02T20:36Z
+house:NC-12,Kalshi,0.988,3536,NC-12 House winner?,2026-11-02T20:36Z
+house:NC-12,Polymarket,0.99,66555,NC-12 House Election Winner,2026-11-02T20:36Z
+house:NC-13,Kalshi,0.365,647676,NC-13 House winner?,2026-11-02T20:36Z
+house:NC-13,Polymarket,0.335,633223,NC-13 House Election Winner,2026-11-02T20:36Z
+house:NC-14,Kalshi,0.215,270996,NC-14 House winner?,2026-11-02T20:36Z
+house:NC-14,Polymarket,0.22,48540,NC-14 House Election Winner,2026-11-02T20:36Z
+house:ND-AL,Kalshi,0.021,13752,ND-AL House winner?,2026-11-02T20:36Z
+house:ND-AL,Polymarket,0.0255,61178,ND-AL House Election Winner,2026-11-02T20:36Z
+house:NE-01,Kalshi,0.225,193805,NE-01 House winner?,2026-11-02T20:36Z
+house:NE-01,Polymarket,0.245,58949,NE-01 House Election Winner,2026-11-02T20:36Z
+house:NE-02,Polymarket,0.9265,68915,NE-02 House Election Winner,2026-11-02T20:36Z
+house:NE-03,Kalshi,0.0125,6549,NE-03 House winner?,2026-11-02T20:36Z
+house:NE-03,Polymarket,0.0065,16634,NE-03 House Election Winner,2026-11-02T20:36Z
+house:NH-01,Polymarket,0.9325,57106,NH-01 House Election Winner,2026-11-02T20:36Z
+house:NH-02,Kalshi,0.9465,80879,NH-02 House winner?,2026-11-02T20:36Z
+house:NH-02,Polymarket,0.954,69992,NH-02 House Election Winner,2026-11-02T20:36Z
+house:NJ-01,Kalshi,0.984,3242,NJ-01 House winner?,2026-11-02T20:36Z
+house:NJ-01,Polymarket,0.9825,54744,NJ-01 House Election Winner,2026-11-02T20:36Z
+house:NJ-02,Kalshi,0.305,343798,NJ-02 House winner?,2026-11-02T20:36Z
+house:NJ-02,Polymarket,0.315,233091,NJ-02 House Election Winner,2026-11-02T20:36Z
+house:NJ-03,Kalshi,0.985,5973,NJ-03 House winner?,2026-11-02T20:36Z
+house:NJ-03,Polymarket,0.984,41266,NJ-03 House Election Winner,2026-11-02T20:36Z
+house:NJ-04,Kalshi,0.0355,100678,NJ-04 House winner?,2026-11-02T20:36Z
+house:NJ-04,Polymarket,0.038,34537,NJ-04 House Election Winner,2026-11-02T20:36Z
+house:NJ-05,Polymarket,0.985,32933,NJ-05 House Election Winner,2026-11-02T20:36Z
+house:NJ-06,Kalshi,0.987,1585,NJ-06 House winner?,2026-11-02T20:36Z
+house:NJ-06,Polymarket,0.9875,34867,NJ-06 House Election Winner,2026-11-02T20:36Z
+house:NJ-07,Polymarket,0.945,65849,NJ-07 House Election Winner,2026-11-02T20:36Z
+house:NJ-08,Kalshi,0.983,17391,NJ-08 House winner?,2026-11-02T20:36Z
+house:NJ-08,Polymarket,0.9805,50843,NJ-08 House Election Winner,2026-11-02T20:36Z
+house:NJ-09,Polymarket,0.9735,48882,NJ-09 House Election Winner,2026-11-02T20:36Z
+house:NJ-10,Kalshi,0.9905,1752,NJ-10 House winner?,2026-11-02T20:36Z
+house:NJ-10,Polymarket,0.9865,59207,NJ-10 House Election Winner,2026-11-02T20:36Z
+house:NJ-11,Kalshi,0.9925,20633,NJ-11 House winner?,2026-11-02T20:36Z
+house:NJ-11,Polymarket,0.994,47815,NJ-11 House Election Winner,2026-11-02T20:36Z
+house:NJ-12,Kalshi,0.981,13562,NJ-12 House winner?,2026-11-02T20:36Z
+house:NJ-12,Polymarket,0.9805,30443,NJ-12 House Election Winner,2026-11-02T20:36Z
+house:NM-01,Kalshi,0.9795,8039,NM-01 House winner?,2026-11-02T20:36Z
+house:NM-01,Polymarket,0.981,46255,NM-01 House Election Winner,2026-11-02T20:36Z
+house:NM-02,Polymarket,0.9235,87882,NM-02 House Election Winner,2026-11-02T20:36Z
+house:NM-03,Kalshi,0.9685,9961,NM-03 House winner?,2026-11-02T20:36Z
+house:NM-03,Polymarket,0.9735,54993,NM-03 House Election Winner,2026-11-02T20:36Z
+house:NV-01,Polymarket,0.954,37520,NV-01 House Election Winner,2026-11-02T20:36Z
+house:NV-02,Kalshi,0.335,251607,NV-02 House winner?,2026-11-02T20:36Z
+house:NV-02,Polymarket,0.335,89486,NV-02 House Election Winner,2026-11-02T20:36Z
+house:NV-03,Polymarket,0.9435,12785,NV-03 House Election Winner,2026-11-02T20:36Z
+house:NV-04,Polymarket,0.991,37885,NV-04 House Election Winner,2026-11-02T20:36Z
+house:NY-01,Kalshi,0.205,527446,NY-01 House winner?,2026-11-02T20:36Z
+house:NY-01,Polymarket,0.205,147579,NY-01 House Election Winner,2026-11-02T20:36Z
+house:NY-02,Kalshi,0.135,260759,NY-02 House winner?,2026-11-02T20:36Z
+house:NY-02,Polymarket,0.125,29356,NY-02 House Election Winner,2026-11-02T20:36Z
+house:NY-03,Polymarket,0.915,59331,NY-03 House Election Winner,2026-11-02T20:36Z
+house:NY-04,Polymarket,0.923,28653,NY-04 House Election Winner,2026-11-02T20:36Z
+house:NY-05,Kalshi,0.995,4633,NY-05 House winner?,2026-11-02T20:36Z
+house:NY-05,Polymarket,0.998,64855,NY-05 House Election Winner,2026-11-02T20:36Z
+house:NY-06,Kalshi,0.9875,2322,NY-06 House winner?,2026-11-02T20:36Z
+house:NY-06,Polymarket,0.9945,27844,NY-06 House Election Winner,2026-11-02T20:36Z
+house:NY-07,Kalshi,0.988,2206,NY-07 House winner?,2026-11-02T20:36Z
+house:NY-07,Polymarket,0.9905,32014,NY-07 House Election Winner,2026-11-02T20:36Z
+house:NY-08,Kalshi,0.9875,3733,NY-08 House winner?,2026-11-02T20:36Z
+house:NY-08,Polymarket,0.987,33358,NY-08 House Election Winner,2026-11-02T20:36Z
+house:NY-09,Kalshi,0.9845,5248,NY-09 House winner?,2026-11-02T20:36Z
+house:NY-09,Polymarket,0.9825,62319,NY-09 House Election Winner,2026-11-02T20:36Z
+house:NY-10,Kalshi,0.987,21217,NY-10 House winner?,2026-11-02T20:36Z
+house:NY-10,Polymarket,0.9875,57137,NY-10 House Election Winner,2026-11-02T20:36Z
+house:NY-11,Kalshi,0.0765,47104,NY-11 House winner?,2026-11-02T20:36Z
+house:NY-11,Polymarket,0.0675,52812,NY-11 House Election Winner,2026-11-02T20:36Z
+house:NY-12,Kalshi,0.974,17807,NY-12 House winner?,2026-11-02T20:36Z
+house:NY-12,Polymarket,0.978,35634,NY-12 House Election Winner,2026-11-02T20:36Z
+house:NY-13,Kalshi,0.9905,5899,NY-13 House winner?,2026-11-02T20:36Z
+house:NY-13,Polymarket,0.9925,41113,NY-13 House Election Winner,2026-11-02T20:36Z
+house:NY-14,Kalshi,0.9945,6459,NY-14 House winner?,2026-11-02T20:36Z
+house:NY-14,Polymarket,0.9975,67243,NY-14 House Election Winner,2026-11-02T20:36Z
+house:NY-15,Kalshi,0.98,3590,NY-15 House winner?,2026-11-02T20:36Z
+house:NY-15,Polymarket,0.9805,49635,NY-15 House Election Winner,2026-11-02T20:36Z
+house:NY-16,Kalshi,0.987,2338,NY-16 House winner?,2026-11-02T20:36Z
+house:NY-16,Polymarket,0.988,42076,NY-16 House Election Winner,2026-11-02T20:36Z
+house:NY-17,Polymarket,0.595,166858,NY-17 House Election Winner,2026-11-02T20:36Z
+house:NY-18,Polymarket,0.977,46677,NY-18 House Election Winner,2026-11-02T20:36Z
+house:NY-19,Polymarket,0.969,36106,NY-19 House Election Winner,2026-11-02T20:36Z
+house:NY-20,Kalshi,0.989,2221,NY-20 House winner?,2026-11-02T20:36Z
+house:NY-20,Polymarket,0.9875,47973,NY-20 House Election Winner,2026-11-02T20:36Z
+house:NY-21,Kalshi,0.325,245990,NY-21 House winner?,2026-11-02T20:36Z
+house:NY-21,Polymarket,0.305,129765,NY-21 House Election Winner,2026-11-02T20:36Z
+house:NY-22,Polymarket,0.979,41186,NY-22 House Election Winner,2026-11-02T20:36Z
+house:NY-23,Kalshi,0.0195,22397,NY-23 House winner?,2026-11-02T20:36Z
+house:NY-23,Polymarket,0.0115,90068,NY-23 House Election Winner,2026-11-02T20:36Z
+house:NY-24,Kalshi,0.031,22635,NY-24 House winner?,2026-11-02T20:36Z
+house:NY-24,Polymarket,0.0285,54262,NY-24 House Election Winner,2026-11-02T20:36Z
+house:NY-25,Kalshi,0.9855,2042,NY-25 House winner?,2026-11-02T20:36Z
+house:NY-25,Polymarket,0.9875,42250,NY-25 House Election Winner,2026-11-02T20:36Z
+house:NY-26,Kalshi,0.9865,1337,NY-26 House winner?,2026-11-02T20:36Z
+house:NY-26,Polymarket,0.987,43071,NY-26 House Election Winner,2026-11-02T20:36Z
+house:OH-01,Polymarket,0.953,67471,OH-01 House Election Winner,2026-11-02T20:36Z
+house:OH-02,Kalshi,0.017,8491,OH-02 House winner?,2026-11-02T20:36Z
+house:OH-02,Polymarket,0.011,61586,OH-02 House Election Winner,2026-11-02T20:36Z
+house:OH-03,Kalshi,0.98,5503,OH-03 House winner?,2026-11-02T20:36Z
+house:OH-03,Polymarket,0.9845,58982,OH-03 House Election Winner,2026-11-02T20:36Z
+house:OH-04,Kalshi,0.019,4679,OH-04 House winner?,2026-11-02T20:36Z
+house:OH-04,Polymarket,0.016,24440,OH-04 House Election Winner,2026-11-02T20:36Z
+house:OH-05,Kalshi,0.0345,9582,OH-05 House winner?,2026-11-02T20:36Z
+house:OH-05,Polymarket,0.031,67567,OH-05 House Election Winner,2026-11-02T20:36Z
+house:OH-06,Kalshi,0.021,10801,OH-06 House winner?,2026-11-02T20:36Z
+house:OH-06,Polymarket,0.011,83473,OH-06 House Election Winner,2026-11-02T20:36Z
+house:OH-07,Kalshi,0.87,359216,OH-07 House winner?,2026-11-02T20:36Z
+house:OH-07,Polymarket,0.86,151049,OH-07 House Election Winner,2026-11-02T20:36Z
+house:OH-08,Kalshi,0.069,3182,OH-08 House winner?,2026-11-02T20:36Z
+house:OH-08,Polymarket,0.07,19129,OH-08 House Election Winner,2026-11-02T20:36Z
+house:OH-09,Polymarket,0.815,67081,OH-09 House Election Winner,2026-11-02T20:36Z
+house:OH-10,Kalshi,0.295,287755,OH-10 House winner?,2026-11-02T20:36Z
+house:OH-10,Polymarket,0.295,79627,OH-10 House Election Winner,2026-11-02T20:36Z
+house:OH-11,Kalshi,0.988,3134,OH-11 House winner?,2026-11-02T20:36Z
+house:OH-11,Polymarket,0.9915,39564,OH-11 House Election Winner,2026-11-02T20:36Z
+house:OH-12,Kalshi,0.0195,14229,OH-12 House winner?,2026-11-02T20:36Z
+house:OH-12,Polymarket,0.0195,40632,OH-12 House Election Winner,2026-11-02T20:36Z
+house:OH-13,Polymarket,0.9775,47309,OH-13 House Election Winner,2026-11-02T20:36Z
+house:OH-14,Kalshi,0.0475,10071,OH-14 House winner?,2026-11-02T20:36Z
+house:OH-14,Polymarket,0.0405,103104,OH-14 House Election Winner,2026-11-02T20:36Z
+house:OH-15,Kalshi,0.365,132991,OH-15 House winner?,2026-11-02T20:36Z
+house:OH-15,Polymarket,0.375,58077,OH-15 House Election Winner,2026-11-02T20:36Z
+house:OK-01,Kalshi,0.055,9343,OK-01 House winner?,2026-11-02T20:36Z
+house:OK-01,Polymarket,0.0525,45642,OK-01 House Election Winner,2026-11-02T20:36Z
+house:OK-02,Kalshi,0.012,6454,OK-02 House winner?,2026-11-02T20:36Z
+house:OK-02,Polymarket,0.007,34822,OK-02 House Election Winner,2026-11-02T20:36Z
+house:OK-03,Kalshi,0.0205,14832,OK-03 House winner?,2026-11-02T20:36Z
+house:OK-03,Polymarket,0.0215,108462,OK-03 House Election Winner,2026-11-02T20:36Z
+house:OK-04,Kalshi,0.025,6396,OK-04 House winner?,2026-11-02T20:36Z
+house:OK-04,Polymarket,0.026,37583,OK-04 House Election Winner,2026-11-02T20:36Z
+house:OK-05,Kalshi,0.115,100140,OK-05 House winner?,2026-11-02T20:36Z
+house:OK-05,Polymarket,0.125,66642,OK-05 House Election Winner,2026-11-02T20:36Z
+house:OR-01,Kalshi,0.9865,823,OR-01 House winner?,2026-11-02T20:36Z
+house:OR-01,Polymarket,0.9875,27759,OR-01 House Election Winner,2026-11-02T20:36Z
+house:OR-02,Kalshi,0.033,2733,OR-02 House winner?,2026-11-02T20:36Z
+house:OR-02,Polymarket,0.028,23424,OR-02 House Election Winner,2026-11-02T20:36Z
+house:OR-03,Kalshi,0.9945,1811,OR-03 House winner?,2026-11-02T20:36Z
+house:OR-03,Polymarket,0.99,21646,OR-03 House Election Winner,2026-11-02T20:36Z
+house:OR-04,Kalshi,0.9705,3007,OR-04 House winner?,2026-11-02T20:36Z
+house:OR-04,Polymarket,0.9875,35945,OR-04 House Election Winner,2026-11-02T20:36Z
+house:OR-05,Polymarket,0.9715,35943,OR-05 House Election Winner,2026-11-02T20:36Z
+house:OR-06,Kalshi,0.988,41303,OR-06 House winner?,2026-11-02T20:36Z
+house:OR-06,Polymarket,0.9875,27241,OR-06 House Election Winner,2026-11-02T20:36Z
+house:PA-01,Polymarket,0.565,134723,PA-01 House Election Winner,2026-11-02T20:36Z
+house:PA-02,Kalshi,0.9905,237,PA-02 House winner?,2026-11-02T20:36Z
+house:PA-02,Polymarket,0.987,40642,PA-02 House Election Winner,2026-11-02T20:36Z
+house:PA-03,Kalshi,0.9755,1818,PA-03 House winner?,2026-11-02T20:36Z
+house:PA-03,Polymarket,0.982,34081,PA-03 House Election Winner,2026-11-02T20:36Z
+house:PA-04,Kalshi,0.9805,4394,PA-04 House winner?,2026-11-02T20:36Z
+house:PA-04,Polymarket,0.9805,22217,PA-04 House Election Winner,2026-11-02T20:36Z
+house:PA-05,Kalshi,0.985,2355,PA-05 House winner?,2026-11-02T20:36Z
+house:PA-05,Polymarket,0.9855,39675,PA-05 House Election Winner,2026-11-02T20:36Z
+house:PA-06,Kalshi,0.989,7260,PA-06 House winner?,2026-11-02T20:36Z
+house:PA-06,Polymarket,0.99,41577,PA-06 House Election Winner,2026-11-02T20:36Z
+house:PA-07,Polymarket,0.875,47072,PA-07 House Election Winner,2026-11-02T20:36Z
+house:PA-08,Polymarket,0.865,71665,PA-08 House Election Winner,2026-11-02T20:36Z
+house:PA-09,Kalshi,0.023,30449,PA-09 House winner?,2026-11-02T20:36Z
+house:PA-09,Polymarket,0.0245,34031,PA-09 House Election Winner,2026-11-02T20:36Z
+house:PA-10,Polymarket,0.825,36622,PA-10 House Election Winner,2026-11-02T20:36Z
+house:PA-11,Kalshi,0.033,10148,PA-11 House winner?,2026-11-02T20:36Z
+house:PA-11,Polymarket,0.0345,67939,PA-11 House Election Winner,2026-11-02T20:36Z
+house:PA-12,Kalshi,0.9865,74883,PA-12 House winner?,2026-11-02T20:36Z
+house:PA-12,Polymarket,0.9835,25229,PA-12 House Election Winner,2026-11-02T20:36Z
+house:PA-13,Kalshi,0.0185,2393,PA-13 House winner?,2026-11-02T20:36Z
+house:PA-13,Polymarket,0.026,18144,PA-13 House Election Winner,2026-11-02T20:36Z
+house:PA-14,Kalshi,0.0245,3154,PA-14 House winner?,2026-11-02T20:36Z
+house:PA-14,Polymarket,0.017,44744,PA-14 House Election Winner,2026-11-02T20:36Z
+house:PA-15,Kalshi,0.015,19316,PA-15 House winner?,2026-11-02T20:36Z
+house:PA-15,Polymarket,0.0135,30952,PA-15 House Election Winner,2026-11-02T20:36Z
+house:PA-16,Kalshi,0.061,17525,PA-16 House winner?,2026-11-02T20:36Z
+house:PA-16,Polymarket,0.058,90751,PA-16 House Election Winner,2026-11-02T20:36Z
+house:PA-17,Polymarket,0.9705,33481,PA-17 House Election Winner,2026-11-02T20:36Z
+house:RI-01,Kalshi,0.983,4288,RI-01 House winner?,2026-11-02T20:36Z
+house:RI-01,Polymarket,0.9795,47425,RI-01 House Election Winner,2026-11-02T20:36Z
+house:RI-02,Kalshi,0.9645,107364,RI-02 House winner?,2026-11-02T20:36Z
+house:RI-02,Polymarket,0.9715,65371,RI-02 House Election Winner,2026-11-02T20:36Z
+house:SC-01,Kalshi,0.495,273354,SC-01 House winner?,2026-11-02T20:36Z
+house:SC-01,Polymarket,0.495,159443,SC-01 House Election Winner,2026-11-02T20:36Z
+house:SC-02,Kalshi,0.0835,57847,SC-02 House winner?,2026-11-02T20:36Z
+house:SC-02,Polymarket,0.09,78710,SC-02 House Election Winner,2026-11-02T20:36Z
+house:SC-03,Kalshi,0.0185,9052,SC-03 House winner?,2026-11-02T20:36Z
+house:SC-03,Polymarket,0.019,55809,SC-03 House Election Winner,2026-11-02T20:36Z
+house:SC-04,Kalshi,0.036,8678,SC-04 House winner?,2026-11-02T20:36Z
+house:SC-04,Polymarket,0.0345,49016,SC-04 House Election Winner,2026-11-02T20:36Z
+house:SC-05,Kalshi,0.063,15379,SC-05 House winner?,2026-11-02T20:36Z
+house:SC-05,Polymarket,0.06,11854,SC-05 House Election Winner,2026-11-02T20:36Z
+house:SC-06,Kalshi,0.9935,45154,SC-06 House winner?,2026-11-02T20:36Z
+house:SC-06,Polymarket,0.9895,45052,SC-06 House Election Winner,2026-11-02T20:36Z
+house:SC-07,Kalshi,0.042,51046,SC-07 House winner?,2026-11-02T20:36Z
+house:SC-07,Polymarket,0.0405,69025,SC-07 House Election Winner,2026-11-02T20:36Z
+house:SD-AL,Kalshi,0.0245,6903,SD-AL House winner?,2026-11-02T20:36Z
+house:SD-AL,Polymarket,0.0135,39726,SD-AL House Election Winner,2026-11-02T20:36Z
+house:TN-01,Kalshi,0.0135,4197,TN-01 House winner?,2026-11-02T20:36Z
+house:TN-01,Polymarket,0.0075,28536,TN-01 House Election Winner,2026-11-02T20:36Z
+house:TN-02,Kalshi,0.015,8411,TN-02 House winner?,2026-11-02T20:36Z
+house:TN-02,Polymarket,0.0145,39317,TN-02 House Election Winner,2026-11-02T20:36Z
+house:TN-03,Kalshi,0.025,14873,TN-03 House winner?,2026-11-02T20:36Z
+house:TN-03,Polymarket,0.026,45690,TN-03 House Election Winner,2026-11-02T20:36Z
+house:TN-04,Kalshi,0.027,8778,TN-04 House winner?,2026-11-02T20:36Z
+house:TN-04,Polymarket,0.0245,136097,TN-04 House Election Winner,2026-11-02T20:36Z
+house:TN-05,Kalshi,0.059,66148,TN-05 House winner?,2026-11-02T20:36Z
+house:TN-05,Polymarket,0.06,78815,TN-05 House Election Winner,2026-11-02T20:36Z
+house:TN-06,Kalshi,0.036,3998,TN-06 House winner?,2026-11-02T20:36Z
+house:TN-06,Polymarket,0.0365,30903,TN-06 House Election Winner,2026-11-02T20:36Z
+house:TN-07,Kalshi,0.048,10947,TN-07 House winner?,2026-11-02T20:36Z
+house:TN-07,Polymarket,0.043,56122,TN-07 House Election Winner,2026-11-02T20:36Z
+house:TN-08,Kalshi,0.043,11158,TN-08 House winner?,2026-11-02T20:36Z
+house:TN-08,Polymarket,0.035,51590,TN-08 House Election Winner,2026-11-02T20:36Z
+house:TN-09,Kalshi,0.145,242629,TN-09 House winner?,2026-11-02T20:36Z
+house:TN-09,Polymarket,0.165,82760,TN-09 House Election Winner,2026-11-02T20:36Z
+house:TX-01,Kalshi,0.0305,9279,TX-01 House winner?,2026-11-02T20:36Z
+house:TX-01,Polymarket,0.0195,60497,TX-01 House Election Winner,2026-11-02T20:36Z
+house:TX-02,Kalshi,0.0615,2789,TX-02 House winner?,2026-11-02T20:36Z
+house:TX-02,Polymarket,0.055,35774,TX-02 House Election Winner,2026-11-02T20:36Z
+house:TX-03,Kalshi,0.0605,20407,TX-03 House winner?,2026-11-02T20:36Z
+house:TX-03,Polymarket,0.0575,63723,TX-03 House Election Winner,2026-11-02T20:36Z
+house:TX-04,Kalshi,0.036,5955,TX-04 House winner?,2026-11-02T20:36Z
+house:TX-04,Polymarket,0.0295,93393,TX-04 House Election Winner,2026-11-02T20:36Z
+house:TX-05,Kalshi,0.037,6228,TX-05 House winner?,2026-11-02T20:36Z
+house:TX-05,Polymarket,0.038,65412,TX-05 House Election Winner,2026-11-02T20:36Z
+house:TX-06,Kalshi,0.023,8312,TX-06 House winner?,2026-11-02T20:36Z
+house:TX-06,Polymarket,0.0125,131317,TX-06 House Election Winner,2026-11-02T20:36Z
+house:TX-07,Kalshi,0.9795,52775,TX-07 House winner?,2026-11-02T20:36Z
+house:TX-07,Polymarket,0.983,31134,TX-07 House Election Winner,2026-11-02T20:36Z
+house:TX-08,Kalshi,0.0245,24126,TX-08 House winner?,2026-11-02T20:36Z
+house:TX-08,Polymarket,0.016,65930,TX-08 House Election Winner,2026-11-02T20:36Z
+house:TX-09,Polymarket,0.255,74941,TX-09 House Election Winner,2026-11-02T20:36Z
+house:TX-10,Kalshi,0.0765,9971,TX-10 House winner?,2026-11-02T20:36Z
+house:TX-10,Polymarket,0.075,38682,TX-10 House Election Winner,2026-11-02T20:36Z
+house:TX-11,Kalshi,0.031,9658,TX-11 House winner?,2026-11-02T20:36Z
+house:TX-11,Polymarket,0.0245,36908,TX-11 House Election Winner,2026-11-02T20:36Z
+house:TX-12,Kalshi,0.0355,10180,TX-12 House winner?,2026-11-02T20:36Z
+house:TX-12,Polymarket,0.041,69514,TX-12 House Election Winner,2026-11-02T20:36Z
+house:TX-13,Kalshi,0.015,26958,TX-13 House winner?,2026-11-02T20:36Z
+house:TX-13,Polymarket,0.017,19606,TX-13 House Election Winner,2026-11-02T20:36Z
+house:TX-14,Kalshi,0.049,5743,TX-14 House winner?,2026-11-02T20:36Z
+house:TX-14,Polymarket,0.045,40249,TX-14 House Election Winner,2026-11-02T20:36Z
+house:TX-15,Polymarket,0.895,122060,TX-15 House Election Winner,2026-11-02T20:36Z
+house:TX-16,Kalshi,0.981,2244,TX-16 House winner?,2026-11-02T20:36Z
+house:TX-16,Polymarket,0.9825,28049,TX-16 House Election Winner,2026-11-02T20:36Z
+house:TX-17,Kalshi,0.035,34779,TX-17 House winner?,2026-11-02T20:36Z
+house:TX-17,Polymarket,0.034,70105,TX-17 House Election Winner,2026-11-02T20:36Z
+house:TX-18,Kalshi,0.9905,1718,TX-18 House winner?,2026-11-02T20:36Z
+house:TX-18,Polymarket,0.992,17559,TX-18 House Election Winner,2026-11-02T20:36Z
+house:TX-19,Kalshi,0.019,7293,TX-19 House winner?,2026-11-02T20:36Z
+house:TX-19,Polymarket,0.0165,32224,TX-19 House Election Winner,2026-11-02T20:36Z
+house:TX-20,Kalshi,0.9835,3164,TX-20 House winner?,2026-11-02T20:36Z
+house:TX-20,Polymarket,0.984,40443,TX-20 House Election Winner,2026-11-02T20:36Z
+house:TX-21,Kalshi,0.0345,17451,TX-21 House winner?,2026-11-02T20:36Z
+house:TX-21,Polymarket,0.032,85389,TX-21 House Election Winner,2026-11-02T20:36Z
+house:TX-22,Kalshi,0.0545,5720,TX-22 House winner?,2026-11-02T20:36Z
+house:TX-22,Polymarket,0.055,43354,TX-22 House Election Winner,2026-11-02T20:36Z
+house:TX-23,Kalshi,0.445,1103726,TX-23 House winner?,2026-11-02T20:36Z
+house:TX-23,Polymarket,0.455,217603,TX-23 House Election Winner,2026-11-02T20:36Z
+house:TX-24,Kalshi,0.057,47699,TX-24 House winner?,2026-11-02T20:36Z
+house:TX-24,Polymarket,0.05,90972,TX-24 House Election Winner,2026-11-02T20:36Z
+house:TX-25,Kalshi,0.0445,26217,TX-25 House winner?,2026-11-02T20:36Z
+house:TX-25,Polymarket,0.0395,64705,TX-25 House Election Winner,2026-11-02T20:36Z
+house:TX-26,Kalshi,0.0205,22338,TX-26 House winner?,2026-11-02T20:36Z
+house:TX-26,Polymarket,0.0165,93590,TX-26 House Election Winner,2026-11-02T20:36Z
+house:TX-27,Kalshi,0.0245,16193,TX-27 House winner?,2026-11-02T20:36Z
+house:TX-27,Polymarket,0.0215,75456,TX-27 House Election Winner,2026-11-02T20:36Z
+house:TX-28,Polymarket,0.925,24145,TX-28 House Election Winner,2026-11-02T20:36Z
+house:TX-29,Kalshi,0.9825,5475,TX-29 House winner?,2026-11-02T20:36Z
+house:TX-29,Polymarket,0.983,20664,TX-29 House Election Winner,2026-11-02T20:36Z
+house:TX-30,Kalshi,0.9775,6597,TX-30 House winner?,2026-11-02T20:36Z
+house:TX-30,Polymarket,0.9815,48897,TX-30 House Election Winner,2026-11-02T20:36Z
+house:TX-31,Kalshi,0.0695,27645,TX-31 House winner?,2026-11-02T20:36Z
+house:TX-31,Polymarket,0.065,70535,TX-31 House Election Winner,2026-11-02T20:36Z
+house:TX-32,Polymarket,0.14,52176,TX-32 House Election Winner,2026-11-02T20:36Z
+house:TX-33,Kalshi,0.983,3566,TX-33 House winner?,2026-11-02T20:36Z
+house:TX-33,Polymarket,0.9875,18711,TX-33 House Election Winner,2026-11-02T20:36Z
+house:TX-34,Polymarket,0.895,34052,TX-34 House Election Winner,2026-11-02T20:36Z
+house:TX-35,Polymarket,0.725,109840,TX-35 House Election Winner,2026-11-02T20:36Z
+house:TX-36,Kalshi,0.0255,6992,TX-36 House winner?,2026-11-02T20:36Z
+house:TX-36,Polymarket,0.021,67995,TX-36 House Election Winner,2026-11-02T20:36Z
+house:TX-37,Kalshi,0.9805,4805,TX-37 House winner?,2026-11-02T20:36Z
+house:TX-37,Polymarket,0.981,45641,TX-37 House Election Winner,2026-11-02T20:36Z
+house:TX-38,Kalshi,0.0385,11271,TX-38 House winner?,2026-11-02T20:36Z
+house:TX-38,Polymarket,0.0325,37486,TX-38 House Election Winner,2026-11-02T20:36Z
+house:UT-01,Polymarket,0.985,54436,UT-01 House Election Winner,2026-11-02T20:36Z
+house:UT-02,Polymarket,0.065,34158,UT-02 House Election Winner,2026-11-02T20:36Z
+house:UT-03,Polymarket,0.013,18800,UT-03 House Election Winner,2026-11-02T20:36Z
+house:UT-04,Kalshi,0.0355,6225,UT-04 House winner?,2026-11-02T20:36Z
+house:UT-04,Polymarket,0.0405,60526,UT-04 House Election Winner,2026-11-02T20:36Z
+house:VA-01,Polymarket,0.645,141211,VA-01 House Election Winner,2026-11-02T20:36Z
+house:VA-02,Polymarket,0.91,64430,VA-02 House Election Winner,2026-11-02T20:36Z
+house:VA-03,Kalshi,0.989,1515,VA-03 House winner?,2026-11-02T20:36Z
+house:VA-03,Polymarket,0.9895,69544,VA-03 House Election Winner,2026-11-02T20:36Z
+house:VA-04,Kalshi,0.9845,10026,VA-04 House winner?,2026-11-02T20:36Z
+house:VA-04,Polymarket,0.9855,42861,VA-04 House Election Winner,2026-11-02T20:36Z
+house:VA-05,Kalshi,0.365,1052905,VA-05 House winner?,2026-11-02T20:36Z
+house:VA-05,Polymarket,0.365,351033,VA-05 House Election Winner,2026-11-02T20:36Z
+house:VA-06,Kalshi,0.0625,202322,VA-06 House winner?,2026-11-02T20:36Z
+house:VA-06,Polymarket,0.055,142784,VA-06 House Election Winner,2026-11-02T20:36Z
+house:VA-07,Polymarket,0.971,17131,VA-07 House Election Winner,2026-11-02T20:36Z
+house:VA-08,Kalshi,0.9885,16344,VA-08 House winner?,2026-11-02T20:36Z
+house:VA-08,Polymarket,0.989,41858,VA-08 House Election Winner,2026-11-02T20:36Z
+house:VA-09,Kalshi,0.0195,12011,VA-09 House winner?,2026-11-02T20:36Z
+house:VA-09,Polymarket,0.0255,67215,VA-09 House Election Winner,2026-11-02T20:36Z
+house:VA-10,Polymarket,0.979,8473,VA-10 House Election Winner,2026-11-02T20:36Z
+house:VA-11,Kalshi,0.985,4494,VA-11 House winner?,2026-11-02T20:36Z
+house:VA-11,Polymarket,0.9835,29660,VA-11 House Election Winner,2026-11-02T20:36Z
+house:VT-AL,Kalshi,0.9825,7788,VT-AL House winner?,2026-11-02T20:36Z
+house:VT-AL,Polymarket,0.9815,51856,VT-AL House Election Winner,2026-11-02T20:36Z
+house:WA-01,Kalshi,0.9855,19266,WA-01 House winner?,2026-11-02T20:36Z
+house:WA-01,Polymarket,0.985,47705,WA-01 House Election Winner,2026-11-02T20:36Z
+house:WA-02,Kalshi,0.9825,1738,WA-02 House winner?,2026-11-02T20:36Z
+house:WA-02,Polymarket,0.989,33155,WA-02 House Election Winner,2026-11-02T20:36Z
+house:WA-03,Polymarket,0.905,72639,WA-03 House Election Winner,2026-11-02T20:36Z
+house:WA-04,Kalshi,0.076,38855,WA-04 House winner?,2026-11-02T20:36Z
+house:WA-04,Polymarket,0.075,65954,WA-04 House Election Winner,2026-11-02T20:36Z
+house:WA-05,Kalshi,0.165,192374,WA-05 House winner?,2026-11-02T20:36Z
+house:WA-05,Polymarket,0.155,127138,WA-05 House Election Winner,2026-11-02T20:36Z
+house:WA-06,Kalshi,0.99,2062,WA-06 House winner?,2026-11-02T20:36Z
+house:WA-06,Polymarket,0.991,46208,WA-06 House Election Winner,2026-11-02T20:36Z
+house:WA-07,Kalshi,0.991,3432,WA-07 House winner?,2026-11-02T20:36Z
+house:WA-07,Polymarket,0.994,35491,WA-07 House Election Winner,2026-11-02T20:36Z
+house:WA-08,Polymarket,0.9745,29243,WA-08 House Election Winner,2026-11-02T20:36Z
+house:WA-09,Kalshi,0.983,18292,WA-09 House winner?,2026-11-02T20:36Z
+house:WA-09,Polymarket,0.982,56049,WA-09 House Election Winner,2026-11-02T20:36Z
+house:WA-10,Kalshi,0.9935,1385,WA-10 House winner?,2026-11-02T20:36Z
+house:WA-10,Polymarket,0.992,37713,WA-10 House Election Winner,2026-11-02T20:36Z
+house:WI-01,Polymarket,0.515,30731,WI-01 House Election Winner,2026-11-02T20:36Z
+house:WI-02,Kalshi,0.9945,2018,WI-02 House winner?,2026-11-02T20:36Z
+house:WI-02,Polymarket,0.9925,104595,WI-02 House Election Winner,2026-11-02T20:36Z
+house:WI-03,Polymarket,0.88,24979,WI-03 House Election Winner,2026-11-02T20:36Z
+house:WI-04,Kalshi,0.994,2397,WI-04 House winner?,2026-11-02T20:36Z
+house:WI-04,Polymarket,0.9875,37796,WI-04 House Election Winner,2026-11-02T20:36Z
+house:WI-05,Kalshi,0.0215,10891,WI-05 House winner?,2026-11-02T20:36Z
+house:WI-05,Polymarket,0.027,109326,WI-05 House Election Winner,2026-11-02T20:36Z
+house:WI-06,Kalshi,0.0615,50229,WI-06 House winner?,2026-11-02T20:36Z
+house:WI-06,Polymarket,0.065,49549,WI-06 House Election Winner,2026-11-02T20:36Z
+house:WI-07,Kalshi,0.066,15354,WI-07 House winner?,2026-11-02T20:36Z
+house:WI-07,Polymarket,0.065,80643,WI-07 House Election Winner,2026-11-02T20:36Z
+house:WI-08,Kalshi,0.115,31977,WI-08 House winner?,2026-11-02T20:36Z
+house:WI-08,Polymarket,0.115,32564,WI-08 House Election Winner,2026-11-02T20:36Z
+house:WV-01,Kalshi,0.023,5574,WV-01 House winner?,2026-11-02T20:36Z
+house:WV-01,Polymarket,0.02,63115,WV-01 House Election Winner,2026-11-02T20:36Z
+house:WV-02,Kalshi,0.0175,4096,WV-02 House winner?,2026-11-02T20:36Z
+house:WV-02,Polymarket,0.0185,101604,WV-02 House Election Winner,2026-11-02T20:36Z
+house:WY-AL,Kalshi,0.0345,23307,WY-AL House winner?,2026-11-02T20:36Z
+house:WY-AL,Polymarket,0.031,55213,WY-AL House Election Winner,2026-11-02T20:36Z
+senate:AK,Kalshi,0.705,6268075,Alaska Senate winner?,2026-11-02T20:36Z
+senate:AK,Polymarket,0.725,2693944,Alaska Senate Election Winner,2026-11-02T20:36Z
+senate:AL,Kalshi,0.0175,24928,Alabama Senate winner?,2026-11-02T20:36Z
+senate:AL,Polymarket,0.0145,17448,Alabama Senate Election Winner,2026-11-02T20:36Z
+senate:AR,Kalshi,0.0425,543192,Arkansas Senate winner?,2026-11-02T20:36Z
+senate:AR,Polymarket,0.038,113812,Arkansas Senate Election Winner,2026-11-02T20:36Z
+senate:CO,Kalshi,0.994,90292,Colorado Senate winner?,2026-11-02T20:36Z
+senate:CO,Polymarket,0.9905,54439,Colorado Senate Election Winner,2026-11-02T20:36Z
+senate:DE,Kalshi,0.9875,49371,Delaware Senate winner?,2026-11-02T20:36Z
+senate:DE,Polymarket,0.988,34586,Delaware Senate Election Winner,2026-11-02T20:36Z
+senate:FL,Kalshi,0.145,4363229,Florida Senate winner?,2026-11-02T20:36Z
+senate:FL,Polymarket,0.125,816693,Florida Senate Election Winner,2026-11-02T20:36Z
+senate:GA,Kalshi,0.9685,4076369,Georgia Senate winner?,2026-11-02T20:36Z
+senate:GA,Polymarket,0.9745,503119,Georgia Senate Election Winner,2026-11-02T20:36Z
+senate:IA,Kalshi,0.505,10310486,Iowa Senate winner?,2026-11-02T20:36Z
+senate:IA,Polymarket,0.485,2136256,Iowa Senate Election Winner,2026-11-02T20:36Z
+senate:ID,Kalshi,0.0455,1327278,Idaho Senate winner?,2026-11-02T20:36Z
+senate:ID,Polymarket,0.0335,479366,Idaho Senate Election Winner,2026-11-02T20:36Z
+senate:IL,Kalshi,0.9925,80786,Illinois Senate winner?,2026-11-02T20:36Z
+senate:IL,Polymarket,0.9935,42828,Illinois Senate Election Winner,2026-11-02T20:36Z
+senate:KS,Kalshi,0.625,9621445,Kansas Senate winner?,2026-11-02T20:36Z
+senate:KS,Polymarket,0.615,2326009,Kansas Senate Election Winner,2026-11-02T20:36Z
+senate:KY,Kalshi,0.0415,380016,Kentucky Senate winner?,2026-11-02T20:36Z
+senate:KY,Polymarket,0.036,54735,Kentucky Senate Election Winner,2026-11-02T20:36Z
+senate:LA,Kalshi,0.125,553506,Louisiana Senate winner?,2026-11-02T20:36Z
+senate:LA,Polymarket,0.135,165388,Louisiana Senate Election Winner,2026-11-02T20:36Z
+senate:MA,Kalshi,0.99,219788,Massachusetts Senate winner?,2026-11-02T20:36Z
+senate:MA,Polymarket,0.994,59416,Massachusetts Senate Election Winner,2026-11-02T20:36Z
+senate:ME,Kalshi,0.725,15000366,Maine Senate winner?,2026-11-02T20:36Z
+senate:ME,Polymarket,0.745,3384673,Maine Senate Election Winner,2026-11-02T20:36Z
+senate:MI,Kalshi,0.775,21715758,Michigan Senate winner?,2026-11-02T20:36Z
+senate:MI,Polymarket,0.785,7730740,Michigan Senate Election Winner,2026-11-02T20:36Z
+senate:MN,Kalshi,0.9225,7072286,Minnesota Senate winner?,2026-11-02T20:36Z
+senate:MN,Polymarket,0.935,854150,Minnesota Senate Election Winner,2026-11-02T20:36Z
+senate:MS,Kalshi,0.155,1854385,Mississippi Senate winner?,2026-11-02T20:36Z
+senate:MS,Polymarket,0.145,752178,Mississippi Senate Election Winner,2026-11-02T20:36Z
+senate:MT,Kalshi,0.0905,1673386,Montana Senate winner?,2026-11-02T20:36Z
+senate:MT,Polymarket,0.085,478189,Montana Senate Election Winner,2026-11-02T20:36Z
+senate:NC,Kalshi,0.9715,6071330,North Carolina Senate winner?,2026-11-02T20:36Z
+senate:NC,Polymarket,0.9755,391171,North Carolina Senate Election Winner,2026-11-02T20:36Z
+senate:NE,Kalshi,0.305,6084543,Nebraska Senate winner?,2026-11-02T20:36Z
+senate:NE,Polymarket,0.285,2415899,Nebraska Senate Election Winner,2026-11-02T20:36Z
+senate:NH,Kalshi,0.9385,3237988,New Hampshire Senate winner?,2026-11-02T20:36Z
+senate:NH,Polymarket,0.955,627375,New Hampshire Senate Election Winner,2026-11-02T20:36Z
+senate:NJ,Kalshi,0.9805,333640,New Jersey Senate winner?,2026-11-02T20:36Z
+senate:NJ,Polymarket,0.9865,38854,New Jersey Senate Election Winner,2026-11-02T20:36Z
+senate:NM,Kalshi,0.9925,136797,New Mexico Senate winner?,2026-11-02T20:36Z
+senate:NM,Polymarket,0.9965,33355,New Mexico Senate Election Winner,2026-11-02T20:36Z
+senate:OH,Kalshi,0.715,10070875,Ohio Senate winner?,2026-11-02T20:36Z
+senate:OH,Polymarket,0.725,2656493,Ohio Senate Election Winner,2026-11-02T20:36Z
+senate:OK,Kalshi,0.017,88597,Oklahoma Senate winner?,2026-11-02T20:36Z
+senate:OK,Polymarket,0.017,31336,Oklahoma Senate Election Winner,2026-11-02T20:36Z
+senate:OR,Kalshi,0.987,38266,Oregon Senate winner?,2026-11-02T20:36Z
+senate:OR,Polymarket,0.989,10559,Oregon Senate Election Winner,2026-11-02T20:36Z
+senate:RI,Kalshi,0.994,58183,Rhode Island Senate winner?,2026-11-02T20:36Z
+senate:RI,Polymarket,0.9915,28435,Rhode Island Senate Election Winner,2026-11-02T20:36Z
+senate:SC,Kalshi,0.325,9688843,South Carolina Senate winner?,2026-11-02T20:36Z
+senate:SC,Polymarket,0.315,2027085,South Carolina Senate Election Winner,2026-11-02T20:36Z
+senate:SD,Kalshi,0.0485,744024,South Dakota Senate winner?,2026-11-02T20:36Z
+senate:SD,Polymarket,0.049,126663,South Dakota Senate Election Winner,2026-11-02T20:36Z
+senate:TN,Kalshi,0.021,570557,Tennessee Senate winner?,2026-11-02T20:36Z
+senate:TN,Polymarket,0.0165,125895,Tennessee Senate Election Winner,2026-11-02T20:36Z
+senate:TX,Kalshi,0.735,73020261,Texas Senate winner?,2026-11-02T20:36Z
+senate:TX,Polymarket,0.755,11466854,Texas Senate Election Winner,2026-11-02T20:36Z
+senate:VA,Kalshi,0.9925,94559,Virginia Senate winner?,2026-11-02T20:36Z
+senate:VA,Polymarket,0.992,24827,Virginia Senate Election Winner,2026-11-02T20:36Z
+senate:WV,Kalshi,0.014,61339,West Virginia Senate winner?,2026-11-02T20:36Z
+senate:WV,Polymarket,0.0145,23797,West Virginia Senate Election Winner,2026-11-02T20:36Z
+senate:WY,Kalshi,0.0135,36595,Wyoming Senate winner?,2026-11-02T20:36Z
+senate:WY,Polymarket,0.0115,23015,Wyoming Senate Election Winner,2026-11-02T20:36Z
