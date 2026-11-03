@@ -486,9 +486,10 @@ KS,GBAO (D),2026-07-08,2026-07-13,600,LV,Hamilton,Marshall,43.0,47.0,https://www
 KS,Tavern Research (D),2026-01-26,2026-01-28,1013,LV,Hamilton,Marshall,46.0,54.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Kansas
 IL,Research Co.,2026-10-31,2026-11-02,450,LV,Stratton,Tracy,53.0,41.0,https://researchco.ca/2026/11/02/midterms-2026-two/
 IL,ActiVote,2026-10-21,2026-10-30,400,LV,Stratton,Tracy,56.0,44.0,https://www.activote.net/polls/2026/il-u-s-senate/2026-10-30/
-IL,ActiVote,2026-09-26,2026-10-20,400,LV,Stratton,Tracy,58.5,41.5,https://www.activote.net/polls/2026/il-u-s-senate/2026-10-20/
+IL,ActiVote,2026-09-26,2026-10-20,400,LV,Stratton,Tracy,59.0,42.0,https://www.activote.net/polls/2026/il-u-s-senate/2026-10-20/
 IL,Public Policy Polling (D),2026-09-30,2026-10-01,569,LV,Stratton,Tracy,49.0,36.0,https://www.cnwmedia.com/article/cnw-poll-pritzker-leads-bailey-by-20-points-democrats-ahead-in-four-other-statewide-races
 ID,VoteNexus Research,2026-10-21,2026-10-22,700,LV,Achilles,Risch,43.0,49.0,https://drive.google.com/file/d/1ZWt7_rFQzMxjeueMCX4GoFyqIe9jRk8X/view
+ID,Peak Insights (R),2026-10-13,2026-10-15,500,LV,Achilles,Risch,27.0,54.0,https://senatorrisch.com/new-poll-senator-risch-continues-to-lead/
 ID,Peak Insights (R),2026-09-28,2026-09-30,500,LV,Achilles,Risch,24.0,49.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Idaho
 ID,Advanced Targeting Research,2026-09-13,2026-09-16,700,RV,Achilles,Risch,50.0,39.0,https://www.advancedtargetingresearch.com/_files/ugd/03a624_0fca9a6dd7f846f7bc96f97429561064.pdf
 ID,Peak Insights (R),2026-08-11,2026-08-13,500,LV,Achilles,Risch,18.0,52.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Idaho
@@ -562,9 +563,11 @@ GA,Cygnal (R),2025-05-15,2025-05-17,800,LV,Ossoff,Collins,46.0,43.0,https://en.w
 GA,Trafalgar Group (R),2025-04-24,2025-04-27,1426,LV,Ossoff,Collins,48.0,43.0,https://www.thetrafalgargroup.org/wp-content/uploads/2025/04/GA-26-US-Senate-0428_Full-Report.pdf
 GA,WPA Intelligence (R),2025-01-14,2025-01-15,500,LV,Ossoff,Collins,44.0,34.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Georgia
 FL,Research Co.,2026-10-31,2026-11-02,450,LV,Nixon,Moody,44.0,51.0,https://researchco.ca/2026/11/02/midterms-2026-two/
+FL,RedBox Research (D),2026-10-30,2026-10-31,2898,LV,Nixon,Moody,45.0,47.0,https://afightworthhaving.com/polling/2026/florida
 FL,Big Data Poll,2026-10-26,2026-10-30,1067,LV,Nixon,Moody,45.0,52.0,https://www.bigdatapoll.com/blog/sunshine-state-poll-ashley-moody-leads-angie-craig-governors-race-tight/
 FL,Stetson University,2026-10-26,2026-10-30,852,RV,Nixon,Moody,45.0,49.0,https://www.stetson.edu/artsci/cpor/media/cpor-fall-2026-report-wave-3-october.pdf
 FL,InsiderAdvantage (R),2026-10-28,2026-10-29,1200,LV,Nixon,Moody,43.0,49.0,https://insideradvantage.com/insideradvantage-florida-survey-donalds-49-jolly-45-moody-49-nixon-43/
+FL,Targoz Market Research,2026-10-26,2026-10-29,1013,LV,Nixon,Moody,43.0,52.0,https://www.targoz.com/market-matters-blog/2026/11/2/republicans-lead-all-five-florida-statewide-races
 FL,Political Matrix/The Listener Group,2026-10-26,2026-10-28,500,LV,Nixon,Moody,36.0,42.0,https://palafoxproductions.com/new-florida-statewide-poll-for-november-election/
 FL,St. Pete Polls,2026-10-25,2026-10-27,916,LV,Nixon,Moody,45.0,49.0,https://data.ddhq.io/polls/2026/10/28/St.-Pete-Polls-Florida
 FL,ActiVote,2026-10-17,2026-10-27,400,LV,Nixon,Moody,47.0,53.0,https://www.activote.net/polls/2026/fl-u-s-senate/
@@ -592,16 +595,18 @@ FL,University of North Florida,2026-07-08,2026-07-17,848,LV,Nixon,Moody,42.0,50.
 FL,Stetson University,2026-03-15,2026-04-13,848,LV,Nixon,Moody,38.0,51.0,https://www2.stetson.edu/today/2026/04/stetson-poll-republicans-lead-in-florida-2026-races-but-many-voters-still-undecided/
 FL,Emerson College,2026-03-29,2026-03-31,1125,LV,Nixon,Moody,36.0,47.0,https://emersoncollegepolling.com/florida-2026-poll-donalds-leads-gop-primary-for-governor-republicans-outpace-democrats-in-florida-elections/
 FL,University of North Florida,2026-02-21,2026-03-02,786,LV,Nixon,Moody,38.0,46.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Florida
+CO,Keating Research (D),2026-11-01,2026-11-02,400,LV,Hickenlooper,Baisley,58.0,37.0,https://keatingresearch.com/polls/colorado-statewide-november-2026/
 CO,Research Co.,2026-10-31,2026-11-02,450,LV,Hickenlooper,Baisley,57.0,35.0,https://researchco.ca/2026/11/02/midterms-2026-two/
 CO,CU Boulder/YouGov,2026-10-09,2026-10-20,710,LV,Hickenlooper,Baisley,57.0,39.0,https://www.colorado.edu/lab/aprl/media/84
 CO,Lake Research Partners (D),2026-09-16,2026-09-30,600,RV,Hickenlooper,Baisley,52.0,38.0,https://ballot.org/wp-content/uploads/2026/10/LRP-Topline-CO-BISC-State-Partners-10.8.26.pdf
+AR,GrayHouse (R),2026-10-27,2026-10-28,509,LV,Shoffner,Cotton,39.0,55.0,https://www.grayhouse.com/post/arkansas-senate-poll-october-2026-cotton
 AR,Hendrix College,2026-10-08,2026-10-13,709,LV,Shoffner,Cotton,41.0,50.0,https://talkbusiness.net/2026/10/poll-cotton-takes-lead-over-shoffner/
-AR,GrayHouse (R),2026-09-30,2026-10-04,550,LV,Shoffner,Cotton,39.0,50.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Arkansas
+AR,GrayHouse (R),2026-09-30,2026-10-04,550,LV,Shoffner,Cotton,40.0,51.0,https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Arkansas
 AR,J.L. Partners,2026-08-14,2026-08-18,803,LV,Shoffner,Cotton,35.0,51.0,https://static1.squarespace.com/static/663253f0bc87b7070102f41f/t/6a84d771481c4817e92f0eee/1787090801301/AR+Aug+26+Polling+Memo.pdf
 AR,Hendrix College,2026-08-11,2026-08-12,1217,LV,Shoffner,Cotton,47.0,44.0,https://talkbusiness.net/2026/08/poll-tight-race-for-us-senate-between-cotton-shoffner
 AR,2040 Strategy Group (D),2026-07-17,2026-07-25,586,LV,Shoffner,Cotton,43.0,46.0,https://drive.google.com/file/d/1xl5CVWv-W49Lo1iPOweW9Mm78u0xUsvU/view
 AR,GrayHouse (R),2026-02-07,2026-02-09,550,LV,Shoffner,Cotton,36.0,58.0,https://brooklandnews.com/2026/03/05/poll-finds-strong-support-for-trump-cotton-in-arkansas/
-AL,Chism Strategies (D),2026-10-22,2026-10-24,695,LV,Wess,Moore,40.0,48.0,https://www.al.com/politics/2026/10/alabama-governors-race-new-poll-finds-genuine-toss-up-between-tuberville-jones.html
+AL,Blueprint Polling (D),2026-10-22,2026-10-24,695,LV,Wess,Moore,40.0,48.0,https://cdn.prod.website-files.com/6931cd6da26b553260b5e813/6ae260db146d9884d704fa9e_bluepnt006%20Report.pdf
 AL,Cygnal (R),2026-10-16,2026-10-17,500,LV,Wess,Moore,35.0,50.0,https://aldailynews.com/poll-barry-moore-leads-everett-wess-in-u-s-senate-race/
 AL,The Alabama Poll,2026-10-15,2026-10-16,600,LV,Wess,Moore,35.0,56.0,https://www.al.com/politics/2026/10/gop-faces-election-downturn-but-theres-no-blue-wave-for-alabama-democrats-poll-shows.html
 AL,RMG Research (R),2026-09-21,2026-09-25,800,RV,Wess,Moore,33.0,54.0,https://yellowhammernews.com/report-doug-jones-is-polling-worse-than-2020-blowout-election/
