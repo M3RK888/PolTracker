@@ -280,10 +280,10 @@ if __name__ == "__main__":
     write_js("senate", "SENATE", senate)
     write_js("house", "HOUSE", house)
 
-    # The 2026 forecast is frozen on Election Day: afterwards, market prices follow the
+    # The 2026 forecast is frozen at 5pm Eastern on Election Day: afterwards, market prices follow the
     # results, so a rebuilt "forecast" would partly be hindsight. The Election Day
     # version stays on the site (and in the history files) as what was predicted.
-    before_election = forecast_model.AS_OF <= forecast_model.ELECTION_2026
+    before_election = not forecast_model.frozen_2026()
     f26 = forecast_model.forecast_2026() if before_election else None
     f28 = forecast_model.forecast_2028()
     # Add today's numbers to the tracker's history, then ship the whole history with each forecast

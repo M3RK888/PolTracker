@@ -3,9 +3,9 @@
 # Claude routine still runs at 12:00 UTC, only to look for new 2028 polls,
 # which needs judgment.)
 #
-#   until Nov 3, 2026:  Senate/House polls and races (fetch_midterms.py)
+#   until 5pm ET Nov 3: Senate/House polls and races (fetch_midterms.py)
 #   every day:          market prices, approval, unemployment (fetch_markets.py)
-#   after Nov 3, 2026:  election results and the forecast's score (score_forecast.py)
+#   from 5pm ET Nov 3: election results and the forecast's score (score_forecast.py)
 #   then:               rebuild the site data (adds today's tracker points), test, commit, publish
 #
 # A failed fetch keeps the previous day's data and shows a warning on the run;
@@ -49,9 +49,12 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
 
+      # "After" starts at 5pm Eastern on Election Day, an hour before the first polls close
+      # (same cutoff as forecast_model.FREEZE_2026): later runs don't re-read the races'
+      # polls, and the 2026 forecast stays at its last pre-close version.
       - name: Is it after Election Day?
         id: when
-        run: echo "after=$([ "$(TZ=America/New_York date +%F)" \> 2026-11-03 ] && echo yes || echo no)" >> "$GITHUB_OUTPUT"
+        run: echo "after=$([ "$(TZ=America/New_York date '+%F %H')" \> "2026-11-03 16" ] && echo yes || echo no)" >> "$GITHUB_OUTPUT"
 
       - name: Senate and House polls and races
         if: steps.when.outputs.after == 'no'

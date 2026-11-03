@@ -38,6 +38,14 @@ import midterms
 AS_OF = midterms.AS_OF
 ELECTION_2026 = pd.Timestamp("2026-11-03")
 ELECTION_2028 = pd.Timestamp("2028-11-07")
+# The 2026 forecast stops updating at 5pm Eastern on Election Day, an hour before the
+# first polls close: a build after that would use market prices that already follow
+# early results. (The daily job is scheduled for 7am but GitHub often starts it hours late.)
+FREEZE_2026 = pd.Timestamp("2026-11-03 17:00")
+
+
+def frozen_2026() -> bool:
+    return pd.Timestamp.now(tz="America/New_York").tz_localize(None) >= FREEZE_2026
 
 N_DRAWS = 20_000
 SEED = 2026                    # fixed, so the same inputs always give the same numbers
