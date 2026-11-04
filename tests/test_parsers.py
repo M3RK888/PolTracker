@@ -161,6 +161,15 @@ def test_race_outcome_rules():
     assert scoring.race_outcome([("A", "D", None, False), ("B", "R", None, False)]) is None
 
 
+def test_short_row_keeps_its_spanning_cell():
+    # A two-row district with a short second row: its candidates must not land in the next district
+    table = ["{|", "!A", "!B", "!C", "|-", "|one", "|skip", "|rowspan=2 |first cands",
+             "|-", "|one more", "|-", "|two", "|skip", "|second cands", "|}"]
+    rows = w.tables(table)[0]["rows"]
+    assert rows[1] == ["one more", "rowspan=2 |first cands"]
+    assert rows[2] == ["two", "skip", "second cands"]
+
+
 def test_election_night_needs_a_marked_winner():
     # Votes still being counted: the leader isn't the winner yet
     assert score_forecast.called_outcome([("A", "D", 52.0, False), ("B", "R", 48.0, False)]) is None

@@ -94,28 +94,21 @@
   },
   "house": {
    "races": 11,
-   "called_right": 0.9091,
-   "brier": 0.059,
-   "log_loss": 0.1582,
+   "called_right": 1.0,
+   "brier": 0.0,
+   "log_loss": 0.0101,
    "competitive": {
-    "races": 1,
-    "called_right": 0.0,
-    "brier": 0.6495
+    "races": 0,
+    "called_right": null,
+    "brier": null
    },
    "calibration": [
     {
      "from": 0.0,
      "to": 0.05,
-     "races": 2,
-     "forecast": 0.003,
+     "races": 3,
+     "forecast": 0.004,
      "dem_won": 0.0
-    },
-    {
-     "from": 0.05,
-     "to": 0.25,
-     "races": 1,
-     "forecast": 0.194,
-     "dem_won": 1.0
     },
     {
      "from": 0.95,
@@ -133,24 +126,24 @@
    },
    "vs_markets": {
     "races": 11,
-    "forecast_brier": 0.059,
-    "market_brier": 0.0711
+    "forecast_brier": 0.0,
+    "market_brier": 0.0003
    },
    "surprises": [
-    {
-     "race": "FL-21",
-     "p_dem": 0.1941,
-     "p_winner": 0.1941,
-     "dem_won": true,
-     "median": -5.46,
-     "margin": null
-    },
     {
      "race": "FL-19",
      "p_dem": 0.0063,
      "p_winner": 0.9937,
      "dem_won": false,
      "median": -19.48,
+     "margin": null
+    },
+    {
+     "race": "FL-06",
+     "p_dem": 0.0058,
+     "p_winner": 0.9942,
+     "dem_won": false,
+     "median": -19.5,
      "margin": null
     },
     {
@@ -271,7 +264,6 @@
     "FL-03",
     "FL-04",
     "FL-05",
-    "FL-06",
     "FL-07",
     "FL-08",
     "FL-09",
@@ -283,6 +275,7 @@
     "FL-16",
     "FL-17",
     "FL-18",
+    "FL-21",
     "FL-22",
     "FL-23",
     "FL-25",

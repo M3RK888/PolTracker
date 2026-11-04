@@ -180,6 +180,13 @@ def _parse_table(body: list[str], start: int) -> dict:
                     pending[col] = [raw, rs - 1]
                 row.append(raw)
                 col += 1
+        # A spanning cell further right than this row's own cells reach still covers this
+        # row; left alone, it would land in the next row (a neighboring race's candidates).
+        for c in sorted(c for c in pending if c >= col):
+            row.append(pending[c][0])
+            pending[c][1] -= 1
+            if pending[c][1] == 0:
+                del pending[c]
         rows.append(row)
 
     text_cells = []
