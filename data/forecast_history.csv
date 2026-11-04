@@ -94,6 +94,7 @@ date,race,kind,p_dem,p_rep,median,lo,hi,market_dem,polymarket,kalshi
 2026-11-01,house,daily,0.9484,0.0516,239,223,261,0.9403,0.945,0.9355
 2026-11-02,house,daily,0.9505,0.0495,240,223,261,0.9463,0.955,0.9375
 2026-11-03,house,daily,0.9495,0.0505,239,223,261,0.9372,0.945,0.9295
+2026-11-04,president:biden-trump-jr.,daily,0.5901,0.4031,284,203,373,0.6425,0.66,0.625
 2026-10-22,president:buttigieg-vance,daily,0.5946,0.3987,285,204,374,0.6175,0.65,0.585
 2026-10-23,president:buttigieg-vance,daily,0.5961,0.3969,285,204,375,0.62,0.655,0.585
 2026-10-24,president:buttigieg-vance,daily,0.5961,0.3969,285,204,375,0.62,0.655,0.585
