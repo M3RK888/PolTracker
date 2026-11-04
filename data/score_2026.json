@@ -2,14 +2,14 @@
  "forecast_date": "2026-11-03",
  "chambers": {
   "senate": {
-   "races": 28,
-   "called_right": 0.9643,
+   "races": 29,
+   "called_right": 0.9655,
    "brier": 0.0364,
-   "log_loss": 0.1276,
+   "log_loss": 0.1304,
    "competitive": {
-    "races": 10,
-    "called_right": 0.9,
-    "brier": 0.1019
+    "races": 11,
+    "called_right": 0.9091,
+    "brier": 0.0959
    },
    "calibration": [
     {
@@ -50,8 +50,8 @@
     {
      "from": 0.75,
      "to": 0.95,
-     "races": 3,
-     "forecast": 0.924,
+     "races": 4,
+     "forecast": 0.896,
      "dem_won": 1.0
     },
     {
@@ -69,9 +69,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 28,
+    "races": 29,
     "forecast_brier": 0.0364,
-    "market_brier": 0.0389
+    "market_brier": 0.041
    },
    "surprises": [
     {
@@ -118,7 +118,6 @@
    "pending": [
     "AK",
     "ID",
-    "ME",
     "MI",
     "MS",
     "MT",
