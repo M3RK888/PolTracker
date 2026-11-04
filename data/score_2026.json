@@ -2,14 +2,14 @@
  "forecast_date": "2026-11-03",
  "chambers": {
   "senate": {
-   "races": 22,
-   "called_right": 0.9545,
-   "brier": 0.0254,
-   "log_loss": 0.0867,
+   "races": 24,
+   "called_right": 0.9583,
+   "brier": 0.0315,
+   "log_loss": 0.1108,
    "competitive": {
-    "races": 5,
-    "called_right": 0.8,
-    "brier": 0.1115
+    "races": 7,
+    "called_right": 0.8571,
+    "brier": 0.1077
    },
    "calibration": [
     {
@@ -36,8 +36,8 @@
     {
      "from": 0.6,
      "to": 0.75,
-     "races": 1,
-     "forecast": 0.718,
+     "races": 3,
+     "forecast": 0.697,
      "dem_won": 1.0
     },
     {
@@ -62,9 +62,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 22,
-    "forecast_brier": 0.0254,
-    "market_brier": 0.0268
+    "races": 24,
+    "forecast_brier": 0.0315,
+    "market_brier": 0.0338
    },
    "surprises": [
     {
@@ -73,6 +73,22 @@
      "p_winner": 0.3267,
      "dem_won": true,
      "median": -2.17,
+     "margin": null
+    },
+    {
+     "race": "KS",
+     "p_dem": 0.6716,
+     "p_winner": 0.6716,
+     "dem_won": true,
+     "median": 2.16,
+     "margin": null
+    },
+    {
+     "race": "OH",
+     "p_dem": 0.7019,
+     "p_winner": 0.7019,
+     "dem_won": true,
+     "median": 2.55,
      "margin": null
     },
     {
@@ -90,29 +106,12 @@
      "dem_won": false,
      "median": -5.58,
      "margin": null
-    },
-    {
-     "race": "NH",
-     "p_dem": 0.9391,
-     "p_winner": 0.9391,
-     "dem_won": true,
-     "median": 7.9,
-     "margin": null
-    },
-    {
-     "race": "GA",
-     "p_dem": 0.9462,
-     "p_winner": 0.9462,
-     "dem_won": true,
-     "median": 8.46,
-     "margin": null
     }
    ],
    "pending": [
     "AK",
     "IA",
     "ID",
-    "KS",
     "LA",
     "ME",
     "MI",
@@ -120,7 +119,6 @@
     "MS",
     "MT",
     "NE",
-    "OH",
     "SD"
    ]
   },
