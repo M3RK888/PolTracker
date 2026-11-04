@@ -121,14 +121,14 @@
    ]
   },
   "house": {
-   "races": 374,
-   "called_right": 0.9626,
-   "brier": 0.0286,
-   "log_loss": 0.0979,
+   "races": 376,
+   "called_right": 0.9628,
+   "brier": 0.0287,
+   "log_loss": 0.0985,
    "competitive": {
-    "races": 61,
-    "called_right": 0.7705,
-    "brier": 0.1739
+    "races": 63,
+    "called_right": 0.7778,
+    "brier": 0.1699
    },
    "calibration": [
     {
@@ -148,8 +148,8 @@
     {
      "from": 0.25,
      "to": 0.4,
-     "races": 1,
-     "forecast": 0.288,
+     "races": 2,
+     "forecast": 0.289,
      "dem_won": 0.0
     },
     {
@@ -169,8 +169,8 @@
     {
      "from": 0.75,
      "to": 0.95,
-     "races": 16,
-     "forecast": 0.892,
+     "races": 17,
+     "forecast": 0.893,
      "dem_won": 1.0
     },
     {
@@ -188,8 +188,8 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 373,
-    "forecast_brier": 0.0286,
+    "races": 375,
+    "forecast_brier": 0.0287,
     "market_brier": 0.0148
    },
    "surprises": [
@@ -271,11 +271,9 @@
     "NC-10",
     "NC-13",
     "NC-14",
-    "NE-01",
     "NV-02",
     "NY-01",
     "NY-02",
-    "NY-03",
     "NY-04",
     "NY-21",
     "OH-10",
