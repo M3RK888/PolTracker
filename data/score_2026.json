@@ -2,28 +2,49 @@
  "forecast_date": "2026-11-03",
  "chambers": {
   "senate": {
-   "races": 2,
-   "called_right": 1.0,
-   "brier": 0.0015,
-   "log_loss": 0.0327,
+   "races": 19,
+   "called_right": 0.9474,
+   "brier": 0.0252,
+   "log_loss": 0.0818,
    "competitive": {
-    "races": 1,
-    "called_right": 1.0,
-    "brier": 0.0029
+    "races": 4,
+    "called_right": 0.75,
+    "brier": 0.1194
    },
    "calibration": [
     {
+     "from": 0.0,
+     "to": 0.05,
+     "races": 6,
+     "forecast": 0.001,
+     "dem_won": 0.0
+    },
+    {
+     "from": 0.05,
+     "to": 0.25,
+     "races": 1,
+     "forecast": 0.134,
+     "dem_won": 0.0
+    },
+    {
+     "from": 0.25,
+     "to": 0.4,
+     "races": 1,
+     "forecast": 0.327,
+     "dem_won": 1.0
+    },
+    {
      "from": 0.75,
      "to": 0.95,
-     "races": 1,
-     "forecast": 0.946,
+     "races": 2,
+     "forecast": 0.943,
      "dem_won": 1.0
     },
     {
      "from": 0.95,
      "to": 1.0,
-     "races": 1,
-     "forecast": 0.993,
+     "races": 9,
+     "forecast": 0.994,
      "dem_won": 1.0
     }
    ],
@@ -34,11 +55,35 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 2,
-    "forecast_brier": 0.0015,
-    "market_brier": 0.0006
+    "races": 19,
+    "forecast_brier": 0.0252,
+    "market_brier": 0.0269
    },
    "surprises": [
+    {
+     "race": "SC",
+     "p_dem": 0.3267,
+     "p_winner": 0.3267,
+     "dem_won": true,
+     "median": -2.17,
+     "margin": null
+    },
+    {
+     "race": "FL",
+     "p_dem": 0.1335,
+     "p_winner": 0.8665,
+     "dem_won": false,
+     "median": -5.58,
+     "margin": null
+    },
+    {
+     "race": "NH",
+     "p_dem": 0.9391,
+     "p_winner": 0.9391,
+     "dem_won": true,
+     "median": 7.9,
+     "margin": null
+    },
     {
      "race": "GA",
      "p_dem": 0.9462,
@@ -48,73 +93,70 @@
      "margin": null
     },
     {
-     "race": "VA",
-     "p_dem": 0.9929,
-     "p_winner": 0.9929,
+     "race": "NC",
+     "p_dem": 0.9669,
+     "p_winner": 0.9669,
      "dem_won": true,
-     "median": 14.59,
+     "median": 9.82,
      "margin": null
     }
    ],
    "pending": [
     "AK",
-    "AL",
     "AR",
-    "CO",
-    "DE",
-    "FL",
     "IA",
     "ID",
-    "IL",
     "KS",
-    "KY",
     "LA",
-    "MA",
     "ME",
     "MI",
     "MN",
     "MS",
     "MT",
-    "NC",
     "NE",
-    "NH",
-    "NJ",
-    "NM",
     "OH",
-    "OK",
     "OR",
-    "RI",
-    "SC",
     "SD",
-    "TN",
-    "TX",
-    "WV",
-    "WY"
+    "TX"
    ]
   },
   "house": {
-   "races": 11,
+   "races": 30,
    "called_right": 1.0,
-   "brier": 0.0,
-   "log_loss": 0.0101,
+   "brier": 0.008,
+   "log_loss": 0.0368,
    "competitive": {
-    "races": 0,
-    "called_right": null,
-    "brier": null
+    "races": 2,
+    "called_right": 1.0,
+    "brier": 0.119
    },
    "calibration": [
     {
      "from": 0.0,
      "to": 0.05,
-     "races": 3,
-     "forecast": 0.004,
+     "races": 6,
+     "forecast": 0.002,
      "dem_won": 0.0
+    },
+    {
+     "from": 0.4,
+     "to": 0.6,
+     "races": 1,
+     "forecast": 0.538,
+     "dem_won": 1.0
+    },
+    {
+     "from": 0.75,
+     "to": 0.95,
+     "races": 1,
+     "forecast": 0.844,
+     "dem_won": 1.0
     },
     {
      "from": 0.95,
      "to": 1.0,
-     "races": 8,
-     "forecast": 1.0,
+     "races": 22,
+     "forecast": 0.997,
      "dem_won": 1.0
     }
    ],
@@ -125,49 +167,49 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 11,
-    "forecast_brier": 0.0,
-    "market_brier": 0.0003
+    "races": 30,
+    "forecast_brier": 0.008,
+    "market_brier": 0.0012
    },
    "surprises": [
+    {
+     "race": "PA-08",
+     "p_dem": 0.5377,
+     "p_winner": 0.5377,
+     "dem_won": true,
+     "median": 0.61,
+     "margin": null
+    },
+    {
+     "race": "PA-07",
+     "p_dem": 0.8444,
+     "p_winner": 0.8444,
+     "dem_won": true,
+     "median": 6.42,
+     "margin": null
+    },
+    {
+     "race": "OH-13",
+     "p_dem": 0.9669,
+     "p_winner": 0.9669,
+     "dem_won": true,
+     "median": 12.67,
+     "margin": null
+    },
+    {
+     "race": "PA-17",
+     "p_dem": 0.9796,
+     "p_winner": 0.9796,
+     "dem_won": true,
+     "median": 14.59,
+     "margin": null
+    },
     {
      "race": "FL-19",
      "p_dem": 0.0063,
      "p_winner": 0.9937,
      "dem_won": false,
      "median": -19.48,
-     "margin": null
-    },
-    {
-     "race": "FL-06",
-     "p_dem": 0.0058,
-     "p_winner": 0.9942,
-     "dem_won": false,
-     "median": -19.5,
-     "margin": null
-    },
-    {
-     "race": "KY-03",
-     "p_dem": 0.9986,
-     "p_winner": 0.9986,
-     "dem_won": true,
-     "median": 28.54,
-     "margin": null
-    },
-    {
-     "race": "FL-10",
-     "p_dem": 0.9998,
-     "p_winner": 0.9998,
-     "dem_won": true,
-     "median": 34.55,
-     "margin": null
-    },
-    {
-     "race": "FL-20",
-     "p_dem": 0.9999,
-     "p_winner": 0.9999,
-     "dem_won": true,
-     "median": 48.57,
      "margin": null
     }
    ],
@@ -351,12 +393,7 @@
     "MA-09",
     "MD-01",
     "MD-02",
-    "MD-03",
-    "MD-04",
-    "MD-05",
     "MD-06",
-    "MD-07",
-    "MD-08",
     "ME-01",
     "ME-02",
     "MI-01",
@@ -461,7 +498,6 @@
     "NY-26",
     "OH-01",
     "OH-02",
-    "OH-03",
     "OH-04",
     "OH-05",
     "OH-06",
@@ -471,7 +507,6 @@
     "OH-10",
     "OH-11",
     "OH-12",
-    "OH-13",
     "OH-14",
     "OH-15",
     "OK-01",
@@ -486,22 +521,11 @@
     "OR-05",
     "OR-06",
     "PA-01",
-    "PA-02",
-    "PA-03",
-    "PA-04",
-    "PA-05",
-    "PA-06",
-    "PA-07",
-    "PA-08",
     "PA-09",
     "PA-10",
     "PA-11",
-    "PA-12",
-    "PA-13",
     "PA-14",
-    "PA-15",
     "PA-16",
-    "PA-17",
     "RI-01",
     "RI-02",
     "SC-01",
@@ -571,7 +595,6 @@
     "VA-06",
     "VA-07",
     "VA-08",
-    "VA-09",
     "VA-10",
     "VA-11",
     "VT-AL",
