@@ -121,10 +121,10 @@
    ]
   },
   "house": {
-   "races": 372,
-   "called_right": 0.9624,
-   "brier": 0.0287,
-   "log_loss": 0.0982,
+   "races": 374,
+   "called_right": 0.9626,
+   "brier": 0.0286,
+   "log_loss": 0.0979,
    "competitive": {
     "races": 61,
     "called_right": 0.7705,
@@ -134,7 +134,7 @@
     {
      "from": 0.0,
      "to": 0.05,
-     "races": 121,
+     "races": 123,
      "forecast": 0.013,
      "dem_won": 0.0
     },
@@ -188,9 +188,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 371,
-    "forecast_brier": 0.0288,
-    "market_brier": 0.0149
+    "races": 373,
+    "forecast_brier": 0.0286,
+    "market_brier": 0.0148
    },
    "surprises": [
     {
@@ -288,9 +288,7 @@
     "TX-02",
     "TX-05",
     "TX-22",
-    "TX-27",
     "TX-32",
-    "TX-38",
     "UT-02",
     "UT-04",
     "VA-01",
