@@ -2,14 +2,14 @@
  "forecast_date": "2026-11-03",
  "chambers": {
   "senate": {
-   "races": 20,
-   "called_right": 0.95,
-   "brier": 0.0239,
-   "log_loss": 0.0782,
+   "races": 21,
+   "called_right": 0.9524,
+   "brier": 0.0266,
+   "log_loss": 0.0903,
    "competitive": {
-    "races": 4,
-    "called_right": 0.75,
-    "brier": 0.1194
+    "races": 5,
+    "called_right": 0.8,
+    "brier": 0.1115
    },
    "calibration": [
     {
@@ -34,6 +34,13 @@
      "dem_won": 1.0
     },
     {
+     "from": 0.6,
+     "to": 0.75,
+     "races": 1,
+     "forecast": 0.718,
+     "dem_won": 1.0
+    },
+    {
      "from": 0.75,
      "to": 0.95,
      "races": 2,
@@ -55,9 +62,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 20,
-    "forecast_brier": 0.0239,
-    "market_brier": 0.0257
+    "races": 21,
+    "forecast_brier": 0.0266,
+    "market_brier": 0.028
    },
    "surprises": [
     {
@@ -66,6 +73,14 @@
      "p_winner": 0.3267,
      "dem_won": true,
      "median": -2.17,
+     "margin": null
+    },
+    {
+     "race": "TX",
+     "p_dem": 0.7177,
+     "p_winner": 0.7177,
+     "dem_won": true,
+     "median": 2.79,
      "margin": null
     },
     {
@@ -91,14 +106,6 @@
      "dem_won": true,
      "median": 8.46,
      "margin": null
-    },
-    {
-     "race": "NC",
-     "p_dem": 0.9669,
-     "p_winner": 0.9669,
-     "dem_won": true,
-     "median": 9.82,
-     "margin": null
     }
    ],
    "pending": [
@@ -115,19 +122,18 @@
     "NE",
     "OH",
     "OR",
-    "SD",
-    "TX"
+    "SD"
    ]
   },
   "house": {
-   "races": 30,
+   "races": 31,
    "called_right": 1.0,
-   "brier": 0.008,
-   "log_loss": 0.0368,
+   "brier": 0.0115,
+   "log_loss": 0.0492,
    "competitive": {
-    "races": 2,
+    "races": 3,
     "called_right": 1.0,
-    "brier": 0.119
+    "brier": 0.1185
    },
    "calibration": [
     {
@@ -142,6 +148,13 @@
      "to": 0.6,
      "races": 1,
      "forecast": 0.538,
+     "dem_won": 1.0
+    },
+    {
+     "from": 0.6,
+     "to": 0.75,
+     "races": 1,
+     "forecast": 0.657,
      "dem_won": 1.0
     },
     {
@@ -166,9 +179,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 30,
-    "forecast_brier": 0.008,
-    "market_brier": 0.0012
+    "races": 31,
+    "forecast_brier": 0.0115,
+    "market_brier": 0.0021
    },
    "surprises": [
     {
@@ -177,6 +190,14 @@
      "p_winner": 0.5377,
      "dem_won": true,
      "median": 0.61,
+     "margin": null
+    },
+    {
+     "race": "PA-10",
+     "p_dem": 0.6571,
+     "p_winner": 0.6571,
+     "dem_won": true,
+     "median": 2.53,
      "margin": null
     },
     {
@@ -201,14 +222,6 @@
      "p_winner": 0.9796,
      "dem_won": true,
      "median": 14.59,
-     "margin": null
-    },
-    {
-     "race": "FL-19",
-     "p_dem": 0.0063,
-     "p_winner": 0.9937,
-     "dem_won": false,
-     "median": -19.48,
      "margin": null
     }
    ],
@@ -521,7 +534,6 @@
     "OR-06",
     "PA-01",
     "PA-09",
-    "PA-10",
     "PA-11",
     "PA-14",
     "PA-16",
