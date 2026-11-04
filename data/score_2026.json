@@ -122,10 +122,10 @@
    ]
   },
   "house": {
-   "races": 90,
-   "called_right": 0.9333,
-   "brier": 0.0504,
-   "log_loss": 0.1518,
+   "races": 95,
+   "called_right": 0.9368,
+   "brier": 0.0478,
+   "log_loss": 0.1445,
    "competitive": {
     "races": 11,
     "called_right": 0.4545,
@@ -170,7 +170,7 @@
     {
      "from": 0.95,
      "to": 1.0,
-     "races": 66,
+     "races": 71,
      "forecast": 0.997,
      "dem_won": 1.0
     }
@@ -182,9 +182,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 89,
-    "forecast_brier": 0.051,
-    "market_brier": 0.0302
+    "races": 94,
+    "forecast_brier": 0.0483,
+    "market_brier": 0.0286
    },
    "surprises": [
     {
@@ -263,11 +263,6 @@
     "CO-06",
     "CO-07",
     "CO-08",
-    "CT-01",
-    "CT-02",
-    "CT-03",
-    "CT-04",
-    "CT-05",
     "DE-AL",
     "FL-01",
     "FL-02",
