@@ -123,3 +123,22 @@ jobs:
   publish:
     needs: refresh
     uses: ./.github/workflows/pages.yml
+
+  # While results come in, each run starts the next one 10 minutes after it publishes.
+  # GitHub's timers ran hours late on election night; this doesn't depend on them.
+  # The chain ends by itself on Nov 7 (UTC). If it breaks, the schedule above restarts it.
+  next-run:
+    needs: publish
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      actions: write
+    steps:
+      - name: Wait, then start the next run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ "$(date -u +%F)" \< 2026-11-07 ] || { echo "Results window is over"; exit 0; }
+          sleep 600
+          gh workflow run refresh.yml --ref main --repo "${{ github.repository }}"
