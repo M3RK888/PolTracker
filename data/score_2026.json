@@ -121,10 +121,10 @@
    ]
   },
   "house": {
-   "races": 291,
-   "called_right": 0.9691,
-   "brier": 0.0236,
-   "log_loss": 0.0828,
+   "races": 303,
+   "called_right": 0.9703,
+   "brier": 0.0227,
+   "log_loss": 0.0803,
    "competitive": {
     "races": 43,
     "called_right": 0.7907,
@@ -134,8 +134,8 @@
     {
      "from": 0.0,
      "to": 0.05,
-     "races": 86,
-     "forecast": 0.01,
+     "races": 97,
+     "forecast": 0.011,
      "dem_won": 0.0
     },
     {
@@ -176,7 +176,7 @@
     {
      "from": 0.95,
      "to": 1.0,
-     "races": 162,
+     "races": 163,
      "forecast": 0.995,
      "dem_won": 1.0
     }
@@ -188,9 +188,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 290,
-    "forecast_brier": 0.0237,
-    "market_brier": 0.0128
+    "races": 302,
+    "forecast_brier": 0.0228,
+    "market_brier": 0.0124
    },
    "surprises": [
     {
@@ -290,20 +290,8 @@
     "OK-05",
     "SC-01",
     "SC-02",
-    "SC-03",
-    "SC-04",
-    "SC-05",
-    "SC-06",
-    "SC-07",
-    "SD-AL",
-    "TN-01",
-    "TN-02",
-    "TN-03",
     "TN-04",
-    "TN-05",
-    "TN-06",
     "TN-07",
-    "TN-08",
     "TN-09",
     "TX-01",
     "TX-02",
