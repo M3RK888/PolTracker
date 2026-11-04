@@ -121,14 +121,14 @@
    ]
   },
   "house": {
-   "races": 369,
-   "called_right": 0.9648,
-   "brier": 0.0276,
-   "log_loss": 0.0951,
+   "races": 371,
+   "called_right": 0.965,
+   "brier": 0.0278,
+   "log_loss": 0.096,
    "competitive": {
-    "races": 58,
-    "called_right": 0.7759,
-    "brier": 0.1747
+    "races": 60,
+    "called_right": 0.7833,
+    "brier": 0.1709
    },
    "calibration": [
     {
@@ -162,15 +162,15 @@
     {
      "from": 0.6,
      "to": 0.75,
-     "races": 6,
-     "forecast": 0.658,
+     "races": 7,
+     "forecast": 0.659,
      "dem_won": 1.0
     },
     {
      "from": 0.75,
      "to": 0.95,
-     "races": 15,
-     "forecast": 0.891,
+     "races": 16,
+     "forecast": 0.892,
      "dem_won": 1.0
     },
     {
@@ -188,9 +188,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 368,
-    "forecast_brier": 0.0277,
-    "market_brier": 0.0142
+    "races": 370,
+    "forecast_brier": 0.0279,
+    "market_brier": 0.0145
    },
    "surprises": [
     {
@@ -262,8 +262,6 @@
     "LA-05",
     "LA-06",
     "ME-02",
-    "MI-07",
-    "MI-10",
     "MN-01",
     "MT-01",
     "NC-03",
