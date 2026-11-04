@@ -121,10 +121,10 @@
    ]
   },
   "house": {
-   "races": 275,
-   "called_right": 0.9673,
-   "brier": 0.025,
-   "log_loss": 0.0868,
+   "races": 291,
+   "called_right": 0.9691,
+   "brier": 0.0236,
+   "log_loss": 0.0828,
    "competitive": {
     "races": 43,
     "called_right": 0.7907,
@@ -134,7 +134,7 @@
     {
      "from": 0.0,
      "to": 0.05,
-     "races": 77,
+     "races": 86,
      "forecast": 0.01,
      "dem_won": 0.0
     },
@@ -176,7 +176,7 @@
     {
      "from": 0.95,
      "to": 1.0,
-     "races": 155,
+     "races": 162,
      "forecast": 0.995,
      "dem_won": 1.0
     }
@@ -188,9 +188,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 274,
-    "forecast_brier": 0.0251,
-    "market_brier": 0.0135
+    "races": 290,
+    "forecast_brier": 0.0237,
+    "market_brier": 0.0128
    },
    "surprises": [
     {
@@ -287,23 +287,7 @@
     "NY-04",
     "NY-21",
     "OH-10",
-    "OK-01",
-    "OK-02",
-    "OK-03",
-    "OK-04",
     "OK-05",
-    "OR-01",
-    "OR-02",
-    "OR-03",
-    "OR-04",
-    "OR-05",
-    "OR-06",
-    "PA-09",
-    "PA-11",
-    "PA-14",
-    "PA-16",
-    "RI-01",
-    "RI-02",
     "SC-01",
     "SC-02",
     "SC-03",
