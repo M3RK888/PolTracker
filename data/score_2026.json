@@ -121,14 +121,14 @@
    ]
   },
   "house": {
-   "races": 335,
-   "called_right": 0.9672,
-   "brier": 0.0259,
-   "log_loss": 0.0888,
+   "races": 339,
+   "called_right": 0.9617,
+   "brier": 0.0289,
+   "log_loss": 0.0966,
    "competitive": {
-    "races": 49,
-    "called_right": 0.7755,
-    "brier": 0.1755
+    "races": 51,
+    "called_right": 0.7451,
+    "brier": 0.1906
    },
    "calibration": [
     {
@@ -141,9 +141,9 @@
     {
      "from": 0.05,
      "to": 0.25,
-     "races": 19,
-     "forecast": 0.153,
-     "dem_won": 0.316
+     "races": 20,
+     "forecast": 0.152,
+     "dem_won": 0.35
     },
     {
      "from": 0.25,
@@ -155,9 +155,9 @@
     {
      "from": 0.4,
      "to": 0.6,
-     "races": 13,
-     "forecast": 0.477,
-     "dem_won": 0.923
+     "races": 14,
+     "forecast": 0.472,
+     "dem_won": 0.929
     },
     {
      "from": 0.6,
@@ -176,7 +176,7 @@
     {
      "from": 0.95,
      "to": 1.0,
-     "races": 171,
+     "races": 173,
      "forecast": 0.995,
      "dem_won": 1.0
     }
@@ -188,9 +188,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 334,
-    "forecast_brier": 0.0259,
-    "market_brier": 0.0128
+    "races": 338,
+    "forecast_brier": 0.0289,
+    "market_brier": 0.014
    },
    "surprises": [
     {
@@ -199,6 +199,14 @@
      "p_winner": 0.1202,
      "dem_won": true,
      "median": -7.42,
+     "margin": null
+    },
+    {
+     "race": "NC-09",
+     "p_dem": 0.1222,
+     "p_winner": 0.1222,
+     "dem_won": true,
+     "median": -7.44,
      "margin": null
     },
     {
@@ -223,14 +231,6 @@
      "p_winner": 0.1915,
      "dem_won": true,
      "median": -5.55,
-     "margin": null
-    },
-    {
-     "race": "TX-23",
-     "p_dem": 0.192,
-     "p_winner": 0.192,
-     "dem_won": true,
-     "median": -5.42,
      "margin": null
     }
    ],
@@ -270,13 +270,11 @@
     "MI-10",
     "MN-01",
     "MT-01",
-    "NC-01",
     "NC-03",
     "NC-05",
     "NC-06",
     "NC-07",
     "NC-08",
-    "NC-09",
     "NC-10",
     "NC-14",
     "NE-01",
@@ -300,7 +298,6 @@
     "TX-27",
     "TX-32",
     "TX-38",
-    "UT-01",
     "UT-02",
     "UT-04",
     "VA-01",
@@ -313,7 +310,6 @@
     "VA-08",
     "VA-10",
     "VA-11",
-    "VT-AL",
     "WA-01",
     "WA-02",
     "WA-03",
