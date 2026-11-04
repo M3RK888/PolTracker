@@ -2,14 +2,14 @@
  "forecast_date": "2026-11-03",
  "chambers": {
   "senate": {
-   "races": 32,
-   "called_right": 0.9688,
-   "brier": 0.0339,
-   "log_loss": 0.1251,
+   "races": 33,
+   "called_right": 0.9697,
+   "brier": 0.0347,
+   "log_loss": 0.1298,
    "competitive": {
-    "races": 12,
-    "called_right": 0.9167,
-    "brier": 0.0902
+    "races": 13,
+    "called_right": 0.9231,
+    "brier": 0.0878
    },
    "calibration": [
     {
@@ -22,8 +22,8 @@
     {
      "from": 0.05,
      "to": 0.25,
-     "races": 2,
-     "forecast": 0.117,
+     "races": 3,
+     "forecast": 0.159,
      "dem_won": 0.0
     },
     {
@@ -69,9 +69,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 32,
-    "forecast_brier": 0.0339,
-    "market_brier": 0.0389
+    "races": 33,
+    "forecast_brier": 0.0347,
+    "market_brier": 0.0405
    },
    "surprises": [
     {
@@ -117,46 +117,52 @@
    ],
    "pending": [
     "AK",
-    "MS",
-    "NE"
+    "MS"
    ]
   },
   "house": {
-   "races": 95,
-   "called_right": 0.9368,
-   "brier": 0.0478,
-   "log_loss": 0.1445,
+   "races": 123,
+   "called_right": 0.9512,
+   "brier": 0.0452,
+   "log_loss": 0.1467,
    "competitive": {
-    "races": 11,
-    "called_right": 0.4545,
-    "brier": 0.412
+    "races": 25,
+    "called_right": 0.76,
+    "brier": 0.2216
    },
    "calibration": [
     {
      "from": 0.0,
      "to": 0.05,
-     "races": 13,
-     "forecast": 0.005,
+     "races": 25,
+     "forecast": 0.014,
      "dem_won": 0.0
     },
     {
      "from": 0.05,
      "to": 0.25,
-     "races": 6,
-     "forecast": 0.127,
-     "dem_won": 0.833
+     "races": 15,
+     "forecast": 0.14,
+     "dem_won": 0.333
+    },
+    {
+     "from": 0.25,
+     "to": 0.4,
+     "races": 1,
+     "forecast": 0.288,
+     "dem_won": 0.0
     },
     {
      "from": 0.4,
      "to": 0.6,
-     "races": 2,
-     "forecast": 0.472,
-     "dem_won": 1.0
+     "races": 5,
+     "forecast": 0.485,
+     "dem_won": 0.8
     },
     {
      "from": 0.6,
      "to": 0.75,
-     "races": 1,
+     "races": 2,
      "forecast": 0.657,
      "dem_won": 1.0
     },
@@ -170,7 +176,7 @@
     {
      "from": 0.95,
      "to": 1.0,
-     "races": 71,
+     "races": 73,
      "forecast": 0.997,
      "dem_won": 1.0
     }
@@ -182,9 +188,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 94,
-    "forecast_brier": 0.0483,
-    "market_brier": 0.0286
+    "races": 122,
+    "forecast_brier": 0.0455,
+    "market_brier": 0.0261
    },
    "surprises": [
     {
@@ -264,39 +270,11 @@
     "CO-07",
     "CO-08",
     "DE-AL",
-    "FL-01",
-    "FL-02",
-    "FL-03",
-    "FL-04",
-    "FL-05",
     "FL-07",
-    "FL-08",
     "FL-09",
-    "FL-11",
-    "FL-12",
     "FL-13",
-    "FL-14",
-    "FL-15",
-    "FL-16",
-    "FL-17",
-    "FL-18",
-    "FL-21",
-    "FL-22",
-    "FL-23",
-    "FL-25",
     "FL-26",
     "FL-27",
-    "FL-28",
-    "GA-01",
-    "GA-02",
-    "GA-03",
-    "GA-07",
-    "GA-08",
-    "GA-09",
-    "GA-10",
-    "GA-11",
-    "GA-12",
-    "GA-14",
     "HI-01",
     "HI-02",
     "IA-01",
