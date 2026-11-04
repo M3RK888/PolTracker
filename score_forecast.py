@@ -35,13 +35,23 @@ def election_day_forecast() -> pd.DataFrame:
     return h[h["date"] == day].copy(), day
 
 
+def called_outcome(results: list) -> dict | None:
+    """A race's outcome, only once Wikipedia marks a winner. While votes are being
+    counted, a page can show vote shares with no winner; whoever leads then may not win."""
+    winners = [party for _, party, _, won in results if won]
+    if not winners:
+        return None
+    o = scoring.race_outcome(results)
+    return {"dem_won": winners[-1] != "R", "margin": o["margin"] if o else None}
+
+
 def results_2026() -> pd.DataFrame:
     races, _ = fetch_midterms.senate(2026, with_polls=False)
     districts, _ = fetch_midterms.house(2026)
     rows = []
     for chamber, items, key in (("senate", races, "state"), ("house", districts, "district")):
         for r in items:
-            o = scoring.race_outcome(r["results"])
+            o = called_outcome(r["results"])
             rows.append({"chamber": chamber, "race": r[key],
                          "dem_won": None if o is None else o["dem_won"],
                          "margin": None if o is None else o["margin"]})

@@ -10,6 +10,7 @@ from pathlib import Path
 
 import fetch_markets
 import fetch_midterms as fm
+import score_forecast
 import scoring
 import wikitables as w
 
@@ -158,3 +159,11 @@ def test_race_outcome_rules():
     assert out["dem_won"] is False and out["margin"] is None and not out["two_way"]
     # No results yet
     assert scoring.race_outcome([("A", "D", None, False), ("B", "R", None, False)]) is None
+
+
+def test_election_night_needs_a_marked_winner():
+    # Votes still being counted: the leader isn't the winner yet
+    assert score_forecast.called_outcome([("A", "D", 52.0, False), ("B", "R", 48.0, False)]) is None
+    # Winner marked, with or without vote shares
+    assert score_forecast.called_outcome([("A", "D", 48.0, False), ("B", "R", 52.0, True)]) == {"dem_won": False, "margin": -4.0}
+    assert score_forecast.called_outcome([("A", "D", None, True), ("B", "R", None, False)]) == {"dem_won": True, "margin": None}

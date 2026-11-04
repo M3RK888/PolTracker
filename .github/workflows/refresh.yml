@@ -16,6 +16,7 @@ name: Daily data refresh
 on:
   schedule:
     - cron: "0 11 * * *"     # 11:00 UTC: 7am Eastern (6am after clocks change), before any polls close
+    - cron: "7,37 * 4-7 11 *"   # every 30 minutes Nov 4-7 UTC (from 7pm ET Nov 3), while results come in
   workflow_dispatch:         # "Run workflow" button on the Actions tab
     inputs:
       test_report:
