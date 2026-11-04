@@ -121,14 +121,14 @@
    ]
   },
   "house": {
-   "races": 367,
-   "called_right": 0.9646,
-   "brier": 0.0278,
-   "log_loss": 0.0955,
+   "races": 368,
+   "called_right": 0.9647,
+   "brier": 0.0277,
+   "log_loss": 0.0954,
    "competitive": {
-    "races": 57,
-    "called_right": 0.7719,
-    "brier": 0.1777
+    "races": 58,
+    "called_right": 0.7759,
+    "brier": 0.1747
    },
    "calibration": [
     {
@@ -169,8 +169,8 @@
     {
      "from": 0.75,
      "to": 0.95,
-     "races": 14,
-     "forecast": 0.887,
+     "races": 15,
+     "forecast": 0.891,
      "dem_won": 1.0
     },
     {
@@ -188,8 +188,8 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 366,
-    "forecast_brier": 0.0279,
+    "races": 367,
+    "forecast_brier": 0.0278,
     "market_brier": 0.0143
    },
    "surprises": [
@@ -246,7 +246,6 @@
     "CA-07",
     "CA-11",
     "CA-14",
-    "CA-22",
     "CA-23",
     "CA-29",
     "CA-34",
