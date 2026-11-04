@@ -2,14 +2,14 @@
  "forecast_date": "2026-11-03",
  "chambers": {
   "senate": {
-   "races": 24,
-   "called_right": 0.9583,
-   "brier": 0.0315,
-   "log_loss": 0.1108,
+   "races": 25,
+   "called_right": 0.96,
+   "brier": 0.0399,
+   "log_loss": 0.1334,
    "competitive": {
-    "races": 7,
-    "called_right": 0.8571,
-    "brier": 0.1077
+    "races": 8,
+    "called_right": 0.875,
+    "brier": 0.1245
    },
    "calibration": [
     {
@@ -31,6 +31,13 @@
      "to": 0.4,
      "races": 1,
      "forecast": 0.327,
+     "dem_won": 1.0
+    },
+    {
+     "from": 0.4,
+     "to": 0.6,
+     "races": 1,
+     "forecast": 0.508,
      "dem_won": 1.0
     },
     {
@@ -62,9 +69,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 24,
-    "forecast_brier": 0.0315,
-    "market_brier": 0.0338
+    "races": 25,
+    "forecast_brier": 0.0399,
+    "market_brier": 0.0422
    },
    "surprises": [
     {
@@ -73,6 +80,14 @@
      "p_winner": 0.3267,
      "dem_won": true,
      "median": -2.17,
+     "margin": null
+    },
+    {
+     "race": "IA",
+     "p_dem": 0.5084,
+     "p_winner": 0.5084,
+     "dem_won": true,
+     "median": 0.1,
      "margin": null
     },
     {
@@ -98,19 +113,10 @@
      "dem_won": true,
      "median": 2.79,
      "margin": null
-    },
-    {
-     "race": "FL",
-     "p_dem": 0.1335,
-     "p_winner": 0.8665,
-     "dem_won": false,
-     "median": -5.58,
-     "margin": null
     }
    ],
    "pending": [
     "AK",
-    "IA",
     "ID",
     "LA",
     "ME",
