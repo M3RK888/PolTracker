@@ -2,10 +2,10 @@
  "forecast_date": "2026-11-03",
  "chambers": {
   "senate": {
-   "races": 19,
-   "called_right": 0.9474,
-   "brier": 0.0252,
-   "log_loss": 0.0818,
+   "races": 20,
+   "called_right": 0.95,
+   "brier": 0.0239,
+   "log_loss": 0.0782,
    "competitive": {
     "races": 4,
     "called_right": 0.75,
@@ -15,7 +15,7 @@
     {
      "from": 0.0,
      "to": 0.05,
-     "races": 6,
+     "races": 7,
      "forecast": 0.001,
      "dem_won": 0.0
     },
@@ -55,9 +55,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 19,
-    "forecast_brier": 0.0252,
-    "market_brier": 0.0269
+    "races": 20,
+    "forecast_brier": 0.0239,
+    "market_brier": 0.0257
    },
    "surprises": [
     {
@@ -103,7 +103,6 @@
    ],
    "pending": [
     "AK",
-    "AR",
     "IA",
     "ID",
     "KS",
