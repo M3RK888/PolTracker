@@ -121,10 +121,10 @@
    ]
   },
   "house": {
-   "races": 394,
-   "called_right": 0.9492,
-   "brier": 0.0398,
-   "log_loss": 0.1321,
+   "races": 396,
+   "called_right": 0.9495,
+   "brier": 0.0396,
+   "log_loss": 0.1314,
    "competitive": {
     "races": 74,
     "called_right": 0.7432,
@@ -134,7 +134,7 @@
     {
      "from": 0.0,
      "to": 0.05,
-     "races": 127,
+     "races": 129,
      "forecast": 0.014,
      "dem_won": 0.008
     },
@@ -188,9 +188,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 393,
-    "forecast_brier": 0.0399,
-    "market_brier": 0.0243
+    "races": 395,
+    "forecast_brier": 0.0397,
+    "market_brier": 0.0242
    },
    "surprises": [
     {
@@ -271,8 +271,6 @@
     "SC-02",
     "TN-07",
     "TN-09",
-    "UT-02",
-    "UT-04",
     "VA-05",
     "WA-04",
     "WA-05"
