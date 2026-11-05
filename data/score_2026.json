@@ -121,14 +121,14 @@
    ]
   },
   "house": {
-   "races": 387,
-   "called_right": 0.9612,
-   "brier": 0.0297,
-   "log_loss": 0.1019,
+   "races": 388,
+   "called_right": 0.9588,
+   "brier": 0.031,
+   "log_loss": 0.1048,
    "competitive": {
-    "races": 68,
-    "called_right": 0.7794,
-    "brier": 0.1681
+    "races": 69,
+    "called_right": 0.7681,
+    "brier": 0.173
    },
    "calibration": [
     {
@@ -148,9 +148,9 @@
     {
      "from": 0.25,
      "to": 0.4,
-     "races": 2,
-     "forecast": 0.289,
-     "dem_won": 0.0
+     "races": 3,
+     "forecast": 0.29,
+     "dem_won": 0.333
     },
     {
      "from": 0.4,
@@ -188,9 +188,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 386,
-    "forecast_brier": 0.0298,
-    "market_brier": 0.0156
+    "races": 387,
+    "forecast_brier": 0.031,
+    "market_brier": 0.0162
    },
    "surprises": [
     {
@@ -272,7 +272,6 @@
     "NY-02",
     "NY-21",
     "OH-10",
-    "SC-01",
     "SC-02",
     "TN-04",
     "TN-07",
