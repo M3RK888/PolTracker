@@ -121,14 +121,14 @@
    ]
   },
   "house": {
-   "races": 396,
-   "called_right": 0.9495,
-   "brier": 0.0396,
-   "log_loss": 0.1314,
+   "races": 397,
+   "called_right": 0.9496,
+   "brier": 0.0395,
+   "log_loss": 0.1315,
    "competitive": {
-    "races": 74,
-    "called_right": 0.7432,
-    "brier": 0.1979
+    "races": 75,
+    "called_right": 0.7467,
+    "brier": 0.1956
    },
    "calibration": [
     {
@@ -169,8 +169,8 @@
     {
      "from": 0.75,
      "to": 0.95,
-     "races": 19,
-     "forecast": 0.887,
+     "races": 20,
+     "forecast": 0.885,
      "dem_won": 1.0
     },
     {
@@ -188,9 +188,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 395,
-    "forecast_brier": 0.0397,
-    "market_brier": 0.0242
+    "races": 396,
+    "forecast_brier": 0.0396,
+    "market_brier": 0.0243
    },
    "surprises": [
     {
@@ -237,7 +237,6 @@
    "pending": [
     "AK-AL",
     "AR-02",
-    "AZ-01",
     "AZ-02",
     "AZ-05",
     "AZ-08",
