@@ -121,14 +121,14 @@
    ]
   },
   "house": {
-   "races": 386,
-   "called_right": 0.9611,
-   "brier": 0.0298,
+   "races": 387,
+   "called_right": 0.9612,
+   "brier": 0.0297,
    "log_loss": 0.1019,
    "competitive": {
-    "races": 67,
-    "called_right": 0.7761,
-    "brier": 0.1705
+    "races": 68,
+    "called_right": 0.7794,
+    "brier": 0.1681
    },
    "calibration": [
     {
@@ -169,8 +169,8 @@
     {
      "from": 0.75,
      "to": 0.95,
-     "races": 18,
-     "forecast": 0.886,
+     "races": 19,
+     "forecast": 0.887,
      "dem_won": 1.0
     },
     {
@@ -188,8 +188,8 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 385,
-    "forecast_brier": 0.0299,
+    "races": 386,
+    "forecast_brier": 0.0298,
     "market_brier": 0.0156
    },
    "surprises": [
@@ -240,7 +240,6 @@
     "AZ-01",
     "AZ-02",
     "AZ-05",
-    "AZ-06",
     "AZ-08",
     "CA-04",
     "CA-07",
