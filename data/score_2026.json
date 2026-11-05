@@ -121,22 +121,22 @@
    ]
   },
   "house": {
-   "races": 392,
-   "called_right": 0.9515,
-   "brier": 0.037,
-   "log_loss": 0.122,
+   "races": 394,
+   "called_right": 0.9492,
+   "brier": 0.0398,
+   "log_loss": 0.1321,
    "competitive": {
-    "races": 73,
-    "called_right": 0.7397,
-    "brier": 0.1977
+    "races": 74,
+    "called_right": 0.7432,
+    "brier": 0.1979
    },
    "calibration": [
     {
      "from": 0.0,
      "to": 0.05,
-     "races": 126,
+     "races": 127,
      "forecast": 0.014,
-     "dem_won": 0.0
+     "dem_won": 0.008
     },
     {
      "from": 0.05,
@@ -155,9 +155,9 @@
     {
      "from": 0.4,
      "to": 0.6,
-     "races": 15,
-     "forecast": 0.468,
-     "dem_won": 0.933
+     "races": 16,
+     "forecast": 0.472,
+     "dem_won": 0.938
     },
     {
      "from": 0.6,
@@ -188,11 +188,19 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 391,
-    "forecast_brier": 0.0371,
-    "market_brier": 0.0208
+    "races": 393,
+    "forecast_brier": 0.0399,
+    "market_brier": 0.0243
    },
    "surprises": [
+    {
+     "race": "TN-04",
+     "p_dem": 0.0274,
+     "p_winner": 0.0274,
+     "dem_won": true,
+     "median": -13.47,
+     "margin": null
+    },
     {
      "race": "TX-09",
      "p_dem": 0.0754,
@@ -223,14 +231,6 @@
      "p_winner": 0.1222,
      "dem_won": true,
      "median": -7.44,
-     "margin": null
-    },
-    {
-     "race": "NC-13",
-     "p_dem": 0.125,
-     "p_winner": 0.125,
-     "dem_won": true,
-     "median": -7.36,
      "margin": null
     }
    ],
@@ -268,9 +268,7 @@
     "NY-01",
     "NY-02",
     "NY-21",
-    "OH-10",
     "SC-02",
-    "TN-04",
     "TN-07",
     "TN-09",
     "UT-02",
