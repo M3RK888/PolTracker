@@ -121,14 +121,14 @@
    ]
   },
   "house": {
-   "races": 388,
-   "called_right": 0.9588,
-   "brier": 0.031,
-   "log_loss": 0.1048,
+   "races": 389,
+   "called_right": 0.9589,
+   "brier": 0.0312,
+   "log_loss": 0.1056,
    "competitive": {
-    "races": 69,
-    "called_right": 0.7681,
-    "brier": 0.173
+    "races": 70,
+    "called_right": 0.7714,
+    "brier": 0.1721
    },
    "calibration": [
     {
@@ -162,8 +162,8 @@
     {
      "from": 0.6,
      "to": 0.75,
-     "races": 7,
-     "forecast": 0.659,
+     "races": 8,
+     "forecast": 0.66,
      "dem_won": 1.0
     },
     {
@@ -188,9 +188,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 387,
-    "forecast_brier": 0.031,
-    "market_brier": 0.0162
+    "races": 388,
+    "forecast_brier": 0.0313,
+    "market_brier": 0.0163
    },
    "surprises": [
     {
@@ -278,7 +278,6 @@
     "TN-09",
     "UT-02",
     "UT-04",
-    "VA-01",
     "VA-05",
     "WA-04",
     "WA-05"
