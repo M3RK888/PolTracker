@@ -121,10 +121,10 @@
    ]
   },
   "house": {
-   "races": 383,
-   "called_right": 0.9634,
-   "brier": 0.0283,
-   "log_loss": 0.0983,
+   "races": 385,
+   "called_right": 0.9636,
+   "brier": 0.0282,
+   "log_loss": 0.098,
    "competitive": {
     "races": 66,
     "called_right": 0.7879,
@@ -176,7 +176,7 @@
     {
      "from": 0.95,
      "to": 1.0,
-     "races": 191,
+     "races": 193,
      "forecast": 0.995,
      "dem_won": 1.0
     }
@@ -188,8 +188,8 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 382,
-    "forecast_brier": 0.0284,
+    "races": 384,
+    "forecast_brier": 0.0283,
     "market_brier": 0.0147
    },
    "surprises": [
@@ -249,8 +249,6 @@
     "CA-23",
     "CA-29",
     "CA-40",
-    "CA-47",
-    "CA-48",
     "CO-03",
     "CO-04",
     "CO-05",
