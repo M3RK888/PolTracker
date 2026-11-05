@@ -121,14 +121,14 @@
    ]
   },
   "house": {
-   "races": 403,
-   "called_right": 0.9479,
-   "brier": 0.0399,
-   "log_loss": 0.1328,
+   "races": 405,
+   "called_right": 0.9457,
+   "brier": 0.0408,
+   "log_loss": 0.1352,
    "competitive": {
-    "races": 78,
-    "called_right": 0.7436,
-    "brier": 0.193
+    "races": 80,
+    "called_right": 0.7375,
+    "brier": 0.1936
    },
    "calibration": [
     {
@@ -148,16 +148,16 @@
     {
      "from": 0.25,
      "to": 0.4,
-     "races": 4,
+     "races": 5,
      "forecast": 0.29,
-     "dem_won": 0.25
+     "dem_won": 0.2
     },
     {
      "from": 0.4,
      "to": 0.6,
-     "races": 17,
-     "forecast": 0.475,
-     "dem_won": 0.882
+     "races": 18,
+     "forecast": 0.472,
+     "dem_won": 0.889
     },
     {
      "from": 0.6,
@@ -188,9 +188,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 402,
-    "forecast_brier": 0.04,
-    "market_brier": 0.025
+    "races": 404,
+    "forecast_brier": 0.0409,
+    "market_brier": 0.0258
    },
    "surprises": [
     {
@@ -246,10 +246,8 @@
     "CA-40",
     "CO-03",
     "CO-04",
-    "CO-05",
     "FL-07",
     "FL-09",
-    "FL-13",
     "FL-26",
     "FL-27",
     "LA-05",
