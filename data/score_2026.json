@@ -121,29 +121,29 @@
    ]
   },
   "house": {
-   "races": 408,
-   "called_right": 0.9461,
-   "brier": 0.0389,
-   "log_loss": 0.1277,
+   "races": 412,
+   "called_right": 0.9466,
+   "brier": 0.039,
+   "log_loss": 0.1282,
    "competitive": {
-    "races": 82,
-    "called_right": 0.7317,
-    "brier": 0.1925
+    "races": 84,
+    "called_right": 0.7381,
+    "brier": 0.1901
    },
    "calibration": [
     {
      "from": 0.0,
      "to": 0.05,
-     "races": 131,
-     "forecast": 0.014,
+     "races": 133,
+     "forecast": 0.015,
      "dem_won": 0.0
     },
     {
      "from": 0.05,
      "to": 0.25,
-     "races": 30,
-     "forecast": 0.139,
-     "dem_won": 0.367
+     "races": 31,
+     "forecast": 0.138,
+     "dem_won": 0.355
     },
     {
      "from": 0.25,
@@ -155,9 +155,9 @@
     {
      "from": 0.4,
      "to": 0.6,
-     "races": 19,
-     "forecast": 0.475,
-     "dem_won": 0.842
+     "races": 20,
+     "forecast": 0.472,
+     "dem_won": 0.8
     },
     {
      "from": 0.6,
@@ -188,9 +188,9 @@
     "in_80pct_range": NaN
    },
    "vs_markets": {
-    "races": 407,
-    "forecast_brier": 0.039,
-    "market_brier": 0.024
+    "races": 411,
+    "forecast_brier": 0.0391,
+    "market_brier": 0.0243
    },
    "surprises": [
     {
@@ -237,14 +237,11 @@
    "pending": [
     "AK-AL",
     "AZ-02",
-    "AZ-05",
-    "AZ-08",
     "CA-04",
     "CA-07",
     "CA-14",
     "CA-23",
     "CA-40",
-    "CO-03",
     "CO-04",
     "FL-07",
     "FL-09",
@@ -256,7 +253,6 @@
     "NC-03",
     "NC-05",
     "NC-07",
-    "NC-08",
     "NC-10",
     "NY-02",
     "SC-02",
