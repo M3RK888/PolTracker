@@ -186,7 +186,7 @@ date,race,kind,p_dem,p_rep,median,lo,hi,market_dem,polymarket,kalshi
 2026-11-03,president:newsom-vance,daily,0.5976,0.3953,285,204,375,0.6425,0.66,0.625
 2026-11-04,president:newsom-vance,daily,0.5977,0.3953,285,205,375,0.6425,0.66,0.625
 2026-11-05,president:newsom-vance,daily,0.5978,0.3952,285,205,375,0.6425,0.66,0.625
-2026-11-06,president:newsom-vance,daily,0.5977,0.3953,285,205,375,0.6425,0.66,0.625
+2026-11-06,president:newsom-vance,daily,0.5985,0.3946,285,205,375,0.6425,0.66,0.625
 2026-10-22,president:ocasio-cortez-rubio,daily,0.5595,0.4349,279,198,368,0.6175,0.65,0.585
 2026-10-23,president:ocasio-cortez-rubio,daily,0.5605,0.4336,279,198,368,0.62,0.655,0.585
 2026-10-24,president:ocasio-cortez-rubio,daily,0.5664,0.4273,280,199,369,0.62,0.655,0.585
