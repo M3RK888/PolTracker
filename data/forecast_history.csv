@@ -210,7 +210,7 @@ date,race,kind,p_dem,p_rep,median,lo,hi,market_dem,polymarket,kalshi
 2026-11-04,president:ocasio-cortez-rubio,daily,0.5772,0.4162,282,201,370,0.6425,0.66,0.625
 2026-11-05,president:ocasio-cortez-rubio,daily,0.5772,0.4162,282,202,370,0.6425,0.66,0.625
 2026-11-06,president:ocasio-cortez-rubio,daily,0.5772,0.4162,282,202,370,0.6425,0.66,0.625
-2026-11-07,president:ocasio-cortez-rubio,daily,0.5774,0.416,282,202,370,0.6425,0.66,0.625
+2026-11-07,president:ocasio-cortez-rubio,daily,0.5645,0.4292,280,199,368,0.6425,0.66,0.625
 2026-10-22,president:ocasio-cortez-vance,daily,0.5622,0.432,279,199,368,0.6175,0.65,0.585
 2026-10-23,president:ocasio-cortez-vance,daily,0.563,0.4309,280,199,369,0.62,0.655,0.585
 2026-10-24,president:ocasio-cortez-vance,daily,0.5693,0.4242,281,200,369,0.62,0.655,0.585
@@ -227,7 +227,7 @@ date,race,kind,p_dem,p_rep,median,lo,hi,market_dem,polymarket,kalshi
 2026-11-04,president:ocasio-cortez-vance,daily,0.5847,0.4085,283,203,372,0.6425,0.66,0.625
 2026-11-05,president:ocasio-cortez-vance,daily,0.5849,0.4084,283,203,372,0.6425,0.66,0.625
 2026-11-06,president:ocasio-cortez-vance,daily,0.5849,0.4083,283,203,371,0.6425,0.66,0.625
-2026-11-07,president:ocasio-cortez-vance,daily,0.5853,0.408,283,203,371,0.6425,0.66,0.625
+2026-11-07,president:ocasio-cortez-vance,daily,0.5755,0.4178,282,201,370,0.6425,0.66,0.625
 2026-10-22,president:ossoff-rubio,daily,0.5863,0.407,284,203,373,0.6175,0.65,0.585
 2026-10-23,president:ossoff-rubio,daily,0.5875,0.4057,284,203,373,0.62,0.655,0.585
 2026-10-24,president:ossoff-rubio,daily,0.5875,0.4057,284,203,373,0.62,0.655,0.585
