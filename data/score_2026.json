@@ -80,7 +80,7 @@
      "p_winner": 0.3267,
      "dem_won": true,
      "median": -2.17,
-     "margin": null
+     "margin": NaN
     },
     {
      "race": "IA",
@@ -88,7 +88,7 @@
      "p_winner": 0.5084,
      "dem_won": true,
      "median": 0.1,
-     "margin": null
+     "margin": NaN
     },
     {
      "race": "KS",
@@ -96,7 +96,7 @@
      "p_winner": 0.6716,
      "dem_won": true,
      "median": 2.16,
-     "margin": null
+     "margin": NaN
     },
     {
      "race": "OH",
@@ -104,7 +104,7 @@
      "p_winner": 0.7019,
      "dem_won": true,
      "median": 2.55,
-     "margin": null
+     "margin": NaN
     },
     {
      "race": "TX",
@@ -112,7 +112,7 @@
      "p_winner": 0.7177,
      "dem_won": true,
      "median": 2.79,
-     "margin": null
+     "margin": NaN
     }
    ],
    "pending": [
@@ -182,10 +182,10 @@
     }
    ],
    "margin": {
-    "races": 0,
-    "bias": NaN,
-    "mean_abs_error": NaN,
-    "in_80pct_range": NaN
+    "races": 10,
+    "bias": 10.34,
+    "mean_abs_error": 10.34,
+    "in_80pct_range": 0.2
    },
    "vs_markets": {
     "races": 415,
@@ -199,7 +199,7 @@
      "p_winner": 0.0274,
      "dem_won": true,
      "median": -13.47,
-     "margin": null
+     "margin": NaN
     },
     {
      "race": "TX-09",
@@ -207,7 +207,7 @@
      "p_winner": 0.0754,
      "dem_won": true,
      "median": -9.33,
-     "margin": null
+     "margin": NaN
     },
     {
      "race": "NC-06",
@@ -215,7 +215,7 @@
      "p_winner": 0.0775,
      "dem_won": true,
      "median": -9.43,
-     "margin": null
+     "margin": NaN
     },
     {
      "race": "IN-05",
@@ -223,7 +223,7 @@
      "p_winner": 0.1202,
      "dem_won": true,
      "median": -7.42,
-     "margin": null
+     "margin": NaN
     },
     {
      "race": "NC-09",
@@ -231,7 +231,7 @@
      "p_winner": 0.1222,
      "dem_won": true,
      "median": -7.44,
-     "margin": null
+     "margin": NaN
     }
    ],
    "pending": [
