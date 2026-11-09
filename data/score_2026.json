@@ -121,14 +121,14 @@
    ]
   },
   "house": {
-   "races": 416,
-   "called_right": 0.9423,
-   "brier": 0.0429,
-   "log_loss": 0.1415,
+   "races": 420,
+   "called_right": 0.9381,
+   "brier": 0.0459,
+   "log_loss": 0.1504,
    "competitive": {
-    "races": 86,
-    "called_right": 0.7326,
-    "brier": 0.1955
+    "races": 90,
+    "called_right": 0.7222,
+    "brier": 0.2029
    },
    "calibration": [
     {
@@ -141,16 +141,16 @@
     {
      "from": 0.05,
      "to": 0.25,
-     "races": 32,
-     "forecast": 0.138,
-     "dem_won": 0.375
+     "races": 35,
+     "forecast": 0.139,
+     "dem_won": 0.371
     },
     {
      "from": 0.25,
      "to": 0.4,
-     "races": 6,
+     "races": 7,
      "forecast": 0.29,
-     "dem_won": 0.167
+     "dem_won": 0.286
     },
     {
      "from": 0.4,
@@ -188,9 +188,9 @@
     "in_80pct_range": 0.2
    },
    "vs_markets": {
-    "races": 415,
-    "forecast_brier": 0.043,
-    "market_brier": 0.0274
+    "races": 419,
+    "forecast_brier": 0.046,
+    "market_brier": 0.0297
    },
    "surprises": [
     {
@@ -199,6 +199,14 @@
      "p_winner": 0.0274,
      "dem_won": true,
      "median": -13.47,
+     "margin": NaN
+    },
+    {
+     "race": "CO-04",
+     "p_dem": 0.0729,
+     "p_winner": 0.0729,
+     "dem_won": true,
+     "median": -9.44,
      "margin": NaN
     },
     {
@@ -224,33 +232,21 @@
      "dem_won": true,
      "median": -7.42,
      "margin": NaN
-    },
-    {
-     "race": "NC-09",
-     "p_dem": 0.1222,
-     "p_winner": 0.1222,
-     "dem_won": true,
-     "median": -7.44,
-     "margin": NaN
     }
    ],
    "pending": [
     "AK-AL",
-    "AZ-02",
     "CA-04",
     "CA-07",
     "CA-23",
     "CA-40",
-    "CO-04",
     "FL-07",
     "FL-26",
     "FL-27",
     "LA-05",
     "LA-06",
-    "MN-01",
     "NC-03",
     "NC-05",
-    "NC-07",
     "NC-10",
     "SC-02",
     "WA-05"
