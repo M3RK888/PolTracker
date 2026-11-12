@@ -2,10 +2,10 @@
  "forecast_date": "2026-11-03",
  "chambers": {
   "senate": {
-   "races": 33,
-   "called_right": 0.9697,
-   "brier": 0.0347,
-   "log_loss": 0.1298,
+   "races": 34,
+   "called_right": 0.9412,
+   "brier": 0.061,
+   "log_loss": 0.2241,
    "competitive": {
     "races": 13,
     "called_right": 0.9231,
@@ -15,9 +15,9 @@
     {
      "from": 0.0,
      "to": 0.05,
-     "races": 10,
-     "forecast": 0.005,
-     "dem_won": 0.0
+     "races": 11,
+     "forecast": 0.008,
+     "dem_won": 0.091
     },
     {
      "from": 0.05,
@@ -63,24 +63,32 @@
     }
    ],
    "margin": {
-    "races": 0,
-    "bias": NaN,
-    "mean_abs_error": NaN,
-    "in_80pct_range": NaN
+    "races": 4,
+    "bias": 5.95,
+    "mean_abs_error": 5.95,
+    "in_80pct_range": 0.25
    },
    "vs_markets": {
-    "races": 33,
-    "forecast_brier": 0.0347,
-    "market_brier": 0.0405
+    "races": 34,
+    "forecast_brier": 0.061,
+    "market_brier": 0.0621
    },
    "surprises": [
+    {
+     "race": "MS",
+     "p_dem": 0.0355,
+     "p_winner": 0.0355,
+     "dem_won": true,
+     "median": -9.69,
+     "margin": NaN
+    },
     {
      "race": "SC",
      "p_dem": 0.3267,
      "p_winner": 0.3267,
      "dem_won": true,
      "median": -2.17,
-     "margin": NaN
+     "margin": 4.5
     },
     {
      "race": "IA",
@@ -105,19 +113,10 @@
      "dem_won": true,
      "median": 2.55,
      "margin": NaN
-    },
-    {
-     "race": "TX",
-     "p_dem": 0.7177,
-     "p_winner": 0.7177,
-     "dem_won": true,
-     "median": 2.79,
-     "margin": NaN
     }
    ],
    "pending": [
-    "AK",
-    "MS"
+    "AK"
    ]
   },
   "house": {
@@ -182,10 +181,10 @@
     }
    ],
    "margin": {
-    "races": 10,
-    "bias": 10.34,
-    "mean_abs_error": 10.34,
-    "in_80pct_range": 0.2
+    "races": 24,
+    "bias": 8.37,
+    "mean_abs_error": 8.37,
+    "in_80pct_range": 0.5
    },
    "vs_markets": {
     "races": 423,
