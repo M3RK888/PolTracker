@@ -181,10 +181,10 @@
     }
    ],
    "margin": {
-    "races": 24,
-    "bias": 8.37,
-    "mean_abs_error": 8.37,
-    "in_80pct_range": 0.5
+    "races": 25,
+    "bias": 7.7,
+    "mean_abs_error": 8.36,
+    "in_80pct_range": 0.52
    },
    "vs_markets": {
     "races": 423,
