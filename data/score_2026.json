@@ -120,14 +120,14 @@
    ]
   },
   "house": {
-   "races": 425,
-   "called_right": 0.9412,
-   "brier": 0.0444,
-   "log_loss": 0.1448,
+   "races": 427,
+   "called_right": 0.9415,
+   "brier": 0.0442,
+   "log_loss": 0.1443,
    "competitive": {
-    "races": 95,
-    "called_right": 0.7368,
-    "brier": 0.1979
+    "races": 96,
+    "called_right": 0.7396,
+    "brier": 0.1959
    },
    "calibration": [
     {
@@ -140,9 +140,9 @@
     {
      "from": 0.05,
      "to": 0.25,
-     "races": 36,
-     "forecast": 0.14,
-     "dem_won": 0.361
+     "races": 37,
+     "forecast": 0.139,
+     "dem_won": 0.351
     },
     {
      "from": 0.25,
@@ -175,7 +175,7 @@
     {
      "from": 0.95,
      "to": 1.0,
-     "races": 197,
+     "races": 198,
      "forecast": 0.995,
      "dem_won": 1.0
     }
@@ -187,9 +187,9 @@
     "in_80pct_range": 0.52
    },
    "vs_markets": {
-    "races": 423,
-    "forecast_brier": 0.0444,
-    "market_brier": 0.0278
+    "races": 425,
+    "forecast_brier": 0.0443,
+    "market_brier": 0.0276
    },
    "surprises": [
     {
@@ -235,14 +235,12 @@
    ],
    "pending": [
     "AK-AL",
-    "CA-04",
     "CA-23",
     "LA-05",
     "LA-06",
     "MN-01",
     "NC-05",
     "NC-07",
-    "NC-10",
     "TN-04"
    ]
   }
