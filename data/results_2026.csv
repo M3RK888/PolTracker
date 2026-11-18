@@ -2,7 +2,7 @@ chamber,race,dem_won,margin
 senate,FL,False,-2.9
 senate,OH,True,
 senate,AL,False,-9.4
-senate,AK,,
+senate,AK,True,4.3
 senate,AR,False,-11.9
 senate,CO,True,
 senate,DE,True,27.1
@@ -10,7 +10,7 @@ senate,GA,True,18.0
 senate,ID,False,-22.9
 senate,IL,True,25.6
 senate,IA,True,4.2
-senate,KS,True,5.0
+senate,KS,True,5.4
 senate,KY,False,-12.1
 senate,LA,False,-1.8
 senate,ME,True,6.2
