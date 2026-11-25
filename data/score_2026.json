@@ -65,7 +65,7 @@
    "margin": {
     "races": 22,
     "bias": 5.71,
-    "mean_abs_error": 6.77,
+    "mean_abs_error": 6.76,
     "in_80pct_range": 0.455
    },
    "vs_markets": {
